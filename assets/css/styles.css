@@ -1,0 +1,78 @@
+.fundo{
+   width: 100%;
+   /*Sumir com o scroll*/
+   height: 100vh;
+   background: rgb(136,69,153);
+   text-align: center;
+}
+.espaco-6{
+  /*56px*/
+  height: 6%;
+}
+.espaco-3{
+   /*32px*/
+  height: 3%;
+}
+.espaco-1{
+  /*32px*/
+ height: 8px;
+}
+.btn:not(:disabled):not(.disabled) {
+  width: 198px;
+  height: 56px;
+  font-size: 20px;
+  font-family: 'Fira Sans', sans-serif;
+  background: #541663;
+}
+.titulo{
+  color: rgb(255,255,255);
+  font-family: 'Luckiest Guy', cursive; 
+  font-size: 92px;
+}
+.borda{
+  -webkit-text-fill-color:rgba(255, 255, 255, 0.9) ;
+  -webkit-text-stroke-color: #000000;
+  -webkit-text-stroke-width: 2px;
+}
+.subtitulo-t{
+  color: rgb(255,255,255);
+  font-size: 48px;
+}
+.botao-borda{
+  border-width: 4px;
+  border-style: solid;
+  border: #ffffff;
+  border-radius: 10px;
+}
+.logo-eic{
+  top: 85%;
+  bottom: 5%;
+}
+.icones-altura{
+  /*Aqui também chega o eic p baixo*/
+  height: 56px;
+}
+.largura-espaco{
+  width: 38vw;
+}
+.icones-largura{
+  width: 8vw;
+}
+.alinhar-icone-1{
+  height: 80px;
+  text-align: right;
+  width: 80px;
+}
+.alinhar-icone-2{
+  height: 80px;
+  text-align: center;
+  width: 80px;
+}
+.alinhar-icone-3{
+  height: 80px;
+  text-align: left;
+  width: 80px;
+}
+/*Chegar titulo p baixo*/
+/*preciso dar conta dos espaçamentos*/
+
