@@ -1,9 +1,12 @@
+/*mobile-first*/
 .fundo{
-   width: 100%;
-   /*Sumir com o scroll*/
-   height: 100vh;
-   background: rgb(136,69,153);
-   text-align: center;
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  background: rgb(136,69,153);
+  text-align: center;
+  justify-content: center;
 }
 .espaco-6{
   /*56px*/
@@ -23,56 +26,193 @@
   font-size: 20px;
   font-family: 'Fira Sans', sans-serif;
   background: #541663;
+  border: 4px solid #ffffff;
+  border-radius: 10px;
 }
 .titulo{
   color: rgb(255,255,255);
   font-family: 'Luckiest Guy', cursive; 
-  font-size: 92px;
-}
-.borda{
+  font-size: 52px;
   -webkit-text-fill-color:rgba(255, 255, 255, 0.9) ;
   -webkit-text-stroke-color: #000000;
-  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-width: 1px;
 }
+
 .subtitulo-t{
   color: rgb(255,255,255);
-  font-size: 48px;
+  font-size: 32px;
+  -webkit-text-fill-color:rgba(255, 255, 255, 0.9) ;
+  -webkit-text-stroke-color: #000000;
+  -webkit-text-stroke-width: 1px;
 }
-.botao-borda{
-  border-width: 4px;
-  border-style: solid;
-  border: #ffffff;
+.bt:active{
+  width: 198px;
+  height: 56px;
+  font-size: 20px;
+  font-family: 'Fira Sans', sans-serif;
+  background: #541663;
+  border: 4px solid #ffffff;
   border-radius: 10px;
 }
-.logo-eic{
-  top: 85%;
-  bottom: 5%;
-}
-.icones-altura{
-  /*Aqui também chega o eic p baixo*/
-  height: 56px;
-}
-.largura-espaco{
-  width: 38vw;
-}
-.icones-largura{
-  width: 8vw;
-}
-.alinhar-icone-1{
-  height: 80px;
-  text-align: right;
-  width: 80px;
-}
-.alinhar-icone-2{
-  height: 80px;
-  text-align: center;
-  width: 80px;
-}
-.alinhar-icone-3{
-  height: 80px;
-  text-align: left;
-  width: 80px;
-}
-/*Chegar titulo p baixo*/
-/*preciso dar conta dos espaçamentos*/
 
+a{
+  color: rgb(255,255,255);
+}
+
+.cards-inicial{
+  width: 295px;
+  height: 88px;
+}
+
+.caixa-btns-c{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 32px 0px 0px;
+    position: absolute;
+    width: 200px;
+    height: 120px;
+    left: 46vw;
+    top: 470px;
+  }
+  .btn-circ{
+    position: static;
+    width: 56px;
+    height: 56px;
+    top: 32px;
+    flex: none;
+    
+  }
+  .btn-circ-1{
+    left: 0px;
+    order: 0;
+    align-self: center;
+    flex-grow: 0;
+    margin: 16px 0px;
+  }
+  .btn-circ-2{
+    left: 72px;
+    order: 1;
+    align-self: center;
+    flex-grow: 0;
+    margin: 16px 0px;
+  }
+  .btn-circ-3{
+    left: 144px;
+    order: 2;
+    align-self: center;
+    flex-grow: 0;
+    margin: 16px 0px;
+  }
+
+/*preciso dar conta dos espaçamentos - alguns - dos botoes na versão de celular*/
+
+/*versão destop */
+@media (min-width: 1000px){
+
+  .titulo{
+    color: rgb(255,255,255);
+    font-family: 'Luckiest Guy', cursive; 
+    font-size: 92px;
+    -webkit-text-fill-color:rgba(255, 255, 255, 0.9) ;
+    -webkit-text-stroke-color: #000000;
+    -webkit-text-stroke-width: 2px;
+  }
+  .subtitulo-t{
+    color: rgb(255,255,255);
+    font-size: 48px;
+  }
+  .logo-eic{
+    top: 85%;
+    bottom: 5%;
+  }
+  .icones-altura{
+    /*Aqui também chega o eic p baixo*/
+    height: 56px;
+  }
+  .largura-espaco{
+    width: 38vw;
+  }
+
+  .cards-inicial{
+    width: auto;
+    height: auto;
+  }
+    
+}
+ /*versão tablet */
+@media(min-width: 600px) and (max-width: 1000px){
+
+  .titulo{
+    color: rgb(255,255,255);
+    font-family: 'Luckiest Guy', cursive; 
+    font-size: 92px;
+    -webkit-text-fill-color:rgba(255, 255, 255, 0.9) ;
+    -webkit-text-stroke-color:#000000;
+    -webkit-text-stroke-width: 2px;
+  }
+  .subtitulo-t{
+    color: rgb(255,255,255);
+    font-size: 48px;
+  }
+  .logo-eic{
+    top: 85%;
+    bottom: 5%;
+  }
+  .icones-altura{
+    /*Aqui também chega o eic p baixo*/
+    height: 56px;
+  }
+  .largura-espaco{
+    width: 38vw;
+  }
+
+.alinhamento-botoes{
+  align-items: center;
+}
+  .caixa-btns-c{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 32px 0px 0px;
+    position: absolute;
+    width: 200px;
+    height: 120px;
+    left: 740px;
+    top: 470px;
+  }
+  .btn-circ{
+    position: static;
+    width: 56px;
+    height: 56px;
+    top: 32px;
+    flex: none;
+    
+  }
+  .btn-circ-1{
+    left: 0px;
+    order: 0;
+    align-self: center;
+    flex-grow: 0;
+    margin: 16px 0px;
+  }
+  .btn-circ-2{
+    left: 72px;
+    order: 1;
+    align-self: center;
+    flex-grow: 0;
+    margin: 16px 0px;
+  }
+  .btn-circ-3{
+    left: 144px;
+    order: 2;
+    align-self: center;
+    flex-grow: 0;
+    margin: 16px 0px;
+  }
+  .cards-inicial{
+    width: auto;
+    height: auto;
+  }
+    
+}
