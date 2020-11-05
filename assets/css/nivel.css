@@ -11,50 +11,109 @@ p{
     text-align: center;
     width: 80vw;
 }
+.menu-lateral{
+  display: none;
+}
+.menu-mobile{
+  position: absolute;
+  width: 309px;
+  height: 25px;
+  left: 24px;
+  top: 47px;
+  /*justify-content: space-between;*/
+}
+.btn-alinhamento{
+  position: relative;
+  justify-content: center;
+}
+
+
+
+.btn-facil:not(:disabled):not(.disabled) {
+  width: 198px;
+  height: 56px;
+  font-size: 20px;
+  font-family: 'Fira Sans', sans-serif;
+  background: #BB78CC;
+  border: 4px solid #ffffff;
+  border-radius: 10px;
+}
+.btn-medio:not(:disabled):not(.disabled) {
+  width: 198px;
+  height: 56px;
+  font-size: 20px;
+  font-family: 'Fira Sans', sans-serif;
+  background: #664F9F;
+  border: 4px solid #ffffff;
+  border-radius: 10px;
+}
+.btn-dificil:not(:disabled):not(.disabled) {
+  width: 198px;
+  height: 56px;
+  font-size: 20px;
+  font-family: 'Fira Sans', sans-serif;
+  background: #CB5881;
+  border: 4px solid #ffffff;
+  border-radius: 10px;
+}
+
 /*versão destop */
 @media (min-width: 1000px){
-
-    .subtitulo-2{
-        text-align: center;
-        color: rgb(255,255,255);
-        font-size: 38px;
-        font-family: 'Luckiest Guy', cursive; 
-        -webkit-text-fill-color:rgba(255, 255, 255, 0.9) ;
-        -webkit-text-stroke-color: #000000;
-        -webkit-text-stroke-width: 1px;
-    }
-    p{  
-    
-        font-family: Fira Sans;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 24px;
-        line-height: 29px;
-        text-align: center;
-        color: #F0E2F3;
-    
-    }
-    .menu-lateral{
-        
-        position: absolute;
-        width: 20vw;
-        height: 100vh;
-        left: 1300px;
-        top: 0px;
-        background-color: #541663;
-    }
-   
-    .fonte-menu-lateral{
-    
-        font-family: Fira Sans;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 18px;
-        line-height: 24px;
-        color: #EEEEEE;
-    }
+  .subtitulo-2{
+      text-align: center;
+      color: rgb(255,255,255);
+      font-size: 38px;
+      font-family: 'Luckiest Guy', cursive; 
+      -webkit-text-fill-color:rgba(255, 255, 255, 0.9) ;
+      -webkit-text-stroke-color: #000000;
+      -webkit-text-stroke-width: 1px;
+  }
+  p{  
+  
+      font-family: Fira Sans;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 29px;
+      text-align: center;
+      color: #F0E2F3;
+  
+  }
+  
+  ul {
+    list-style-type: none;
+    left: 80%;
+    margin: 0;
+    padding: 0;
+    width: 20vw;
+    background-color: #541663;
+    height: 100%; /* Full height */
+    position: fixed; /* Make it stick, even on scroll */
+    overflow: auto; /* Enable scrolling if the sidenav has too much content */
+  }
+  
+  .fonte-menu-lateral{
+  
+      font-family: Fira Sans;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 24px;
+      color: #EEEEEE;   
   }
 
+  .elem-menu-lateral{
+  width: 300px;
+}
+  .elem-menu-lateral img{
+    padding-left: 40px;
+    float: left;
+  }
+  .elem-menu-lateral p{
+    padding-left: 80px;
+    text-align: left;
+  }
+  
    /*versão tablet */
   @media(min-width: 600px) and (max-width: 1000px){
   
@@ -129,6 +188,4 @@ p{
       width: auto;
       height: auto;
     }
-      
   }
-  

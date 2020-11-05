@@ -20,6 +20,9 @@
   /*32px*/
  height: 8px;
 }
+.espaco-05{
+  height: 4px;
+}
 .btn:not(:disabled):not(.disabled) {
   width: 198px;
   height: 56px;
