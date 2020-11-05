@@ -1,39 +1,134 @@
-.subtitulo-2{
-    text-align: center;
-    color: rgb(255,255,255);
-    font-size: 38px;
-    font-family: 'Luckiest Guy', cursive; 
-    -webkit-text-fill-color:rgba(255, 255, 255, 0.9) ;
-    -webkit-text-stroke-color: #000000;
-    -webkit-text-stroke-width: 1px;
-}
-p{  
-
+p{
     font-family: Fira Sans;
     font-style: normal;
     font-weight: 500;
-    font-size: 24px;
-    line-height: 29px;
+    font-size: 20px;
+    line-height: 24px;
     text-align: center;
     color: #F0E2F3;
-
 }
-.menu-lateral{
+.largura-texto{
+    text-align: center;
+    width: 80vw;
+}
+/*versão destop */
+@media (min-width: 1000px){
+
+    .subtitulo-2{
+        text-align: center;
+        color: rgb(255,255,255);
+        font-size: 38px;
+        font-family: 'Luckiest Guy', cursive; 
+        -webkit-text-fill-color:rgba(255, 255, 255, 0.9) ;
+        -webkit-text-stroke-color: #000000;
+        -webkit-text-stroke-width: 1px;
+    }
+    p{  
     
-    position: absolute;
-    width: 20vw;
-    height: 100vh;
-    left: 90%;
-    top: 0px;
-    background-color: #541663;
-}
+        font-family: Fira Sans;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 29px;
+        text-align: center;
+        color: #F0E2F3;
+    
+    }
+    .menu-lateral{
+        
+        position: absolute;
+        width: 20vw;
+        height: 100vh;
+        left: 1300px;
+        top: 0px;
+        background-color: #541663;
+    }
+   
+    .fonte-menu-lateral{
+    
+        font-family: Fira Sans;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 24px;
+        color: #EEEEEE;
+    }
+  }
 
-.fonte-menu-lateral{
-
-    font-family: Fira Sans;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 24px;
-    color: #EEEEEE;
-}
+   /*versão tablet */
+  @media(min-width: 600px) and (max-width: 1000px){
+  
+    .titulo{
+      color: rgb(255,255,255);
+      font-family: 'Luckiest Guy', cursive; 
+      font-size: 92px;
+      -webkit-text-fill-color:rgba(255, 255, 255, 0.9) ;
+      -webkit-text-stroke-color:#000000;
+      -webkit-text-stroke-width: 2px;
+    }
+    .subtitulo-t{
+      color: rgb(255,255,255);
+      font-size: 48px;
+    }
+    .logo-eic{
+      top: 85%;
+      bottom: 5%;
+    }
+    .icones-altura{
+      /*Aqui também chega o eic p baixo*/
+      height: 56px;
+    }
+    .largura-espaco{
+      width: 38vw;
+    }
+  
+  .alinhamento-botoes{
+    align-items: center;
+  }
+    .caixa-btns-c{
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      padding: 32px 0px 0px;
+      position: absolute;
+      width: 200px;
+      height: 120px;
+      left: 740px;
+      top: 470px;
+    }
+    .btn-circ{
+      position: static;
+      width: 56px;
+      height: 56px;
+      top: 32px;
+      flex: none;
+      
+    }
+    .btn-circ-1{
+      left: 0px;
+      order: 0;
+      align-self: center;
+      flex-grow: 0;
+      margin: 16px 0px;
+    }
+    .btn-circ-2{
+      left: 72px;
+      order: 1;
+      align-self: center;
+      flex-grow: 0;
+      margin: 16px 0px;
+    }
+    .btn-circ-3{
+      left: 144px;
+      order: 2;
+      align-self: center;
+      flex-grow: 0;
+      margin: 16px 0px;
+    }
+    .cards-inicial{
+      width: auto;
+      height: auto;
+    }
+      
+  }
+  

@@ -72,8 +72,8 @@ a{
     position: absolute;
     width: 200px;
     height: 120px;
-    left: 46vw;
-    top: 470px;
+    left: 30vw;
+    top: 400px;
   }
   .btn-circ{
     position: static;
@@ -83,21 +83,21 @@ a{
     flex: none;
     
   }
-  .btn-circ-1{
+  #btn-circ-1{
     left: 0px;
     order: 0;
     align-self: center;
     flex-grow: 0;
     margin: 16px 0px;
   }
-  .btn-circ-2{
+  #btn-circ-2{
     left: 72px;
     order: 1;
     align-self: center;
     flex-grow: 0;
     margin: 16px 0px;
   }
-  .btn-circ-3{
+  #btn-circ-3{
     left: 144px;
     order: 2;
     align-self: center;
@@ -137,6 +137,18 @@ a{
   .cards-inicial{
     width: auto;
     height: auto;
+  }
+
+  .caixa-btns-c{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 32px 0px 0px;
+    position: absolute;
+    width: 200px;
+    height: 120px;
+    left: 43vw;
+    top: 500px;
   }
     
 }
@@ -178,8 +190,8 @@ a{
     position: absolute;
     width: 200px;
     height: 120px;
-    left: 740px;
-    top: 470px;
+    left: 39vw;
+    top: 500px;
   }
   .btn-circ{
     position: static;
@@ -189,21 +201,21 @@ a{
     flex: none;
     
   }
-  .btn-circ-1{
+  #btn-circ-1{
     left: 0px;
     order: 0;
     align-self: center;
     flex-grow: 0;
     margin: 16px 0px;
   }
-  .btn-circ-2{
+  #btn-circ-2{
     left: 72px;
     order: 1;
     align-self: center;
     flex-grow: 0;
     margin: 16px 0px;
   }
-  .btn-circ-3{
+  #btn-circ-3{
     left: 144px;
     order: 2;
     align-self: center;
