@@ -1,3 +1,4 @@
+/*versão mobile*/
 p{
     font-family: Fira Sans;
     font-style: normal;
@@ -9,7 +10,7 @@ p{
 }
 .largura-texto{
     text-align: center;
-    width: 80vw;
+    /*width: 444px; Problema em definir um tamanho máximo*/
 }
 .menu-lateral{
   display: none;
@@ -22,43 +23,54 @@ p{
   top: 47px;
   /*justify-content: space-between;*/
 }
-.btn-alinhamento{
-  position: relative;
-  justify-content: center;
-}
-
-
 
 .btn-facil:not(:disabled):not(.disabled) {
-  width: 198px;
-  height: 56px;
-  font-size: 20px;
-  font-family: 'Fira Sans', sans-serif;
-  background: #BB78CC;
-  border: 4px solid #ffffff;
-  border-radius: 10px;
+  background: #Bb78CC;
 }
 .btn-medio:not(:disabled):not(.disabled) {
-  width: 198px;
-  height: 56px;
-  font-size: 20px;
-  font-family: 'Fira Sans', sans-serif;
   background: #664F9F;
-  border: 4px solid #ffffff;
-  border-radius: 10px;
 }
 .btn-dificil:not(:disabled):not(.disabled) {
-  width: 198px;
-  height: 56px;
-  font-size: 20px;
-  font-family: 'Fira Sans', sans-serif;
   background: #CB5881;
-  border: 4px solid #ffffff;
-  border-radius: 10px;
 }
 
+
+   /*versão tablet */
+  @media(min-width: 600px) and (max-width: 1000px){
+  
+  .titulo{
+    color: rgb(255,255,255);
+    font-family: 'Luckiest Guy', cursive; 
+    font-size: 92px;
+    -webkit-text-fill-color:rgba(255, 255, 255, 0.9) ;
+    -webkit-text-stroke-color:#000000;
+    -webkit-text-stroke-width: 2px;
+  }
+  .subtitulo-t{
+    color: rgb(255,255,255);
+    font-size: 48px;
+  }
+  .logo-eic{
+    top: 85%;
+    bottom: 5%;
+  }
+
+  .menu-lateral{
+    display:block;
+  }
+}
 /*versão destop */
 @media (min-width: 1000px){
+  .fundo{
+    display: block;
+    overflow: hidden;
+    width: 80%;
+    height: 100vh;
+    background: rgb(136,69,153);
+    text-align: center;
+    justify-content: center;
+  }
+
   .subtitulo-2{
       text-align: center;
       color: rgb(255,255,255);
@@ -69,7 +81,6 @@ p{
       -webkit-text-stroke-width: 1px;
   }
   p{  
-  
       font-family: Fira Sans;
       font-style: normal;
       font-weight: 500;
@@ -77,7 +88,6 @@ p{
       line-height: 29px;
       text-align: center;
       color: #F0E2F3;
-  
   }
   
   ul {
@@ -93,7 +103,6 @@ p{
   }
   
   .fonte-menu-lateral{
-  
       font-family: Fira Sans;
       font-style: normal;
       font-weight: normal;
@@ -101,7 +110,6 @@ p{
       line-height: 24px;
       color: #EEEEEE;   
   }
-
   .elem-menu-lateral{
   width: 300px;
 }
@@ -113,79 +121,5 @@ p{
     padding-left: 80px;
     text-align: left;
   }
-  
-   /*versão tablet */
-  @media(min-width: 600px) and (max-width: 1000px){
-  
-    .titulo{
-      color: rgb(255,255,255);
-      font-family: 'Luckiest Guy', cursive; 
-      font-size: 92px;
-      -webkit-text-fill-color:rgba(255, 255, 255, 0.9) ;
-      -webkit-text-stroke-color:#000000;
-      -webkit-text-stroke-width: 2px;
-    }
-    .subtitulo-t{
-      color: rgb(255,255,255);
-      font-size: 48px;
-    }
-    .logo-eic{
-      top: 85%;
-      bottom: 5%;
-    }
-    .icones-altura{
-      /*Aqui também chega o eic p baixo*/
-      height: 56px;
-    }
-    .largura-espaco{
-      width: 38vw;
-    }
-  
-  .alinhamento-botoes{
-    align-items: center;
-  }
-    .caixa-btns-c{
-      display: flex;
-      flex-direction: row;
-      align-items: flex-start;
-      padding: 32px 0px 0px;
-      position: absolute;
-      width: 200px;
-      height: 120px;
-      left: 740px;
-      top: 470px;
-    }
-    .btn-circ{
-      position: static;
-      width: 56px;
-      height: 56px;
-      top: 32px;
-      flex: none;
-      
-    }
-    .btn-circ-1{
-      left: 0px;
-      order: 0;
-      align-self: center;
-      flex-grow: 0;
-      margin: 16px 0px;
-    }
-    .btn-circ-2{
-      left: 72px;
-      order: 1;
-      align-self: center;
-      flex-grow: 0;
-      margin: 16px 0px;
-    }
-    .btn-circ-3{
-      left: 144px;
-      order: 2;
-      align-self: center;
-      flex-grow: 0;
-      margin: 16px 0px;
-    }
-    .cards-inicial{
-      width: auto;
-      height: auto;
-    }
-  }
+
+}

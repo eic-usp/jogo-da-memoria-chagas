@@ -31,6 +31,8 @@
   background: #541663;
   border: 4px solid #ffffff;
   border-radius: 10px;
+  vertical-align: center;
+  text-align: center;
 }
 .titulo{
   color: rgb(255,255,255);
@@ -75,7 +77,7 @@ a{
     position: absolute;
     width: 200px;
     height: 120px;
-    left: 30vw;
+    left: 27%;
     top: 400px;
   }
   .btn-circ{
@@ -107,10 +109,85 @@ a{
     flex-grow: 0;
     margin: 16px 0px;
   }
+/*versão tablet */
+ 
+@media(min-width: 600px) and (max-width: 1000px){
 
-/*preciso dar conta dos espaçamentos - alguns - dos botoes na versão de celular*/
+  .titulo{
+    color: rgb(255,255,255);
+    font-family: 'Luckiest Guy', cursive; 
+    font-size: 92px;
+    -webkit-text-fill-color:rgba(255, 255, 255, 0.9) ;
+    -webkit-text-stroke-color:#000000;
+    -webkit-text-stroke-width: 2px;
+  }
+  .subtitulo-t{
+    color: rgb(255,255,255);
+    font-size: 48px;
+  }
+  .logo-eic{
+    top: 85%;
+    bottom: 5%;
+  }
+  .icones-altura{
+    /*Aqui também chega o eic p baixo*/
+    height: 56px;
+  }
+  .largura-espaco{
+    width: 38vw;
+  }
 
-/*versão destop */
+.alinhamento-botoes{
+  align-items: center;
+}
+  .caixa-btns-c{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 32px 0px 0px;
+    position: absolute;
+    width: 200px;
+    height: 120px;
+    left: 39vw;
+    top: 600px;
+  }
+  .btn-circ{
+    position: static;
+    width: 56px;
+    height: 56px;
+    top: 32px;
+    flex: none;
+    
+  }
+  #btn-circ-1{
+    left: 0px;
+    order: 0;
+    align-self: center;
+    flex-grow: 0;
+    margin: 16px 0px;
+  }
+  #btn-circ-2{
+    left: 72px;
+    order: 1;
+    align-self: center;
+    flex-grow: 0;
+    margin: 16px 0px;
+  }
+  #btn-circ-3{
+    left: 144px;
+    order: 2;
+    align-self: center;
+    flex-grow: 0;
+    margin: 16px 0px;
+  }
+  .cards-inicial{
+    width: auto;
+    height: auto;
+  }
+    
+}
+/*versão desktop */
+
 @media (min-width: 1000px){
 
   .titulo{
@@ -150,84 +227,10 @@ a{
     position: absolute;
     width: 200px;
     height: 120px;
-    left: 43vw;
+    left: 46vw;
     top: 500px;
+    
   }
     
 }
- /*versão tablet */
-@media(min-width: 600px) and (max-width: 1000px){
-
-  .titulo{
-    color: rgb(255,255,255);
-    font-family: 'Luckiest Guy', cursive; 
-    font-size: 92px;
-    -webkit-text-fill-color:rgba(255, 255, 255, 0.9) ;
-    -webkit-text-stroke-color:#000000;
-    -webkit-text-stroke-width: 2px;
-  }
-  .subtitulo-t{
-    color: rgb(255,255,255);
-    font-size: 48px;
-  }
-  .logo-eic{
-    top: 85%;
-    bottom: 5%;
-  }
-  .icones-altura{
-    /*Aqui também chega o eic p baixo*/
-    height: 56px;
-  }
-  .largura-espaco{
-    width: 38vw;
-  }
-
-.alinhamento-botoes{
-  align-items: center;
-}
-  .caixa-btns-c{
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 32px 0px 0px;
-    position: absolute;
-    width: 200px;
-    height: 120px;
-    left: 39vw;
-    top: 500px;
-  }
-  .btn-circ{
-    position: static;
-    width: 56px;
-    height: 56px;
-    top: 32px;
-    flex: none;
-    
-  }
-  #btn-circ-1{
-    left: 0px;
-    order: 0;
-    align-self: center;
-    flex-grow: 0;
-    margin: 16px 0px;
-  }
-  #btn-circ-2{
-    left: 72px;
-    order: 1;
-    align-self: center;
-    flex-grow: 0;
-    margin: 16px 0px;
-  }
-  #btn-circ-3{
-    left: 144px;
-    order: 2;
-    align-self: center;
-    flex-grow: 0;
-    margin: 16px 0px;
-  }
-  .cards-inicial{
-    width: auto;
-    height: auto;
-  }
-    
-}
+ 
