@@ -8,6 +8,7 @@
 .btn-dificil:not(:disabled):not(.disabled) {
   background: #CB5881;
 }
+
 /*versão mobile*/
 @media(max-width: 599px){
   .fundo{
@@ -40,15 +41,39 @@
   }
   .largura-texto{
       text-align: center;
-      /*width: 444px; Problema em definir um tamanho máximo*/
+    /*Arrumar tam maximo de centralizar depois*/
   }
   .menu-mobile{
-    position: absolute;
+    position: relative;
     width: 309px;
     height: 25px;
     left: 24px;
     top: 47px;
   }
+.nav-botao-voltar{
+  position: relative;
+  left: 0%;
+  right: 93.2%;
+  top:0;
+}
+/* logo-eic */
+.nav-logo-eic{
+  position: relative;
+  left: 45.63%;
+  right: 45.31%;
+  top: 0;
+}
+/* botao-menu */
+.nav-botao-menu{
+  position: relative;
+  left: 93.2%;
+  right: 0%;
+  top: 0;
+}
+.nav-elem{
+  width: 21px;
+  height: 21px;
+}
   ul, li, a, img, .elem-menu-lateral, .menu-desktop{
     display:none;
   }
