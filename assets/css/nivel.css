@@ -1,29 +1,4 @@
-/*versão mobile*/
-p{
-    font-family: Fira Sans;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 24px;
-    text-align: center;
-    color: #F0E2F3;
-}
-.largura-texto{
-    text-align: center;
-    /*width: 444px; Problema em definir um tamanho máximo*/
-}
-.menu-lateral{
-  display: none;
-}
-.menu-mobile{
-  position: absolute;
-  width: 309px;
-  height: 25px;
-  left: 24px;
-  top: 47px;
-  /*justify-content: space-between;*/
-}
-
+/*Global*/
 .btn-facil:not(:disabled):not(.disabled) {
   background: #Bb78CC;
 }
@@ -33,32 +8,52 @@ p{
 .btn-dificil:not(:disabled):not(.disabled) {
   background: #CB5881;
 }
+/*versão mobile*/
+@media(max-width: 599px){
+  .fundo{
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    background: rgb(136,69,153);
+    text-align: center;
+    justify-content: center;
+  } 
 
-
-   /*versão tablet */
-  @media(min-width: 600px) and (max-width: 1000px){
-  
-  .titulo{
+  .subtitulo-2{
+    text-align: center;
     color: rgb(255,255,255);
+    font-size: 38px;
     font-family: 'Luckiest Guy', cursive; 
-    font-size: 92px;
     -webkit-text-fill-color:rgba(255, 255, 255, 0.9) ;
-    -webkit-text-stroke-color:#000000;
-    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #000000;
+    -webkit-text-stroke-width: 1px;
   }
-  .subtitulo-t{
-    color: rgb(255,255,255);
-    font-size: 48px;
+  p{
+      font-family: Fira Sans;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 24px;
+      text-align: center;
+      color: #F0E2F3;
   }
-  .logo-eic{
-    top: 85%;
-    bottom: 5%;
+  .largura-texto{
+      text-align: center;
+      /*width: 444px; Problema em definir um tamanho máximo*/
   }
-
-  .menu-lateral{
-    display:block;
+  .menu-mobile{
+    position: absolute;
+    width: 309px;
+    height: 25px;
+    left: 24px;
+    top: 47px;
+  }
+  ul, li, a, img, .elem-menu-lateral, .menu-desktop{
+    display:none;
   }
 }
+  
 /*versão destop */
 @media (min-width: 1000px){
   .fundo{
@@ -99,7 +94,7 @@ p{
     background-color: #541663;
     height: 100%; /* Full height */
     position: fixed; /* Make it stick, even on scroll */
-    overflow: auto; /* Enable scrolling if the sidenav has too much content */
+    overflow: hidden; /* Enable scrolling if the sidenav has too much content */
   }
   
   .fonte-menu-lateral{
@@ -121,5 +116,37 @@ p{
     padding-left: 80px;
     text-align: left;
   }
+  .menu-mobile{
+    display: none;
+  }
+  .logo-eic-centro{
+    padding-left:40px;
+  }
+  .espaco-v{
+    left:30px
+  }
+}
+ /*versão tablet */
+ @media(min-width: 600px) and (max-width: 1000px){
+  
+  .titulo{
+    color: rgb(255,255,255);
+    font-family: 'Luckiest Guy', cursive; 
+    font-size: 92px;
+    -webkit-text-fill-color:rgba(255, 255, 255, 0.9) ;
+    -webkit-text-stroke-color:#000000;
+    -webkit-text-stroke-width: 2px;
+  }
+  .subtitulo-t{
+    color: rgb(255,255,255);
+    font-size: 48px;
+  }
+  .logo-eic{
+    top: 85%;
+    bottom: 5%;
+  }
 
+  .menu-lateral{
+    display:block;
+  }
 }

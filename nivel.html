@@ -12,13 +12,15 @@
     <link rel="stylesheet" href="assets/css/nivel.css">
 </head>
 
-<body class="fundo">
+<body>
  <!-- menu Desktop - rodando perfeito -->
-    <ul class="esconder-menu-desktop">
+
+    <div class="menu-desktop">
+    <ul>
     <li class = "espaco-6"></li>
-    <li> 
+    <li> <!--Colocar o logo no centro-->
         <a href="index.html"> 
-            <img src="assets/img/logo-eic-branco.png">
+            <img class="logo-eic-centro" src="assets/img/logo-eic-branco.png">
         </a>
     <li class = "espaco-6"></li>
     <li class = "espaco-6"></li>
@@ -60,17 +62,23 @@
         </a>
     </li>
     </ul>
+    </div>
+   
+
      <!--Menu mobile-->
      <!-- Construir menu tabler e celular - ta um caos -->
-    <div class="menu-mobile">
-    <div class="row">
+   <!-- <div class="row">
     <div class"col"><img scr="assets/img/botao-creditos.svg"> </div>
      <div class"col"><img scr="assets/img/botao-creditos.svg"> </div>
       <div class"col"><img scr="assets/img/botao-creditos.svg"> </div>
-    </div>
+    </div>-->
     </div>
     <!-- fim Menu / navbar-->
 
+
+
+
+    <div class="fundo">
     <!-- Alinhar titulos ao centro-->
     <div class="espaco-6"></div>
     <h1 class="subtitulo-2">ESCOLHA UM NÍVEL</h1>
@@ -90,15 +98,7 @@
     <div class="row">
         <div class="col"><a class="btn btn-primary btn-dificil" href="#"> DÍFICIL </a></div>
     </div>
-
-
-
-
-
-
-
-
-
+    </div>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
