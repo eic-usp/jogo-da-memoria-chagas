@@ -74,7 +74,7 @@
   width: 21px;
   height: 21px;
 }
-  ul, li, a, img, .elem-menu-lateral, .menu-desktop{
+   .menu-desktop{
     display:none;
   }
 }
