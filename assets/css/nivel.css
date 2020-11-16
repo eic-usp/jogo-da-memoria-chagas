@@ -43,13 +43,6 @@
       text-align: center;
     /*Arrumar tam maximo de centralizar depois*/
   }
-  .menu-mobile{
-    position: relative;
-    width: 309px;
-    height: 25px;
-    left: 24px;
-    top: 47px;
-  }
 .nav-botao-voltar{
   position: relative;
   left: 0%;
@@ -74,8 +67,8 @@
   width: 21px;
   height: 21px;
 }
-   .menu-desktop{
-    display:none;
+ .menu-desktop{
+  display:none;
   }
 }
   
@@ -92,6 +85,7 @@
   }
 
   .subtitulo-2{
+
       text-align: center;
       color: rgb(255,255,255);
       font-size: 38px;
@@ -104,7 +98,7 @@
       font-family: Fira Sans;
       font-style: normal;
       font-weight: 500;
-      font-size: 24px;
+      font-size: 20px;
       line-height: 29px;
       text-align: center;
       color: #F0E2F3;
@@ -153,6 +147,25 @@
 }
  /*versão tablet */
  @media(min-width: 600px) and (max-width: 1000px){
+
+  .subtitulo-2{
+    text-align: center;
+    color: rgb(255,255,255);
+    font-size: 46px;
+    font-family: 'Luckiest Guy', cursive; 
+    -webkit-text-fill-color:rgba(255, 255, 255, 0.9) ;
+    -webkit-text-stroke-color: #000000;
+    -webkit-text-stroke-width: 1px;
+  }
+  p{  
+    font-family: Fira Sans;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    color: #F0E2F3;
+}
   
   .titulo{
     color: rgb(255,255,255);
@@ -171,7 +184,8 @@
     bottom: 5%;
   }
 
-  .menu-lateral{
-    display:block;
-  }
+  .menu-desktop{
+    display:none;
+    }
+
 }
