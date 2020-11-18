@@ -49,6 +49,17 @@
   right: 93.2%;
   top:0;
 }
+
+  .menu-lateral-modal{ 
+    
+    position: absolute;
+    width: 10%vw;
+    height: 100vh;
+    left: 56px;
+    top: 0px;
+    background: #541663;
+
+  }
 /* logo-eic */
 .nav-logo-eic{
   position: relative;
