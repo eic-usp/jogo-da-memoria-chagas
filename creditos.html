@@ -4,41 +4,127 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Creditos | Jogo da memória</title>
+    <title>Sobre o jogo - Jogo da memória</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Luckiest+Guy">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/nivel.css">
+    
 </head>
 
-<body class = "fundo">
-    <!--Alinhar verticalmente os títulos-->
-    <div class="espaco-6"></div>
-    <h1 class="borda titulo">JOGO DA MEMÓRIA</h1>
-    <div class="espaco-1"></div>
-    <h1 class="subtitulo-t borda">Doença de chagas</h1>
-    <div class="espaco-3"></div>
-    <img src="assets/img/cards-img.png" class="cards-inicial">
-    <div class="espaco-3"></div>
-    <div class="row">
-        <div class="col"><a class="btn btn-primary" href="nivel.html"> INICIAR </a></div>
-    </div>
-    <!--Problema no link do botao - consertado-->
-   <div class="espaco-6"></div>
-   <!-- pROBLEMA PARA CENTRALIZAR URGENTE-->
-    <div class="caixa-btns-c">
-        <div class="btn-circ" id="btn-circ-1"> <a href="instrucoes.html"> <img src="assets/img/botao-instruções.svg"></a></div>
-        <div class="btn-circ" id="btn-circ-2"> <a href="creditos.html"> <img src="assets/img/botao-creditos.svg"></a></div>
-        <div class="btn-circ" id="btn-circ-3"> <a href="compartilhar.html"> <img src="assets/img/botao-compartilhar.svg"> </a></div>
+<body>
+ <!-- menu Desktop - rodando perfeito -->
+
+    <div class="menu-desktop">
+        <ul class="menu-desktop">
+        <li class = "espaco-6 menu-desktop"></li>
+        <li> <!--Colocar o logo no centro-->
+            <a class="menu-desktop" href="index.html"> 
+                <img class="logo-eic-centro menu-desktop" src="assets/img/logo-eic-branco.png">
+            </a>
+        <li class = "menu-desktop espaco-6"></li>
+        <li class = "menu-desktop espaco-6"></li>
+        <li class="menu-desktop"> 
+        <a href=" menu-desktop index.html"> </a>
+        <li class="menu-desktop">
+            <a href="menu-desktop index.html">
+            <div class=" menu-desktop elem-menu-lateral">
+            <img  class ="menu-desktop" src="assets/img/home.svg">
+            <p class="menu-desktop"> Início <p> 
+            <div>
+            </a>
+        </li>
+        <li class =  "menu-desktop espaco-3"></li>
+        <li>
+            <a  class="menu-desktop" href="sobre-o-jogo.html">
+            <div class=" menu-desktop elem-menu-lateral">
+            <img  class="menu-desktop" src="assets/img/sobre-o-jogo.svg">
+            <p class="menu-desktop"> Sobre o jogo <p> 
+            <div>
+            </a>
+        </li>
+        <li class="menu-desktop espaco-3"></li>
+        <li>
+            <a class="menu-desktop" href="index.html">
+            <div class="menu-desktop elem-menu-lateral">
+            <img class="menu-desktop" src="assets/img/creditos.svg">
+            <p class="menu-desktop"> Créditos <p> 
+            <div>
+            </a>
+        </li>
+        <li class = "menu-desktop espaco-3"></li>
+        <li>
+            <a class="menu-desktop" href="compartilhar.html">
+            <div class="menu- desktop elem-menu-lateral">
+            <img  class="menu-desktop" src="assets/img/compartilhar.svg">
+            <p class="menu-desktop"> Compartilhar <p> 
+            <div>
+            </a>
+        </li>
+        </ul>
     </div>
 
-     <div class="espaco-6"></div>
-     <div class="espaco-6"></div>
-     <div class="espaco-6"></div>
-    <img class = "logo-eic" src="assets/img/logo-eic-branco.png">
+    <div class="fundo">
+<!-- menu mobile-->
+    <div class="espaco-3 menu-mobile"></div>
+    <div class="menu-mobile">
+
+        <div class="espaco-6 menu-mobile"></div>
+
+        <div class="row menu-mobile">
+
+        <!-- lembrar de mudar o link de voltar dependendo da pagina atual-->
+            <div class="col menu-mobile">
+                <a class = "menu-mobile" href="index.html"> 
+                    <img class="nav-elem menu-mobile" src="assets/img/nav/voltar.svg">
+                </a>
+            </div>
+            <div class="col menu-mobile">
+                <a class="menu-mobile" href="index.html"> 
+                    <img class="nav-elem menu-mobile" src="assets/img/nav/logo-eic-nav.svg">
+                </a>
+            </div>
+            <!-- lembrar de arrumar section, pra ver como fica | arrumar para funcionar e abrir igual do pc no celular -->
+            <div class="col menu-mobile">
+                <a class="menu-mobile" href="#menu-mobile-ativado"  data-toggle="modal"> 
+                    <img class="nav-elem" src="assets/img/nav/menu.svg">
+                </a>
+            </div>
+            </div>
+
     </div>
+
+<!--fim menu mobile-->
+<!-- Conteúdo da página -->
+<!-- Fazer botao de voltar-->
+    <div class="espaco-6"> </div>
+
+    <h1 class="subtitulo-2">CRÉDITOS</h1>
+    <div class="espaco-3"></div>
+
+    <p class="p-destaque">COORDENAÇÃO GERAL </p>
+    <p> Leila M. Beltramini </p>
+    <div class="espaco-3"></div>
+     <p class="p-destaque">SUPERVISÃO </p>
+    <p> Nelma R. S. Bossolan </p>
+    <div class="espaco-3"></div>
+     <p class="p-destaque">DESENVOLVIMENTO DO SOFTWARE </p>
+    <p> Claudinei Caetano de Souza (versão 1.0) </p>
+    <p> Ana Luiza Martins Cesario (versão 2.0) </p>
+    <div class="espaco-3"></div>
+     <p class="p-destaque">CONTEÚDO </p>
+    <p> Marilia Faustino </p>
+    <div class="espaco-3"></div>
+    <p class="p-destaque">DESING DE INTERFACE </p>
+    <p> Marilia Faustino (versão 1.0) </p>
+    <p> Simone F. Souza (versão 2.0) </p>
+    </div>
+
+     
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/menu-modal.js"></script>
 </body>
 
 </html>

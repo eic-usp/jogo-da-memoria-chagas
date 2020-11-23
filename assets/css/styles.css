@@ -1,3 +1,10 @@
+.divider{
+  border: 2px solid #ffffff;
+}
+.cont-divider{
+  width: 60vw;
+  left:30vw;
+}
 /*mobile-first*/
 .fundo{
   display: block;
@@ -14,7 +21,7 @@
 }
 .espaco-3{
    /*32px*/
-  height: 3%;
+  height: 0.5%;
 }
 .espaco-1{
   /*32px*/
@@ -41,6 +48,7 @@
   -webkit-text-fill-color:rgba(255, 255, 255, 0.9) ;
   -webkit-text-stroke-color: #000000;
   -webkit-text-stroke-width: 1px;
+  letter-spacing: -0.015em;
 }
 
 .subtitulo-t{
@@ -184,6 +192,10 @@ a{
     width: auto;
     height: auto;
   }
+  .espaco-3{
+    /*32px*/
+   height: 1.6%;
+ }
     
 }
 /*versão desktop */
@@ -231,6 +243,11 @@ a{
     top: 500px;
     
   }
+  .espaco-3{
+    /*32px*/
+   height: 3%;
+ }
+    
     
 }
  

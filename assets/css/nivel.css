@@ -29,6 +29,7 @@
     -webkit-text-fill-color:rgba(255, 255, 255, 0.9) ;
     -webkit-text-stroke-color: #000000;
     -webkit-text-stroke-width: 1px;
+    letter-spacing: -0.015em;
   }
   p{
       font-family: Fira Sans;
@@ -81,9 +82,21 @@
  .menu-desktop{
   display:none;
   }
+  .p-destaque{
+    font-family: Fira Sans;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 22px;
+    line-height: 29px;
+    text-align: center;
+    color: #FFFFFF;
+  }
+  .scroll-bar{
+    overflow: auto;
+  }
 }
   
-/*versão destop */
+/*versão desktop */
 @media (min-width: 1000px){
   .fundo{
     display: block;
@@ -104,6 +117,7 @@
       -webkit-text-fill-color:rgba(255, 255, 255, 0.9) ;
       -webkit-text-stroke-color: #000000;
       -webkit-text-stroke-width: 1px;
+      letter-spacing: -0.015em;
   }
   p{  
       font-family: Fira Sans;
@@ -155,6 +169,15 @@
   .espaco-v{
     left:30px
   }
+  .p-destaque{
+    font-family: Fira Sans;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 22px;
+    line-height: 29px;
+    text-align: center;
+    color: #FFFFFF;
+  }
 }
  /*versão tablet */
  @media(min-width: 600px) and (max-width: 1000px){
@@ -167,6 +190,7 @@
     -webkit-text-fill-color:rgba(255, 255, 255, 0.9) ;
     -webkit-text-stroke-color: #000000;
     -webkit-text-stroke-width: 1px;
+    letter-spacing: -0.015em;
   }
   p{  
     font-family: Fira Sans;
@@ -176,6 +200,15 @@
     line-height: 29px;
     text-align: center;
     color: #F0E2F3;
+}
+.p-destaque{
+  font-family: Fira Sans;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+  color: #FFFFFF;
 }
   
   .titulo{
