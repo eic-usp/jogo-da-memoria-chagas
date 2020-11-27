@@ -1,5 +1,6 @@
 // Conteúdo que deseja inserir
-var oDiv = '<div class="modal menu-lateral-modal"> <p> aaa </p> </div> ';
+
+var oDiv = '<div class="fundo"> <div class="modal menu-lateral-modal"> <div class="espaco-6"> <p> aaa </p> </div> </div> ';
 
 
 // Captura o evento de clique

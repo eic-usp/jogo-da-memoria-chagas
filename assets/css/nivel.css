@@ -54,10 +54,10 @@
   .menu-lateral-modal{ 
     
     position: absolute;
-    width: 10%vw;
+    width: 100vw;
     height: 100vh;
-    left: 56px;
-    top: 0px;
+    left: -180px;
+    top: -5px;
     background: #541663;
 
   }
