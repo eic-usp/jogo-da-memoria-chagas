@@ -44,19 +44,21 @@
       text-align: center;
     /*Arrumar tam maximo de centralizar depois*/
   }
-.nav-botao-voltar{
-  position: relative;
-  left: 0%;
-  right: 93.2%;
-  top:0;
-}
-
+  .nav-botao-voltar{
+    position: relative;
+    left: 0%;
+    right: 93.2%;
+    top:0;
+  }
+  .logo-eic-modal-centro{
+    padding-left:10px;
+  }
   .menu-lateral-modal{ 
     
     position: absolute;
     width: 100vw;
     height: 100vh;
-    left: -180px;
+    left: clamp(-180px,-180px, -160px);
     top: -5px;
     background: #541663;
 
@@ -94,6 +96,17 @@
   .scroll-bar{
     overflow: auto;
   }
+  .tipoUL{
+    list-style-type: none;
+    left: 0%;
+    margin: 0;
+    padding: 0;
+    width: 20vw;
+    background-color: #541663;
+    height: 100%; /* Full height */
+    position: fixed; /* Make it stick, even on scroll */
+    overflow: hidden; /* Enable scrolling if the sidenav has too much content */
+  }
 }
   
 /*versão desktop */
@@ -129,7 +142,7 @@
       color: #F0E2F3;
   }
   
-  ul {
+  .tipoUL {
     list-style-type: none;
     left: 80%;
     margin: 0;
