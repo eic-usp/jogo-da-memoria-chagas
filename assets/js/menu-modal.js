@@ -1,11 +1,6 @@
 // Conteúdo que deseja inserir
 
-var oDiv = '<div class="fundo"> <div class="espaco-6"> <div class="modal menu-lateral-modal"> <a href="index.html"> <div class="espaco-6> </div> <img class="logo-eic-modal-centro tam-logo-eic-modal" src="assets/img/logo-eic-branco.png">aa </a>  </div> </div> ';
-
-
-        
-        
-            
+var oDiv = ' <div class="modal menu-lateral-modal"> <p class="p-menu-modal">  <a class="menu-desktop" href="compartilhar.html"><div class="menu- desktop elem-menu-lateral"><img  class="menu-desktop" src="assets/img/compartilhar.svg"><p class="menu-desktop"> Compartilhar <p> <div> </div>';           
 
 // Captura o evento de clique
 $('a[href="#menu-mobile-ativado"]').click(function(event) {

@@ -40,6 +40,9 @@
       text-align: center;
       color: #F0E2F3;
   }
+  .p-menu-modal{
+    right: 0px;
+  }
   .largura-texto{
       text-align: center;
     /*Arrumar tam maximo de centralizar depois*/
@@ -61,8 +64,33 @@
     left: clamp(-180px,-180px, -160px);
     top: -5px;
     background: #541663;
+  }
+  .caixa-como-jogar{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 32px 0px 0px;
+    position: absolute;
+    width: 432px;
+    height: 120px;
+    left: 297px;
+    top: 60vh;
+  }
+  .elem-carta{
+    height:120px;
+    width: 120px;
+    top: 60vh;
+  }
+  .seta-meio{
+    width: 80px;
+    height: 80px;
+    top:56vh;
 
   }
+  .espaco-caixa-como-jogar{
+    width: 56px;
+  }
+
 /* logo-eic */
 .nav-logo-eic{
   position: relative;
