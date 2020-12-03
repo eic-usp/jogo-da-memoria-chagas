@@ -65,17 +65,7 @@
     top: -5px;
     background: #541663;
   }
-  .caixa-como-jogar{
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 32px 0px 0px;
-    position: absolute;
-    width: 432px;
-    height: 120px;
-    left: 297px;
-    top: 60vh;
-  }
+
   .elem-carta{
     height:120px;
     width: 120px;
@@ -85,10 +75,6 @@
     width: 80px;
     height: 80px;
     top:56vh;
-
-  }
-  .espaco-caixa-como-jogar{
-    width: 56px;
   }
 
 /* logo-eic */
@@ -134,6 +120,9 @@
     height: 100%; /* Full height */
     position: fixed; /* Make it stick, even on scroll */
     overflow: hidden; /* Enable scrolling if the sidenav has too much content */
+  }
+  .mostrar-no-desktop{
+    display: none;
   }
 }
   
