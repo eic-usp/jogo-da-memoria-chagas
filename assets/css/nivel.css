@@ -124,6 +124,9 @@
   .mostrar-no-desktop{
     display: none;
   }
+  .mostrar-horizontal{
+    display: none;
+  }
 }
   
 /*versão desktop */
@@ -208,6 +211,10 @@
     text-align: center;
     color: #FFFFFF;
   }
+  .mostrar-vertical{
+    display:none;
+  }
+  
 }
  /*versão tablet */
  @media(min-width: 600px) and (max-width: 1000px){
@@ -257,9 +264,14 @@
     top: 85%;
     bottom: 5%;
   }
-
   .menu-desktop{
     display:none;
+    }
+  .mostrar-no-desktop{
+      display: none;
+  }
+  .mostrar-horizontal{
+      display: none;
     }
 
 }
