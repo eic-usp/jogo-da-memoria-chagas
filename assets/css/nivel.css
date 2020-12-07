@@ -37,7 +37,7 @@
       font-weight: 500;
       font-size: 20px;
       line-height: 24px;
-      text-align: center;
+      text-align: left;
       color: #F0E2F3;
   }
   .p-menu-modal{
@@ -64,7 +64,10 @@
     left: clamp(-180px,-180px, -160px);
     top: -5px;
     background: #541663;
+    padding:16px;
+    text-align: left;
   }
+
 
   .elem-carta{
     height:120px;
@@ -126,6 +129,16 @@
   }
   .mostrar-horizontal{
     display: none;
+  }
+  .ULmodal{
+    list-style-type: none;
+    list-style-type: none;
+    left: 0%;
+    margin: 0;
+    padding: 0;
+    width: 20vw;
+    background-color: #541663;
+    
   }
 }
   
