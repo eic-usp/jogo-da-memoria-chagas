@@ -1,0 +1,21 @@
+.alinhar-cartas-centro{
+    margin-left: 25%; 
+}
+.padrao-tablet{
+    display: none;
+}
+.tam-carta{
+/*Procurar tamnaho da carta*/
+}
+/*MOBILE*/
+@media(max-width: 599px){ 
+    .padrao-desktop{
+        display: none;
+    }
+}
+/*TABLET*/
+@media(min-width: 600px) and (max-width: 1000px){
+    .padrao-desktop{
+        display: none;
+    }
+}
