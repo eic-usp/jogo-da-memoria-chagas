@@ -1,11 +1,35 @@
-.alinhar-cartas-centro{
-    margin-left: 25%; 
-}
-.padrao-tablet{
-    display: none;
-}
-.tam-carta{
+
+/*DESKTOP*/
 /*Procurar tamnaho da carta*/
+#container{
+    width: 50vw;
+    height: 65vh;
+    top: 50px;
+    left: 50px;
+    border: 1px solid #000;
+    position: relative;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+.card{
+    width: 120px;
+    height: 120px;
+    position: absolute; /*é importante mas porque?*/
+    border-radius: 10px;
+    /*aqui os cards ficam empilhados, mas preciso distanciar um por um? NAO JAVASCRIPT LINDO*/
+    perspective: 600px;
+    /*profundidade do giro, para nao ficar chapado*/ 
+}
+.face{
+    width: 100%;
+    height: 100%;
+    position: absolute; /*para que as faces fiquem sobrepostas*/
+    border-radius: 10px;
+    transition: all 1s;
+    backface-visibility: hidden;
+}
+.back{
+    background: url("../img/verso2.jpg");
 }
 /*MOBILE*/
 @media(max-width: 599px){ 
