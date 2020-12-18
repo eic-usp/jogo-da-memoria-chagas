@@ -1,10 +1,9 @@
 
 /*DESKTOP*/
-/*Procurar tamnaho da carta*/
 #container{
-    width: 50vw;
-    height: 65vh;
-    top: 50px;
+    width: 40vw;
+    height: 68vh;
+    top: 30px;
     left: 50px;
     border: 1px solid #000;
     position: relative;
@@ -29,7 +28,23 @@
     backface-visibility: hidden;
 }
 .back{
-    background: url("../img/verso2.jpg");
+    background: url("../img/verso1.png");
+}
+.back.flipped{
+    transform: rotateY(180deg);
+}
+.front{
+    transform: rotateY(-180deg);
+}
+.front.flipped{
+    transform: rotateY(0deg);
+}
+.card:hover{
+    /*efeito lindo, amei*/
+    box-shadow: 0 0 30px #aaa;
+}
+.face .flipped .match{
+    box-shadow: 0 0 10px #0f0;
 }
 /*MOBILE*/
 @media(max-width: 599px){ 
