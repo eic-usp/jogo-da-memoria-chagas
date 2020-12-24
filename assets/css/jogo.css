@@ -28,7 +28,7 @@
     backface-visibility: hidden;
 }
 .back{
-    background: url("../img/verso1.png");
+    background: url("../img/fase1/verso1.png");
 }
 .back.flipped{
     transform: rotateY(180deg);
