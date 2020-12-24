@@ -13,13 +13,13 @@
     for(var i = 0; i<16; i++){
         /*img é objeto, indices textuais, funções = métodos */
         var img = {
-                src: "../img/fase1/"+ i + ".png",
+                src: "assets/img/fase1/" + i + ".png",
                 id: i%4
                 /* arrumado - nao vai funcionar porque eu nao criei as imagens desse jeito */
         };
-        console.log( "caminho" +img.src);
         images.push(img);
     } 
+    console.log(images);
 
 startGame();
 
@@ -67,7 +67,7 @@ function startGame(){
      card.addEventListener("click", flipCard, false);
 
         /*todos os cards tem imagem e id */
-        frontFaces[i].style.background = "url('../img/fase1/"+images[i].src +"')";
+        frontFaces[i].style.background = "url('"+images[i].src +"')";
         frontFaces[i].setAttribute("id",images[i].id);
         console.log(frontFaces[i].id);
          }
@@ -117,7 +117,7 @@ function startGame(){
         } else {
 
             /*Não entendi e acho que nao vai funcionar */
-           // console.log(flippedCards);
+           console.log(flippedCards);
            flippedCards[0].childNodes[1].classList.toggle("flipped");
            flippedCards[0].childNodes[3].classList.toggle("flipped");
            flippedCards[1].childNodes[1].classList.toggle("flipped");
