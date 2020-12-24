@@ -29,7 +29,7 @@ function startGame(){
 
     flippedCards = [];
 
-     //images = randomSort(images);
+    // images = randomSort(images);
       //Procurar uma função de random sort melhor
 
     var frontFaces = document.getElementsByClassName("front");
@@ -37,7 +37,7 @@ function startGame(){
     
     var size = windowWidth = $(window).width();
     
-   if(size >= 1000){ /*Versão Desktop*/
+   if(size > 1000){ /*Versão Desktop*/
 
     /*tentar criar uma função e modularizar essa parte passando o tamanho da tela por parâmetro, ver se vai funcionar*/
     
@@ -64,23 +64,70 @@ function startGame(){
         card.style.top = 410 + "px";
        }
 
-     card.addEventListener("click", flipCard, false);
+        card.addEventListener("click", flipCard, false);
 
         /*todos os cards tem imagem e id */
         frontFaces[i].style.background = "url('"+images[i].src +"')";
         frontFaces[i].setAttribute("id",images[i].id);
         console.log(frontFaces[i].id);
          }
-    /*modalGameOver.style.zIndex = -2;
-    modalGameOver.removeEventListener("click",startGame, false);*/
-
     
-    }else if (size >= 600 && size <= 999) { /*Versão tablet*/
+    }else if (size >= 600 && size <= 1000) { /*Versão tablet*/
+
+        for(var i = 0; i < 16; i++){
+
+            frontFaces[i].classList.remove("flipped", "match");
+            backFaces[i].classList.remove("flipped", "match");
+           var card = document.querySelector("#card" + i);
+           card.style.left = i % 4 === 0? 6 + "px" : i % 4 * 102 + 6 + "px"; 
+    
+           if(i < 4){
+            card.style.top = 6 + "px";
+           } else if(i < 8){
+            card.style.top = 108 + "px";
+           }else if(i < 12){
+            card.style.top = 210 + "px";
+           } else{
+            card.style.top = 312 + "px";
+           }
+    
+            card.addEventListener("click", flipCard, false);
+    
+            frontFaces[i].style.background = "url('"+images[i].src +"')";
+            frontFaces[i].setAttribute("id",images[i].id);
+            console.log(frontFaces[i].id);
+             }
 
     }else{ /*Versão Mobile*/
+        for(var i = 0; i < 16; i++){
+
+            frontFaces[i].classList.remove("flipped", "match");
+            backFaces[i].classList.remove("flipped", "match");
+           var card = document.querySelector("#card" + i);
+           card.style.left = i % 4 === 0? 6 + "px" : i % 4 * 76 + 6 + "px"; 
+    
+           if(i < 4){
+            card.style.top = 5 + "px";
+           } else if(i < 8){
+            card.style.top = 80 + "px";
+           }else if(i < 12){
+            card.style.top = 155 + "px";
+           } else{
+            card.style.top = 230 + "px";
+           }
+    
+            card.addEventListener("click", flipCard, false);
+    
+            frontFaces[i].style.background = "url('"+images[i].src +"')";
+            frontFaces[i].setAttribute("id",images[i].id);
+            console.log(frontFaces[i].id);
+             }
 
     }
+     /* modalGameOver.style.zIndex = -2;
+    modalGameOver.removeEventListener("click",startGame, false);*/
 }
+
  function flipCard(){
         if(flippedCards.length < 2){
              /*rotacionar as faces 180 graus*/
