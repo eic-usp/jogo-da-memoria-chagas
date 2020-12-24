@@ -17,6 +17,7 @@
                 id: i%4
                 /* arrumado - nao vai funcionar porque eu nao criei as imagens desse jeito */
         };
+        console.log( "caminho" +img.src);
         images.push(img);
     } 
 
@@ -70,8 +71,8 @@ function startGame(){
         frontFaces[i].setAttribute("id",images[i].id);
         console.log(frontFaces[i].id);
          }
-    modalGameOver.style.zIndex = -2;
-    modalGameOver.removeEventListener("click",startGame, false);
+    /*modalGameOver.style.zIndex = -2;
+    modalGameOver.removeEventListener("click",startGame, false);*/
 
     
     }else if (size >= 600 && size <= 999) { /*Versão tablet*/
