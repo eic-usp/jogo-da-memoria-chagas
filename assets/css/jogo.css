@@ -8,9 +8,6 @@
     transition: all 1s;
     backface-visibility: hidden;
 }
-.back{
-    background: url("../img/fase1/verso1.png");
-}
 .back.flipped{
     transform: rotateY(180deg);
 }
@@ -57,6 +54,10 @@
         perspective: 600px;
         /*profundidade do giro, para nao ficar chapado*/ 
     }
+    .back{
+        object-fit: fill;
+        background: url("../img/fase1/verso1.png");
+    }
 }
 /*TABLET*/
 @media(min-width: 600px) and (max-width: 1000px){
@@ -79,6 +80,10 @@
         perspective: 600px;
         /*profundidade do giro, para nao ficar chapado*/ 
     }
+    .back{
+        object-fit: fill;
+        background: url("../img/fase1/verso1.png");
+    }
 }
 /*MOBILE*/
 @media(max-width: 599px){ 
@@ -100,6 +105,10 @@
         /*aqui os cards ficam empilhados, mas preciso distanciar um por um? NAO JAVASCRIPT LINDO*/
         perspective: 600px;
         /*profundidade do giro, para nao ficar chapado*/ 
+    }
+    .back{
+        object-fit: fill;
+        background: url("../img/fase1/verso1.png");
     }
     
 }
