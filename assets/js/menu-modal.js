@@ -1,6 +1,12 @@
 // Conteúdo que deseja inserir
 
-var oDiv = ' <div class="modal menu-lateral-modal"> <ul class="ULmodal"> <li class="espaco-3"> </li> <li> <img class ="logo-eic-modal-centro" src="assets/img/logo-eic-branco.png">  </li> <li> <br> </li> <li> <br> </li> <li> <a href="#"> <div class="elem-menu-modal">  <img src="assets/img/home.svg"> <p> Início </p> </div> </a> </li> <li> <br> <br> <p> Sobre o jogo </p> </li>  <li> Créditos </li> <li> Compartilhar </li></ul> </div>';           
+
+//var menumodal = document.querySelector("#menumodal");
+//menumodal.addEventListener("click", Show, false);
+
+
+
+//var oDiv =  ""         
 //Não to conseguindo colocar a imagem e o texto na mesma linha
 /*<a class="menu-desktop" href="index.html">
             <div class="menu-desktop elem-menu-lateral">

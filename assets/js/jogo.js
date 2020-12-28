@@ -4,7 +4,7 @@
 
     var flippedCards = [];
 
-    var modalGameOver = document.querySelector("#modalGameOver");
+   // var modalGameOver = document.querySelector("#modalGameOver");
 
     var matches = 0;
 
@@ -19,7 +19,7 @@
         };
         images.push(img);
     } 
-    console.log(images);
+    //console.log(images);
 
 startGame();
 
@@ -29,7 +29,7 @@ function startGame(){
 
     flippedCards = [];
 
-    // images = randomSort(images);
+    //images = randomSort(images);
       //Procurar uma função de random sort melhor
 
     var frontFaces = document.getElementsByClassName("front");
@@ -39,8 +39,10 @@ function startGame(){
     
    if(size > 1000){ /*Versão Desktop*/
 
-    /*tentar criar uma função e modularizar essa parte passando o tamanho da tela por parâmetro, ver se vai funcionar*/
-    
+   
+    //InicialTime(); // função para mostrar todas as cartas no inicio
+
+     /*tentar criar uma função e modularizar essa parte passando o tamanho da tela por parâmetro, ver se vai funcionar*/
     for(var i = 0; i < 16; i++){
 
         frontFaces[i].classList.remove("flipped", "match");
@@ -69,7 +71,7 @@ function startGame(){
         /*todos os cards tem imagem e id */
         frontFaces[i].style.background = "url('"+images[i].src +"')";
         frontFaces[i].setAttribute("id",images[i].id);
-        console.log(frontFaces[i].id);
+        //console.log(frontFaces[i].id);
          }
     
     }else if (size >= 600 && size <= 1000) { /*Versão tablet*/
@@ -127,10 +129,17 @@ function startGame(){
      /* modalGameOver.style.zIndex = -2;
     modalGameOver.removeEventListener("click",startGame, false);*/
 }
+/*function InicialTime(){
+    setTimeout(function(){
+        for(var i = 0; i < 16; i++){
+            frontFaces[i].classList.add("flipped");
+        }
+    },1500);
+}*/
 
  function flipCard(){
         if(flippedCards.length < 2){
-             /*rotacionar as faces 180 graus*/
+            /*rotacionar as faces 180 graus*/
             /*getElementsByClassName retorna uma lista */
             var faces =  this.getElementsByClassName("face");
 
@@ -140,7 +149,7 @@ function startGame(){
             }
             faces[0].classList.toggle("flipped");
             faces[1].classList.toggle("flipped");
-            /*toggle = switch, se existe adiciona, se ja existe, remove  */
+            /*toggle = switch, se nao existe adiciona, se ja existe, remove  */
             flippedCards.push(this);
 
             if(flippedCards.length === 2 ){
@@ -162,8 +171,7 @@ function startGame(){
                 }
             }
         } else {
-
-            /*Não entendi e acho que nao vai funcionar */
+            /*Não entendi bem*/
            console.log(flippedCards);
            flippedCards[0].childNodes[1].classList.toggle("flipped");
            flippedCards[0].childNodes[3].classList.toggle("flipped");
