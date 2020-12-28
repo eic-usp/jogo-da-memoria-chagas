@@ -1,0 +1,14 @@
+/*Código dos menus hamburguer*/
+.btnMenu{
+    display: block;
+    background-repeat: no-repeat;
+    text-indent: -9999px;
+    /*arrumar os paddings, mas ver como está na outra pagina*/
+    
+}
+.btnMenu_open{
+   background-image: url(../img/nav/menu.svg);
+}
+.btnMenu_close{
+   background-image: url(../img/medalha.svg);
+}

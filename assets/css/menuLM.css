@@ -1,0 +1,25 @@
+.menuLM{
+   /* position: absolute;
+    top: 0;*/
+    width: 90%;
+    right: 0;
+
+    transform: translateX(100%);
+    transition: transform 200ms linear;
+}
+.menu-item{
+    padding-right: 20px;
+}
+.menu-item-action{
+    color: #F0E2F3;
+    font-size: 18px;
+}
+
+.menu_open{
+    transform: translateX(0);
+
+}
+li{
+    /*border-bottom para pagina de compartilhar o jogo*/
+    list-style-type: none;
+}
