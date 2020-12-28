@@ -1,19 +1,7 @@
-// Conteúdo que deseja inserir
-
-
-//var menumodal = document.querySelector("#menumodal");
-//menumodal.addEventListener("click", Show, false);
-
-
-
-//var oDiv =  ""         
+//agora eu entendi porque precisa ser tudo na mesma linha
+var DivModalMobile =  "<div> <p> oi </p> </div>";       
 //Não to conseguindo colocar a imagem e o texto na mesma linha
-/*<a class="menu-desktop" href="index.html">
-            <div class="menu-desktop elem-menu-lateral">
-            <img class="menu-desktop" src="assets/img/creditos.svg">
-            <p class="menu-desktop"> Créditos <p> 
-            <div>
-            </a>*/
+
 // Captura o evento de clique
 $('a[href="#menu-mobile-ativado"]').click(function(event) {
 
@@ -23,16 +11,14 @@ $('a[href="#menu-mobile-ativado"]').click(function(event) {
     // Checa se a class modal existe
 	if(!$('.modal').length) {
 		
-		
 		// Se não existir, insere
-		$(this).after(oDiv);
+		$(this).after(DivModalMobile);
 	}
 	else {
-		
 		// Se existir da um fadeToggle(); // trocar fade toggle por slide toggle
 		$('.modal').fadeToggle();
 		$('.p').fadeToggle();
-		console.log('ta entrando pra sair');
+		
 	}
 	
 });

@@ -1,5 +1,6 @@
 /*pensar em como rodar em diferentes tamanhos de tela - pensei- agora vai ser fácil */
 (function(){ 
+
     var images = [];
 
     var flippedCards = [];
@@ -36,9 +37,13 @@ function startGame(){
     var backFaces = document.getElementsByClassName("back");
     
     var size = windowWidth = $(window).width();
+
+    //mudar o texto
+    ShowStart();
+
+   // InicialTime();
     
    if(size > 1000){ /*Versão Desktop*/
-
    
     //InicialTime(); // função para mostrar todas as cartas no inicio
 
@@ -73,7 +78,8 @@ function startGame(){
         frontFaces[i].setAttribute("id",images[i].id);
         //console.log(frontFaces[i].id);
          }
-    
+         
+        
     }else if (size >= 600 && size <= 1000) { /*Versão tablet*/
 
         for(var i = 0; i < 16; i++){
@@ -122,23 +128,33 @@ function startGame(){
     
             frontFaces[i].style.background = "url('"+images[i].src +"')";
             frontFaces[i].setAttribute("id",images[i].id);
-            console.log(frontFaces[i].id);
+           // console.log(frontFaces[i].id);
              }
 
     }
      /* modalGameOver.style.zIndex = -2;
     modalGameOver.removeEventListener("click",startGame, false);*/
 }
+
 /*function InicialTime(){
-    setTimeout(function(){
+        Cards = [];
+        var faces = this.getElementsByClassName("face");
         for(var i = 0; i < 16; i++){
-            frontFaces[i].classList.add("flipped");
+            faces[i].classList.toggle("flipped");
+            Cards.push(this);
         }
-    },1500);
 }*/
 
+function ShowStart(){
+    setTimeout(function(){ 
+        document.getElementById("titulo-jogo").innerHTML = "Vire os cartões";
+    }, 5000);
+}
+
  function flipCard(){
+     victory();
         if(flippedCards.length < 2){
+
             /*rotacionar as faces 180 graus*/
             /*getElementsByClassName retorna uma lista */
             var faces =  this.getElementsByClassName("face");
@@ -166,13 +182,12 @@ function startGame(){
                     flippedCards = [];
 
                     if(matches === 8){
-                        gameOver();
+                        victory();
                     }
                 }
             }
         } else {
             /*Não entendi bem*/
-           console.log(flippedCards);
            flippedCards[0].childNodes[1].classList.toggle("flipped");
            flippedCards[0].childNodes[3].classList.toggle("flipped");
            flippedCards[1].childNodes[1].classList.toggle("flipped");
@@ -181,8 +196,11 @@ function startGame(){
            flippedCards = [];
         }  
     }
+function victory(){
+        window.location.replace("vitoria.html");
+    }
 
-    function matchCardsSign(){
+   /* function matchCardsSign(){
         imgMatchSing.style.zIndex = 1;
         imgMatchSing.style.top = 150 + "px";
         imgMatchSing.style.opacity = 0;
@@ -191,6 +209,6 @@ function startGame(){
             imgMatchSing.style.top = 250 + "px";
             imgMatchSing.style.opacity = 1;
         },1500);
-    }
+    }*/
 
  }());
