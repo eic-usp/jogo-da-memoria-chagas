@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Luckiest+Guy">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/nivel.css">
-    <link rel="stylesheet" href="assets/css/menuLateral.css">
+     <link rel="stylesheet" href="assets/css/menuLM.css">
+      <link rel="stylesheet" href="assets/css/btnMenuLM.css">
     
 </head>
 
@@ -68,6 +69,7 @@
     </div>
 
     <div class="fundo">
+
 <!-- menu mobile-->
     <div class="espaco-3"></div>
     <div class="espaco-3 menu-mobile"></div>
@@ -77,31 +79,68 @@
 
         <div class="row menu-mobile">
 
-        <!-- lembrar de mudar o link de voltar dependendo da pagina atual-->
+          <!-- lembrar de mudar o link de voltar dependendo da pagina atual-->
+
             <div class="col menu-mobile">
                 <a class = "menu-mobile" href="index.html"> 
                     <img class="nav-elem menu-mobile" src="assets/img/nav/voltar.svg">
                 </a>
             </div>
             <div class="col menu-mobile">
-                <a class="menu-mobile" href="index.html"> 
+               <a class="menu-mobile" href="index.html"> 
                     <img class="nav-elem menu-mobile" src="assets/img/nav/logo-eic-nav.svg">
                 </a>
             </div>
             <!-- lembrar de arrumar section, pra ver como fica | arrumar para funcionar e abrir igual do pc no celular -->
             <div class="col menu-mobile">
-                <a class="menu-mobile" id="aaaa"> 
+                <a class="menu-mobile" href="#menu-mobile-ativado"  data-toggle="modal"> 
                     <img class="nav-elem" src="assets/img/nav/menu.svg">
                 </a>
             </div>
-
-            <div class="especial"></div>
-            </div>
-
+               <!-- <div class="col menu-mobile">
+                    <div class="menu-mobile"> 
+                        <div class="menu">
+                             <a href="#menuLM" class="btnMenu"> Menu </a>
+                                 <ul id="menuLM" class="menuLM btnMenu_open">
+                                     <li class="menu-item">
+                                       <a href="" class="menu-item-action"> Cursos </a>
+                                    </li>
+                                    <li class="menu-item">
+                                       <a href="" class="menu-item-action"> oi </a>
+                                    </li>
+                                    <li class="menu-item">
+                                       <a href="" class="menu-item-action"> hello </a>
+                                    </li>
+                                 </ul>
+                         </div>
+                    </div>
+            </div>-->
+                <!--
+                       <img src="assets/img/nav/menu.svg"> 
+                   < div class="modal menu-lateral-modal" id="menuMobile-lateral">
+                    <ul class="ULmodal">
+                        <li class="espaco-3"> </li>
+                        <li> <img class ="logo-eic-modal-centro" src="assets/img/logo-eic-branco.png">  </li> 
+                        <li> <br> </li>
+                        <li> <br> </li>
+                        <li>
+                            <a href="#">
+                                <div class="elem-menu-modal">  
+                                    <img src="assets/img/home.svg"> 
+                                    <p> Início </p> 
+                                </div>
+                            </a>
+                        </li>
+                        <li> <br> <br> <p> Sobre o jogo </p> </li>  
+                        <li> Créditos </li> 
+                        <li> Compartilhar </li>
+                    </ul>
+                </div>-->
     </div>
-
-<!--fim menu mobile-->
-<!-- Conteúdo da página -->
+   
+ <div class="espaco-6 menuMobile"> </div>
+  <!--fim menu mobile-->
+   <!-- Conteúdo da página -->
     <div class="espaco-6"> </div>
 
     <h1 class="subtitulo-2">ESCOLHA UM NÍVEL</h1>
@@ -131,11 +170,12 @@
             </div>
         </div>
 
-</div>
+    </div>
+  </div>
      
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/menuLateral.js"></script>
+    <script src="assets/js/btnMenuLM.js"></script>
 </body>
 
 </html>
