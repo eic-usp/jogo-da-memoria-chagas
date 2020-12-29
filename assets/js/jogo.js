@@ -11,7 +11,7 @@
 
     var imgMatchSing = document.querySelector("#imgMatchSing");
 
-    for(var i = 0; i<16; i++){
+    for(var i = 0; i < 16; i++){
         /*img é objeto, indices textuais, funções = métodos */
         var img = {
                 src: "assets/img/fase1/" + i + ".png",
@@ -30,8 +30,17 @@ function startGame(){
 
     flippedCards = [];
 
+    //pegar o caminho da imagem para usar no front faces
+    source = [];
+    source = images.forEach(PathImage);
+   
+     //pegar o id da imagem para usar no front faces
+     idList = [];
+     idList = images.forEach(IdImage);
+
     //images = randomSort(images);
-      //Procurar uma função de random sort melhor
+    images  = randomSort(images);
+    console.log(images);
 
     var frontFaces = document.getElementsByClassName("front");
     var backFaces = document.getElementsByClassName("back");
@@ -58,7 +67,7 @@ function startGame(){
        //console.log(card);
        /* mostrar se esta pegando os cards*/
        /*mod: resto da divisao */
-       /*Problema do espaçameto vertical */
+       /*Problema do espaçameto vertical - resolvido */
        card.style.left = i % 4 === 0? 15 + "px" : i % 4 * 140 + 20 + "px"; 
 
        if(i < 4){
@@ -74,13 +83,14 @@ function startGame(){
         card.addEventListener("click", flipCard, false);
 
         /*todos os cards tem imagem e id */
-        frontFaces[i].style.background = "url('"+images[i].src +"')";
+        frontFaces[i].style.background = "url('"+ images[i].src +"')";
         frontFaces[i].setAttribute("id",images[i].id);
-        //console.log(frontFaces[i].id);
+        console.log(images[i].src);
+
          }
          
         
-    }else if (size >= 600 && size <= 1000) { /*Versão tablet*/
+    } else if (size >= 600 && size <= 1000) { /*Versão tablet*/
 
         for(var i = 0; i < 16; i++){
 
@@ -120,20 +130,43 @@ function startGame(){
             card.style.top = 80 + "px";
            }else if(i < 12){
             card.style.top = 155 + "px";
-           } else{
+           } else {
             card.style.top = 230 + "px";
            }
     
             card.addEventListener("click", flipCard, false);
     
-            frontFaces[i].style.background = "url('"+images[i].src +"')";
+            frontFaces[i].style.background = "url('"+ images[i].src +"')";
             frontFaces[i].setAttribute("id",images[i].id);
-           // console.log(frontFaces[i].id);
+            //console.log(sources[i]);
              }
 
     }
      /* modalGameOver.style.zIndex = -2;
     modalGameOver.removeEventListener("click",startGame, false);*/
+}
+
+function PathImage(img){
+    var path = img.src;
+   // console.log(path);
+    return path;
+}
+function IdImage(img){
+    var id = img.id;
+   // console.log(id);
+    return id;
+}
+
+function randomSort(images){
+    var sorted = [];
+    while(sorted.length < 16){
+        var i = Math.floor(Math.random()*16);
+        //se for -1 o elem ainda nao existe no  novo array
+        if(sorted.indexOf(images[i]) < 0){
+            sorted.push(images[i]);
+        }
+    }
+     return sorted;
 }
 
 /*function InicialTime(){
@@ -152,7 +185,6 @@ function ShowStart(){
 }
 
  function flipCard(){
-     victory();
         if(flippedCards.length < 2){
 
             /*rotacionar as faces 180 graus*/
@@ -176,8 +208,9 @@ function ShowStart(){
                     flippedCards[1].childNodes[1].classList.toggle("match");
                     flippedCards[1].childNodes[3].classList.toggle("match");
 
-                    matchCardsSign();
-
+                    //matchCardsSign();
+                    console.log("match");
+                    
                     matches++;
                     flippedCards = [];
 
