@@ -1,10 +1,9 @@
 .divider{
-  border: 2px solid #ffffff;
+  border-bottom-style: solid;
+  border-bottom-color: #ffffff;
+  border-bottom-width: 2px;
 }
-.cont-divider{
-  width: 60vw;
-  left: 30vw;
-}
+
 /*mobile-first*/
 
 .fundo{
