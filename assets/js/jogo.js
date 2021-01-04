@@ -53,12 +53,8 @@ function startGame(){
     //mudar o texto
     ShowStart();
 
-   InicialTime();
-    
    if(size > 1000){ /*Versão Desktop*/
-   
-    //InicialTime(); // função para mostrar todas as cartas no inicio
-
+    
      /*tentar criar uma função e modularizar essa parte passando o tamanho da tela por parâmetro, ver se vai funcionar*/
     for(var i = 0; i < 16; i++){
 
@@ -88,7 +84,11 @@ function startGame(){
         /*todos os cards tem imagem e id */
         frontFaces[i].style.background = "url('"+ images[i].src +"')";
         frontFaces[i].setAttribute("id",images[i].id);
-        console.log(images[i].src);
+       // console.log(images[i].src);
+
+       if(i===0){
+        var texto = InicialTime(); // função para mostrar todas as cartas no inicio
+       }
 
          }
          
@@ -173,23 +173,17 @@ function randomSort(images){
 }
 
 function InicialTime(){
-    console.log("entrou");
     setTimeout(function(){ 
-        var card;
-        var Cards = [];
-
-        for(var i = 0; i < 16; i++){
-        var card = document.querySelector("#card" + i);
-        console.log("carta da vez:" + card);
-        card[i].classList.toggle("flipped");
-        cards.push(this);
-        }
-        for(var i = 0; i < 16; i++){
-            Cards[0].childNodes[1].classList.toggle("flipped");
-            Cards[0].childNodes[3].classList.toggle("match");
-        }
-    },5000); 
-    return;
+        /*var CardsShow = []; 
+        var faces = document.getElementsByClassName("face");
+        //console.log("ver se chama");
+        faces[0].classList.toggle("flipped");
+        CardsShow.push(faces[0]);*/
+        console.log(oi);
+    }, 5000);
+       // flippedCards[0].childNodes[1].classList.toggle("flipped");
+       // flippedCards[0].childNodes[3].classList.toggle("flipped");
+        return "saiu";
 }
 
 function ShowStart(){
@@ -247,7 +241,7 @@ function ShowStart(){
 function victory(){
         window.location.replace("vitoria.html");
     }
-   /* function matchCardsSign(){
+  /* function matchCardsSign(){
         imgMatchSing.style.zIndex = 1;
         imgMatchSing.style.top = 150 + "px";
         imgMatchSing.style.opacity = 0;
