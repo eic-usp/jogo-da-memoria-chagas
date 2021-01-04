@@ -29,6 +29,7 @@ function startGame(){
     matches = 0;
 
     flippedCards = [];
+    // não usei na pratica, mas talvez seja util depois 
 
     //pegar o caminho da imagem para usar no front faces
     source = [];
@@ -37,6 +38,8 @@ function startGame(){
      //pegar o id da imagem para usar no front faces
      idList = [];
      idList = images.forEach(IdImage);
+
+     // fim das funções nao utilizadas
 
     //images = randomSort(images);
     images  = randomSort(images);
@@ -50,7 +53,7 @@ function startGame(){
     //mudar o texto
     ShowStart();
 
-   // InicialTime();
+   InicialTime();
     
    if(size > 1000){ /*Versão Desktop*/
    
@@ -169,14 +172,25 @@ function randomSort(images){
      return sorted;
 }
 
-/*function InicialTime(){
-        Cards = [];
-        var faces = this.getElementsByClassName("face");
+function InicialTime(){
+    console.log("entrou");
+    setTimeout(function(){ 
+        var card;
+        var Cards = [];
+
         for(var i = 0; i < 16; i++){
-            faces[i].classList.toggle("flipped");
-            Cards.push(this);
+        var card = document.querySelector("#card" + i);
+        console.log("carta da vez:" + card);
+        card[i].classList.toggle("flipped");
+        cards.push(this);
         }
-}*/
+        for(var i = 0; i < 16; i++){
+            Cards[0].childNodes[1].classList.toggle("flipped");
+            Cards[0].childNodes[3].classList.toggle("match");
+        }
+    },5000); 
+    return;
+}
 
 function ShowStart(){
     setTimeout(function(){ 
@@ -233,7 +247,6 @@ function ShowStart(){
 function victory(){
         window.location.replace("vitoria.html");
     }
-
    /* function matchCardsSign(){
         imgMatchSing.style.zIndex = 1;
         imgMatchSing.style.top = 150 + "px";
