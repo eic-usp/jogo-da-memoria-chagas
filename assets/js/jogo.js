@@ -50,9 +50,6 @@ function startGame(){
     
     var size = windowWidth = $(window).width();
 
-    //mudar o texto
-    ShowStart();
-
    if(size > 1000){ /*Versão Desktop*/
     
      /*tentar criar uma função e modularizar essa parte passando o tamanho da tela por parâmetro, ver se vai funcionar*/
@@ -86,8 +83,10 @@ function startGame(){
         frontFaces[i].setAttribute("id",images[i].id);
        // console.log(images[i].src);
 
-       if(i===0){
-        var texto = InicialTime(); // função para mostrar todas as cartas no inicio
+       if(i === 15){
+        //mudar o texto
+        ShowStart();
+        InicialTime(); // função para mostrar todas as cartas no inicio
        }
 
          }
@@ -173,17 +172,17 @@ function randomSort(images){
 }
 
 function InicialTime(){
-    setTimeout(function(){ 
-        /*var CardsShow = []; 
-        var faces = document.getElementsByClassName("face");
-        //console.log("ver se chama");
-        faces[0].classList.toggle("flipped");
-        CardsShow.push(faces[0]);*/
-        console.log(oi);
+   var Cards = [];
+
+    var faces =  document.getElementsByClassName("face");
+    //mostra todas as cartas no ínicio
+    console.log(Cards);
+   setTimeout(function (){
+    for(i = 0; i < 32; i++){
+        faces[i].classList.toggle("flipped");
+        Cards.push(this);
+        }
     }, 5000);
-       // flippedCards[0].childNodes[1].classList.toggle("flipped");
-       // flippedCards[0].childNodes[3].classList.toggle("flipped");
-        return "saiu";
 }
 
 function ShowStart(){
