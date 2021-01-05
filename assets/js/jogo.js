@@ -43,7 +43,7 @@ function startGame(){
 
     //images = randomSort(images);
     images  = randomSort(images);
-    console.log(images);
+   // console.log(images);
 
     var frontFaces = document.getElementsByClassName("front");
     var backFaces = document.getElementsByClassName("back");
@@ -116,6 +116,12 @@ function startGame(){
             frontFaces[i].style.background = "url('"+images[i].src +"')";
             frontFaces[i].setAttribute("id",images[i].id);
             console.log(frontFaces[i].id);
+
+            if(i === 15){
+                //mudar o texto
+                ShowStart();
+                InicialTime(); // função para mostrar todas as cartas no inicio
+               }
              }
 
     }else{ /*Versão Mobile*/
@@ -141,6 +147,11 @@ function startGame(){
             frontFaces[i].style.background = "url('"+ images[i].src +"')";
             frontFaces[i].setAttribute("id",images[i].id);
             //console.log(sources[i]);
+                if(i === 15){
+                    //mudar o texto
+                    ShowStart();
+                    InicialTime(); // função para mostrar todas as cartas no inicio
+                }
              }
 
     }
@@ -172,15 +183,15 @@ function randomSort(images){
 }
 
 function InicialTime(){
-   var Cards = [];
-
-    var faces =  document.getElementsByClassName("face");
     //mostra todas as cartas no ínicio
-    console.log(Cards);
+    //var Cards = [];
+    var faces =  document.getElementsByClassName("face");
+    for(i = 0; i < 32; i++){
+        faces[i].classList.toggle("flipped");
+        }
    setTimeout(function (){
     for(i = 0; i < 32; i++){
         faces[i].classList.toggle("flipped");
-        Cards.push(this);
         }
     }, 5000);
 }
