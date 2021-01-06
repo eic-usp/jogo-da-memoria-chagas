@@ -59,7 +59,18 @@
   .elem-menu-modal{
     width: 242px;
   }
-  
+  .menu-lateral-modal{    
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    left: clamp(-180px,-180px, -160px);
+    top: -5px;
+    background: #541663;
+    padding:16px;
+    text-align: left;
+  }
+
+
   .elem-carta{
     height:120px;
     width: 120px;
@@ -122,7 +133,8 @@
     display: none;
   }
   .ULmodal{
-    list-style: none;
+    list-style-type: none;
+    list-style-type: none;
     left: 0%;
     margin: 0;
     padding: 0;
@@ -148,6 +160,7 @@
   }
 
   .subtitulo-2{
+
       text-align: center;
       color: rgb(255,255,255);
       font-size: 38px;

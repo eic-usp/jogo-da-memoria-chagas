@@ -29,6 +29,7 @@ function startGame(){
     matches = 0;
 
     flippedCards = [];
+    // não usei na pratica, mas talvez seja util depois 
 
     //pegar o caminho da imagem para usar no front faces
     source = [];
@@ -38,24 +39,19 @@ function startGame(){
      idList = [];
      idList = images.forEach(IdImage);
 
+     // fim das funções nao utilizadas
+
     //images = randomSort(images);
     images  = randomSort(images);
-    console.log(images);
+   // console.log(images);
 
     var frontFaces = document.getElementsByClassName("front");
     var backFaces = document.getElementsByClassName("back");
     
     var size = windowWidth = $(window).width();
 
-    //mudar o texto
-    ShowStart();
-
-   // InicialTime();
-    
    if(size > 1000){ /*Versão Desktop*/
-   
-    //InicialTime(); // função para mostrar todas as cartas no inicio
-
+    
      /*tentar criar uma função e modularizar essa parte passando o tamanho da tela por parâmetro, ver se vai funcionar*/
     for(var i = 0; i < 16; i++){
 
@@ -85,7 +81,13 @@ function startGame(){
         /*todos os cards tem imagem e id */
         frontFaces[i].style.background = "url('"+ images[i].src +"')";
         frontFaces[i].setAttribute("id",images[i].id);
-        console.log(images[i].src);
+       // console.log(images[i].src);
+
+       if(i === 15){
+        //mudar o texto
+        ShowStart();
+        InicialTime(); // função para mostrar todas as cartas no inicio
+       }
 
          }
          
@@ -114,6 +116,12 @@ function startGame(){
             frontFaces[i].style.background = "url('"+images[i].src +"')";
             frontFaces[i].setAttribute("id",images[i].id);
             console.log(frontFaces[i].id);
+
+            if(i === 15){
+                //mudar o texto
+                ShowStart();
+                InicialTime(); // função para mostrar todas as cartas no inicio
+               }
              }
 
     }else{ /*Versão Mobile*/
@@ -139,6 +147,11 @@ function startGame(){
             frontFaces[i].style.background = "url('"+ images[i].src +"')";
             frontFaces[i].setAttribute("id",images[i].id);
             //console.log(sources[i]);
+                if(i === 15){
+                    //mudar o texto
+                    ShowStart();
+                    InicialTime(); // função para mostrar todas as cartas no inicio
+                }
              }
 
     }
@@ -169,14 +182,19 @@ function randomSort(images){
      return sorted;
 }
 
-/*function InicialTime(){
-        Cards = [];
-        var faces = this.getElementsByClassName("face");
-        for(var i = 0; i < 16; i++){
-            faces[i].classList.toggle("flipped");
-            Cards.push(this);
+function InicialTime(){
+    //mostra todas as cartas no ínicio
+    //var Cards = [];
+    var faces =  document.getElementsByClassName("face");
+    for(i = 0; i < 32; i++){
+        faces[i].classList.toggle("flipped");
         }
-}*/
+   setTimeout(function (){
+    for(i = 0; i < 32; i++){
+        faces[i].classList.toggle("flipped");
+        }
+    }, 5000);
+}
 
 function ShowStart(){
     setTimeout(function(){ 
@@ -219,6 +237,7 @@ function ShowStart(){
                     }
                 }
             }
+            
         } else {
             /*Não entendi bem*/
            flippedCards[0].childNodes[1].classList.toggle("flipped");
@@ -232,8 +251,7 @@ function ShowStart(){
 function victory(){
         window.location.replace("vitoria.html");
     }
-
-   /* function matchCardsSign(){
+  /* function matchCardsSign(){
         imgMatchSing.style.zIndex = 1;
         imgMatchSing.style.top = 150 + "px";
         imgMatchSing.style.opacity = 0;
