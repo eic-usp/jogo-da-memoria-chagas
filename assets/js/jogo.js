@@ -226,7 +226,7 @@ function ShowStart(){
                     flippedCards[1].childNodes[1].classList.toggle("match");
                     flippedCards[1].childNodes[3].classList.toggle("match");
 
-                    //matchCardsSign();
+                    matchCardsSign();
                     console.log("match");
                     
                     matches++;
@@ -239,7 +239,7 @@ function ShowStart(){
             }
             
         } else {
-            /*Não entendi bem*/
+            /*childNodes: todos os nós filhos de FlippedCards (filhos do array pai (flippedCards))*/
            flippedCards[0].childNodes[1].classList.toggle("flipped");
            flippedCards[0].childNodes[3].classList.toggle("flipped");
            flippedCards[1].childNodes[1].classList.toggle("flipped");
@@ -251,7 +251,8 @@ function ShowStart(){
 function victory(){
         window.location.replace("vitoria.html");
     }
-  /* function matchCardsSign(){
+
+function matchCardsSign(){
         imgMatchSing.style.zIndex = 1;
         imgMatchSing.style.top = 150 + "px";
         imgMatchSing.style.opacity = 0;
@@ -259,7 +260,7 @@ function victory(){
             imgMatchSing.style.zIndex = -1;
             imgMatchSing.style.top = 250 + "px";
             imgMatchSing.style.opacity = 1;
-        },1500);
-    }*/
+        },1000);
+    }
 
  }());

@@ -59,7 +59,7 @@
   .elem-menu-modal{
     width: 242px;
   }
-  .menu-lateral-modal{    
+  #menu-modal{    
     position: absolute;
     width: 100vw;
     height: 100vh;
@@ -67,10 +67,9 @@
     top: -5px;
     background: #541663;
     padding:16px;
-    text-align: left;
+    text-align: right;
+    z-index: -2;
   }
-
-
   .elem-carta{
     height:120px;
     width: 120px;
@@ -232,6 +231,9 @@
   .mostrar-vertical{
     display:none;
   }
+  #menu-modal{
+    display: none;
+  }
   
 }
  /*versão tablet */
@@ -291,5 +293,17 @@
   .mostrar-horizontal{
       display: none;
     }
+
+  #menu-modal{    
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      left: clamp(-180px,-180px, -160px);
+      top: -5px;
+      background: #541663;
+      padding:16px;
+      text-align: left;
+      z-index: -2;
+  }
 
 }
