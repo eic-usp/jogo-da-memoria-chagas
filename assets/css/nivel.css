@@ -40,9 +40,6 @@
       text-align: left;
       color: #F0E2F3;
   }
-  .p-menu-modal{
-    right: 0px;
-  }
   .largura-texto{
       text-align: center;
     /*Arrumar tam maximo de centralizar depois*/
@@ -53,21 +50,19 @@
     right: 93.2%;
     top:0;
   }
-  .logo-eic-modal-centro{
-    padding-left: 30px;
-  }
   .elem-menu-modal{
     width: 242px;
   }
   #menu-modal{    
     position: absolute;
-    width: 100vw;
+    width: 80vw;
     height: 100vh;
-    left: clamp(-180px,-180px, -160px);
+    /*left: clamp(-180px,-180px, -160px);*/
+    right: 0px;
     top: -5px;
     background: #541663;
     padding:16px;
-    text-align: right;
+    justify-content: left;
     z-index: -2;
   }
   .elem-carta{
@@ -80,6 +75,10 @@
     height: 80px;
     top:56vh;
   }
+
+.logo-modal{
+  padding-top: 5%;
+}
 
 /* logo-eic */
 .nav-logo-eic{
@@ -131,18 +130,17 @@
   .mostrar-horizontal{
     display: none;
   }
-  .ULmodal{
-    list-style-type: none;
-    list-style-type: none;
-    left: 0%;
-    margin: 0;
-    padding: 0;
-    width: 20vw;
-    background-color: #541663;
-    
+
+  .elem-menu-modal img{
+    padding-left: 3%;
+    float: left;
   }
-  .largura-p-modal{
-    width: 160px;
+  .elem-modal-height{
+    line-height: 20px;
+    height: 20px;
+  }
+  .list-modal{
+   list-style-type: none;
   }
 }
   
@@ -214,7 +212,7 @@
     display: none;
   }
   .logo-eic-centro{
-    padding-left:40px;
+    padding-left: 5vw;
   }
   .espaco-v{
     left:30px
@@ -230,9 +228,6 @@
   }
   .mostrar-vertical{
     display:none;
-  }
-  #menu-modal{
-    display: none;
   }
   
 }
@@ -293,17 +288,26 @@
   .mostrar-horizontal{
       display: none;
     }
+    
+.logo-modal{
+  padding-top: 5%;
+  padding-left: 24%;
+}
 
   #menu-modal{    
       position: absolute;
-      width: 100vw;
+      width: 50vw;
       height: 100vh;
-      left: clamp(-180px,-180px, -160px);
+      right: 0px;
       top: -5px;
       background: #541663;
       padding:16px;
       text-align: left;
       z-index: -2;
   }
+  .list-modal{
+    list-style-type: none;
+  }
+
 
 }

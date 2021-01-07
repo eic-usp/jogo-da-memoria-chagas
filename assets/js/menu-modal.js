@@ -17,5 +17,5 @@ function ShowMenuModal(){
 }
 function HideMenuModal(){
 	menuModal.style.zIndex = -2;
-	console.log("chamou");
+	console.log("chamou e parou de mostrar");
 }
