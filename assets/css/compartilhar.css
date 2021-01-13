@@ -1,0 +1,9 @@
+.divider{
+    border: 2px solid #ffffff;
+  }
+  
+  .cont-divider{
+    width: 100vw;
+    left: 20vw;
+    right: 20vw;
+  }
