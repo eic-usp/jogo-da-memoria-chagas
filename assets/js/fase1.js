@@ -213,12 +213,14 @@ function ShowStart(){
             if(faces[0].classList.length > 2){
                 return; 
             }
+
             faces[0].classList.toggle("flipped");
             faces[1].classList.toggle("flipped");
             /*toggle = switch, se nao existe adiciona, se ja existe, remove  */
             flippedCards.push(this);
 
             if(flippedCards.length === 2 ){
+                //Problema com a carta carlos chagas e megacolon - não sei o que está acontecendo
                 //elemento de face front 
                 if(flippedCards[0].childNodes[3].id === flippedCards[1].childNodes[3].id){
                     flippedCards[0].childNodes[1].classList.toggle("match");

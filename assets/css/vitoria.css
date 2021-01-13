@@ -1,0 +1,30 @@
+/*Global*/
+
+.btn-next:not(:disabled):not(.disabled) {
+    background:  #541663;;
+  }
+  .btn-playAgain:not(:disabled):not(.disabled) {
+    background: #301A67;
+  }
+  .points-box{
+    position: relative;
+    width: 156px;
+    height: 56px;
+    background: #301A67;
+    border-radius: 10px;
+  }
+  .display-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .medal{
+      top: 10px;
+      position: relative;
+  }
+  p.points{
+    top:10px;
+  }
+  #points, .medal{
+    display: inline-block;
+  }
