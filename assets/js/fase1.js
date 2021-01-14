@@ -1,13 +1,13 @@
 /*pensar em como rodar em diferentes tamanhos de tela - pensei- agora vai ser fácil */
 /*Pensar em excluir a pagina da fase 2 e fazer a pagina da fase 2 para fazer tudo no mesmo arquivo - tornar + otimizado */
-
+// porque as imagens estao se repetindo ??
 (function(){
 
     var images = [];
 
     var flippedCards = [];
-
-   // var modalGameOver = document.querySelector("#modalGameOver");
+    // ainda nao criei o botao, nem no menu desktop, nem modal
+    //var quitGame = document.querySelector("quitGame");
 
     var matches = 0;
 
