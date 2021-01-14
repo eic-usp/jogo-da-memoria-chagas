@@ -1,5 +1,7 @@
 /*pensar em como rodar em diferentes tamanhos de tela - pensei- agora vai ser fácil */
-(function(){ 
+/*Pensar em excluir a pagina da fase 2 e fazer a pagina da fase 2 para fazer tudo no mesmo arquivo - tornar + otimizado */
+
+(function(){
 
     var images = [];
 
@@ -11,15 +13,17 @@
 
     var imgMatchSing = document.querySelector("#imgMatchSing");
 
-    for(var i = 0; i < 16; i++){
-        /*img é objeto, indices textuais, funções = métodos */
-        var img = {
-                src: "assets/img/fase1/" + i + ".png",
-                id: i%4
-                /* arrumado - nao vai funcionar porque eu nao criei as imagens desse jeito */
-        };
-        images.push(img);
-    } 
+    //Fazer contador de pontos (pensar em como fazer)
+
+        for(var i = 0; i < 16; i++){
+            /*img é objeto, indices textuais, funções = métodos */
+            var img = {
+                    src: "assets/img/fase1/" + i + ".png",
+                    id: i%4
+                    /* arrumado - nao vai funcionar porque eu nao criei as imagens desse jeito */
+            };
+            images.push(img);
+        } 
     //console.log(images);
 
 startGame();
@@ -29,19 +33,7 @@ function startGame(){
     matches = 0;
 
     flippedCards = [];
-    // não usei na pratica, mas talvez seja util depois 
 
-    //pegar o caminho da imagem para usar no front faces
-    source = [];
-    source = images.forEach(PathImage);
-   
-     //pegar o id da imagem para usar no front faces
-     idList = [];
-     idList = images.forEach(IdImage);
-
-     // fim das funções nao utilizadas
-
-    //images = randomSort(images);
     images  = randomSort(images);
    // console.log(images);
 
@@ -89,7 +81,7 @@ function startGame(){
         InicialTime(); // função para mostrar todas as cartas no inicio
        }
 
-         }
+    }
          
         
     } else if (size >= 600 && size <= 1000) { /*Versão tablet*/
@@ -147,27 +139,16 @@ function startGame(){
             frontFaces[i].style.background = "url('"+ images[i].src +"')";
             frontFaces[i].setAttribute("id",images[i].id);
             //console.log(sources[i]);
+
                 if(i === 15){
                     //mudar o texto
                     ShowStart();
                     InicialTime(); // função para mostrar todas as cartas no inicio
                 }
              }
-
     }
      /* modalGameOver.style.zIndex = -2;
     modalGameOver.removeEventListener("click",startGame, false);*/
-}
-
-function PathImage(img){
-    var path = img.src;
-   // console.log(path);
-    return path;
-}
-function IdImage(img){
-    var id = img.id;
-   // console.log(id);
-    return id;
 }
 
 function randomSort(images){
@@ -203,6 +184,7 @@ function ShowStart(){
 }
 
  function flipCard(){
+
         if(flippedCards.length < 2){
 
             /*rotacionar as faces 180 graus*/
@@ -228,6 +210,8 @@ function ShowStart(){
                     flippedCards[1].childNodes[1].classList.toggle("match");
                     flippedCards[1].childNodes[3].classList.toggle("match");
 
+                    matches = 7;
+
                     matchCardsSign();
                     console.log("match");
                     
@@ -239,7 +223,7 @@ function ShowStart(){
                     }
                 }
             }
-            
+
         } else {
             /*childNodes: todos os nós filhos de FlippedCards (filhos do array pai (flippedCards))*/
            flippedCards[0].childNodes[1].classList.toggle("flipped");
@@ -250,7 +234,14 @@ function ShowStart(){
            flippedCards = [];
         }  
     }
+
 function victory(){
+        var url = window.location.href;
+        sessionStorage.setItem("url", url);
+
+        var points = getElementById("points");
+        sessionStorage.setItem("points", points);
+
         window.location.replace("vitoria.html");
     }
 
