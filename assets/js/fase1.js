@@ -210,6 +210,8 @@ function ShowStart(){
                     flippedCards[1].childNodes[1].classList.toggle("match");
                     flippedCards[1].childNodes[3].classList.toggle("match");
 
+                    // criar a função de pontuação e chamar aqui score();
+
                     matches = 7;
 
                     matchCardsSign();
@@ -239,7 +241,8 @@ function victory(){
         var url = window.location.href;
         sessionStorage.setItem("url", url);
 
-        var points = getElementById("points");
+        var points = $("#points").text();    
+
         sessionStorage.setItem("points", points);
 
         window.location.replace("vitoria.html");
