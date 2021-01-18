@@ -8,8 +8,8 @@ var btnMedio = document.getElementById("medio");
 var btnDificil = document.getElementById("dificil");
 //btnMedio.addEventListener("click", fase(3), false);
 
+// mandar o botao apertado para a fase
 function fase(n){
-    window.location.replace("fase1.html");
     sessionStorage.setItem("n", n);
 }
 

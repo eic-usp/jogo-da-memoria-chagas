@@ -1,10 +1,13 @@
 
 //tentativa de otimização do jogo (para fazer mais fazes mais rápido e nao ficar repetindo as mesmas partes do jogo)
 // porque as imagens estao se repetindo ??
-var level = sessionStorage.getItem('n');
-console. log("nivel:" + level);
 
 (function(){
+    var level = sessionStorage.getItem('n');
+    if (level === null){
+        level = 1;
+    }
+    console. log("nivel:" + level);
 
     var images = [];
 
@@ -28,19 +31,19 @@ console. log("nivel:" + level);
                     /* arrumado - nao vai funcionar porque eu nao criei as imagens desse jeito */
             };
             images.push(img);
-             //console.log(images);
         } 
     } else if(level === 2){
+
         for(var i = 0; i < 16; i++){
             /*img é objeto, indices textuais, funções = métodos */
             var img = {
                     src: "assets/img/fase2/" + i + ".png",
                     id: i%4
-                    /* arrumado - nao vai funcionar porque eu nao criei as imagens desse jeito */
             };
             images.push(img);
-             //console.log(images);
         } 
+    } else{
+        console.log("ainda nao fiz");
     }
    
 
@@ -169,6 +172,9 @@ function startGame(){
     modalGameOver.removeEventListener("click",startGame, false);*/
 }
 
+}());
+
+
 function randomSort(images){
     var sorted = [];
     while(sorted.length < 16){
@@ -276,5 +282,3 @@ function matchCardsSign(){
             imgMatchSing.style.opacity = 1;
         },1000);
     }
-
- }());

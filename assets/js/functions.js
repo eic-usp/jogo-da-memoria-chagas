@@ -1,68 +1,4 @@
-var level = sessionStorage.getItem('n');
-
- if (level === 1){
-
-    var images = [];
-
-    var flippedCards = [];
-
-    // ainda nao criei o botao, nem no menu desktop, nem modal
-    //var quitGame = document.querySelector("quitGame");
-
-    var matches = 0;
-
-    var imgMatchSing = document.querySelector("#imgMatchSing");
-
-    //Fazer contador de pontos (pensar em como fazer)
-
-        for(var i = 0; i < 16; i++){
-            /*img é objeto, indices textuais, funções = métodos */
-            var img = {
-                    src: "assets/img/fase1/" + i + ".png",
-                    id: i%4
-                    /* arrumado - nao vai funcionar porque eu nao criei as imagens desse jeito */
-            };
-            images.push(img);
-        } 
-    //console.log(images);
-
-startGame();
-
- }else if(level === 2){
-     
-    console.log("fase2 - entrou");
-    var images = [];
-
-    var flippedCards = [];
-
-    // ainda nao criei o botao, nem no menu desktop, nem modal
-    //var quitGame = document.querySelector("quitGame");
-
-    var matches = 0;
-
-    var imgMatchSing = document.querySelector("#imgMatchSing");
-
-    //Fazer contador de pontos (pensar em como fazer)
-
-        for(var i = 0; i < 16; i++){
-            /*img é objeto, indices textuais, funções = métodos */
-            var img = {
-                    src: "assets/img/fase2/" + i + ".png",
-                    id: i%4
-            };
-            images.push(img);
-        } 
-    //console.log(images);
-
-startGame();
-
- } else if(level === 3){
-
-    console.log("fase3 ainda nao fiz");
-
- }
-
- function startGame(){
+function startGame(){
    
     matches = 0;
 
@@ -150,8 +86,7 @@ startGame();
                }
              }
 
-    }else{
-         /*Versão Mobile*/
+    }else{ /*Versão Mobile*/
         for(var i = 0; i < 16; i++){
 
             frontFaces[i].classList.remove("flipped", "match");
@@ -185,6 +120,7 @@ startGame();
      /* modalGameOver.style.zIndex = -2;
     modalGameOver.removeEventListener("click",startGame, false);*/
 }
+
 function randomSort(images){
     var sorted = [];
     while(sorted.length < 16){
@@ -272,10 +208,8 @@ function ShowStart(){
     }
 
 function victory(){
-       // vou ter que mudar isso agora
-       // var url = window.location.href;
-
-       // sessionStorage.setItem("url", url);
+        var url = window.location.href;
+        sessionStorage.setItem("level", level);
 
         var points = $("#points").text();    
 
