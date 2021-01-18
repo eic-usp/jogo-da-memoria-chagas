@@ -97,7 +97,7 @@
     </div>
 
 <!--Menu modal que só aparece quando o botao-menu-modal é clicado-->
-<!--<div id="menu-modal">
+<div id="menu-modal">
     <ul class="list-modal">
         <li>
             <a href="#">
@@ -120,7 +120,7 @@
     </ul>
     <div class="espaco-6"></div>
     <div id="botao-voltar"><p> Voltar </p></div>
-</div>-->
+</div>
 
 <!--fim menu mobile-->
 <!-- Conteúdo da página -->
@@ -134,14 +134,14 @@
 
         <!--alinhar botoes ao centro - feito, pensar em fazer com on click -->
         <div class="row">
-            <div class="col"><a class="btn btn-primary btn-facil" href="fase1.html"> FÁCIL </a> </div>
+            <div class="col"><a class="btn btn-primary btn-facil" id ="facil" onclick="fase(1);"> FÁCIL </a> </div>
         </div>
 
         <div class="espaco-6"></div>
 
         <div class="row">
             <div class="col">
-                <a class="btn btn-primary btn-medio" href="fase2.html"> MÉDIO  </a>
+                <a class="btn btn-primary btn-medio" id="medio"> MÉDIO  </a>
             </div>
         </div>
 
@@ -149,7 +149,7 @@
 
         <div class="row">
             <div class="col">
-            <a class="btn btn-primary btn-dificil" href="fase3.html"> DÍFICIL </a>
+            <a class="btn btn-primary btn-dificil" id="dificil"> DÍFICIL </a>
             </div>
         </div>
 
@@ -158,6 +158,8 @@
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/menu-modal.js"></script>
+    <script src="assets/js/nivel.js"></script>
+
 </body>
 
 </html>

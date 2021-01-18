@@ -1,4 +1,5 @@
 var points = sessionStorage.getItem('points');
+var level = sessionStorage.getItem('level');
 
 //console.log("pontos =" + points);
 
@@ -9,7 +10,7 @@ var url = sessionStorage.getItem('url');
 
 //console.log("url anterior = " + url);
 
-// alterar dinamicamente os links dos botoes para nao precisar fazer 3 paginas de vitoria
+//pensar em como alterar o link do botao dinamicamente
 //pensar em transformar a pagina de jogo em uma só
 
 if (url.includes('fase1') === true){

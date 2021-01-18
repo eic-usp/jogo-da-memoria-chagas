@@ -1,14 +1,11 @@
-
-//tentativa de otimização do jogo (para fazer mais fazes mais rápido e nao ficar repetindo as mesmas partes do jogo)
-// porque as imagens estao se repetindo ??
 var level = sessionStorage.getItem('n');
-console. log("nivel:" + level);
 
-(function(){
+ if (level === 1){
 
     var images = [];
 
     var flippedCards = [];
+
     // ainda nao criei o botao, nem no menu desktop, nem modal
     //var quitGame = document.querySelector("quitGame");
 
@@ -18,8 +15,6 @@ console. log("nivel:" + level);
 
     //Fazer contador de pontos (pensar em como fazer)
 
- if (level === 1){
-
         for(var i = 0; i < 16; i++){
             /*img é objeto, indices textuais, funções = métodos */
             var img = {
@@ -28,25 +23,45 @@ console. log("nivel:" + level);
                     /* arrumado - nao vai funcionar porque eu nao criei as imagens desse jeito */
             };
             images.push(img);
-             //console.log(images);
         } 
-    } else if(level === 2){
+    //console.log(images);
+
+startGame();
+
+ }else if(level === 2){
+    console.log("fase2 - entrou");
+    var images = [];
+
+    var flippedCards = [];
+
+    // ainda nao criei o botao, nem no menu desktop, nem modal
+    //var quitGame = document.querySelector("quitGame");
+
+    var matches = 0;
+
+    var imgMatchSing = document.querySelector("#imgMatchSing");
+
+    //Fazer contador de pontos (pensar em como fazer)
+
         for(var i = 0; i < 16; i++){
             /*img é objeto, indices textuais, funções = métodos */
             var img = {
                     src: "assets/img/fase2/" + i + ".png",
                     id: i%4
-                    /* arrumado - nao vai funcionar porque eu nao criei as imagens desse jeito */
             };
             images.push(img);
-             //console.log(images);
         } 
-    }
-   
+    //console.log(images);
 
 startGame();
 
-function startGame(){
+ } else if(level === 3){
+
+    console.log("fase3 ainda nao fiz");
+
+ }
+
+ function startGame(){
    
     matches = 0;
 
@@ -134,7 +149,8 @@ function startGame(){
                }
              }
 
-    }else{ /*Versão Mobile*/
+    }else{
+         /*Versão Mobile*/
         for(var i = 0; i < 16; i++){
 
             frontFaces[i].classList.remove("flipped", "match");
@@ -168,7 +184,6 @@ function startGame(){
      /* modalGameOver.style.zIndex = -2;
     modalGameOver.removeEventListener("click",startGame, false);*/
 }
-
 function randomSort(images){
     var sorted = [];
     while(sorted.length < 16){
@@ -256,8 +271,10 @@ function ShowStart(){
     }
 
 function victory(){
-        var url = window.location.href;
-        sessionStorage.setItem("level", level);
+       // vou ter que mudar isso agora
+       // var url = window.location.href;
+
+       // sessionStorage.setItem("url", url);
 
         var points = $("#points").text();    
 
@@ -276,5 +293,3 @@ function matchCardsSign(){
             imgMatchSing.style.opacity = 1;
         },1000);
     }
-
- }());
