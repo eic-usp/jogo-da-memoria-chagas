@@ -1,16 +1,16 @@
 
-var btnFacil = document.getElementById("facil");
-//btnFacil.addEventListener("click", fase(1), false);
-
-var btnMedio = document.getElementById("medio");
-//btnMedio.addEventListener("click", fase(2), false);
-
-var btnDificil = document.getElementById("dificil");
-//btnMedio.addEventListener("click", fase(3), false);
-
 // mandar o botao apertado para a fase
 function fase(n){
-    sessionStorage.setItem("n", n);
+    console.log(n);
+     var nivel;
+    if(n === "facil"){
+        nivel = 1;
+    } else if (n === "medio"){
+        nivel = 2;
+    } else if(n === "dificil"){
+        nivel = 3;
+    }
+    sessionStorage.setItem("nivel", nivel);
 }
 
 

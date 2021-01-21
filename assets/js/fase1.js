@@ -3,11 +3,8 @@
 // porque as imagens estao se repetindo ??
 
 (function(){
-    var level = sessionStorage.getItem('n');
-    if (level === null){
-        level = 1;
-    }
-    console. log("nivel:" + level);
+
+    var level = sessionStorage.getItem('nivel');
 
     var images = [];
 
@@ -21,7 +18,11 @@
 
     //Fazer contador de pontos (pensar em como fazer)
 
- if (level === 1){
+    console.log(" level antes de entrar no if " + level);
+
+    if (level === "1"){
+
+        document.getElementsByTagName('title')[0].innerHTML= "Fase 1";
 
         for(var i = 0; i < 16; i++){
             /*img é objeto, indices textuais, funções = métodos */
@@ -32,9 +33,22 @@
             };
             images.push(img);
         } 
-    } else if(level === 2){
+    } else if (level === "2"){
 
-        for(var i = 0; i < 16; i++){
+        // tentar arrumar para nao repetir as mesmas imagens - deu certo
+
+        document.getElementsByTagName('title')[0].innerHTML= "Fase 2";
+
+        for(var i = 0; i < 8; i++){
+            /*img é objeto, indices textuais, funções = métodos */
+            var img = {
+                    src: "assets/img/fase1/" + i + ".png",
+                    id: i%4
+            };
+            images.push(img);
+        }
+
+        for(var i = 8; i < 16; i++){
             /*img é objeto, indices textuais, funções = métodos */
             var img = {
                     src: "assets/img/fase2/" + i + ".png",
@@ -42,14 +56,28 @@
             };
             images.push(img);
         } 
-    } else{
-        console.log("ainda nao fiz");
+
+    } else if(level === "3"){
+
+        document.getElementsByTagName('title')[0].innerHTML= "Fase 3";
+
+        for(var i = 0; i < 16; i++){
+            /*img é objeto, indices textuais, funções = métodos */
+            var img = {
+                    // nao lembrar de arrumar
+                    src: "assets/img/fase3/" + i + ".png",
+                    id: i%4
+                    /* arrumado - nao vai funcionar porque eu nao criei as imagens desse jeito */
+            };
+            images.push(img);
+        } 
+
     }
    
 
 startGame();
 
-function startGame(){
+function startGame(){   
    
     matches = 0;
 
