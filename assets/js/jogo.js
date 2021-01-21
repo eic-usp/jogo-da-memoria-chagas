@@ -1,19 +1,35 @@
-var level = sessionStorage.getItem('n');
 
- if (level === 1){
+//tentativa de otimização do jogo (para fazer mais fazes mais rápido e nao ficar repetindo as mesmas partes do jogo)
+// porque as imagens estao se repetindo ??
+// mexer com o css por algum motivo esta impedindo o funcionamento do jogo
+
+(function(){
+
+    var level = sessionStorage.getItem('nivel');
+
+    if (level === null){
+        level = 1;
+    }
 
     var images = [];
 
-    var flippedCards = [];
-
     // ainda nao criei o botao, nem no menu desktop, nem modal
+
     //var quitGame = document.querySelector("quitGame");
 
     var matches = 0;
 
-    var imgMatchSing = document.querySelector("#imgMatchSing");
+    //var imgMatchSing = document.querySelector("#imgMatchSing");
 
     //Fazer contador de pontos (pensar em como fazer)
+
+    console.log(" level antes de entrar no if " + level);
+
+    if (level === "1"){
+
+        document.getElementsByTagName('title')[0].innerHTML= "Fase 1";
+
+        var link = document.getElementById('folha');
 
         for(var i = 0; i < 16; i++){
             /*img é objeto, indices textuais, funções = métodos */
@@ -24,27 +40,22 @@ var level = sessionStorage.getItem('n');
             };
             images.push(img);
         } 
-    //console.log(images);
+    } else if (level === "2"){
 
-startGame();
+        // tentar arrumar para nao repetir as mesmas imagens - deu certo
 
- }else if(level === 2){
-     
-    console.log("fase2 - entrou");
-    var images = [];
+        document.getElementsByTagName('title')[0].innerHTML= "Fase 2";
 
-    var flippedCards = [];
+        for(var i = 0; i < 8; i++){
+            /*img é objeto, indices textuais, funções = métodos */
+            var img = {
+                    src: "assets/img/fase1/" + i + ".png",
+                    id: i%4
+            };
+            images.push(img);
+        }
 
-    // ainda nao criei o botao, nem no menu desktop, nem modal
-    //var quitGame = document.querySelector("quitGame");
-
-    var matches = 0;
-
-    var imgMatchSing = document.querySelector("#imgMatchSing");
-
-    //Fazer contador de pontos (pensar em como fazer)
-
-        for(var i = 0; i < 16; i++){
+        for(var i = 8; i < 16; i++){
             /*img é objeto, indices textuais, funções = métodos */
             var img = {
                     src: "assets/img/fase2/" + i + ".png",
@@ -52,24 +63,34 @@ startGame();
             };
             images.push(img);
         } 
-    //console.log(images);
+
+    } else if(level === "3"){
+
+        document.getElementsByTagName('title')[0].innerHTML= "Fase 3";
+
+        for(var i = 0; i < 16; i++){
+            /*img é objeto, indices textuais, funções = métodos */
+            var img = {
+                    // nao lembrar de arrumar
+                    src: "assets/img/fase3/" + i + ".png",
+                    id: i%4
+                    /* arrumado - nao vai funcionar porque eu nao criei as imagens desse jeito */
+            };
+            images.push(img);
+        } 
+
+    }
+   
 
 startGame();
 
- } else if(level === 3){
-
-    console.log("fase3 ainda nao fiz");
-
- }
-
- function startGame(){
+function startGame(){   
    
     matches = 0;
 
     flippedCards = [];
 
     images  = randomSort(images);
-   // console.log(images);
 
     var frontFaces = document.getElementsByClassName("front");
     var backFaces = document.getElementsByClassName("back");
@@ -81,12 +102,14 @@ startGame();
      /*tentar criar uma função e modularizar essa parte passando o tamanho da tela por parâmetro, ver se vai funcionar*/
     for(var i = 0; i < 16; i++){
 
+        //console.log("entrou no for");
+
         frontFaces[i].classList.remove("flipped", "match");
         backFaces[i].classList.remove("flipped", "match");
 
        /*Pode usar get element by id, porem o query selector é mais rápido*/
        var card = document.querySelector("#card" + i);
-       //console.log(card);
+      // console.log(card);
        /* mostrar se esta pegando os cards*/
        /*mod: resto da divisao */
        /*Problema do espaçameto vertical - resolvido */
@@ -150,8 +173,7 @@ startGame();
                }
              }
 
-    }else{
-         /*Versão Mobile*/
+    }else{ /*Versão Mobile*/
         for(var i = 0; i < 16; i++){
 
             frontFaces[i].classList.remove("flipped", "match");
@@ -185,6 +207,10 @@ startGame();
      /* modalGameOver.style.zIndex = -2;
     modalGameOver.removeEventListener("click",startGame, false);*/
 }
+
+}());
+
+
 function randomSort(images){
     var sorted = [];
     while(sorted.length < 16){
@@ -217,7 +243,7 @@ function ShowStart(){
     }, 5000);
 }
 
- function flipCard(){
+ function flipCard(){ /*Função para virar as cartas*/
 
         if(flippedCards.length < 2){
 
@@ -272,10 +298,8 @@ function ShowStart(){
     }
 
 function victory(){
-       // vou ter que mudar isso agora
-       // var url = window.location.href;
-
-       // sessionStorage.setItem("url", url);
+        var url = window.location.href;
+        sessionStorage.setItem("level", level);
 
         var points = $("#points").text();    
 
