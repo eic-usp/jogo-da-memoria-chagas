@@ -2,6 +2,7 @@
 /*global*/
 *{
     font-display: block;
+    /*Para não ficar aparecendo um erro sem razão no console*/
 }
 .face{
     width: 100%;
@@ -10,7 +11,7 @@
     border-radius: 10px;
     transition: all 1s;
     backface-visibility: hidden;
-    background-repeat: no-repeat;
+    background-repeat: initial;
 }
 .back.flipped{
     transform: rotateY(180deg);
@@ -38,6 +39,7 @@
 }
 /*DESKTOP*/
 @media(min-width: 1001px){
+
     #container{
         width: 29vw; /*O tamanho das cartas esta muito pequeno em comparação ao tamanho da tela*/
         height: 58vh;
@@ -84,6 +86,7 @@
         /*profundidade do giro, para nao ficar chapado*/ 
     }
     .back{
+      
         object-fit: fill;
         background: url("../img/fase1/verso1.png");
     }
