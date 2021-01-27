@@ -58,6 +58,7 @@
         /*aqui os cards ficam empilhados, mas preciso distanciar um por um? NAO JAVASCRIPT LINDO*/
         perspective: 600px;
         /*profundidade do giro, para nao ficar chapado*/ 
+        background-repeat: no-repeat;
     }
     .back{
         object-fit: fill;

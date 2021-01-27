@@ -14,6 +14,7 @@
     var images = [];
 
     var bgLevel = document.getElementsByClassName('back');
+    console.log(bgLevel);
 
     // ainda nao criei o botao, nem no menu desktop, nem modal
 
@@ -25,15 +26,19 @@
 
     //Fazer contador de pontos (pensar em como fazer)
 
-    //console.log(" level antes de entrar no if " + level);
-
     if (level === "1"){
 
         document.getElementsByTagName('title')[0].innerHTML= "Fase 1";
 
-        //bgLevel.style.background = "url('"+ assets/fase1/verso1.png +"')";
+        bgLevel.style.cssText =
+        'object-fit: fill;' +
+        'background: url("../img/fase1/1.png");';
+
+   
+    background: url("../img/fase1/verso1.png");
 
         for(var i = 0; i < 16; i++){
+            console.log("oi");
             /*img é objeto, indices textuais, funções = métodos */
             var img = {
                     src: "assets/img/fase1/" + i + ".png",
@@ -45,7 +50,7 @@
 
         document.getElementsByTagName('title')[0].innerHTML= "Fase 2";
 
-       // bgLevel.style.background = "url('"+ assets/fase2/verso2.png +"')";
+       
 
         for(var i = 0; i < 8; i++){
             var img = {

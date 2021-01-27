@@ -1,3 +1,5 @@
+/*arrumar os aquivos de estilo porque estão uma bagunça*/
+
 /*Global*/
 .btn-facil:not(:disabled):not(.disabled) {
   background: #Bb78CC;
@@ -50,9 +52,7 @@
     right: 93.2%;
     top:0;
   }
-  .elem-menu-modal{
-    width: 242px;
-  }
+  
   #menu-modal{    
     position: absolute;
     width: 80vw;
@@ -131,17 +131,6 @@
     display: none;
   }
 
-  .elem-menu-modal img{
-    padding-left: 3%;
-    float: left;
-  }
-  .elem-modal-height{
-    line-height: 20px;
-    height: 20px;
-  }
-  .list-modal{
-   list-style-type: none;
-  }
 }
   
 /*versão desktop */
@@ -188,26 +177,7 @@
     position: fixed; /* Make it stick, even on scroll */
     overflow: hidden; /* Enable scrolling if the sidenav has too much content */
   }
-  
-  .fonte-menu-lateral{
-      font-family: Fira Sans;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 18px;
-      line-height: 24px;
-      color: #EEEEEE;   
-  }
-  .elem-menu-lateral{
-  width: 300px;
-}
-  .elem-menu-lateral img{
-    padding-left: 40px;
-    float: left;
-  }
-  .elem-menu-lateral p{
-    padding-left: 80px;
-    text-align: left;
-  }
+
   .menu-mobile{
     display: none;
   }
@@ -229,7 +199,17 @@
   .mostrar-vertical{
     display:none;
   }
-  
+  .elem-menu-lateral{
+    width: 300px;
+  }
+  .elem-menu-lateral img{
+    padding-left: 40px;
+    float: left;
+  }
+  .elem-menu-lateral p{
+    padding-left: 80px;
+    text-align: left;
+  }
 }
  /*versão tablet */
  @media(min-width: 600px) and (max-width: 1000px){
@@ -288,41 +268,9 @@
   .mostrar-horizontal{
       display: none;
     }
-    
-.logo-modal{
-  padding-top: 5%;
-  padding-left: 24%;
-}
 
-  #menu-modal{    
-      position: absolute;
-      width: 50vw;
-      height: 100vh;
-      right: 0px;
-      top: -5px;
-      background: #541663;
-      padding:16px;
-      text-align: left;
-      z-index: -2;
-  }
-  .list-modal{
-    list-style-type: none;
-  }
-  .elem-menu-modal{
-    width: 10vw;
-    height:40px;
-  }
-  .elem-menu-modal img{
-      padding-left: 20px;
-      float: left;
-  }
-  .elem-menu-modal p{
-      padding-left: 40px;
-      text-align: left;
-  }
-  .tamanho-img-modal{
-      height:56px;
-      width: 56px;
+  .alinhamento{
+    align: left;
   }
 
 

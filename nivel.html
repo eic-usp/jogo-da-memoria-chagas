@@ -10,11 +10,12 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Luckiest+Guy">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/nivel.css">
+    <link rel="stylesheet" href="assets/css/menu-modal.css">
     
 </head>
 
 <body>
- <!-- menu Desktop - rodando perfeito -->
+ <!-- menu Desktop - esta com problemas por tags que eu usei em dois lugares, arrumar -->
 
     <div class="menu-desktop">
         <ul class="menu-desktop tipoUL">
@@ -57,7 +58,7 @@
         <li class = "menu-desktop espaco-3"></li>
         <li>
             <a class="menu-desktop" href="compartilhar.html">
-            <div class="menu- desktop elem-menu-lateral">
+            <div class="menu-desktop elem-menu-lateral">
             <img  class="menu-desktop" src="assets/img/compartilhar.svg">
             <p class="menu-desktop"> Compartilhar <p> 
             <div>
@@ -87,7 +88,6 @@
                     <img class="nav-elem menu-mobile" src="assets/img/nav/logo-eic-nav.svg">
                 </a>
             </div>
-            <!-- lembrar de arrumar section, pra ver como fica | arrumar para funcionar e abrir igual do pc no celular -->
             <div class="col menu-mobile">
                 <a class="menu-mobile" id="botao-menu-modal"> 
                     <img class="nav-elem" src="assets/img/nav/menu.svg">
@@ -95,28 +95,51 @@
             </div>
             </div>
     </div>
-
-<!--Menu modal que só aparece quando o botao-menu-modal é clicado-->
-<div id="menu-modal">
+    
+<!--Menu modal que só aparece quando o botao-menu-modal é clicado, funcionando e aparecendo-->
+<div id="menu-modal" class="menu-mobile">
     <ul class="list-modal">
+         <li>
+            <a href="index.html">
+            <div class= "logo-modal">
+            <img class="tamanho-logo-modal" src="assets/img/logo-eic-branco.png">
+            <div>
+            </a>
+        </li>
         <li>
-            <a href="#">
+            <a href="index.html">
             <div class= "elem-menu-modal">
-            <img class="elem-menu-modal tamanho-img-modal" src="assets/img/home.svg">
-            <p class="elem-menu-modal"> Início <p> 
+            <img class="tamanho-img-modal" src="assets/img/home.svg">
+            <p> Início <p> 
+            <div>
+            </a>
+        </li>
+         <li>
+            <a href="sobre-o-jogo.html">
+            <div class= "elem-menu-modal">
+            <img class="tamanho-img-modal" src="assets/img/sobre-o-jogo.svg">
+            <p> Sobre o Jogo <p> 
             <div>
             </a>
         </li>
         <li><div class="espaco-6"></div></li>
          <li>
-            <a href="#">
+            <a href="creditos.html">
             <div class= "elem-menu-modal">
-            <img class="elem-menu-modal tamanho-img-modal" src="assets/img/sobre-o-jogo.svg">
-            <p class="elem-menu-modal"> Sobre o Jogo <p> 
+            <img class="tamanho-img-modal" src="assets/img/creditos.svg">
+            <p> Créditos <p> 
             <div>
             </a>
         </li>
-        
+         <li><div class="espaco-6"></div></li>
+         <li>
+            <a href="compartilhar.html">
+            <div class= "elem-menu-modal">
+            <img class="tamanho-img-modal" src="assets/img/compartilhar.svg">
+            <p> Compartilhar <p> 
+            <div>
+            </a>
+        </li>
     </ul>
     <div class="espaco-6"></div>
     <div id="botao-voltar"><p> Voltar </p></div>
