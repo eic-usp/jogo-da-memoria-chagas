@@ -1,7 +1,7 @@
 
 //tentativa de otimização do jogo (para fazer mais fazes mais rápido e nao ficar repetindo as mesmas partes do jogo)
 // porque as imagens estao se repetindo ??
-// mexer com o css por algum motivo esta impedindo o funcionamento do jogo
+
 
 (function(){
 
@@ -16,13 +16,7 @@
     //var bgLevel = document.getElementsByClassName('back');
     //console.log(bgLevel);
 
-    // ainda nao criei o botao, nem no menu desktop, nem modal
-
-    //var quitGame = document.querySelector("quitGame");
-
     var matches = 0;
-
-    //var imgMatchSing = document.querySelector("#imgMatchSing");
 
     //Fazer contador de pontos (pensar em como fazer)
 
@@ -46,6 +40,7 @@
             };
             images.push(img);
         } 
+
     } else if (level === "2"){
 
         document.getElementsByTagName('title')[0].innerHTML= "Fase 2";
@@ -99,6 +94,8 @@
 
         images  = randomSort(images);
 
+        var score = 0;
+
         var frontFaces = document.getElementsByClassName("front");
         var backFaces = document.getElementsByClassName("back");
         
@@ -151,6 +148,10 @@
 
             for(var i = 0; i < 16; i++){
 
+                var quitGame = document.getElementById("btn-voltar-m");
+                quitGame.addEventListener("click",ShowQuitModal,false);
+
+
                 frontFaces[i].classList.remove("flipped", "match");
                 backFaces[i].classList.remove("flipped", "match");
                 var card = document.querySelector("#card" + i);
@@ -181,6 +182,9 @@
 
         } else { /*Versão Mobile*/
             for(var i = 0; i < 16; i++){
+
+                var quitGame = document.getElementById("btn-voltar-m");
+                quitGame.addEventListener("click", ShowQuitModal, false);
 
                 frontFaces[i].classList.remove("flipped", "match");
                 backFaces[i].classList.remove("flipped", "match");
@@ -274,13 +278,14 @@
                         flippedCards[1].childNodes[1].classList.toggle("match");
                         flippedCards[1].childNodes[3].classList.toggle("match");
 
-                        // criar a função de pontuação e chamar aqui score();
+                        CountPoints(matches, score);
 
                         matchCardsSign();
                         console.log("match");
                         
                         matches++;
                         flippedCards = [];
+
 
                         if(matches === 8){
                             victory();
@@ -298,17 +303,40 @@
             flippedCards = [];
             }  
         }
+    function CountPoints(matches, score){
+        console.log("entrou aqui");
+        if(matches != 7){
+            score += 12;
+        } else{
+            score += 16;
+        }
+      //  document.getElementById("points").innerHTML = score;
+      var oi =  document.getElementById("points");
+      console.log("o que ta pegando:"+ oi);
+    }
 
     function ShowQuitModal(){
+
         var quitModal = document.getElementById("modal-sair");
-        quitModal.style.zIndex = 5;
-        console.log("Deu bom");
-        //pegar os botoes e chamar HideQuitModal aqui dentro
+        quitModal.style.zIndex = 10;
+
+        var btnClose = document.getElementById("sair");
+        btnClose.addEventListener("click", quitGame, false);
+
+        var btnHideModal = document.getElementById("fechar");
+        btnHideModal.addEventListener("click", HideQuitModal, false);
+
+        var btnStay = document.getElementById("ficar");
+        btnStay.addEventListener("click", HideQuitModal, false);
+
     }
     function HideQuitModal(){
         var quitModal = document.getElementById("modal-sair");
         quitModal.style.zIndex = -3;
         console.log("sumiu");
+    }
+    function quitGame(){
+        window.location.replace("index.html");
     }
 
     function victory(){

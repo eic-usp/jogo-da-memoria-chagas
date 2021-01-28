@@ -1,5 +1,5 @@
 /*arrumar os aquivos de estilo porque estão uma bagunça*/
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 /*Global*/
 .btn-facil:not(:disabled):not(.disabled) {
   background: #Bb78CC;
@@ -9,6 +9,43 @@
 }
 .btn-dificil:not(:disabled):not(.disabled) {
   background: #CB5881;
+}
+#modal-sair{
+  z-index: -5;
+  background: #FFFFFF;
+  position: absolute;
+  width: 20vw;
+  height: 28vh;
+  border-radius: 8px;
+  left: 32%;
+  top: 24%;
+}
+.btn-close{
+  width: 32px;
+  height: 32px;
+  top: 10px;
+  right: -10px;
+}
+.fonte-modal-sair-destaque{
+  font-family:'Luckiest Guy', cursive;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 28px;
+  text-align: center;
+  letter-spacing: 0.0025em;
+  color: #541663;
+}
+.fonte-modal-sair{
+  font-family: 'Roboto', sans-serif;;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 0.005em;
+  color: rgba(0, 0, 0, 0.83);
+}
+.modal-exclamacao{
+  width: 48px;
+  height: 48px;
 }
 
 /*versão mobile*/
@@ -210,6 +247,7 @@
     padding-left: 80px;
     text-align: left;
   }
+
 }
  /*versão tablet */
  @media(min-width: 600px) and (max-width: 1000px){
