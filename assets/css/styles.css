@@ -256,6 +256,14 @@ a{
    height:56px;
    width: 80px;
  }
+ #btn-voltar-d{
+  padding-left: 4%;
+  padding-top: 1%;
+ }
+ .img-voltar{
+   width: 32px;
+   height:32px;
+ }
     
     
 }

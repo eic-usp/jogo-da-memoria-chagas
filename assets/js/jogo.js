@@ -13,8 +13,8 @@
 
     var images = [];
 
-    var bgLevel = document.getElementsByClassName('back');
-    console.log(bgLevel);
+    //var bgLevel = document.getElementsByClassName('back');
+    //console.log(bgLevel);
 
     // ainda nao criei o botao, nem no menu desktop, nem modal
 
@@ -30,12 +30,12 @@
 
         document.getElementsByTagName('title')[0].innerHTML= "Fase 1";
 
-        bgLevel.style.cssText =
+       /* bgLevel.style.cssText =
         'object-fit: fill;' +
-        'background: url("../img/fase1/1.png");';
+        'background: url("../img/fase1/1.png");';*/
 
    
-    background: url("../img/fase1/verso1.png");
+        //background: url("../img/fase1/verso1.png");
 
         for(var i = 0; i < 16; i++){
             console.log("oi");
@@ -51,7 +51,6 @@
         document.getElementsByTagName('title')[0].innerHTML= "Fase 2";
 
        
-
         for(var i = 0; i < 8; i++){
             var img = {
                     src: "assets/img/fase1/" + i + ".png",
@@ -106,10 +105,12 @@
         var size = windowWidth = $(window).width();
 
         if(size > 1000){ /*Versão Desktop*/
-        
+
             /*tentar criar uma função e modularizar essa parte passando o tamanho da tela por parâmetro, ver se vai funcionar*/
             for(var i = 0; i < 16; i++){
 
+                var quitGame = document.getElementById("btn-voltar-d");
+                quitGame.addEventListener("click",ShowQuitModal,false);
                 //console.log("entrou no for");
 
                 frontFaces[i].classList.remove("flipped", "match");
@@ -118,9 +119,7 @@
                 /*Pode usar get element by id, porem o query selector é mais rápido*/
                 var card = document.querySelector("#card" + i);
                 // console.log(card);
-                /* mostrar se esta pegando os cards*/
                 /*mod: resto da divisao */
-                /*Problema do espaçameto vertical - resolvido */
                 card.style.left = i % 4 === 0? 15 + "px" : i % 4 * 140 + 20 + "px"; 
 
                 if(i < 4){
@@ -299,6 +298,18 @@
             flippedCards = [];
             }  
         }
+
+    function ShowQuitModal(){
+        var quitModal = document.getElementById("modal-sair");
+        quitModal.style.zIndex = 5;
+        console.log("Deu bom");
+        //pegar os botoes e chamar HideQuitModal aqui dentro
+    }
+    function HideQuitModal(){
+        var quitModal = document.getElementById("modal-sair");
+        quitModal.style.zIndex = -3;
+        console.log("sumiu");
+    }
 
     function victory(){
             var url = window.location.href;
