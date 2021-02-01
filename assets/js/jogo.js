@@ -12,7 +12,6 @@
     }
 
     var images = [];
-
     //var bgLevel = document.getElementsByClassName('back');
     //console.log(bgLevel);
 
@@ -24,12 +23,7 @@
 
         document.getElementsByTagName('title')[0].innerHTML= "Fase 1";
 
-       /* bgLevel.style.cssText =
-        'object-fit: fill;' +
-        'background: url("../img/fase1/1.png");';*/
-
-   
-        //background: url("../img/fase1/verso1.png");
+       
 
         for(var i = 0; i < 16; i++){
             console.log("oi");
@@ -94,8 +88,6 @@
 
         images  = randomSort(images);
 
-        var score = 0;
-
         var frontFaces = document.getElementsByClassName("front");
         var backFaces = document.getElementsByClassName("back");
         
@@ -130,6 +122,10 @@
                 }
 
                 card.addEventListener("click", flipCard, false);
+
+                if(i === 1){
+                    backgroundLevel(level);
+                }
 
                 /*todos os cards tem imagem e id */
                 frontFaces[i].style.background = "url('"+ images[i].src +"')";
@@ -168,6 +164,10 @@
                 }
         
                 card.addEventListener("click", flipCard, false);
+
+                if(i === 1){
+                    backgroundLevel(level);
+                }
         
                 frontFaces[i].style.background = "url('"+images[i].src +"')";
                 frontFaces[i].setAttribute("id",images[i].id);
@@ -202,6 +202,10 @@
                 }
         
                 card.addEventListener("click", flipCard, false);
+
+                if(i === 1){
+                    backgroundLevel(level);
+                }
         
                 frontFaces[i].style.background = "url('"+ images[i].src +"')";
                 frontFaces[i].setAttribute("id",images[i].id);
@@ -218,6 +222,22 @@
         modalGameOver.removeEventListener("click",startGame, false);*/
     }
 
+    function backgroundLevel(level){
+            // pensar em como fazer funcionar caso esteja na faze 3 e va para a fase 1
+            var backFaces = document.getElementsByClassName("back");
+            for(var i = 0; i < backFaces.length; i++){
+                if(level === "1"){
+                    backFaces[i].classList.add("b1");
+                }else if(level === "2"){
+                    backFaces[i].classList.remove("b1");
+                    backFaces[i].classList.add("b2");
+                } else{
+                    backFaces[i].classList.remove("b2");
+                    backFaces[i].classList.add("b3");
+                    //ainda nao existe
+                }
+            }
+    }
 
     function randomSort(images){
         var sorted = [];
@@ -253,6 +273,8 @@
 
     function flipCard(){ /*Função para virar as cartas*/
 
+        
+            
             if(flippedCards.length < 2){
 
                 /*rotacionar as faces 180 graus*/
@@ -278,7 +300,6 @@
                         flippedCards[1].childNodes[1].classList.toggle("match");
                         flippedCards[1].childNodes[3].classList.toggle("match");
 
-                        CountPoints(matches, score);
 
                         matchCardsSign();
                         console.log("match");
@@ -286,6 +307,11 @@
                         matches++;
                         flippedCards = [];
 
+                        if (matches === 1){
+                        var score = 0; 
+                        } else {
+                        score = CountPoints(matches, score);
+                        }
 
                         if(matches === 8){
                             victory();
@@ -304,15 +330,17 @@
             }  
         }
     function CountPoints(matches, score){
-        console.log("entrou aqui");
+        console.log(matches);
+        console.log(score);
         if(matches != 7){
             score += 12;
         } else{
             score += 16;
         }
       //  document.getElementById("points").innerHTML = score;
-      var oi =  document.getElementById("points");
-      console.log("o que ta pegando:"+ oi);
+      //var oi =  document.getElementById("points");
+      console.log("o que ta pegando:"+ score);
+      return score;
     }
 
     function ShowQuitModal(){
@@ -330,6 +358,7 @@
         btnStay.addEventListener("click", HideQuitModal, false);
 
     }
+
     function HideQuitModal(){
         var quitModal = document.getElementById("modal-sair");
         quitModal.style.zIndex = -3;

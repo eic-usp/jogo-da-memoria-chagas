@@ -37,6 +37,7 @@
     opacity: 1;
     z-index: -1;
 }
+
 /*DESKTOP*/
 @media(min-width: 1001px){
 
@@ -62,8 +63,16 @@
     }
     .back{
         object-fit: fill;
+    }   
+    .b1{
         background: url("../img/fase1/verso1.png");
-    }    
+    }
+    .b2{
+        background: url("../img/fase2/verso2.png");
+    }      
+    .b3{
+        background: url("../img/fase3/verso3.png");
+    }   
 }
 /*TABLET*/
 @media(min-width: 600px) and (max-width: 1000px){
@@ -89,8 +98,17 @@
     .back{
       
         object-fit: fill;
+    }
+    .b1{
         background: url("../img/fase1/verso1.png");
     }
+    .b2{
+
+        background: url("../img/fase2/verso2.png");
+    }      
+    .b3{
+        background: url("../img/fase3/verso3.png");
+    } 
     
 }
 /*MOBILE*/
@@ -116,7 +134,16 @@
     }
     .back{
         object-fit: fill;
-        background: url("../img/fase1/verso1.png");
+
     }    
+    .b1{
+        background: url("../img/fase1/verso1.png");
+    }
+    .b2{
+        background: url("../img/fase2/verso2.png");
+    }      
+    .b3{
+        background: url("../img/fase3/verso3.png");
+    }   
     
 }
