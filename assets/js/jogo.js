@@ -123,9 +123,8 @@
 
                 card.addEventListener("click", flipCard, false);
 
-                if(i === 1){
-                    backgroundLevel(level);
-                }
+        
+                backgroundLevel(level);
 
                 /*todos os cards tem imagem e id */
                 frontFaces[i].style.background = "url('"+ images[i].src +"')";
@@ -218,8 +217,6 @@
                 }
              }
         }
-        /* modalGameOver.style.zIndex = -2;
-        modalGameOver.removeEventListener("click",startGame, false);*/
     }
 
     function backgroundLevel(level){
@@ -272,8 +269,6 @@
     }
 
     function flipCard(){ /*Função para virar as cartas*/
-
-        
             
             if(flippedCards.length < 2){
 
@@ -281,14 +276,16 @@
                 /*getElementsByClassName retorna uma lista */
                 var faces =  this.getElementsByClassName("face");
 
+                // tive que mudar para 3 para que as cartas virem 
                 //impedir que o usuario tente clicar duas vezes na mesma carta
-                if(faces[0].classList.length > 2){
+                if(faces[0].classList.length > 3){
                     return; 
                 }
 
                 faces[0].classList.toggle("flipped");
                 faces[1].classList.toggle("flipped");
-                /*toggle = switch, se nao existe adiciona, se ja existe, remove  */
+
+                /*toggle = switch, se nao existe adiciona, se ja existe, remove */
                 flippedCards.push(this);
 
                 if(flippedCards.length === 2 ){
@@ -307,11 +304,7 @@
                         matches++;
                         flippedCards = [];
 
-                        if (matches === 1){
-                        var score = 0; 
-                        } else {
-                        score = CountPoints(matches, score);
-                        }
+                        var score = CountPoints(matches, score) + score;
 
                         if(matches === 8){
                             victory();
@@ -329,18 +322,22 @@
             flippedCards = [];
             }  
         }
-    function CountPoints(matches, score){
-        console.log(matches);
-        console.log(score);
-        if(matches != 7){
-            score += 12;
-        } else{
-            score += 16;
-        }
-      //  document.getElementById("points").innerHTML = score;
-      //var oi =  document.getElementById("points");
-      console.log("o que ta pegando:"+ score);
-      return score;
+
+        function CountPoints(matches, score){
+            console.log("Dentro da função countPoints");
+            console.log(matches);
+            console.log(score);
+            if(matches != 7){
+                score += 12;
+            } else{
+                score += 16;
+            }
+
+
+        document.getElementById("points").innerHTML =  score ;
+        console.log("o que ta pegando:"+ score);
+        score = Number(score);
+        return score;
     }
 
     function ShowQuitModal(){

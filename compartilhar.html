@@ -10,14 +10,16 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Luckiest+Guy">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/nivel.css">
+    <link rel="stylesheet" href="assets/css/menu-modal.css">
     <link rel="stylesheet" href="assets/css/compartilhar.css">
+
     
 </head>
 
 <body>
        <!-- menu Desktop -->
 
-    <div class="menu-desktop">
+   <div class="menu-desktop">
         <ul class="menu-desktop tipoUL">
         <li class = "espaco-6 menu-desktop"></li>
         <li> <!--Colocar o logo no centro-->
@@ -29,10 +31,11 @@
         <li class = "menu-desktop espaco-6"></li>
         <li class="menu-desktop"> 
         <a href=" menu-desktop index.html"> </a>
+
         <li class="menu-desktop">
             <a href="index.html">
             <div class=" menu-desktop elem-menu-lateral">
-            <img  class ="menu-desktop" src="assets/img/home.svg">
+            <img  class ="menu-desktop alinhamento" src="assets/img/home.svg">
             <p class="menu-desktop"> Início <p> 
             <div>
             </a>
@@ -58,7 +61,7 @@
         <li class = "menu-desktop espaco-3"></li>
         <li>
             <a class="menu-desktop" href="compartilhar.html">
-            <div class="menu- desktop elem-menu-lateral">
+            <div class="menu-desktop elem-menu-lateral">
             <img  class="menu-desktop" src="assets/img/compartilhar.svg">
             <p class="menu-desktop"> Compartilhar <p> 
             <div>
@@ -66,39 +69,87 @@
         </li>
         </ul>
     </div>
-<div class="fundo">
-    <!-- menu mobile-->
-    <div class="espaco-3"></div>
-    <div class="espaco-3 menu-mobile"></div>
-    <div class="menu-mobile">
 
-        <div class="espaco-6 menu-mobile"></div>
+    <div class="fundo">
+         <!-- menu mobile-->
+            <div class="espaco-3"></div>
+            <div class="espaco-3 menu-mobile"></div>
+            <div class="menu-mobile">
 
-        <div class="row menu-mobile">
+                <div class="espaco-6 menu-mobile"></div>
 
-        <!-- lembrar de mudar o link de voltar dependendo da pagina atual-->
-            <div class="col menu-mobile">
-                <a class = "menu-mobile" href="index.html"> 
-                    <img class="nav-elem menu-mobile" src="assets/img/nav/voltar.svg">
-                </a>
+                <div class="row menu-mobile">
+
+                <!-- lembrar de mudar o link de voltar dependendo da pagina atual-->
+                    <div class="col menu-mobile">
+                        <a class = "menu-mobile" href="index.html"> 
+                            <img class="nav-elem menu-mobile" src="assets/img/nav/voltar.svg">
+                        </a>
+                    </div>
+                    <div class="col menu-mobile">
+                        <a class="menu-mobile" href="index.html"> 
+                            <img class="nav-elem menu-mobile" src="assets/img/nav/logo-eic-nav.svg">
+                        </a>
+                    </div>
+                    <div class="col menu-mobile">
+                        <a class="menu-mobile" id="botao-menu-modal"> 
+                            <img class="nav-elem" src="assets/img/nav/menu.svg">
+                        </a>
+                    </div>
+                    </div>
             </div>
-            <div class="col menu-mobile">
-                <a class="menu-mobile" href="index.html"> 
-                    <img class="nav-elem menu-mobile" src="assets/img/nav/logo-eic-nav.svg">
-                </a>
-            </div>
-            <!-- lembrar de acrescentar o mobile quando eu conseguir -->
-            <div class="col menu-mobile">
-                <a class="menu-mobile" id="botao-menu-modal"> 
-                    <img class="nav-elem" src="assets/img/nav/menu.svg">
-                </a>
-            </div>
-            </div>
-    </div>
+            
+        <!--Menu modal que só aparece quando o botao-menu-modal é clicado, funcionando e aparecendo-->
+        <div id="menu-modal" class="menu-mobile">
+            <ul class="list-modal">
+                <li>
+                    <a href="index.html">
+                    <div class= "logo-modal">
+                    <img class="tamanho-logo-modal" src="assets/img/logo-eic-branco.png">
+                    <div>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html">
+                    <div class= "elem-menu-modal">
+                    <img class="tamanho-img-modal" src="assets/img/home.svg">
+                    <p> Início <p> 
+                    <div>
+                    </a>
+                </li>
+                <li>
+                    <a href="sobre-o-jogo.html">
+                    <div class= "elem-menu-modal">
+                    <img class="tamanho-img-modal" src="assets/img/sobre-o-jogo.svg">
+                    <p> Sobre o Jogo <p> 
+                    <div>
+                    </a>
+                </li>
+                <li><div class="espaco-6"></div></li>
+                <li>
+                    <a href="creditos.html">
+                    <div class= "elem-menu-modal">
+                    <img class="tamanho-img-modal" src="assets/img/creditos.svg">
+                    <p> Créditos <p> 
+                    <div>
+                    </a>
+                </li>
+                <li><div class="espaco-6"></div></li>
+                <li>
+                    <a href="compartilhar.html">
+                    <div class= "elem-menu-modal">
+                    <img class="tamanho-img-modal" src="assets/img/compartilhar.svg">
+                    <p> Compartilhar <p> 
+                    <div>
+                    </a>
+                </li>
+            </ul>
+            <div class="espaco-6"></div>
+            <div id="botao-voltar"><p> Voltar </p></div>
+        </div>
 
 <!--fim menu mobile-->
 <!-- Conteúdo da página -->
-<!-- Fazer botao de voltar-->
     <div class="espaco-6"> </div>
 
     <h1 class="subtitulo-2">COMPARTILHAR</h1>
