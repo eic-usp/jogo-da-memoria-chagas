@@ -57,24 +57,26 @@
         } 
 
     } else if(level === "3"){
+        // arrumar o tamanho das imagens, mas de resto ta tudo certo até aqui
 
         document.getElementsByTagName('title')[0].innerHTML= "Fase 3";
 
-       // bgLevel.style.background = "url('"+ assets/fase3/verso3.png +"')";
-
         for(var i = 0; i < 8; i++){
+            var img = {
+                    src: "assets/img/fase3/" + i + ".png",
+                    id: i%4
+                };
+                images.push(img);
+            }
+
+        for(var i = 8; i < 16; i++){
             var img = {
                     src: "assets/img/fase2/" + i + ".png",
                     id: i%4
             };
             images.push(img);
         } 
-        for(var i = 8; i < 16; i++){
-            var img = {
-                    src: "assets/img/fase3/" + i + ".png",
-                    id: i%4
-                };
-            }
+
     }
    
 
@@ -300,11 +302,12 @@
 
                         matchCardsSign();
                         console.log("match");
+                        matches = 7;9
                         
                         matches++;
                         flippedCards = [];
 
-                        var score = CountPoints(matches, score) + score;
+                        CountPoints(matches);
 
                         if(matches === 8){
                             victory();
@@ -323,21 +326,34 @@
             }  
         }
 
-        function CountPoints(matches, score){
+        function CountPoints(matches){
             console.log("Dentro da função countPoints");
-            console.log(matches);
-            console.log(score);
-            if(matches != 7){
-                score += 12;
-            } else{
-                score += 16;
+            switch(matches){
+                case 1: 
+                document.getElementById("points").innerHTML =  "12" ;
+                break;
+                case 2: 
+                document.getElementById("points").innerHTML =  "24" ;
+                break;
+                case 3: 
+                document.getElementById("points").innerHTML =  "36" ;
+                break;
+                case 4: 
+                document.getElementById("points").innerHTML =  "48" ;
+                break;
+                case 5: 
+                document.getElementById("points").innerHTML =  "60" ;
+                break;
+                case 6: 
+                document.getElementById("points").innerHTML =  "72" ;
+                break;
+                case 7: 
+                document.getElementById("points").innerHTML =  "84" ;
+                break;
+                case 8: 
+                document.getElementById("points").innerHTML =  "100" ;
+                break;
             }
-
-
-        document.getElementById("points").innerHTML =  score ;
-        console.log("o que ta pegando:"+ score);
-        score = Number(score);
-        return score;
     }
 
     function ShowQuitModal(){
@@ -370,7 +386,8 @@
             var level = sessionStorage.getItem('nivel');
             sessionStorage.setItem("level", level);
 
-            var points = $("#points").text();    
+            var points = $("#points").text();   
+            console.log(points);
 
             sessionStorage.setItem("points", points);
 
