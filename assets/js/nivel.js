@@ -1,7 +1,6 @@
 
 // mandar o botao apertado para a fase
 function fase(n){
-    console.log( "n aqui:" + n);
      var nivel;
     if(n === "facil"){
         nivel = 1;

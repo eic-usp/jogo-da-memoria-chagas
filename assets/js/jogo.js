@@ -26,7 +26,6 @@
        
 
         for(var i = 0; i < 16; i++){
-            console.log("oi");
             /*img é objeto, indices textuais, funções = métodos */
             var img = {
                     src: "assets/img/fase1/" + i + ".png",
@@ -299,10 +298,24 @@
                         flippedCards[1].childNodes[1].classList.toggle("match");
                         flippedCards[1].childNodes[3].classList.toggle("match");
 
-
+                       
                         matchCardsSign();
-                        console.log("match");
-                        matches = 7;9
+
+                        /*Sumir carta */
+                        // a carta some muito rápido 
+                     
+                          var card1 =  flippedCards[0].id;
+                          var card2 =  flippedCards[1].id;
+                  
+                          var HideCard1 = document.getElementById(card1);
+                          HideCard1.classList.add("pair");
+                  
+                          var HideCard2 = document.getElementById(card2);
+                          HideCard2.classList.add("pair");
+                         
+                       
+                       // console.log("match");
+                        matches = 5;
                         
                         matches++;
                         flippedCards = [];
@@ -327,7 +340,7 @@
         }
 
         function CountPoints(matches){
-            console.log("Dentro da função countPoints");
+
             switch(matches){
                 case 1: 
                 document.getElementById("points").innerHTML =  "12" ;
@@ -402,7 +415,9 @@
                 imgMatchSing.style.zIndex = -1;
                 imgMatchSing.style.top = 250 + "px";
                 imgMatchSing.style.opacity = 1;
-            },1000);
+            },1500);
         }
+
+  
 }
 )();

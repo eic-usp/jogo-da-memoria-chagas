@@ -5,20 +5,25 @@ var level = sessionStorage.getItem('level');
 var next = document.getElementById("next");
 var again = document.getElementById("again");
 
-if (level === 1){
+for (i = 0; i < next.length; i++){
+    console.log(i + ":" + next[i]);
+}
 
-     next.addEventListener("click", fase(medio), false);
-     again.addEventListener("click", fase(facil), false);
+if (level === "1"){
+ 
+    again.classList.add = "1";
+    next.classList.add = "2";
+    console.log("deu bom aqui");
 
+} else if (level === "2"){
+    again.id = "2";
+    next.id = "3";
+    
+} else if(level === "3"){
 
-} else if (level === 2){
-
-    next.addEventListener("click", fase(dificil), false);
-    again.addEventListener("click", fase(medio), false);
-
-} else if(level === 3){
-
-     next.addEventListener("click", fase(dificil), false);
-    again.addEventListener("click", fase(dificil), false);
+    again.id = "3";
+    next.id = "1"; // Criar um página para avisar e voltar ao início 
 
 }
+var classes =  next.classList;
+console.log("classes"+ classes);

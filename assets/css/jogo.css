@@ -11,7 +11,6 @@
     border-radius: 10px;
     transition: all 1s;
     backface-visibility: hidden;
-    background-repeat: initial;
 }
 .back.flipped{
     transform: rotateY(180deg);
@@ -38,6 +37,10 @@
     z-index: -1;
 }
 
+.pair{
+    display: none;
+}
+
 /*DESKTOP*/
 @media(min-width: 1001px){
 
@@ -60,6 +63,7 @@
         perspective: 600px;
         /*profundidade do giro, para nao ficar chapado*/ 
         background-repeat: no-repeat;
+        background-size: cover;
     }
     .back{
         object-fit: fill;
@@ -72,7 +76,7 @@
     }      
     .b3{
         background: url("../img/fase3/verso3.png");
-    }   
+    }
 }
 /*TABLET*/
 @media(min-width: 600px) and (max-width: 1000px){
