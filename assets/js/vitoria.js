@@ -3,27 +3,33 @@ document.getElementById("points").innerHTML = "100";
 var level = sessionStorage.getItem('level');
 
 var next = document.getElementById("next");
-var again = document.getElementById("again");
+var again = document.querySelector("#again");
 
-for (i = 0; i < next.length; i++){
-    console.log(i + ":" + next[i]);
-}
+console.log("again: " + again);
+
+//console.log("level vitoria:" + level );
 
 if (level === "1"){
- 
-    again.classList.add = "1";
-    next.classList.add = "2";
-    console.log("deu bom aqui");
+
+   // again.classList.toggle = "facil";
+    next.classList.add = "medio";
+    console.log("1");
 
 } else if (level === "2"){
-    again.id = "2";
-    next.id = "3";
-    
+
+    again.classList.add = "medio";
+    next.classList.add = "dificil";
+    console.log("2");
+
 } else if(level === "3"){
 
-    again.id = "3";
-    next.id = "1"; // Criar um página para avisar e voltar ao início 
-
+    again.classList.add = "dificil";
+    next.classList.add = "fim"; 
+    console.log("3");
+   
 }
-var classes =  next.classList;
-console.log("classes"+ classes);
+
+console.log("lista next: " + next.classList);
+console.log("lista again: " + again.classList);
+
+

@@ -1,9 +1,6 @@
-
-//tentativa de otimização do jogo (para fazer mais fazes mais rápido e nao ficar repetindo as mesmas partes do jogo)
 // porque as imagens estao se repetindo ??
 
-
-(function(){
+(function (){
 
     var level = sessionStorage.getItem('nivel');
 
@@ -24,7 +21,6 @@
         document.getElementsByTagName('title')[0].innerHTML= "Fase 1";
 
        
-
         for(var i = 0; i < 16; i++){
             /*img é objeto, indices textuais, funções = métodos */
             var img = {
@@ -315,7 +311,7 @@
                          
                        
                        // console.log("match");
-                        matches = 5;
+                        matches = 7;
                         
                         matches++;
                         flippedCards = [];
