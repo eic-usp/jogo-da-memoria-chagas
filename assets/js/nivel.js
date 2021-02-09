@@ -15,13 +15,8 @@ function fase(n){
     } else if(n === "dificil"){
         nivel = 3;
       //  console.log("3") ;
-    } else if(n === "fim"){
-        window.location.replace("fim.html"); // ainda não criei
-    } else{
-        console.log("entrou aqui");
-    }
-
-    console.log("nivel depois:" + nivel);
+    } 
+    
     sessionStorage.setItem("nivel", nivel);
 }
 

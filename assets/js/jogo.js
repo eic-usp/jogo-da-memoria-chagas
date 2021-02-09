@@ -2,19 +2,15 @@
 
 (function (){
 
-    var level = sessionStorage.getItem('nivel');
+    var level;
+    level = sessionStorage.getItem('nivel');
 
     if (level === null){
         level = 1;
     }
 
     var images = [];
-    //var bgLevel = document.getElementsByClassName('back');
-    //console.log(bgLevel);
-
     var matches = 0;
-
-    //Fazer contador de pontos (pensar em como fazer)
 
     if (level === "1"){
 
