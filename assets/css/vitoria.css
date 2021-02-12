@@ -1,9 +1,9 @@
 /*Global*/
 
-.btn-next:not(:disabled):not(.disabled) {
+.btn-next {
     background:  #541663;;
   }
-  .btn-playAgain:not(:disabled):not(.disabled) {
+  .btn-playAgain {
     background: #301A67;
   }
   .points-box{
@@ -12,11 +12,6 @@
     height: 56px;
     background: #301A67;
     border-radius: 10px;
-  }
-  .display-center{
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
   .medal{
       top: 10px;

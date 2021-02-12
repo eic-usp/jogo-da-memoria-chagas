@@ -41,6 +41,7 @@
     display: none;
 }
 
+
 /*DESKTOP*/
 @media(min-width: 1001px){
 
@@ -48,8 +49,7 @@
         width: 29vw; /*O tamanho das cartas esta muito pequeno em comparação ao tamanho da tela*/
         height: 58vh;
         top: 24px;
-        left: -4vw;
-       /* border: 1px solid #000;*/
+        left: -6vw;
         position: relative;
         margin: 0 auto;
         border-radius: 10px;
@@ -62,8 +62,6 @@
         /*aqui os cards ficam empilhados, mas preciso distanciar um por um? NAO JAVASCRIPT LINDO*/
         perspective: 600px;
         /*profundidade do giro, para nao ficar chapado*/ 
-        background-repeat: no-repeat;
-        background-size: cover;
     }
     .back{
         object-fit: fill;
@@ -84,7 +82,7 @@
         width: 60vw; /*O tamanho das cartas esta muito pequeno em comparação ao tamanho da tela*/
         height: 64vh;
         top: 0px;
-        left: 6vw;
+        left: 2vw;
         /*border: 1px solid #000;*/
         position: relative;
         margin: 0 auto;
@@ -100,7 +98,6 @@
         /*profundidade do giro, para nao ficar chapado*/ 
     }
     .back{
-      
         object-fit: fill;
     }
     .b1{
@@ -121,7 +118,7 @@
         width: 95vw; /*O tamanho das cartas esta muito pequeno em comparação ao tamanho da tela*/
         height: 58vh;
         top: 20px;
-        left: 20px;
+        left: 2.5vw;
        /* border: 1px solid #000; */
         position: relative;
         margin: 0 auto;

@@ -1,6 +1,9 @@
-
-/*mobile-first*/
-
+/*Mobile*/
+.display-center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .fundo{
   display: block;
   overflow: hidden;
@@ -15,17 +18,17 @@
   height: 6%;
 }
 .espaco-3{
-   /*32px*/
+  /*32px*/
   height: 0.5%;
 }
 .espaco-1{
   /*32px*/
- height: 8px;
+height: 8px;
 }
 .espaco-05{
   height: 4px;
 }
-.btn:not(:disabled):not(.disabled) {
+.btn {
   width: 198px;
   height: 56px;
   font-size: 20px;
@@ -53,16 +56,6 @@
   -webkit-text-stroke-color: #000000;
   -webkit-text-stroke-width: 1px;
 }
-.bt:active{
-  width: 198px;
-  height: 56px;
-  font-size: 20px;
-  font-family: 'Fira Sans', sans-serif;
-  background: #541663;
-  border: 4px solid #ffffff;
-  border-radius: 10px;
-}
-
 a{
   color: rgb(255,255,255);
 }
@@ -77,11 +70,10 @@ a{
     flex-direction: row;
     align-items: flex-start;
     padding: 32px 0px 0px;
-    position: absolute;
-    width: 700px;
+    position: static;
     height: 120px;
-    left: 27%;
-    top: 400px;
+    left: 56vw;
+    top: 64vh;
   }
   .btn-circ{
     position: static;
@@ -116,8 +108,8 @@ a{
     height:56px;
     width: 72px;
   }
-/*versão tablet */
- 
+
+/*versão tablet */ 
 @media(min-width: 600px) and (max-width: 1000px){
 
   .titulo{
@@ -147,15 +139,18 @@ a{
 .alinhamento-botoes{
   align-items: center;
 }
-  .caixa-btns-c{
+  .caixa-btns-c{  
+    /*height: 120px;
+    left: 56vw;
+    top: 40vh;*/
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     padding: 32px 0px 0px;
-    width: 200px;
+    position: static;
     height: 120px;
-    left: 39vw;
-    top: 600px;
+    left: 40vw;
+    top: 64vh;
   }
   .btn-circ{
     position: static;
@@ -202,7 +197,7 @@ a{
 }
 /*versão desktop */
 
-@media (min-width: 1000px){
+@media (min-width: 1001px){
 
   .titulo{
     color: rgb(255,255,255);
@@ -238,11 +233,8 @@ a{
     flex-direction: row;
     align-items: flex-start;
     padding: 32px 0px 0px;
-    position: absolute;
-    width: 200px;
     height: 120px;
-    left: 46vw;
-    top: 500px;
+    top: 52vh;
     
   }
   .espaco-3{
