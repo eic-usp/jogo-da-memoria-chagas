@@ -97,9 +97,6 @@
         perspective: 600px;
         /*profundidade do giro, para nao ficar chapado*/ 
     }
-    .back{
-        object-fit: fill;
-    }
     .b1{
         background: url("../img/fase1/verso1.png");
     }
@@ -127,15 +124,10 @@
     .card{
         width: 72px;
         height: 72px;
-        position: absolute; /*é importante mas porque?*/
+        position: absolute; 
         border-radius: 10px;
-        /*aqui os cards ficam empilhados, mas preciso distanciar um por um? NAO JAVASCRIPT LINDO*/
         perspective: 600px;
-        /*profundidade do giro, para nao ficar chapado*/ 
-    }
-    .back{
-        object-fit: fill;
-    }    
+    }   
     .b1{
         background: url("../img/fase1/verso1.png");
     }

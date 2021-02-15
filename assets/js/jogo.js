@@ -11,7 +11,7 @@
 
     var images = [];
     var matches = 0;
-
+    /* Mudar as imagens de acordo com a fase */
     if (level === "1"){
 
         document.getElementsByTagName('title')[0].innerHTML= "Fase 1";
@@ -93,8 +93,7 @@
 
                 var quitGame = document.getElementById("btn-voltar-d");
                 quitGame.addEventListener("click",ShowQuitModal,false);
-                //console.log("entrou no for");
-
+        
                 frontFaces[i].classList.remove("flipped", "match");
                 backFaces[i].classList.remove("flipped", "match");
 
@@ -122,13 +121,13 @@
                 /*todos os cards tem imagem e id */
                 frontFaces[i].style.background = "url('"+ images[i].src +"')";
                 frontFaces[i].setAttribute("id",images[i].id);
+                frontFaces[i].style.backgroundRepeat = "no-repeat";
                 // console.log(images[i].src);
 
                 if(i === 15){
                     //mudar o texto
                     ShowStart();
-                    InicialTime(); // função para mostrar todas as cartas no inicio
-                }
+                    InicialTime(); 
 
             }
             
@@ -163,12 +162,11 @@
         
                 frontFaces[i].style.background = "url('"+images[i].src +"')";
                 frontFaces[i].setAttribute("id",images[i].id);
-                // console.log(frontFaces[i].id);
+                frontFaces[i].style.backgroundRepeat = "no-repeat";
 
                 if(i === 15){
-                    //mudar o texto
                     ShowStart();
-                    InicialTime(); // função para mostrar todas as cartas no inicio
+                    InicialTime(); 
                 }
             }
 
@@ -201,19 +199,18 @@
         
                 frontFaces[i].style.background = "url('"+ images[i].src +"')";
                 frontFaces[i].setAttribute("id",images[i].id);
-                //console.log(sources[i]);
+                frontFaces[i].style.backgroundRepeat = "no-repeat";
 
                 if(i === 15){
-                    //mudar o texto
                     ShowStart();
-                    InicialTime(); // função para mostrar todas as cartas no inicio
+                    InicialTime();
                 }
              }
         }
     }
 
+    /* Mudar as imagens do verso das cartas acordo com a fase */
     function backgroundLevel(level){
-            // pensar em como fazer funcionar caso esteja na faze 3 e va para a fase 1
             var backFaces = document.getElementsByClassName("back");
             for(var i = 0; i < backFaces.length; i++){
                 if(level === "1"){
@@ -224,11 +221,17 @@
                 } else{
                     backFaces[i].classList.remove("b2");
                     backFaces[i].classList.add("b3");
-                    //ainda nao existe
                 }
             }
     }
-
+/* Mudar o tamanho do verso das imagens se estiver no mobile - preciso testar */
+function sizeBackMobile(){
+        var backFaces = document.getElementsByClassName("back");
+        for(var i = 0; i < backFaces.length; i++){
+            backFaces[i].style.objectFit = "fill";
+        }
+}
+/*Embaralhar as cartas */
     function randomSort(images){
         var sorted = [];
         while(sorted.length < 16){
@@ -240,7 +243,7 @@
         }
         return sorted;
     }
-
+    /* Virar as cartas no inicio do jogo para a pessoa memorizar*/
     function InicialTime(){
         //mostra todas as cartas no ínicio
         //var Cards = [];
@@ -255,13 +258,15 @@
         }, 5000);
     }
 
+    /* Mudar o comando da página */
     function ShowStart(){
         setTimeout(function(){ 
             document.getElementById("titulo-jogo").innerHTML = "Vire os cartões";
         }, 5000);
     }
 
-    function flipCard(){ /*Função para virar as cartas*/
+     /*Função para virar as cartas e contar os matches*/
+    function flipCard(){
             
             if(flippedCards.length < 2){
 
@@ -331,6 +336,7 @@
             }  
         }
 
+         /*Função para contar os pontos*/
         function CountPoints(matches){
 
             switch(matches){
@@ -360,7 +366,7 @@
                 break;
             }
     }
-
+     /*Função para mostrar o modal sair caso a pessoa queira sair no meio do jogo*/
     function ShowQuitModal(){
 
         var quitModal = document.getElementById("modal-sair");
@@ -376,7 +382,7 @@
         btnStay.addEventListener("click", HideQuitModal, false);
 
     }
-
+     /*Função para esconder o menu-modal de saída caso a pessoa queira continuar jogando*/
     function HideQuitModal(){
         var quitModal = document.getElementById("modal-sair");
         quitModal.style.zIndex = -3;
@@ -385,7 +391,7 @@
     function quitGame(){
         window.location.replace("index.html");
     }
-
+     /*Função para chamar a página de vitória*/
     function victory(){
             var url = window.location.href;
             var level = sessionStorage.getItem('nivel');
@@ -398,7 +404,7 @@
 
             window.location.replace("vitoria.html");
         }
-
+         /*Função para mostrar o sinal de que a pessoa acertou o par*/
     function matchCardsSign(){
             imgMatchSing.style.zIndex = 1;
             imgMatchSing.style.top = 150 + "px";
