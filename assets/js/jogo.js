@@ -2,6 +2,7 @@
 
 (function (){
 
+
     var level;
     level = sessionStorage.getItem('nivel');
 
@@ -128,10 +129,10 @@
                     //mudar o texto
                     ShowStart();
                     InicialTime(); 
-
+                }
             }
-            
-        } else if (size >= 600 && size <= 1000) { /*Versão tablet*/
+
+        }else if (size >= 600 && size <= 1000) { /*Versão tablet*/
 
             for(var i = 0; i < 16; i++){
 
@@ -141,6 +142,7 @@
 
                 frontFaces[i].classList.remove("flipped", "match");
                 backFaces[i].classList.remove("flipped", "match");
+                
                 var card = document.querySelector("#card" + i);
                 card.style.left = i % 4 === 0? 6 + "px" : i % 4 * 102 + 6 + "px"; 
         
@@ -407,15 +409,15 @@ function sizeBackMobile(){
          /*Função para mostrar o sinal de que a pessoa acertou o par*/
     function matchCardsSign(){
             imgMatchSing.style.zIndex = 1;
-            imgMatchSing.style.top = 150 + "px";
+            var height =  $(window).height();
+            imgMatchSing.style.top = Math.round(height/2) + "px";
             imgMatchSing.style.opacity = 0;
             setTimeout(function(){
                 imgMatchSing.style.zIndex = -1;
                 imgMatchSing.style.top = 250 + "px";
                 imgMatchSing.style.opacity = 1;
-            },1500);
+            },1000);
         }
-
   
 }
 )();

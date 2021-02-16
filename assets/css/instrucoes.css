@@ -1,0 +1,79 @@
+
+/*DESKTOP*/
+@media(min-width: 1001px){
+
+    .containerTutorial{
+       width:800px;
+    }
+     .subtitulo-2{
+        font-size: 48px;
+    }
+    .tamanhoP{
+        font-size: 24px;
+    }
+    .Inst1{
+        background-image: url("../img/fase1/0.png");
+    }
+    .Inst2{
+        background-image: url("../img/fase2/0.png");
+    }
+    .Inst3{
+        background-image: url("../img/fase3/0.png");
+    }
+
+    .btn-position{
+        top: 150px;
+    }
+    .faces{
+    width: 100%;
+    height: 100%; /*para que as faces fiquem sobrepostas*/
+    border-radius: 10px;
+    transition: all 1s;
+    backface-visibility: hidden;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    }
+    #cardT0{
+        top: 48vh;
+    }
+    #cardT1{
+        top: 48vh;
+    }
+    
+}
+/*TABLET*/
+@media(min-width: 600px) and (max-width: 1000px){
+    .containerTutorial{
+        width: 60vw; /*O tamanho das cartas esta muito pequeno em comparação ao tamanho da tela*/
+        height: 64vh;
+        top: 0px;
+        left: 2vw;
+        /*border: 1px solid #000;*/
+        position: relative;
+        margin: 0 auto;
+        border-radius: 10px;
+    }
+
+
+    
+}
+/*MOBILE*/
+@media(max-width: 599px){ 
+    .containerTutorial{
+        width: 50vw; /*O tamanho das cartas esta muito pequeno em comparação ao tamanho da tela*/
+        height: 24vh;
+        top: 20px;
+        left: 2.5vw;
+        position: relative;
+        margin: 0 auto;
+        border-radius: 10px;
+    }
+   /* .card{
+        width: 72px;
+        height: 72px;
+        position: absolute; 
+        border-radius: 10px;
+        perspective: 600px;
+    }   */
+    
+}

@@ -11,6 +11,8 @@
     border-radius: 10px;
     transition: all 1s;
     backface-visibility: hidden;
+   background-position: center !important;
+    background-repeat: no-repeat !important;
 }
 .back.flipped{
     transform: rotateY(180deg);
@@ -40,7 +42,6 @@
 .pair{
     display: none;
 }
-
 
 /*DESKTOP*/
 @media(min-width: 1001px){
