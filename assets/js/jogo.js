@@ -1,5 +1,3 @@
-// porque as imagens estao se repetindo ??
-
 (function (){
 
 

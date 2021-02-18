@@ -8,14 +8,10 @@ function fase(n){
 
     if(n === "facil"){
         nivel = 1;
-      //  console.log("1") ;
     } else if (n === "medio"){
         nivel = 2;
-       // console.log("2") ;
     } else if(n === "dificil"){
         nivel = 3;
-    } else {
-      window.location.replace("fim.html");
     }
 
     sessionStorage.setItem("nivel", nivel);

@@ -1,5 +1,7 @@
 var btnNext = document.getElementById("nextPage");
 
+btnNext.addEventListener("click", GameTutorial, false);
+
 function GameTutorial(){
     var btnNext = document.getElementById("nextPage");
     var position = btnNext.classList[3];
@@ -30,9 +32,12 @@ function GameTutorial(){
         btnNext.classList.remove("2");
         btnNext.classList.add("3");
 
-    } else if (position === "3"){
         btnNext.innerHTML = "COMEÇAR";
-        window.location.replace("nivel.html");
-    }
+        btnNext.addEventListener("click", ChooseLevel, false);
+
+    } 
+}
+function ChooseLevel(){
+    window.location.replace("nivel.html");
 }
 

@@ -1,25 +1,25 @@
 /*Global*/
-
 .btn-next {
     background:  #541663;;
   }
-  .btn-playAgain {
-    background: #301A67;
-  }
-  .points-box{
+.btn-playAgain {
+  background: #301A67;
+}
+.points-box{
+  position: relative;
+  width: 156px;
+  height: 56px;
+  background: #301A67;
+  border-radius: 10px;
+}
+.medal{
+    top: 4px;
     position: relative;
-    width: 156px;
-    height: 56px;
-    background: #301A67;
-    border-radius: 10px;
-  }
-  .medal{
-      top: 10px;
-      position: relative;
-  }
-  p.points{
-    top:10px;
-  }
-  #points, .medal{
-    display: inline-block;
-  }
+}
+p.points{
+  margin-top: 10px;
+  line-height: 1.8;
+}
+#points, .medal{
+  display: inline-block;
+}

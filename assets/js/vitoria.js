@@ -6,9 +6,6 @@ var level = sessionStorage.getItem('level');
 var next = document.getElementById("next");
 var again = document.getElementById("again");
 
-for(i = 0; i < next.classList.length; i++){
-    console.log("classe" + i + ": " + next.classList[i]);
-}
 switch(level){
     case "1":
         again.classList.add("facil");
@@ -20,18 +17,9 @@ switch(level){
         break;
     case "3":
         again.classList.add("dificil");
-        next.classList.add("fim");
+        next.href = "fim.html";
+        next.innerHTML = "TERMINAR";
         break;
-}
-
-console.log("2 vez");
-
-for(i = 0; i < next.classList.length; i++){
-    console.log("classe " + i + ": " + next.classList[i]);
-}
-
-for(i = 0; i < again.classList.length; i++){
-    console.log("classe again " + i + ": " + again.classList[i]);
 }
 
 var script = document.createElement("script");  
