@@ -1,14 +1,38 @@
-for(var i = 0; i < 2; i++){
+var btnNext = document.getElementById("nextPage");
 
-    var card = document.querySelector("#cardT" + i);
+function GameTutorial(){
+    var btnNext = document.getElementById("nextPage");
+    var position = btnNext.classList[3];
 
-    console.log(i);
+    if(position === "1"){
 
-    if(i === 0){
-        card.style.left =  100 + "px";
-        console.log("deu bom");
-    } else  if(i === 1) {
-        card.style.left =  100 + "px";
+        document.getElementById("textoFase").innerHTML="Na fase 2, o objetivo é encontrar a imagem e o nome!";
+
+        var card1 = document.getElementById("cardI1");
+        card1.classList.remove("Inst1");
+        card1.classList.add("Inst2");
+
+        btnNext.classList.remove("1");
+        btnNext.classList.add("2");
+
+    } else if (position === "2"){
+
+        document.getElementById("textoFase").innerHTML="Na fase 3, o objetivo é encontrar a definição e o conceito!";
+
+        var card0 = document.getElementById("cardI0");
+        card0.classList.remove("Inst1");
+        card0.classList.add("Inst2");
+
+        var card1 = document.getElementById("cardI1");
+        card1.classList.remove("Inst2");
+        card1.classList.add("Inst3");
+
+        btnNext.classList.remove("2");
+        btnNext.classList.add("3");
+
+    } else if (position === "3"){
+        btnNext.innerHTML = "COMEÇAR";
+        window.location.replace("nivel.html");
     }
-   
 }
+
