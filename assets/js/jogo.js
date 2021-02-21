@@ -1,9 +1,12 @@
 (function (){
 
-//mode = 1,2,3
 
     level = sessionStorage.getItem('fase'); // fase 1, 2, 3
     var mode = sessionStorage.getItem('nivel'); // facil/medio/dificil 
+
+    console.log("fase:" + level);
+    console.log("nivel:" + mode);
+
 
     if (level === null){
         level = 1;
@@ -304,31 +307,28 @@ function sizeBackMobile(){
                     //Problema com a carta carlos chagas e megacolon - não sei o que está acontecendo
                     //elemento de face front 
                     if(flippedCards[0].childNodes[3].id === flippedCards[1].childNodes[3].id){
+
                         flippedCards[0].childNodes[1].classList.toggle("match");
                         flippedCards[0].childNodes[3].classList.toggle("match");
                         flippedCards[1].childNodes[1].classList.toggle("match");
                         flippedCards[1].childNodes[3].classList.toggle("match");
 
-                       
                         matchCardsSign();
 
                         /*Sumir carta */
                         // a carta some muito rápido 
                      
-                          var card1 =  flippedCards[0].id;
-                          var card2 =  flippedCards[1].id;
-                  
-                          var HideCard1 = document.getElementById(card1);
-                          HideCard1.classList.add("pair");
-                  
-                          var HideCard2 = document.getElementById(card2);
-                          HideCard2.classList.add("pair");
+                        var card1 =  flippedCards[0].id;
+                        var card2 =  flippedCards[1].id;
+                
+                        var HideCard1 = document.getElementById(card1);
+                        HideCard1.classList.add("pair");
+                
+                        var HideCard2 = document.getElementById(card2);
+                        HideCard2.classList.add("pair");
                          
-                       
-                       // console.log("match");
-                        matches = 6;
-                        
                         matches++;
+                       
                         flippedCards = [];
 
                         CountPoints(matches);
@@ -352,6 +352,7 @@ function sizeBackMobile(){
 
          /*Função para contar os pontos*/
         function CountPoints(matches){
+            console.log("count points" + matches);
 
             switch(matches){
                 case 1: 
@@ -410,8 +411,8 @@ function sizeBackMobile(){
 
             var level = sessionStorage.getItem('fase');
             
-            sessionStorage.setItem("level", level);
-            sessionStorage.setItem("mode", mode);
+            sessionStorage.setItem("fase", level);
+            sessionStorage.setItem("nivel", mode);
 
             var points = $("#points").text();   
 
