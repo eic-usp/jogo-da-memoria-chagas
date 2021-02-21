@@ -1,4 +1,7 @@
 /*Global*/
+*{
+  overflow: hidden;
+}
 .btn-next {
     background:  #541663;;
   }
@@ -13,11 +16,11 @@
   border-radius: 10px;
 }
 .medal{
-    top: 4px;
+    bottom: 20px;
     position: relative;
 }
 p.points{
-  margin-top: 10px;
+  margin-top: 5px;
   line-height: 1.8;
 }
 #points, .medal{

@@ -1,8 +1,9 @@
 (function (){
 
+//mode = 1,2,3
 
-    var level;
-    level = sessionStorage.getItem('nivel');
+    level = sessionStorage.getItem('fase'); // fase 1, 2, 3
+    var mode = sessionStorage.getItem('nivel'); // facil/medio/dificil 
 
     if (level === null){
         level = 1;
@@ -15,7 +16,6 @@
 
         document.getElementsByTagName('title')[0].innerHTML= "Fase 1";
 
-       
         for(var i = 0; i < 16; i++){
             /*img é objeto, indices textuais, funções = métodos */
             var img = {
@@ -126,7 +126,7 @@
                 if(i === 15){
                     //mudar o texto
                     ShowStart();
-                    InicialTime(); 
+                    InicialTime(mode); 
                 }
             }
 
@@ -166,7 +166,7 @@
 
                 if(i === 15){
                     ShowStart();
-                    InicialTime(); 
+                    InicialTime(mode); 
                 }
             }
 
@@ -203,7 +203,7 @@
 
                 if(i === 15){
                     ShowStart();
-                    InicialTime();
+                    InicialTime(mode);
                 }
              }
         }
@@ -244,19 +244,33 @@ function sizeBackMobile(){
         return sorted;
     }
     /* Virar as cartas no inicio do jogo para a pessoa memorizar*/
-    function InicialTime(){
-        //mostra todas as cartas no ínicio
-        //var Cards = [];
+    function InicialTime(mode){
+      
         var faces =  document.getElementsByClassName("face");
         for(i = 0; i < 32; i++){
             faces[i].classList.toggle("flipped");
             }
-    setTimeout(function (){
-        for(i = 0; i < 32; i++){
-            faces[i].classList.toggle("flipped");
-            }
-        }, 5000);
+            if(mode === "1"){
+                setTimeout(function (){
+                for(i = 0; i < 32; i++){
+                    faces[i].classList.toggle("flipped");
+                    }
+                }, 5000);
+            } else if(mode === "2"){
+                setTimeout(function (){
+                    for(i = 0; i < 32; i++){
+                        faces[i].classList.toggle("flipped");
+                        }
+                    }, 2500);
+            } else if(mode === "3"){
+                setTimeout(function (){
+                    for(i = 0; i < 32; i++){
+                        faces[i].classList.toggle("flipped");
+                        }
+                    }, 1500);
+            } 
     }
+    
 
     /* Mudar o comando da página */
     function ShowStart(){
@@ -312,7 +326,7 @@ function sizeBackMobile(){
                          
                        
                        // console.log("match");
-                        matches = 7;
+                        matches = 6;
                         
                         matches++;
                         flippedCards = [];
@@ -393,12 +407,13 @@ function sizeBackMobile(){
     }
      /*Função para chamar a página de vitória*/
     function victory(){
-            var url = window.location.href;
-            var level = sessionStorage.getItem('nivel');
+
+            var level = sessionStorage.getItem('fase');
+            
             sessionStorage.setItem("level", level);
+            sessionStorage.setItem("mode", mode);
 
             var points = $("#points").text();   
-            console.log(points);
 
             sessionStorage.setItem("points", points);
 

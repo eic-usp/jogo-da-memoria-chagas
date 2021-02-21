@@ -2,6 +2,7 @@
 document.getElementById("points").innerHTML = "100";
 
 var level = sessionStorage.getItem('level');
+var mode = sessionStorage.getItem('mode');
 
 var next = document.getElementById("next");
 var again = document.getElementById("again");
