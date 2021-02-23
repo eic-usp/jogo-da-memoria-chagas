@@ -47,10 +47,10 @@
 @media(min-width: 1001px){
 
     #container{
-        width: 29vw; /*O tamanho das cartas esta muito pequeno em comparação ao tamanho da tela*/
+        width: 60vw; /*O tamanho das cartas esta muito pequeno em comparação ao tamanho da tela*/
         height: 58vh;
         top: 24px;
-        left: -6vw;
+        left: 12vw;
         position: relative;
         margin: 0 auto;
         border-radius: 10px;
@@ -81,7 +81,7 @@
 @media(min-width: 600px) and (max-width: 1000px){
     #container{
         width: 60vw; /*O tamanho das cartas esta muito pequeno em comparação ao tamanho da tela*/
-        height: 64vh;
+        height: 58vh;
         top: 0px;
         left: 2vw;
         /*border: 1px solid #000;*/

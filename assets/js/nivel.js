@@ -66,16 +66,12 @@ function fase(n, faseAtual){
             }
     
         }
-
-     }
-
-   
-
-
-    sessionStorage.setItem("nivel", nivel);
-    sessionStorage.setItem("fase", fase);
-
+        
+sessionStorage.setItem("nivel", nivel);
+sessionStorage.setItem("fase", faseAtual);
 }
 
+
+   
 
 

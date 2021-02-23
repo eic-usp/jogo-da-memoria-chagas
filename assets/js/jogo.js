@@ -179,6 +179,7 @@
                 var quitGame = document.getElementById("btn-voltar-m");
                 quitGame.addEventListener("click", ShowQuitModal, false);
 
+
                 frontFaces[i].classList.remove("flipped", "match");
                 backFaces[i].classList.remove("flipped", "match");
                 var card = document.querySelector("#card" + i);

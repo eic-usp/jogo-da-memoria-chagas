@@ -11,21 +11,15 @@
 .btn-dificil {
   background: #CB5881;
 }
-#modal-sair{
-  z-index: -5;
-  background: #FFFFFF;
-  position: absolute;
-  width: 20vw;
-  height: 32vh;
-  border-radius: 8px;
-  left: 32%;
-  top: 24%;
-}
+
 .btn-close{
-  width: 32px;
-  height: 32px;
-  top: 10px;
-  right: -10px;
+  width: 8%;
+  height: 7.5%;
+  top: 4%;
+  right: 4%;
+  position: absolute;
+  background: url('../img/Vector.png');
+  background-repeat: no-repeat;
 }
 .fonte-modal-sair-destaque{
   font-family:'Luckiest Guy', cursive;
@@ -45,9 +39,14 @@
   color: rgba(0, 0, 0, 0.83);
 }
 .modal-exclamacao{
-  width: 48px;
-  height: 48px;
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  left:36%;
+  background: url('../img/exclamacao.png');
+  background-repeat: no-repeat;
 }
+
 
 /*versão mobile*/
 @media(max-width: 599px){
@@ -168,6 +167,16 @@
   .mostrar-horizontal{
     display: none;
   }
+  #modal-sair{
+    z-index: -5;
+    background: #FFFFFF;
+    position: absolute;
+    width: 64vw;
+    height: 32vh;
+    border-radius: 8px;
+    left: 16%;
+    top: 24%;
+  }
 
 }
   
@@ -248,6 +257,16 @@
     padding-left: 80px;
     text-align: left;
   }
+  #modal-sair{
+    z-index: -5;
+    background: #FFFFFF;
+    position: absolute;
+    width: 20vw;
+    height: 32vh;
+    border-radius: 8px;
+    left: 32%;
+    top: 24%;
+  }
 
 }
  /*versão tablet */
@@ -311,6 +330,16 @@
   .alinhamento{
     align: left;
   }
-
+  #modal-sair{
+    z-index: -5;
+    background: #FFFFFF;
+    position: absolute;
+    width: 40vw;
+    height: 32vh;
+    border-radius: 8px;
+    left: 32%;
+    top: 24%;
+  }
+  
 
 }
