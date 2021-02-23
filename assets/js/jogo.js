@@ -327,7 +327,7 @@ function sizeBackMobile(){
                 
                         var HideCard2 = document.getElementById(card2);
                         HideCard2.classList.add("pair");
-                         
+                        matches=7;
                         matches++;
                        
                         flippedCards = [];
@@ -353,7 +353,7 @@ function sizeBackMobile(){
 
          /*Função para contar os pontos*/
         function CountPoints(matches){
-            console.log("count points" + matches);
+            //console.log("count points" + matches);
 
             switch(matches){
                 case 1: 

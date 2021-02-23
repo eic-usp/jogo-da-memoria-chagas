@@ -8,32 +8,21 @@ var next = document.getElementById("next");
 var again = document.getElementById("again");
 
 //var victory = 1;
-
 switch(mode){
     case "1":
         again.classList.add("facil");
-        next.classList.add("medio");
+        next.classList.add("facil");
         break;
     case "2":
-        again.classList.remove("facil");
-        next.classList.remove("medio");
         again.classList.add("medio");
-        next.classList.add("dificil");
+        next.classList.add("medio");
         break;
     case "3":
-        if(level === "1"){
-            again.classList.add("1");
-            next.classList.add("2");
-        } else if (level === "2"){
-            again.classList.add("2");
-            next.classList.add("3");
-        } else if (level === "3"){
-            again.classList.add("3");
-            next.href = "fim.html";
-            next.innerHTML = "TERMINAR";
-        }
+        again.classList.add("dificil");
+        next.classList.add("dificil");
         break;
 }
+
 if(level === "1"){
     again.classList.add("1");
     next.classList.add("2");
@@ -50,7 +39,6 @@ if(level === "1"){
     next.innerHTML = "TERMINAR";
 }
 
-   
 
 var script = document.createElement("script");  
 script.src = "assets/js/nivel.js";  
