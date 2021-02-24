@@ -11,7 +11,7 @@
     border-radius: 10px;
     transition: all 1s;
     backface-visibility: hidden;
-   background-position: center !important;
+    background-position: center !important;
     background-repeat: no-repeat !important;
 }
 .back.flipped{

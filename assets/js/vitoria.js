@@ -7,6 +7,8 @@ var mode = sessionStorage.getItem('nivel');
 var next = document.getElementById("next");
 var again = document.getElementById("again");
 
+var NextLevel = 0;
+
 //var victory = 1;
 switch(mode){
     case "1":
@@ -39,7 +41,14 @@ if(level === "1"){
     next.innerHTML = "TERMINAR";
 }
 
+if (level === "3" && mode !== "3"){
+    NextLevel = 1;
+    sessionStorage.setItem('mode',mode);
+}
+sessionStorage.setItem('next',NextLevel);
 
 var script = document.createElement("script");  
 script.src = "assets/js/nivel.js";  
 document.body.appendChild(script); 
+
+

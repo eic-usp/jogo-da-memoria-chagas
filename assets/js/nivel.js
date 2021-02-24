@@ -15,9 +15,8 @@ function fase(n, faseAtual){
         nivel = 3;
     }
 
-    console.log("nivel antes" + n);
-    console.log("nivel antes" + nivel);
-    console.log("fase" + faseAtual);
+    //console.log("nivel antes" + n);
+   // console.log("fase" + faseAtual);
     
        
 

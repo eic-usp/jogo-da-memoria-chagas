@@ -26,3 +26,6 @@ p.points{
 #points, .medal{
   display: inline-block;
 }
+.hideProx{
+  display:initial;
+}
