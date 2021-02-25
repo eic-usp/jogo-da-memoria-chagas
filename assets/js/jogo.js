@@ -4,9 +4,8 @@
     level = sessionStorage.getItem('fase'); // fase 1, 2, 3
     var mode = sessionStorage.getItem('nivel'); // facil/medio/dificil 
 
-    console.log("fase:" + level);
-    console.log("nivel:" + mode);
-
+    //console.log("fase:" + level);
+    //console.log("nivel:" + mode);
 
     if (level === null){
         level = 1;
@@ -23,8 +22,10 @@
             /*img é objeto, indices textuais, funções = métodos */
             var img = {
                     src: "assets/img/fase1/" + i + ".png",
-                    id: i%4
+                    id: i%8
+                  
             };
+            console.log("id das imagens:" + img.id);
             images.push(img);
         } 
 
@@ -36,7 +37,7 @@
         for(var i = 0; i < 8; i++){
             var img = {
                     src: "assets/img/fase1/" + i + ".png",
-                    id: i%4
+                    id: i%8
             };
             images.push(img);
         }
@@ -44,7 +45,7 @@
         for(var i = 8; i < 16; i++){
             var img = {
                     src: "assets/img/fase2/" + i + ".png",
-                    id: i%4
+                    id: i%8
             };
             images.push(img);
         } 
@@ -57,7 +58,7 @@
         for(var i = 0; i < 8; i++){
             var img = {
                     src: "assets/img/fase3/" + i + ".png",
-                    id: i%4
+                    id: i%8
                 };
                 images.push(img);
             }
@@ -65,7 +66,7 @@
         for(var i = 8; i < 16; i++){
             var img = {
                     src: "assets/img/fase2/" + i + ".png",
-                    id: i%4
+                    id: i%8
             };
             images.push(img);
         } 
@@ -291,7 +292,7 @@ function sizeBackMobile(){
                 /*rotacionar as faces 180 graus*/
                 /*getElementsByClassName retorna uma lista */
                 var faces =  this.getElementsByClassName("face");
-
+                
                 // tive que mudar para 3 para que as cartas virem 
                 //impedir que o usuario tente clicar duas vezes na mesma carta
                 if(faces[0].classList.length > 3){
@@ -304,9 +305,11 @@ function sizeBackMobile(){
                 /*toggle = switch, se nao existe adiciona, se ja existe, remove */
                 flippedCards.push(this);
 
+                
                 if(flippedCards.length === 2 ){
                     //Problema com a carta carlos chagas e megacolon - não sei o que está acontecendo
-                    //elemento de face front 
+                    // tentativa de arrumar
+    
                     if(flippedCards[0].childNodes[3].id === flippedCards[1].childNodes[3].id){
 
                         flippedCards[0].childNodes[1].classList.toggle("match");
@@ -318,16 +321,20 @@ function sizeBackMobile(){
 
                         /*Sumir carta */
                         // a carta some muito rápido 
-                     
-                        var card1 =  flippedCards[0].id;
+                        /*setTimeout(function(){
+                          console.log("oi");
+                        }, 3000);*/
+
+                      /*  var card1 =  flippedCards[0].id;
                         var card2 =  flippedCards[1].id;
                 
                         var HideCard1 = document.getElementById(card1);
                         HideCard1.classList.add("pair");
                 
                         var HideCard2 = document.getElementById(card2);
-                        HideCard2.classList.add("pair");
-                        matches=7;
+                        HideCard2.classList.add("pair");*/
+
+                       // matches=6;
                         matches++;
                        
                         flippedCards = [];
