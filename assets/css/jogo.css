@@ -48,10 +48,10 @@
 
     #container{
         width: 60vw; /*O tamanho das cartas esta muito pequeno em comparação ao tamanho da tela*/
-        height: 58vh;
-        top: 24px;
-        left: 12vw;
-        position: relative;
+        height: 76vh;
+        top: 24vh;
+        left: 16vw;
+        position: absolute;
         margin: 0 auto;
         border-radius: 10px;
     }
@@ -82,10 +82,10 @@
     #container{
         width: 60vw; /*O tamanho das cartas esta muito pequeno em comparação ao tamanho da tela*/
         height: 58vh;
-        top: 0px;
-        left: 2vw;
+        top: 24vh;
+        left: 24vw;
         /*border: 1px solid #000;*/
-        position: relative;
+        position: absolute;
         margin: 0 auto;
         border-radius: 10px;
     }
@@ -115,10 +115,10 @@
     #container{
         width: 95vw; /*O tamanho das cartas esta muito pequeno em comparação ao tamanho da tela*/
         height: 58vh;
-        top: 20px;
-        left: 2.5vw;
+        top: 24vh;
+        left: 16vw;
        /* border: 1px solid #000; */
-        position: relative;
+        position: absolute;
         margin: 0 auto;
         border-radius: 10px;
     }

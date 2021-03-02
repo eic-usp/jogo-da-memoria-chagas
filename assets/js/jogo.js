@@ -25,7 +25,6 @@
                     id: i%8
                   
             };
-            console.log("id das imagens:" + img.id);
             images.push(img);
         } 
 

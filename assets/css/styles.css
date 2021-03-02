@@ -1,263 +1,195 @@
-/*Mobile*/
-.display-center{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.fundo{
-  display: block;
+
+*{
   overflow: hidden;
-  width: 100%;
-  height: 100vh;
-  background: rgb(136,69,153);
-  text-align: center;
-  justify-content: center;
-}
-.espaco-6{
-  /*56px*/
-  height: 6%;
-}
-.espaco-3{
-  /*32px*/
-  height: 0.5%;
-}
-.espaco-1{
-  /*32px*/
-height: 8px;
-}
-.espaco-05{
-  height: 4px;
-}
-.btn {
-  width: 198px;
-  height: 56px;
-  font-size: 20px;
-  font-family: 'Fira Sans', sans-serif;
-  background: #541663;
-  border: 4px solid #ffffff;
-  border-radius: 10px;
-  
-  text-align: center;
-  line-height: 1.8;
-}
-.titulo{
-  color: rgb(255,255,255);
-  font-family: 'Luckiest Guy', cursive; 
-  font-size: 52px;
-  -webkit-text-fill-color:rgba(255, 255, 255, 0.9) ;
-  -webkit-text-stroke-color: #000000;
-  -webkit-text-stroke-width: 1px;
-  letter-spacing: -0.015em;
-}
-
-.subtitulo-t{
-  color: rgb(255,255,255);
-  font-size: 32px;
-  -webkit-text-fill-color:rgba(255, 255, 255, 0.9) ;
-  -webkit-text-stroke-color: #000000;
-  -webkit-text-stroke-width: 1px;
-}
-a{
-  color: rgb(255,255,255);
-}
-
-.cards-inicial{
-  width: 295px;
-  height: 88px;
-}
-
-.caixa-btns-c{
+  }
+  .display-center{
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 32px 0px 0px;
-    position: static;
-    height: 120px;
-    left: 56vw;
-    top: 64vh;
+    align-items: center;
+    justify-content: center;
   }
-  .btn-circ{
-    position: static;
-    width: 56px;
-    height: 56px;
-    top: 32px;
-    flex: none;
-    
+  .fundo{
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    background: rgb(136,69,153);
+    text-align: center;
+    justify-content: center;
   }
-  #btn-circ-1{
-    left: 0px;
-    order: 0;
-    align-self: center;
-    flex-grow: 0;
-    margin: 16px 0px;
+  .espaco-6{
+    /*56px*/
+    height: 6%;
   }
-  #btn-circ-2{
-    left: 72px;
-    order: 1;
-    align-self: center;
-    flex-grow: 0;
-    margin: 16px 0px;
+  .espaco-3{
+    /*32px*/
+    height: 0.5%;
   }
-  #btn-circ-3{
-    left: 144px;
-    order: 2;
-    align-self: center;
-    flex-grow: 0;
-    margin: 16px 0px;
+  .espaco-1{
+    /*32px*/
+  height: 8px;
   }
-  .elem-btn-c{
+  .espaco-05{
+    height: 4px;
+  }
+  .btn {
+    width: 198px;
+    height: 48px;
+    font-size: 16px;
+    font-family: 'Fira Sans', sans-serif;
+    background: #541663;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 1.6;
+  }
+  
+  a{
+    color: rgb(255,255,255);
+  }
+  
+  /*versão MOBILE*/
+  @media(max-width: 599px){
+    .titulo{
+      color: rgb(255,255,255);
+      font-family: 'Luckiest Guy', cursive; 
+      font-size: 48px;
+      -webkit-text-fill-color:rgba(255, 255, 255, 0.9) ;
+      -webkit-text-stroke-color:#000000;
+      -webkit-text-stroke-width: 1px;
+    }
+    .subtitulo-t{
+      color: rgb(255,255,255);
+      font-size: 24px;
+      -webkit-text-stroke-color:#000000;
+      -webkit-text-stroke-width: 0.5px;
+    }
+  .caixa-btns-c{
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      height: 100px;
+      top: 24vh;
+    }
+    .elem-btn-c{
+      height: 72px;
+      width: 72px;
+    }
+    .btn-circ{
+      position: static;
+      width: 72px;
+      height: 72px;
+    }
+    .cards-inicial{
+      width: 80vw;
+      height: 16vh;
+    }
+    .logo-eic{
+      width: 40vw;
+    }
+  }
+  /*versão tablet */ 
+  @media(min-width: 600px) and (max-width: 1000px){
+  
+    .titulo{
+      color: rgb(255,255,255);
+      font-family: 'Luckiest Guy', cursive; 
+      font-size: 64px;
+      -webkit-text-fill-color:rgba(255, 255, 255, 0.9) ;
+      -webkit-text-stroke-color:#000000;
+      -webkit-text-stroke-width: 1.5px;
+    }
+    .subtitulo-t{
+      color: rgb(255,255,255);
+      font-size: 32px;
+      -webkit-text-stroke-color:#000000;
+      -webkit-text-stroke-width: 0.8px;
+    }
+    .logo-eic{
+      top: 85%;
+      bottom: 5%;
+    }
+  .alinhamento-botoes{
+    align-items: center;
+  }
+    .caixa-btns-c{  
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      height: 120px;
+      top: 32vh;
+    }
+  
+    .espaco-3{
+      /*32px*/
+     height: 1.6%;
+   }
+   .elem-btn-c{
     height:56px;
     width: 72px;
   }
-
-/*versão tablet */ 
-@media(min-width: 600px) and (max-width: 1000px){
-
-  .titulo{
-    color: rgb(255,255,255);
-    font-family: 'Luckiest Guy', cursive; 
-    font-size: 92px;
-    -webkit-text-fill-color:rgba(255, 255, 255, 0.9) ;
-    -webkit-text-stroke-color:#000000;
-    -webkit-text-stroke-width: 2px;
-  }
-  .subtitulo-t{
-    color: rgb(255,255,255);
-    font-size: 48px;
+  .cards-inicial{
+    width: 40vw;
+    height: 16vh;
   }
   .logo-eic{
-    top: 85%;
-    bottom: 5%;
+    top: 80%;
+    width: 20vw;
   }
-  .icones-altura{
-    /*Aqui também chega o eic p baixo*/
-    height: 56px;
+      
   }
-  .largura-espaco{
-    width: 38vw;
+  /*versão DESKTOP */
+  @media (min-width: 1001px){
+    .titulo{
+      color: rgb(255,255,255);
+      font-family: 'Luckiest Guy', cursive; 
+      font-size: 64px;
+      -webkit-text-fill-color:rgba(255, 255, 255, 0.9) ;
+      -webkit-text-stroke-color: #000000;
+      -webkit-text-stroke-width: 1.5px;
+    }
+    .subtitulo-t{
+      color: rgb(255,255,255);
+      font-size: 32px;
+      -webkit-text-stroke-color: #000000;
+      -webkit-text-stroke-width: 1px;
+    }
+    .logo-eic{
+      height: 48px;
+    }
+   
+    .largura-espaco{
+      width: 38vw;
+    }
+    .caixa-btns-c{
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      padding: 0px 0px 0px;
+      height: 64px;
+      top: 48vh;
+    }
+    .espaco-3{
+      /*32px*/
+     height: 3%;
+   }
+   .h-espaco-botoes{
+     width: 20px;
+   }
+  
+   #btn-voltar-d{
+    padding-left: 4%;
+    padding-top: 1%;
+   }
+   .img-voltar{
+     width: 32px;
+     height:32px;
+   }
+   .cards-inicial{
+    width: 32vw;
+    height: 16vh;
   }
-
-.alinhamento-botoes{
-  align-items: center;
-}
-  .caixa-btns-c{  
-    /*height: 120px;
-    left: 56vw;
-    top: 40vh;*/
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 32px 0px 0px;
-    position: static;
-    height: 120px;
-    left: 40vw;
-    top: 64vh;
+      
+      
   }
-  .btn-circ{
-    position: static;
-    width: 56px;
-    height: 56px;
-    top: 32px;
-    flex: none;
-    
-  }
-  #btn-circ-1{
-    left: 0px;
-    order: 0;
-    align-self: center;
-    flex-grow: 0;
-    margin: 16px 0px;
-  }
-  #btn-circ-2{
-    left: 72px;
-    order: 1;
-    align-self: center;
-    flex-grow: 0;
-    margin: 16px 0px;
-  }
-  #btn-circ-3{
-    left: 144px;
-    order: 2;
-    align-self: center;
-    flex-grow: 0;
-    margin: 16px 0px;
-  }
-  .cards-inicial{
-    width: auto;
-    height: auto;
-  }
-  .espaco-3{
-    /*32px*/
-   height: 1.6%;
- }
- .elem-btn-c{
-  height:56px;
-  width: 72px;
-}
-    
-}
-/*versão desktop */
-
-@media (min-width: 1001px){
-
-  .titulo{
-    color: rgb(255,255,255);
-    font-family: 'Luckiest Guy', cursive; 
-    font-size: 92px;
-    -webkit-text-fill-color:rgba(255, 255, 255, 0.9) ;
-    -webkit-text-stroke-color: #000000;
-    -webkit-text-stroke-width: 2px;
-  }
-  .subtitulo-t{
-    color: rgb(255,255,255);
-    font-size: 48px;
-  }
-  .logo-eic{
-    top: 85%;
-    bottom: 5%;
-  }
-  .icones-altura{
-    /*Aqui também chega o eic p baixo*/
-    height: 56px;
-  }
-  .largura-espaco{
-    width: 38vw;
-  }
-
-  .cards-inicial{
-    width: auto;
-    height: auto;
-  }
-
-  .caixa-btns-c{
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 32px 0px 0px;
-    height: 120px;
-    top: 52vh;
-    
-  }
-  .espaco-3{
-    /*32px*/
-   height: 3%;
- }
- .h-espaco-botoes{
-   width: 20px;
- }
- .elem-btn-c{
-   height:56px;
-   width: 80px;
- }
- #btn-voltar-d{
-  padding-left: 4%;
-  padding-top: 1%;
- }
- .img-voltar{
-   width: 32px;
-   height:32px;
- }
-    
-    
-}
- 
+   
+  

@@ -193,10 +193,9 @@
   }
 
   .subtitulo-2{
-
       text-align: center;
       color: rgb(255,255,255);
-      font-size: 38px;
+      font-size: 32px;
       font-family: 'Luckiest Guy', cursive; 
       -webkit-text-fill-color:rgba(255, 255, 255, 0.9) ;
       -webkit-text-stroke-color: #000000;
@@ -207,7 +206,7 @@
       font-family: Fira Sans;
       font-style: normal;
       font-weight: 500;
-      font-size: 20px;
+      font-size: 16px;
       line-height: 29px;
       text-align: center;
       color: #F0E2F3;
@@ -229,11 +228,9 @@
     display: none;
   }
   .logo-eic-centro{
-    padding-left: 5vw;
+    padding-left: 4vw;
   }
-  .espaco-v{
-    left:30px
-  }
+
   .p-destaque{
     font-family: Fira Sans;
     font-style: normal;
@@ -250,11 +247,11 @@
     width: 300px;
   }
   .elem-menu-lateral img{
-    padding-left: 40px;
+    padding-left: 20px;
     float: left;
   }
   .elem-menu-lateral p{
-    padding-left: 80px;
+    padding-left: 40px;
     text-align: left;
   }
   #modal-sair{
@@ -266,6 +263,9 @@
     border-radius: 8px;
     left: 32%;
     top: 24%;
+  }
+  a .menu-desktop{
+    font-size: 16px;
   }
 
 }

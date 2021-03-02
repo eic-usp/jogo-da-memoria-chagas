@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Nível - Jogo da memória</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Luckiest+Guy">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/nivelcopy.css">
+    <link rel="stylesheet" href="assets/css/menu-modal.css">
+    
+</head>
+
+<body>
+ <!-- menu Desktop - esta com problemas por tags que eu usei em dois lugares, arrumar -->
+
+    <div class="menu-desktop">
+        <ul class="menu-desktop tipoUL">
+        <li class = "espaco-6 menu-desktop"></li>
+        <li> <!--Colocar o logo no centro-->
+            <a class="menu-desktop" href="index.html"> 
+                <img class="logo-eic-centro menu-desktop" src="assets/img/logo-eic-branco.png">
+            </a>
+        </li>
+        <li class = "menu-desktop espaco-6"></li>
+        <li class = "menu-desktop espaco-6"></li>
+        <li class="menu-desktop"> 
+        <a href=" menu-desktop index.html"> </a>
+
+        <li class="menu-desktop">
+            <a href="index.html">
+            <div class=" menu-desktop elem-menu-lateral">
+            <img  class ="menu-desktop alinhamento" src="assets/img/home.svg">
+            <p class="menu-desktop"> Início <p> 
+            <div>
+            </a>
+        </li>
+        <li class = "menu-desktop espaco-1"></li>
+        <li>
+            <a  class="menu-desktop" href="sobre-o-jogo.html">
+            <div class=" menu-desktop elem-menu-lateral">
+            <img  class="menu-desktop" src="assets/img/sobre-o-jogo.svg">
+            <p class="menu-desktop"> Sobre o jogo <p> 
+            <div>
+            </a>
+        </li>
+        <li class="menu-desktop espaco-1"></li>
+        <li>
+            <a class="menu-desktop" href="index.html">
+            <div class="menu-desktop elem-menu-lateral">
+            <img class="menu-desktop" src="assets/img/creditos.svg">
+            <p class="menu-desktop"> Créditos <p> 
+            <div>
+            </a>
+        </li>
+        <li class = "menu-desktop espaco-1"></li>
+        <li>
+            <a class="menu-desktop" href="compartilhar.html">
+            <div class="menu-desktop elem-menu-lateral">
+            <img  class="menu-desktop" src="assets/img/compartilhar.svg">
+            <p class="menu-desktop"> Compartilhar <p> 
+            <div>
+            </a>
+        </li>
+        </ul>
+    </div>
+
+    <div class="fundo">
+<!-- menu mobile-->
+    <div class="espaco-3"></div>
+    <div class="espaco-3 menu-mobile"></div>
+    <div class="menu-mobile">
+
+        <div class="espaco-6 menu-mobile"></div>
+
+        <div class="row menu-mobile">
+
+        <!-- lembrar de mudar o link de voltar dependendo da pagina atual-->
+            <div class="col menu-mobile">
+                <a class = "menu-mobile" href="index.html"> 
+                    <img class="nav-elem menu-mobile" src="assets/img/nav/voltar.svg">
+                </a>
+            </div>
+            <div class="col menu-mobile">
+                <a class="menu-mobile" href="index.html"> 
+                    <img class="nav-elem menu-mobile" src="assets/img/nav/logo-eic-nav.svg">
+                </a>
+            </div>
+            <div class="col menu-mobile">
+                <a class="menu-mobile" id="botao-menu-modal"> 
+                    <img class="nav-elem" src="assets/img/nav/menu.svg">
+                </a>
+            </div>
+            </div>
+    </div>
+    
+<!--Menu modal que só aparece quando o botao-menu-modal é clicado, funcionando e aparecendo-->
+<div id="menu-modal" class="menu-mobile">
+    <ul class="list-modal">
+         <li>
+            <a href="index.html">
+            <div class= "logo-modal">
+            <img class="tamanho-logo-modal" src="assets/img/logo-eic-branco.png">
+            <div>
+            </a>
+        </li>
+        <li>
+            <a href="index.html">
+            <div class= "elem-menu-modal">
+            <img class="tamanho-img-modal" src="assets/img/home.svg">
+            <p> Início <p> 
+            <div>
+            </a>
+        </li>
+         <li>
+            <a href="sobre-o-jogo.html">
+            <div class= "elem-menu-modal">
+            <img class="tamanho-img-modal" src="assets/img/sobre-o-jogo.svg">
+            <p> Sobre o Jogo <p> 
+            <div>
+            </a>
+        </li>
+        <li><div class="espaco-6"></div></li>
+         <li>
+            <a href="creditos.html">
+            <div class= "elem-menu-modal">
+            <img class="tamanho-img-modal" src="assets/img/creditos.svg">
+            <p> Créditos <p> 
+            <div>
+            </a>
+        </li>
+         <li><div class="espaco-6"></div></li>
+         <li>
+            <a href="compartilhar.html">
+            <div class= "elem-menu-modal">
+            <img class="tamanho-img-modal" src="assets/img/compartilhar.svg">
+            <p> Compartilhar <p> 
+            <div>
+            </a>
+        </li>
+    </ul>
+    <div class="espaco-6"></div>
+    <div id="botao-voltar"><p> Voltar </p></div>
+</div>
+
+<!--fim menu mobile-->
+<!-- Conteúdo da página -->
+    <div class="espaco-6"> </div>
+
+    <h1 class="subtitulo-2">ESCOLHA UM NÍVEL</h1>
+    <div class="espaco-6"></div>
+    <p class="largura-texto"> Você terá um tempo para memorizar as posições dos cartões com as imagens! </p>
+    <div class="espaco-6"></div>
+
+        <div class="row">
+            <div class="col"><a class="btn btn-primary btn-facil 1" id ="facil" href="jogo.html" onclick="fase(this.id, classList[3])"> FÁCIL </a> </div>
+        </div>
+
+        <div class="espaco-6"></div>
+
+        <div class="row">
+            <div class="col">
+                <a class="btn btn-primary btn-medio 1" id="medio" href="jogo.html"  onclick="fase(this.id, classList[3])"> MÉDIO  </a>
+            </div>
+        </div>
+
+        <div class="espaco-6"></div>
+
+        <div class="row">
+            <div class="col">
+            <a class="btn btn-primary btn-dificil 1" id="dificil" href="jogo.html"  onclick="fase(this.id, classList[3])"> DÍFICIL </a>
+            </div>
+        </div>
+
+</div>
+     
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/menu-modal.js"></script>
+    <script src="assets/js/nivel.js"></script>
+
+</body>
+
+</html>
