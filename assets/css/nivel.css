@@ -2,16 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 /*Global*/
-.btn-facil{
-  background: #Bb78CC;
-}
-.btn-medio {
-  background: #664F9F;
-}
-.btn-dificil {
-  background: #CB5881;
-}
-
 .btn-close{
   width: 8%;
   height: 7.5%;
@@ -135,9 +125,6 @@
   width: 21px;
   height: 21px;
 }
- .menu-desktop{
-  display:none;
-  }
   .p-destaque{
     font-family: Fira Sans;
     font-style: normal;
@@ -150,17 +137,7 @@
   .scroll-bar{
     overflow: auto;
   }
-  .tipoUL{
-    list-style-type: none;
-    left: 0%;
-    margin: 0;
-    padding: 0;
-    width: 20vw;
-    background-color: #541663;
-    height: 100%; /* Full height */
-    position: fixed; /* Make it stick, even on scroll */
-    overflow: hidden; /* Enable scrolling if the sidenav has too much content */
-  }
+ 
   .mostrar-no-desktop{
     display: none;
   }
@@ -171,10 +148,10 @@
     z-index: -5;
     background: #FFFFFF;
     position: absolute;
-    width: 64vw;
-    height: 32vh;
+    width: 80vw;
+    height: 48vh;
     border-radius: 8px;
-    left: 16%;
+    left: 8%;
     top: 24%;
   }
 
@@ -195,7 +172,7 @@
   .subtitulo-2{
       text-align: center;
       color: rgb(255,255,255);
-      font-size: 32px;
+      font-size: 38px;
       font-family: 'Luckiest Guy', cursive; 
       -webkit-text-fill-color:rgba(255, 255, 255, 0.9) ;
       -webkit-text-stroke-color: #000000;
@@ -206,53 +183,13 @@
       font-family: Fira Sans;
       font-style: normal;
       font-weight: 500;
-      font-size: 16px;
+      font-size: 20px;
       line-height: 29px;
       text-align: center;
       color: #F0E2F3;
   }
-  
-  .tipoUL {
-    list-style-type: none;
-    left: 80%;
-    margin: 0;
-    padding: 0;
-    width: 20vw;
-    background-color: #541663;
-    height: 100%; /* Full height */
-    position: fixed; /* Make it stick, even on scroll */
-    overflow: hidden; /* Enable scrolling if the sidenav has too much content */
-  }
-
   .menu-mobile{
     display: none;
-  }
-  .logo-eic-centro{
-    padding-left: 4vw;
-  }
-
-  .p-destaque{
-    font-family: Fira Sans;
-    font-style: normal;
-    font-weight: 800;
-    font-size: 22px;
-    line-height: 29px;
-    text-align: center;
-    color: #FFFFFF;
-  }
-  .mostrar-vertical{
-    display:none;
-  }
-  .elem-menu-lateral{
-    width: 300px;
-  }
-  .elem-menu-lateral img{
-    padding-left: 20px;
-    float: left;
-  }
-  .elem-menu-lateral p{
-    padding-left: 40px;
-    text-align: left;
   }
   #modal-sair{
     z-index: -5;
@@ -263,9 +200,6 @@
     border-radius: 8px;
     left: 32%;
     top: 24%;
-  }
-  a .menu-desktop{
-    font-size: 16px;
   }
 
 }
@@ -309,24 +243,10 @@
     -webkit-text-stroke-color:#000000;
     -webkit-text-stroke-width: 2px;
   }
-  .subtitulo-t{
-    color: rgb(255,255,255);
-    font-size: 48px;
-  }
   .logo-eic{
     top: 85%;
     bottom: 5%;
   }
-  .menu-desktop{
-    display:none;
-    }
-  .mostrar-no-desktop{
-      display: none;
-  }
-  .mostrar-horizontal{
-      display: none;
-    }
-
   .alinhamento{
     align: left;
   }
@@ -335,7 +255,7 @@
     background: #FFFFFF;
     position: absolute;
     width: 40vw;
-    height: 32vh;
+    height: 48vh;
     border-radius: 8px;
     left: 32%;
     top: 24%;

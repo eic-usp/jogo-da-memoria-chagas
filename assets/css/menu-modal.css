@@ -1,18 +1,14 @@
-    /*Global*/
-    .list-modal{
-        list-style-type: none;
-    }
+/*Global*/
+ .list-modal{
+     list-style-type: none;
+}
   /*versão mobile*/
   @media(max-width: 599px){
     
   .elem-menu-modal img{
+    padding-left: 3%;
     float: left;
   }
-  .elem-menu-modal p{
-    padding-left: 6%;
-    float: left;
-  }
-  
   .elem-modal-height{
     line-height: 20px;
     height: 20px;
@@ -26,7 +22,6 @@
     padding-left: -4%;
     padding-bottom: 8%;
   }
-
   }
 
    /*versão tablet */

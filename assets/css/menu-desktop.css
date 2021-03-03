@@ -1,0 +1,43 @@
+ /*versão DESKTOP*/
+ @media(MIN-width: 1001px){
+    .tipoUL{
+        list-style-type: none;
+        left: 80vw;
+        margin: 0;
+        padding: 0;
+        width: 20vw;
+        background-color: #541663;
+        height: 100%; /* Full height */
+        position: absolute; /* Make it stick, even on scroll */
+        overflow: hidden; /* Enable scrolling if the sidenav has too much content */
+      }
+      .logo-eic-centro{
+        position: relative;
+        padding-left: 5vw;
+      }
+      .elem-menu-lateral{
+        width: 300px;
+      }
+      .elem-menu-lateral img{
+        padding-left: 40px;
+        float: left;
+      }
+      .elem-menu-lateral p{
+        padding-left: 80px;
+        text-align: left;
+      }
+ 
+}
+  /*versão tablet */
+  @media(min-width: 600px) and (max-width: 1000px){
+    .menu-desktop{
+        display:none;
+        }
+ }
+ /*versão mobile*/
+ @media(max-width: 599px){
+    .menu-desktop{
+        display:none;
+        }
+ 
+}

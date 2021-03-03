@@ -1,0 +1,23 @@
+/*GLOBAL*/
+
+/*DESKTOP*/
+@media(min-width: 1001px){
+    .cards-inicial{
+        width: 26.75rem;
+        height: 8rem;
+      } 
+}
+/*TABLET*/
+@media(min-width: 600px) and (max-width: 1000px){
+    .cards-inicial{
+        width: 26.75rem;
+        height: 8rem;
+      }
+}
+/*MOBILE*/
+@media(max-width: 599px){ 
+    .cards-inicial{
+        width: 13.375rem;
+        height: 4rem;
+      }
+}
