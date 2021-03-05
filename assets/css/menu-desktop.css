@@ -2,31 +2,30 @@
  @media(MIN-width: 1001px){
     .tipoUL{
         list-style-type: none;
-        left: 80vw;
+        left: 80%;
         margin: 0;
         padding: 0;
-        width: 20vw;
+        width: 20%;
         background-color: #541663;
-        height: 100%; /* Full height */
-        position: absolute; /* Make it stick, even on scroll */
-        overflow: hidden; /* Enable scrolling if the sidenav has too much content */
+        height: 100%; 
+        position: absolute; 
+        overflow: hidden; 
       }
       .logo-eic-centro{
         position: relative;
         padding-left: 5vw;
       }
       .elem-menu-lateral{
-        width: 300px;
+        width: 18,75rem;
       }
       .elem-menu-lateral img{
-        padding-left: 40px;
+        padding-left: 2rem;
         float: left;
       }
       .elem-menu-lateral p{
-        padding-left: 80px;
+        padding-left: 4.5rem;
         text-align: left;
       }
- 
 }
   /*versão tablet */
   @media(min-width: 600px) and (max-width: 1000px){

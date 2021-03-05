@@ -90,7 +90,10 @@
         var size = windowWidth = $(window).width();
 
         if(size > 1000){ /*Versão Desktop*/
-
+            
+            var container = document.getElementById("container");
+            console.log(contLeft);
+            container.style.left = (size/2) + 288 +"rem";
             /*tentar criar uma função e modularizar essa parte passando o tamanho da tela por parâmetro, ver se vai funcionar*/
             for(var i = 0; i < 16; i++){
 
@@ -104,16 +107,16 @@
                 var card = document.querySelector("#card" + i);
                 // console.log(card);
                 /*mod: resto da divisao */
-                card.style.left = i % 4 === 0? 15 + "px" : i % 4 * 140 + 20 + "px"; 
+                card.style.left = i % 4 === 0? 0 + "px" : i % 4 * 140 + 10 + "px"; 
 
                 if(i < 4){
-                    card.style.top = 20 + "px";
+                    card.style.top = 0 + "px";
                 } else if(i < 8){
-                    card.style.top = 150 + "px";
+                    card.style.top = 130 + "px";
                 }else if(i < 12){
-                    card.style.top = 280 + "px";
+                    card.style.top = 260 + "px";
                 } else{
-                    card.style.top = 410 + "px";
+                    card.style.top = 390 + "px";
                 }
 
                 card.addEventListener("click", flipCard, false);

@@ -47,13 +47,13 @@
 @media(min-width: 1001px){
 
     #container{
-        width: 100%; /*O tamanho das cartas esta muito pequeno em comparação ao tamanho da tela*/
-        height: 100%;
-        top: 24px;
-        left: 12vw;
-        position: relative;
+        width: 36rem; /*O tamanho das cartas esta muito pequeno em comparação ao tamanho da tela*/
+        height: 32rem;
+        top: 9rem;
+        position: absolute;
         margin: 0 auto;
         border-radius: 10px;
+        border: 1px solid #000;
     }
     .card{
         width: 120px;
@@ -76,15 +76,23 @@
     .b3{
         background: url("../img/fase3/verso3.png");
     }
+    /*Botao do menu lateral*/
+    #btn-voltar-d{
+        padding-left: 4%;
+        padding-top: 1%;
+       }
+       .img-voltar{
+         width: 32px;
+         height:32px;
+       }
 }
 /*TABLET*/
 @media(min-width: 600px) and (max-width: 1000px){
     #container{
-        width: 60vw; /*O tamanho das cartas esta muito pequeno em comparação ao tamanho da tela*/
+        width: 60vw; 
         height: 58vh;
         top: 0px;
         left: 2vw;
-        /*border: 1px solid #000;*/
         position: relative;
         margin: 0 auto;
         border-radius: 10px;
@@ -92,11 +100,10 @@
     .card{
         width: 96px;
         height: 96px;
-        position: absolute; /*é importante mas porque?*/
+        position: absolute; 
         border-radius: 10px;
-        /*aqui os cards ficam empilhados, mas preciso distanciar um por um? NAO JAVASCRIPT LINDO*/
+        /*aqui os cards ficam empilhados, mas são separados com javascript*/
         perspective: 600px;
-        /*profundidade do giro, para nao ficar chapado*/ 
     }
     .b1{
         background: url("../img/fase1/verso1.png");
