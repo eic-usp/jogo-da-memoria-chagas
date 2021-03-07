@@ -1,8 +1,33 @@
-.divider{
-    border: 2px solid #ffffff;
+
+ /*GLOBAL*/
+
+/*DESKTOP*/
+@media(min-width: 1001px){
+  .line{
+    position: absolute;
+    width: 20rem;
+    height: 0px;
+    left: 22.375rem;
+    border: 2px solid rgba(255, 255, 255, 0.2);
   }
-  .cont-divider{
-    width: 100vw;
-    left: 20vw;
-    right: 20vw;
+}
+/*TABLET*/
+@media(min-width: 600px) and (max-width: 1000px){
+  .line{
+    position: absolute;
+    width: 20rem;
+    height: 0px;
+    left: 14rem;
+    border: 2px solid rgba(255, 255, 255, 0.2);
   }
+}
+/*MOBILE*/
+@media(max-width: 599px){ 
+  .line{
+    position: absolute;
+    width: 16rem;
+    height: 0px;
+    left: 6rem;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+  }
+}

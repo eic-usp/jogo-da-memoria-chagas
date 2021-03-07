@@ -47,14 +47,16 @@
 @media(min-width: 1001px){
 
     #container{
-        width: 36rem; /*O tamanho das cartas esta muito pequeno em comparação ao tamanho da tela*/
+        width: 36rem; 
         height: 32rem;
         top: 9rem;
+        left:16rem;
         position: absolute;
         margin: 0 auto;
         border-radius: 10px;
-        border: 1px solid #000;
+       /* border: 1px solid #000; Visualizar melhor o tamanho do container*/
     }
+
     .card{
         width: 120px;
         height: 120px;
@@ -81,10 +83,10 @@
         padding-left: 4%;
         padding-top: 1%;
        }
-       .img-voltar{
-         width: 32px;
-         height:32px;
-       }
+    .img-voltar{
+        width: 32px;
+        height:32px;
+    }
 }
 /*TABLET*/
 @media(min-width: 600px) and (max-width: 1000px){
@@ -115,7 +117,6 @@
     .b3{
         background: url("../img/fase3/verso3.png");
     } 
-    
 }
 /*MOBILE*/
 @media(max-width: 599px){ 
@@ -145,5 +146,5 @@
     .b3{
         background: url("../img/fase3/verso3.png");
     }   
-    
+  
 }

@@ -1,23 +1,18 @@
-/*Global*/
+/*GLOBAL*/
 *{
   overflow: hidden;
 }
 .btn-next {
-    background:  #541663;;
+    background:  #541663;
   }
 .btn-playAgain {
   background: #301A67;
 }
 .points-box{
-  position: relative;
-  width: 156px;
-  height: 56px;
+  width: 9.75rem;
+  height: 3.5rem;
   background: #301A67;
   border-radius: 10px;
-}
-.medal{
-    bottom: 20px;
-    position: relative;
 }
 p.points{
   margin-top: 5px;
@@ -28,4 +23,48 @@ p.points{
 }
 .hideProx{
   display:initial;
+}
+
+
+/*DESKTOP*/
+@media(min-width: 1001px){
+  
+  .points-position-game{
+    position: absolute;
+    left:51.8rem;
+    top: 37.5rem;
+}
+  .medal{
+    bottom: 1.5rem;
+    position: relative;
+  }
+}
+/*TABLET*/
+@media(min-width: 600px) and (max-width: 1000px){
+
+   /*Mesmo que display-center para manter a posição no tablet e mobile*/
+   .points-position-game{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+
+  .medal{
+    bottom: 2rem;
+    position: relative;
+  }
+}
+/*MOBILE*/
+@media(max-width: 599px){ 
+
+   .points-position-game{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+
+  .medal{
+    bottom: 1.5rem;
+    position: relative;
+  }
 }

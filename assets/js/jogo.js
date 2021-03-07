@@ -6,6 +6,7 @@
 
     //console.log("fase:" + level);
     //console.log("nivel:" + mode);
+     console.log("its working");
 
     if (level === null){
         level = 1;
@@ -87,13 +88,10 @@
         var frontFaces = document.getElementsByClassName("front");
         var backFaces = document.getElementsByClassName("back");
         
-        var size = windowWidth = $(window).width();
+        var size = $(window).width();
 
         if(size > 1000){ /*Versão Desktop*/
             
-            var container = document.getElementById("container");
-            console.log(contLeft);
-            container.style.left = (size/2) + 288 +"rem";
             /*tentar criar uma função e modularizar essa parte passando o tamanho da tela por parâmetro, ver se vai funcionar*/
             for(var i = 0; i < 16; i++){
 
@@ -337,7 +335,7 @@ function sizeBackMobile(){
                         var HideCard2 = document.getElementById(card2);
                         HideCard2.classList.add("pair");*/
 
-                       // matches=6;
+                        matches=7;
                         matches++;
                        
                         flippedCards = [];

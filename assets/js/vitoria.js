@@ -1,3 +1,30 @@
+ var size = $(window).width();
+
+ if(size > 1000){ /*Versão Desktop*/
+
+    var titulo = document.getElementsByClassName("titulo");
+    titulo[0].style.lineHeight = "6.8rem";
+    
+    var subtitulo = document.getElementsByClassName("subtitulo-t");
+    subtitulo[0].style.lineHeight = "4rem";
+
+ } else if(size >= 600 && size <= 1000) { /*Versão tablet*/
+
+    var titulo = document.getElementsByClassName("titulo");
+    titulo[0].style.lineHeight = "6.8rem";
+    
+    var subtitulo = document.getElementsByClassName("subtitulo-t");
+    subtitulo[0].style.lineHeight = "4rem";
+
+ } else if(size < 600){ /*Versão mobile*/
+    
+    var titulo = document.getElementsByClassName("titulo");
+    titulo[0].style.lineHeight = "4rem";
+    
+    var subtitulo = document.getElementsByClassName("subtitulo-t");
+    subtitulo[0].style.lineHeight = "2.4rem";
+
+ }
 
 document.getElementById("points").innerHTML = "100";
 
@@ -9,7 +36,6 @@ var again = document.getElementById("again");
 
 var NextLevel = 0;
 
-//var victory = 1;
 switch(mode){
     case "1":
         again.classList.add("facil");
