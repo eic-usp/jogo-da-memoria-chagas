@@ -74,6 +74,16 @@ a{
     -webkit-text-stroke-color: #000000;
     -webkit-text-stroke-width: 1px;
   }
+
+  .subtitulo-tam{
+    color: rgb(255,255,255);
+    font-size: 1.5rem;
+    line-height: 1.7rem;
+    font-weight: 600;
+    -webkit-text-fill-color:rgba(255, 255, 255, 0.9) ;
+    -webkit-text-stroke-color: #000000;
+    -webkit-text-stroke-width: 1px;
+  }
   .subtitulo-2{
     text-align: center;
     color: rgb(255,255,255);
@@ -128,6 +138,15 @@ a{
     -webkit-text-stroke-color: #000000;
     -webkit-text-stroke-width: 1px;
   }
+  .subtitulo-tam{
+    color: rgb(255,255,255);
+    font-size: 2rem;
+    line-height: 2.3rem;
+    font-weight: 600;
+    -webkit-text-fill-color:rgba(255, 255, 255, 0.9) ;
+    -webkit-text-stroke-color: #000000;
+    -webkit-text-stroke-width: 1px;
+  }
   .subtitulo-2{
     text-align: center;
     color: rgb(255,255,255);
@@ -174,10 +193,19 @@ a{
   .subtitulo-t{
     color: rgb(255,255,255);
     font-size: 3rem; /*48px*/
-    line-height: 3rem;;
+    line-height: 3rem;
     font-weight: 700;
     -webkit-text-stroke-color: #000000;
     -webkit-text-stroke-width: 0.8px;
+  }
+  .subtitulo-tam{
+    color: rgb(255,255,255);
+    font-size: 2rem;
+    line-height: 2.3rem;
+    font-weight: 600;
+    -webkit-text-fill-color:rgba(255, 255, 255, 0.9) ;
+    -webkit-text-stroke-color: #000000;
+    -webkit-text-stroke-width: 1px;
   }
   .subtitulo-2{
     text-align: center;

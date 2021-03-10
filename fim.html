@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/nivel.css">
     <link rel="stylesheet" href="assets/css/vitoria.css">
+    <link rel="stylesheet" href="assets/css/menu-desktop.css">
     <link rel="stylesheet" href="assets/css/menu-modal.css">
 
 </head>
@@ -27,7 +28,6 @@
             </a>
         </li>
         <li class = "menu-desktop espaco-6"></li>
-        <li class = "menu-desktop espaco-6"></li>
         <li class="menu-desktop"> 
         <a href=" menu-desktop index.html"> </a>
 
@@ -39,7 +39,7 @@
             <div>
             </a>
         </li>
-        <li class =  "menu-desktop espaco-3"></li>
+        <li class = "menu-desktop espaco-2"></li>
         <li>
             <a  class="menu-desktop" href="sobre-o-jogo.html">
             <div class=" menu-desktop elem-menu-lateral">
@@ -48,7 +48,7 @@
             <div>
             </a>
         </li>
-        <li class="menu-desktop espaco-3"></li>
+        <li class="menu-desktop espaco-2"></li>
         <li>
             <a class="menu-desktop" href="index.html">
             <div class="menu-desktop elem-menu-lateral">
@@ -57,7 +57,7 @@
             <div>
             </a>
         </li>
-        <li class = "menu-desktop espaco-3"></li>
+        <li class = "menu-desktop espaco-2"></li>
         <li>
             <a class="menu-desktop" href="compartilhar.html">
             <div class="menu-desktop elem-menu-lateral">
@@ -70,95 +70,93 @@
     </div>
 
     <div class="fundo">
-         <!-- menu mobile-->
-            <div class="espaco-3"></div>
-            <div class="espaco-3 menu-mobile"></div>
-            <div class="menu-mobile">
+<!-- menu mobile-->
+    <div class="espaco-1"></div>
+    <div class="menu-mobile">
 
-                <div class="espaco-6 menu-mobile"></div>
+        <div class="row menu-mobile">
 
-                <div class="row menu-mobile">
-
-                <!-- lembrar de mudar o link de voltar dependendo da pagina atual-->
-                    <div class="col menu-mobile">
-                        <a class = "menu-mobile" href="index.html"> 
-                            <img class="nav-elem menu-mobile" src="assets/img/nav/voltar.svg">
-                        </a>
-                    </div>
-                    <div class="col menu-mobile">
-                        <a class="menu-mobile" href="index.html"> 
-                            <img class="nav-elem menu-mobile" src="assets/img/nav/logo-eic-nav.svg">
-                        </a>
-                    </div>
-                    <div class="col menu-mobile">
-                        <a class="menu-mobile" id="botao-menu-modal"> 
-                            <img class="nav-elem" src="assets/img/nav/menu.svg">
-                        </a>
-                    </div>
-                    </div>
+        <!-- lembrar de mudar o link de voltar dependendo da pagina atual-->
+            <div class="col menu-mobile">
+                <div id="btn-voltar-m">
+                    <a class = "menu-mobile"> 
+                        <img class="nav-elem menu-mobile" src="assets/img/nav/voltar.svg">
+                    </a>
+                </div>
             </div>
-            
-        <!--Menu modal que só aparece quando o botao-menu-modal é clicado, funcionando e aparecendo-->
-        <div id="menu-modal" class="menu-mobile">
-            <ul class="list-modal">
-                <li>
-                    <a href="index.html">
-                    <div class= "logo-modal">
-                    <img class="tamanho-logo-modal" src="assets/img/logo-eic-branco.png">
-                    <div>
-                    </a>
-                </li>
-                <li>
-                    <a href="index.html">
-                    <div class= "elem-menu-modal">
-                    <img class="tamanho-img-modal" src="assets/img/home.svg">
-                    <p> Início <p> 
-                    <div>
-                    </a>
-                </li>
-                <li>
-                    <a href="sobre-o-jogo.html">
-                    <div class= "elem-menu-modal">
-                    <img class="tamanho-img-modal" src="assets/img/sobre-o-jogo.svg">
-                    <p> Sobre o Jogo <p> 
-                    <div>
-                    </a>
-                </li>
-                <li><div class="espaco-6"></div></li>
-                <li>
-                    <a href="creditos.html">
-                    <div class= "elem-menu-modal">
-                    <img class="tamanho-img-modal" src="assets/img/creditos.svg">
-                    <p> Créditos <p> 
-                    <div>
-                    </a>
-                </li>
-                <li><div class="espaco-6"></div></li>
-                <li>
-                    <a href="compartilhar.html">
-                    <div class= "elem-menu-modal">
-                    <img class="tamanho-img-modal" src="assets/img/compartilhar.svg">
-                    <p> Compartilhar <p> 
-                    <div>
-                    </a>
-                </li>
-            </ul>
-            <div class="espaco-6"></div>
-            <div id="botao-voltar"><p> Voltar </p></div>
-        </div>
-
+            <div class="col menu-mobile">
+                <a class="menu-mobile" href="index.html"> 
+                    <img class="nav-elem menu-mobile" src="assets/img/nav/logo-eic-nav.svg">
+                </a>
+            </div>
+            <div class="col menu-mobile">
+                <a class="menu-mobile" id="botao-menu-modal"> 
+                    <img class="nav-elem" src="assets/img/nav/menu.svg">
+                </a>
+            </div>
+            </div>
+    </div>
+    
+<!--Menu modal que só aparece quando o botao-menu-modal é clicado, funcionando e aparecendo-->
+<div id="menu-modal" class="menu-mobile">
+    <ul class="list-modal">
+         <li>
+            <a href="index.html">
+            <div class= "logo-modal">
+            <img class="tamanho-logo-modal" src="assets/img/logo-eic-branco.png">
+            <div>
+            </a>
+        </li>
+        <li>
+            <a href="index.html">
+            <div class= "elem-menu-modal">
+            <img class="tamanho-img-modal" src="assets/img/home.svg">
+            <p> Início <p> 
+            <div>
+            </a>
+        </li>
+         <li>
+            <a href="sobre-o-jogo.html">
+            <div class= "elem-menu-modal">
+            <img class="tamanho-img-modal" src="assets/img/sobre-o-jogo.svg">
+            <p> Sobre o Jogo <p> 
+            <div>
+            </a>
+        </li>
+        <li><div class="espaco-6"></div></li>
+         <li>
+            <a href="creditos.html">
+            <div class= "elem-menu-modal">
+            <img class="tamanho-img-modal" src="assets/img/creditos.svg">
+            <p> Créditos <p> 
+            <div>
+            </a>
+        </li>
+         <li><div class="espaco-6"></div></li>
+         <li>
+            <a href="compartilhar.html">
+            <div class= "elem-menu-modal">
+            <img class="tamanho-img-modal" src="assets/img/compartilhar.svg">
+            <p> Compartilhar <p> 
+            <div>
+            </a>
+        </li>
+    </ul>
+    <div class="espaco-6"></div>
+    <div id="botao-voltar"><p> Voltar </p></div>
+</div>
        
 
         <!--Conteudo da pagina -->
-        <div class="espaco-6"></div>
+        <div class="espaco-3"></div>
         <div id="trofeu">
         <img src="assets/img/trofeu.png">
         </div>
         <div class="espaco-3"></div>
-        <h1 class="borda titulo"> PARABÉNS! </h1>
+        <h1 class="titulo"> PARABÉNS! </h1>
         <div class="espaco-1"></div>
-        <h3 class="subtitulo-t borda"> Você completou todas as fases! Sua pontuação total foi: </h3>
-        <div class="espaco-3"></div>
+        <h3 class="subtitulo-tam"> Você completou todas as fases! Sua pontuação total foi: </h3>
+        <div class="espaco-1"></div>
            <div class="display-center">
             <div id="points-box" class="points-box">
                 <img  class="medal" src="assets/img/medalha.svg">
@@ -166,27 +164,25 @@
                 <!--Arrumar aqui para o texto e a imagem ficarem alinhados-->
             </div>
         </div>
-        <div class="espaco-6"></div>
+        <div class="espaco-3"></div>
 
         <div class="col">
             <a class="btn btn-primary btn-medio" href="index.html" id="inicio" > INÍCIO  </a>  
         </div>
 
-        <div class="espaco-3"></div>
+        <div class="espaco-1"></div>
 
         <div class="col">
             <a class="btn btn-primary btn-dificil" href="compartilhar.html" id="share" > COMPARTILHAR </a> 
         </div>
 
-         <div class="espaco-3"></div>
+         <div class="espaco-1"></div>
 
         <div class="hideProx">
             <div class="col">
                 <a class="btn btn-primary btn-facil" href="jogo.html" id="prox" onclick="fase(classList[3], '1')" /> PRÓXIMO NÍVEL </a> 
             </div>
         </div>
-           
-
     </div>
 
     <script src="assets/js/jquery.min.js"></script>

@@ -319,23 +319,17 @@ function sizeBackMobile(){
                         flippedCards[1].childNodes[3].classList.toggle("match");
 
                         matchCardsSign();
-
-                        /*Sumir carta */
-                        // a carta some muito rápido 
-                        /*setTimeout(function(){
-                          console.log("oi");
+                            //não funciona
+                      /*  setTimeout(function(){
+                            console.log("entrou");
+                            var cards = document.getElementsByClassName("flipped");
+                            cards[0].classList.add("pair");
+                            cards[1].classList.add("pair");
+                            cards[2].classList.add("pair");
+                            cards[3].classList.add("pair");
                         }, 3000);*/
 
-                      /*  var card1 =  flippedCards[0].id;
-                        var card2 =  flippedCards[1].id;
-                
-                        var HideCard1 = document.getElementById(card1);
-                        HideCard1.classList.add("pair");
-                
-                        var HideCard2 = document.getElementById(card2);
-                        HideCard2.classList.add("pair");*/
-
-                        matches=7;
+                      // matches=7;
                         matches++;
                        
                         flippedCards = [];

@@ -18,6 +18,34 @@
 </head>
 
 <body>
+<!--Teste facebook-->
+
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '275070503942678',
+      xfbml      : true,
+      version    : 'v10.0'
+    });
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<div
+  class="fb-like"
+  data-share="true"
+  data-width="450"
+  data-show-faces="true">
+</div>
+
    <div class="menu-desktop">
         <ul class="menu-desktop tipoUL">
         <li class = "espaco-6 menu-desktop"></li>
@@ -154,14 +182,21 @@
 
     <p> Compartilhe o jogo da memória com seus amigos e familiares </p>
     <div class="espaco-3"></div>
-    <!--Botoezinhos |  arrumar largura das colunas -->
-    <div class="row">
-        <div class="col"><img src="assets/img/redesSociais/btn-facebook.svg"></div>
-        <div class="col"><img src="assets/img/redesSociais/btn-whats.svg"></div>
-        <div class="col"><img src="assets/img/redesSociais/btn-insta.svg"></div>
+    <!--Arrumar links -->
+     <div class="display-center">
+        <div class = "elem-btn-c">
+        <div> <a href="instrucoes.html"> <img src="assets/img/redesSociais/btn-facebook.svg"></a></div>
         </div>
-    <div class="espaco-3"></div>
-     <div class="line"></div>
+        <div class = "elem-btn-c">
+        <div> <a href="creditos.html"><img src="assets/img/redesSociais/btn-whats.svg"></a></div>
+        </div>
+        <div class = "elem-btn-c">
+        <div> <a href="compartilhar.html"><img src="assets/img/redesSociais/btn-insta.svg"> </a></div>
+        </div>
+     </div>
+
+     <div class="espaco-3"></div>
+     <div class="line display-center"></div>
      <div class="espaco-3"></div>
 
 
@@ -169,19 +204,29 @@
     <div class="espaco-3"></div>
     <p> Interaja com a gente nas mídias sociais e em nosso site! </p>
     <div class="espaco-3"></div>  
-    <!--Botoezinhos | arrumar largura das colunas-->
-     <div class="row">
-        <div class="col"><img src="assets/img/redesSociais/btn-facebook-line.svg"></div>
-        <div class="col"><img src="assets/img/redesSociais/btn-insta-line.svg"></div>
-        <div class="col"><img src="assets/img/redesSociais/btn-youtube-line.svg"></div>
-        <div class="col"><img src="assets/img/redesSociais/btn-site-line.svg"></div>
+ 
+
+    <div class="display-center">
+        <div class = "elem-btn-c">
+        <div> <a href="instrucoes.html"> <img src="assets/img/redesSociais/btn-facebook-line.svg"></a></div>
         </div>
-    <div class="espaco-3"></div>
+        <div class = "elem-btn-c">
+        <div> <a href="creditos.html"><img src="assets/img/redesSociais/btn-insta-line.svg"></a></div>
+        </div>
+        <div class = "elem-btn-c">
+        <div> <a href="compartilhar.html"><img src="assets/img/redesSociais/btn-youtube-line.svg"> </a></div>
+        </div>
+         <div class = "elem-btn-c">
+        <div> <a href="compartilhar.html"><img src="assets/img/redesSociais/btn-site-line.svg"> </a></div>
+        </div>
+    </div>
+
 </div>
      
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/menu-modal.js"></script>
+   
 </body>
 
 </html>

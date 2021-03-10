@@ -1,17 +1,20 @@
 
+/*GLOBAL*/
+
 /*DESKTOP*/
 @media(min-width: 1001px){
 
-     .subtitulo-2{
-        font-size: 48px;
+    .subtitulo-2{
+        font-size: 3rem;
+        line-height: 3.3rem;
     }
     .tamanhoP{
-        font-size: 24px;
+        font-size: 1.5rem;
+        line-height: 1.7rem ;
     }
     .cardT{
-    width: 100px;
-    height: 100px;
-    position: absolute; /*é importante mas porque?*/
+    width: 120px;
+    height: 120px; 
     background: #FFFFFF;
     }
     .bg-style{
@@ -29,21 +32,75 @@
         background-image: url("../img/fase3/0.png");
     }
     .btn-position{
-        top: 150px;
-    }
-  /*  #cardI0{
-        left:-20px;
-    }*/
-   /* #cardI1{
-        left:80px;
-    }*/
+        top: 9.375rem;
+    }   
 }
 /*TABLET*/
 @media(min-width: 600px) and (max-width: 1000px){
-  
+    .subtitulo-2{
+        font-size: 3rem;
+        line-height: 3.3rem;
+    }
+    .tamanhoP{
+        font-size: 1.5rem;
+        line-height: 1.7rem ;
+    }
+    .cardT{
+    width: 120px;
+    height: 120px; 
+    background: #FFFFFF;
+    }
+
+    .btn-position{
+        top: 9.375rem;
+    } 
+    .bg-style{
+        border-radius: 10px;
+        background-repeat: no-repeat !important;
+        background-position: center !important;
+    }
+    .Inst1{
+        background-image: url("../img/fase1/0.png");
+    }
+    .Inst2{
+        background-image: url("../img/fase2/8.png");
+    }
+    .Inst3{
+        background-image: url("../img/fase3/0.png");
+    }
 }
 /*MOBILE*/
 @media(max-width: 599px){ 
+    .subtitulo-2{
+        font-size: 3rem;
+        line-height: 3.3rem;
+    }
+    .tamanhoP{
+        font-size: 1.5rem;
+        line-height: 1.7rem ;
+    }
+    .cardT{
+    width: 120px;
+    height: 120px; 
+    background: #FFFFFF;
+    }
+    .bg-style{
+        border-radius: 10px;
+        background-repeat: no-repeat !important;
+        background-position: center !important;
+    }
+    .Inst1{
+        background-image: url("../img/fase1/0.png");
+    }
+    .Inst2{
+        background-image: url("../img/fase2/8.png");
+    }
+    .Inst3{
+        background-image: url("../img/fase3/0.png");
+    }
 
+    .btn-position{
+        top: 9.375rem;
+    } 
     
 }

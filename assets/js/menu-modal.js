@@ -13,10 +13,10 @@ BtnVoltar.addEventListener("click",HideMenuModal,false);
 
 function ShowMenuModal(){
 	menuModal.style.zIndex = 5;
-	console.log("chamou");
+	//console.log("chamou");
 }
 function HideMenuModal(){
 	menuModal.style.zIndex = -2;
-	console.log("chamou e parou de mostrar");
+	//console.log("chamou e parou de mostrar");
 }
 
