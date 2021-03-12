@@ -91,17 +91,17 @@
 /*TABLET*/
 @media(min-width: 600px) and (max-width: 1000px){
     #container{
-        width: 60vw; 
+        width: 72vw; 
         height: 58vh;
         top: 0px;
-        left: 2vw;
+        left: -2vw;
         position: relative;
         margin: 0 auto;
         border-radius: 10px;
     }
     .card{
-        width: 96px;
-        height: 96px;
+        width: 120px;
+        height: 120px;
         position: absolute; 
         border-radius: 10px;
         /*aqui os cards ficam empilhados, mas são separados com javascript*/

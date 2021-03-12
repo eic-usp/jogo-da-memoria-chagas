@@ -20,13 +20,22 @@
     <meta property="og:title"         content="Jogo da memória" />
     <meta property="og:description"   content="Jogo da memória sobre a doença de chagas"/>
     <meta property="og:image" content="assets/img/btn-facebook.svg">
-
+    <meta property="fb:app_id" content="275070503942678">
+    <meta property="og:locale:alternate" content="pt_br">
+    
     
 </head>
 
 <body>
 
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" 
+src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v10.0&appId=275070503942678&autoLogAppEvents=1" 
+nonce="n77VsXlQ"></script>
+
 <script>
+
+/*Conectandp com o app do facebook*/
   window.fbAsyncInit = function() {
     FB.init({
       appId      : '275070503942678',
@@ -43,10 +52,16 @@
      js.src = "https://connect.facebook.net/en_US/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
+
+    /*Mudando o idioma das caixas de diálogo para português*/
+   (function(d){
+  var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+  js = d.createElement('script'); js.id = id; js.async = true;
+  js.src = "https://connect.facebook.net/pt_BR/all.js";
+  d.getElementsByTagName('head')[0].appendChild(js);
+}(document));
+
 </script>
-
-
-
 
    <div class="menu-desktop">
         <ul class="menu-desktop tipoUL">
@@ -126,7 +141,7 @@
             </div>
     </div>
     
-<!--Menu modal que só aparece quando o botao-menu-modal é clicado, funcionando e aparecendo-->
+<!--Menu modal que só aparece quando o botao-menu-modal é clicado-->
 <div id="menu-modal" class="menu-mobile">
     <ul class="list-modal">
          <li>
@@ -144,6 +159,7 @@
             <div>
             </a>
         </li>
+        <li><div class="espaco-1"></div></li>
          <li>
             <a href="sobre-o-jogo.html">
             <div class= "elem-menu-modal">
@@ -152,7 +168,7 @@
             <div>
             </a>
         </li>
-        <li><div class="espaco-6"></div></li>
+        <li><div class="espaco-1"></div></li>
          <li>
             <a href="creditos.html">
             <div class= "elem-menu-modal">
@@ -161,7 +177,7 @@
             <div>
             </a>
         </li>
-         <li><div class="espaco-6"></div></li>
+         <li><div class="espaco-1"></div></li>
          <li>
             <a href="compartilhar.html">
             <div class= "elem-menu-modal">
@@ -171,7 +187,7 @@
             </a>
         </li>
     </ul>
-    <div class="espaco-6"></div>
+    <div class="espaco-3"></div>
     <div id="botao-voltar"><p> Voltar </p></div>
 </div>
 
@@ -185,15 +201,11 @@
     <p> Compartilhe o jogo da memória com seus amigos e familiares no facebook </p>
     <div class="espaco-1"></div>
     <!--Arrumar links -->
-    <div class="display-center">
-        <div class="fb-share-button" data-href="https://jogo-da-memoria-eic.vercel.app/index.html" 
-        data-layout="box_count" data-size="small"><a 
-        target="_blank" 
-        href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">
-        Compartilhar</a>
-        </div>
-    </div>
 
+    <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" 
+    data-layout="button" data-size="large"><a target="_blank"
+     href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" 
+    class="fb-xfbml-parse-ignore">Compartilhar</a></div>
     <div class="espaco-1"></div>
    
     <div class="display-center">
