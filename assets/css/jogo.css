@@ -70,13 +70,13 @@
         object-fit: fill;
     }   
     .b1{
-        background: url("../img/fase1/verso1.png");
+        background: url("../img/desktop/fase1/verso1.png");
     }
     .b2{
-        background: url("../img/fase2/verso2.png");
+        background: url("../img/desktop/fase2/verso2.png");
     }      
     .b3{
-        background: url("../img/fase3/verso3.png");
+        background: url("../img/desktop/fase3/verso3.png");
     }
     /*Botao do menu lateral*/
     #btn-voltar-d{
@@ -108,14 +108,14 @@
         perspective: 600px;
     }
     .b1{
-        background: url("../img/fase1/verso1.png");
+        background: url("../img/desktop/fase1/verso1.png");
     }
     .b2{
 
-        background: url("../img/fase2/verso2.png");
+        background: url("../img/desktop/fase2/verso2.png");
     }      
     .b3{
-        background: url("../img/fase3/verso3.png");
+        background: url("../img/desktop/fase3/verso3.png");
     } 
 }
 /*MOBILE*/
@@ -138,13 +138,13 @@
         perspective: 600px;
     }   
     .b1{
-        background: url("../img/fase1/verso1.png");
+        background: url("../img/mobile/fase1/verso1.png");
     }
     .b2{
-        background: url("../img/fase2/verso2.png");
+        background: url("../img/mobile/fase2/verso2.png");
     }      
     .b3{
-        background: url("../img/fase3/verso3.png");
+        background: url("../img/mobile/fase3/verso3.png");
     }   
   
 }

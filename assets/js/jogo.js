@@ -4,9 +4,10 @@
     level = sessionStorage.getItem('fase'); // fase 1, 2, 3
     var mode = sessionStorage.getItem('nivel'); // facil/medio/dificil 
 
+    var size = $(window).width();
+
     //console.log("fase:" + level);
     //console.log("nivel:" + mode);
-     console.log("its working");
 
     if (level === null){
         level = 1;
@@ -14,64 +15,127 @@
 
     var images = [];
     var matches = 0;
-    /* Mudar as imagens de acordo com a fase */
-    if (level === "1"){
+    /*Imagens desktop*/
+    if(size >= 600){
+        if (level === "1"){
 
-        document.getElementsByTagName('title')[0].innerHTML= "Fase 1";
+            document.getElementsByTagName('title')[0].innerHTML= "Fase 1";
 
-        for(var i = 0; i < 16; i++){
-            /*img é objeto, indices textuais, funções = métodos */
-            var img = {
-                    src: "assets/img/fase1/" + i + ".png",
-                    id: i%8
-                  
-            };
-            console.log("id das imagens:" + img.id);
-            images.push(img);
-        } 
+            for(var i = 0; i < 16; i++){
 
-    } else if (level === "2"){
+                var img = {
+                        src: "assets/img/desktop/fase1/" + i + ".png",
+                        id: i%8
+                    
+                };
+                console.log("id das imagens:" + img.id);
+                images.push(img);
+            } 
 
-        document.getElementsByTagName('title')[0].innerHTML= "Fase 2";
+        } else if (level === "2"){
 
-       
-        for(var i = 0; i < 8; i++){
-            var img = {
-                    src: "assets/img/fase1/" + i + ".png",
-                    id: i%8
-            };
-            images.push(img);
-        }
+            document.getElementsByTagName('title')[0].innerHTML= "Fase 2";
 
-        for(var i = 8; i < 16; i++){
-            var img = {
-                    src: "assets/img/fase2/" + i + ".png",
-                    id: i%8
-            };
-            images.push(img);
-        } 
-
-    } else if(level === "3"){
-        // arrumar o tamanho das imagens, mas de resto ta tudo certo até aqui
-
-        document.getElementsByTagName('title')[0].innerHTML= "Fase 3";
-
-        for(var i = 0; i < 8; i++){
-            var img = {
-                    src: "assets/img/fase3/" + i + ".png",
-                    id: i%8
+        
+            for(var i = 0; i < 8; i++){
+                var img = {
+                        src: "assets/img/desktop/fase1/" + i + ".png",
+                        id: i%8
                 };
                 images.push(img);
             }
 
-        for(var i = 8; i < 16; i++){
-            var img = {
-                    src: "assets/img/fase2/" + i + ".png",
-                    id: i%8
-            };
-            images.push(img);
-        } 
+            for(var i = 8; i < 16; i++){
+                var img = {
+                        src: "assets/img/desktop/fase2/" + i + ".png",
+                        id: i%8
+                };
+                images.push(img);
+            } 
 
+        } else if(level === "3"){
+
+            document.getElementsByTagName('title')[0].innerHTML= "Fase 3";
+
+            for(var i = 0; i < 8; i++){
+                var img = {
+                        src: "assets/img/desktop/fase3/" + i + ".png",
+                        id: i%8
+                    };
+                    images.push(img);
+                }
+
+            for(var i = 8; i < 16; i++){
+                var img = {
+                        src: "assets/img/desktop/fase2/" + i + ".png",
+                        id: i%8
+                };
+                images.push(img);
+            } 
+
+        }
+
+    }else{ /*Imagens mobile*/
+        console.log("fase");
+
+        if (level === "1"){
+
+            document.getElementsByTagName('title')[0].innerHTML= "Fase 1";
+
+            for(var i = 0; i < 16; i++){
+                /*img é objeto, indices textuais, funções = métodos */
+                var img = {
+                        src: "assets/img/mobile/fase1/" + i + ".png",
+                        id: i%8
+                    
+                };
+                console.log("id das imagens:" + img.id);
+                images.push(img);
+            } 
+
+        } else if (level === "2"){
+
+            document.getElementsByTagName('title')[0].innerHTML= "Fase 2";
+
+        
+            for(var i = 0; i < 8; i++){
+                var img = {
+                        src: "assets/img/mobile/fase1/" + i + ".png",
+                        id: i%8
+                };
+                images.push(img);
+            }
+
+            for(var i = 8; i < 16; i++){
+                var img = {
+                        src: "assets/img/mobile/fase2/" + i + ".png",
+                        id: i%8
+                };
+                images.push(img);
+            } 
+
+        } else if(level === "3"){
+            // arrumar o tamanho das imagens, mas de resto ta tudo certo até aqui
+
+            document.getElementsByTagName('title')[0].innerHTML= "Fase 3";
+
+            for(var i = 0; i < 8; i++){
+                var img = {
+                        src: "assets/img/mobile/fase3/" + i + ".png",
+                        id: i%8
+                    };
+                    images.push(img);
+                }
+
+            for(var i = 8; i < 16; i++){
+                var img = {
+                        src: "assets/img/mobile/fase2/" + i + ".png",
+                        id: i%8
+                };
+                images.push(img);
+            } 
+
+        }
     }
    
 
@@ -217,6 +281,7 @@
 
     /* Mudar as imagens do verso das cartas acordo com a fase */
     function backgroundLevel(level){
+         console.log("entrou");
             var backFaces = document.getElementsByClassName("back");
             for(var i = 0; i < backFaces.length; i++){
                 if(level === "1"){
@@ -329,7 +394,7 @@ function sizeBackMobile(){
                             cards[3].classList.add("pair");
                         }, 3000);*/
 
-                      // matches=7;
+                       matches=7;
                         matches++;
                        
                         flippedCards = [];
