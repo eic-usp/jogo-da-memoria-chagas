@@ -23,13 +23,13 @@
         background-position: center !important;
     }
     .Inst1{
-        background-image: url("../img/fase1/0.png");
+        background-image: url("../img/desktop/fase1/0.png");
     }
     .Inst2{
-        background-image: url("../img/fase2/8.png");
+        background-image: url("../img/desktop/fase2/8.png");
     }
     .Inst3{
-        background-image: url("../img/fase3/0.png");
+        background-image: url("../img/desktop/fase3/0.png");
     }
     .btn-position{
         top: 9.375rem;
@@ -60,13 +60,13 @@
         background-position: center !important;
     }
     .Inst1{
-        background-image: url("../img/fase1/0.png");
+        background-image: url("../img/desktop/fase1/0.png");
     }
     .Inst2{
-        background-image: url("../img/fase2/8.png");
+        background-image: url("../img/desktop/fase2/8.png");
     }
     .Inst3{
-        background-image: url("../img/fase3/0.png");
+        background-image: url("../img/desktop/fase3/0.png");
     }
 }
 /*MOBILE*/
@@ -90,13 +90,13 @@
         background-position: center !important;
     }
     .Inst1{
-        background-image: url("../img/fase1/0.png");
+        background-image: url("../img/mobile/fase1/0.png");
     }
     .Inst2{
-        background-image: url("../img/fase2/8.png");
+        background-image: url("../img/mobile/fase2/8.png");
     }
     .Inst3{
-        background-image: url("../img/fase3/0.png");
+        background-image: url("../img/mobile/fase3/0.png");
     }
 
     .btn-position{

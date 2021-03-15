@@ -24,9 +24,16 @@
 </head>
 
 <body>
-<!--Teste facebook-->
+<!-- facebook -->
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" 
+src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v10.0&appId=275070503942678&autoLogAppEvents=1" 
+nonce="n77VsXlQ"></script>
 
 <script>
+
+/*Conectandp com o app do facebook*/
   window.fbAsyncInit = function() {
     FB.init({
       appId      : '275070503942678',
@@ -43,7 +50,17 @@
      js.src = "https://connect.facebook.net/en_US/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
+
+    /*Mudando o idioma das caixas de diálogo para português*/
+   (function(d){
+  var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+  js = d.createElement('script'); js.id = id; js.async = true;
+  js.src = "https://connect.facebook.net/pt_BR/all.js";
+  d.getElementsByTagName('head')[0].appendChild(js);
+}(document));
+
 </script>
+
 
 
    <div class="menu-desktop">
@@ -186,7 +203,15 @@
     <!--Arrumar links -->
      <div class="display-center">
         <div class = "elem-btn-c">
-        <div> <a href="fb-compartilhar.html"> <img src="assets/img/redesSociais/btn-facebook.svg"></a></div>
+            <div> 
+                 <div  data-href="https://developers.facebook.com/docs/plugins/">
+                    <a target="_blank"
+                    href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" 
+                    class="fb-xfbml-parse-ignore">
+                     <img src="assets/img/redesSociais/btn-facebook.svg"></a>
+                    </a>
+                </div>
+            </div>
         </div>
         <div class = "elem-btn-c">
         <div> <a href="creditos.html"><img src="assets/img/redesSociais/btn-whats.svg"></a></div>

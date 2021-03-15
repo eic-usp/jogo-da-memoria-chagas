@@ -190,7 +190,6 @@
                 frontFaces[i].style.background = "url('"+ images[i].src +"')";
                 frontFaces[i].setAttribute("id",images[i].id);
                 frontFaces[i].style.backgroundRepeat = "no-repeat";
-                // console.log(images[i].src);
 
                 if(i === 15){
                     //mudar o texto
@@ -211,6 +210,7 @@
                 backFaces[i].classList.remove("flipped", "match");
                 
                 var card = document.querySelector("#card" + i);
+                //medidas anteriores
               /*  card.style.left = i % 4 === 0? 6 + "px" : i % 4 * 102 + 6 + "px"; 
         
                 if(i < 4){
@@ -397,16 +397,12 @@ function sizeBackMobile(){
 
                         matchCardsSign();
                             //não funciona
-                      /*  setTimeout(function(){
-                            console.log("entrou");
-                            var cards = document.getElementsByClassName("flipped");
-                            cards[0].classList.add("pair");
-                            cards[1].classList.add("pair");
-                            cards[2].classList.add("pair");
-                            cards[3].classList.add("pair");
-                        }, 3000);*/
+                        flippedCards[0].childNodes[1].classList.add("pair");
+                        flippedCards[0].childNodes[3].classList.add("pair");
+                        flippedCards[1].childNodes[1].classList.add("pair");
+                        flippedCards[1].childNodes[3].classList.add("pair");
 
-                       matches=7;
+                        matches=6;
                         matches++;
                        
                         flippedCards = [];

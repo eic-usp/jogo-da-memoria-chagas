@@ -1,4 +1,14 @@
 
+/*animações*/
+/*@keyframes fadeIn {
+    0% { opacity: 1; }
+    20% { opacity: 1;}
+    40% { opacity: 0.8;}
+    60% { opacity: 0.6;}
+    80% { opacity: 0.4;}
+    100% { opacity: 0; 
+    }
+}*/
 /*global*/
 *{
     font-display: block;
@@ -39,9 +49,16 @@
     z-index: -1;
 }
 
+/*.pair{
+  animation-name: fadeIn;
+  animation-delay: 2000ms;
+  animation-duration: 1000ms;
+}*/
 .pair{
     display: none;
 }
+
+
 
 /*DESKTOP*/
 @media(min-width: 1001px){
