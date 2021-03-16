@@ -1,6 +1,6 @@
 
 /*animações*/
-/*@keyframes fadeIn {
+@keyframes fadeIn {
     0% { opacity: 1; }
     20% { opacity: 1;}
     40% { opacity: 0.8;}
@@ -8,7 +8,7 @@
     80% { opacity: 0.4;}
     100% { opacity: 0; 
     }
-}*/
+}
 /*global*/
 *{
     font-display: block;
@@ -21,6 +21,7 @@
     border-radius: 10px;
     transition: all 1s;
     backface-visibility: hidden;
+    background: rgb(136,69,153);
     background-position: center !important;
     background-repeat: no-repeat !important;
 }
@@ -49,14 +50,13 @@
     z-index: -1;
 }
 
-/*.pair{
+.pair{
   animation-name: fadeIn;
   animation-delay: 2000ms;
   animation-duration: 1000ms;
-}*/
-.pair{
-    display: none;
+  animation-fill-mode: forwards;
 }
+
 
 
 
