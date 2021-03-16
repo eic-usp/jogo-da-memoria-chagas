@@ -77,11 +77,13 @@
     .card{
         width: 120px;
         height: 120px;
-        position: absolute; /*é importante mas porque?*/
+        position: absolute; 
         border-radius: 10px;
         /*aqui os cards ficam empilhados, mas preciso distanciar um por um? NAO JAVASCRIPT LINDO*/
         perspective: 600px;
         /*profundidade do giro, para nao ficar chapado*/ 
+        background:  rgb(136,69,153) ;
+        border: 0ch;
     }
     .back{
         object-fit: fill;
@@ -123,6 +125,8 @@
         border-radius: 10px;
         /*aqui os cards ficam empilhados, mas são separados com javascript*/
         perspective: 600px;
+        background:  rgb(136,69,153) ;
+        border: 0ch;
     }
     .b1{
         background: url("../img/desktop/fase1/verso1.png");
@@ -138,11 +142,10 @@
 /*MOBILE*/
 @media(max-width: 599px){ 
     #container{
-        width: 95vw; /*O tamanho das cartas esta muito pequeno em comparação ao tamanho da tela*/
+        width: 95vw; 
         height: 58vh;
         top: 20px;
         left: 2.5vw;
-       /* border: 1px solid #000; */
         position: relative;
         margin: 0 auto;
         border-radius: 10px;
@@ -153,6 +156,8 @@
         position: absolute; 
         border-radius: 10px;
         perspective: 600px;
+        background:  rgb(136,69,153) ;
+        border: 0ch;
     }   
     .b1{
         background: url("../img/mobile/fase1/verso1.png");

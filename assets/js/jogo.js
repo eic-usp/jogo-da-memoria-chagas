@@ -410,7 +410,7 @@ function sizeBackMobile(){
                         flippedCards[1].childNodes[1].classList.add("pair");
                         flippedCards[1].childNodes[3].classList.add("pair");
 
-                        matches=4;
+                        //matches=7;
                         matches++;
                        
                         flippedCards = [];
