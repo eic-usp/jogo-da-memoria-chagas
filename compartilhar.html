@@ -32,8 +32,9 @@ src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v10.0&appId=27507
 nonce="n77VsXlQ"></script>
 
 <script>
-
-/*Conectandp com o app do facebook*/
+/*Conectando com facebook*/
+/*Criar aplicação no facebook do EIC*/
+/*Alterar o id da aplicação quando for colocar online (ou copiar o script que o facebook fornece pronto)*/
   window.fbAsyncInit = function() {
     FB.init({
       appId      : '275070503942678',
@@ -61,7 +62,7 @@ nonce="n77VsXlQ"></script>
 
 </script>
 
-
+<!--Procurar como integrar com instagram e whatsapp-->
 
    <div class="menu-desktop">
         <ul class="menu-desktop tipoUL">
@@ -192,6 +193,7 @@ nonce="n77VsXlQ"></script>
 </div>
 
 <!--fim menu mobile-->
+
 <!-- Conteúdo da página -->
     <div class="espaco-3"> </div>
 
@@ -204,7 +206,7 @@ nonce="n77VsXlQ"></script>
      <div class="display-center">
         <div class = "elem-btn-c">
             <div> 
-                 <div  data-href="https://developers.facebook.com/docs/plugins/">
+                 <div  data-href="https://jogo-da-memoria-eic.vercel.app">
                     <a target="_blank"
                     href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" 
                     class="fb-xfbml-parse-ignore">
@@ -214,8 +216,10 @@ nonce="n77VsXlQ"></script>
             </div>
         </div>
         <div class = "elem-btn-c">
-        <div> <a href="creditos.html"><img src="assets/img/redesSociais/btn-whats.svg"></a></div>
+        <!--Mudar para o link final de quando for hospedado - NÃO ESQUECER-->
+        <div> <a href="https://api.whatsapp.com/send?text= Jogo da memória - Doença de chagas 'https://jogo-da-memoria-eic.vercel.app'"> <img src="assets/img/redesSociais/btn-whats.svg"></a></div>
         </div>
+        <!--Pensar no que fazer com instagram-->
         <div class = "elem-btn-c">
         <div> <a href="compartilhar.html"><img src="assets/img/redesSociais/btn-insta.svg"> </a></div>
         </div>
@@ -234,27 +238,19 @@ nonce="n77VsXlQ"></script>
 
     <div class="display-center">
         <div class = "elem-btn-c">
-        <div> <a href="instrucoes.html"> <img src="assets/img/redesSociais/btn-facebook-line.svg"></a></div>
+        <div> <a href="https://www.facebook.com/EIC.USP/"> <img src="assets/img/redesSociais/btn-facebook-line.svg"></a></div>
         </div>
         <div class = "elem-btn-c">
-        <div> <a href="creditos.html"><img src="assets/img/redesSociais/btn-insta-line.svg"></a></div>
+        <div> <a href="https://www.instagram.com/eiciencia"><img src="assets/img/redesSociais/btn-insta-line.svg"></a></div>
         </div>
         <div class = "elem-btn-c">
-        <div> <a href="compartilhar.html"><img src="assets/img/redesSociais/btn-youtube-line.svg"> </a></div>
+        <div> <a href="https://www.youtube.com/c/EspaçoInterativodeCiências"><img src="assets/img/redesSociais/btn-youtube-line.svg"> </a></div>
         </div>
          <div class = "elem-btn-c">
-        <div> <a href="compartilhar.html"><img src="assets/img/redesSociais/btn-site-line.svg"> </a></div>
+        <div> <a href="https://eic.ifsc.usp.br/"><img src="assets/img/redesSociais/btn-site-line.svg"> </a></div>
         </div>
     </div>
-
-    <!--Funciona mas não do jeito que eu gostaria ainda-->
-<!--<div
-  class="fb-like"
-  data-share="true"
-  data-width="450"
-  data-show-faces="true">
-</div>-->
-
+<!--Botao facebook-->
 <div
   class="fb-share-button" style="display:none"
   data-href="https://jogo-da-memoria-eic.vercel.app/index.html"

@@ -5,7 +5,7 @@ function fase(n, faseAtual){
 
     //s = state     0 - primeira vez | 1 - ja ganhou
 
-     var nivel = "";
+    var nivel = "";
 
     if(n === "facil"){
         nivel = 1;
@@ -18,8 +18,6 @@ function fase(n, faseAtual){
     //console.log("nivel antes" + n);
    // console.log("fase" + faseAtual);
     
-       
-
 sessionStorage.setItem("nivel", nivel);
 sessionStorage.setItem("fase", faseAtual);
 }
