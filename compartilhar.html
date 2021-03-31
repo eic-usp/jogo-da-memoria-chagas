@@ -24,45 +24,6 @@
 </head>
 
 <body>
-<!-- facebook -->
-
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous" 
-src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v10.0&appId=275070503942678&autoLogAppEvents=1" 
-nonce="n77VsXlQ"></script>
-
-<script>
-/*Conectando com facebook*/
-/*Criar aplicação no facebook do EIC*/
-/*Alterar o id da aplicação quando for colocar online (ou copiar o script que o facebook fornece pronto)*/
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '275070503942678',
-      xfbml      : true,
-      version    : 'v10.0'
-    });
-    FB.AppEvents.logPageView();
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "https://connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-
-    /*Mudando o idioma das caixas de diálogo para português*/
-   (function(d){
-  var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
-  js = d.createElement('script'); js.id = id; js.async = true;
-  js.src = "https://connect.facebook.net/pt_BR/all.js";
-  d.getElementsByTagName('head')[0].appendChild(js);
-}(document));
-
-</script>
-
-<!--Procurar como integrar com instagram e whatsapp-->
 
    <div class="menu-desktop">
         <ul class="menu-desktop tipoUL">
@@ -123,7 +84,7 @@ nonce="n77VsXlQ"></script>
 
         <!-- lembrar de mudar o link de voltar dependendo da pagina atual-->
             <div class="col menu-mobile">
-                <div id="btn-voltar-m">
+                <div id="btn-voltar-m"  href="index.html">
                     <a class = "menu-mobile"> 
                         <img class="nav-elem menu-mobile" src="assets/img/nav/voltar.svg">
                     </a>
@@ -202,26 +163,36 @@ nonce="n77VsXlQ"></script>
 
     <p> Compartilhe o jogo da memória com seus amigos e familiares </p>
     <div class="espaco-3"></div>
-    <!--Arrumar links -->
+    <!--Facebook -->
      <div class="display-center">
         <div class = "elem-btn-c">
             <div> 
-                 <div  data-href="https://jogo-da-memoria-eic.vercel.app">
+                 <div data-href="">
                     <a target="_blank"
-                    href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" 
-                    class="fb-xfbml-parse-ignore">
+                    id="facebook-share-btt" rel="nofollow"  class="facebook-share-button"
+                    href="">
                      <img src="assets/img/redesSociais/btn-facebook.svg"></a>
                     </a>
                 </div>
             </div>
         </div>
+         <!-- Whatsapp-->
+
         <div class = "elem-btn-c">
-        <!--Mudar para o link final de quando for hospedado - NÃO ESQUECER-->
-        <div> <a href="https://api.whatsapp.com/send?text= Jogo da memória - Doença de chagas 'https://jogo-da-memoria-eic.vercel.app'"> <img src="assets/img/redesSociais/btn-whats.svg"></a></div>
+            <div> 
+                <a href="https://api.whatsapp.com/send?text= Jogo da memória - Doença de chagas https://eic.ifsc.usp.br/app/jogo-da-memoria-chagas/index.html">
+                    <img src="assets/img/redesSociais/btn-whats.svg">
+                </a>
+             </div>
         </div>
-        <!--Pensar no que fazer com instagram-->
+
+        <!--twiiter-->
         <div class = "elem-btn-c">
-        <div> <a href="compartilhar.html"><img src="assets/img/redesSociais/btn-insta.svg"> </a></div>
+            <div> 
+                <a id="twitter-share-btt" rel="nofollow" target="_blank" href="https://twitter.com/intent/tweet?text= Jogo da memória - Doença de chagas  https://eic.ifsc.usp.br/app/jogo-da-memoria-chagas/index.html"> 
+                    <img src="assets/img/redesSociais/btn-twitter.svg"> 
+                </a>
+            </div>
         </div>
      </div>
 
@@ -262,6 +233,19 @@ nonce="n77VsXlQ"></script>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/menu-modal.js"></script>
+
+    <!--Botao facebook-->
+    <!-- Não foi necessário vincular o ID do jogo no facebook a essa pagina para funcionar -->
+     <script type="text/javascript">
+        //Constrói a URL depois que o DOM estiver pronto
+        document.addEventListener("DOMContentLoaded", function() {            
+            //altera a URL do botão
+            document.getElementById("facebook-share-btt").href = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent("https://eic.ifsc.usp.br/app/jogo-da-memoria-chagas/index.html");
+        }, false);
+    </script>
+
+    
+
    
 </body>
 

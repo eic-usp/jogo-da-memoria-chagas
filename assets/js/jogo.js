@@ -210,18 +210,6 @@
                 backFaces[i].classList.remove("flipped", "match");
                 
                 var card = document.querySelector("#card" + i);
-                //medidas anteriores
-              /*  card.style.left = i % 4 === 0? 6 + "px" : i % 4 * 102 + 6 + "px"; 
-        
-                if(i < 4){
-                    card.style.top = 6 + "px";
-                } else if(i < 8){
-                    card.style.top = 108 + "px";
-                }else if(i < 12){
-                    card.style.top = 210 + "px";
-                } else{
-                    card.style.top = 312 + "px";
-                }*/
         
                 card.style.left = i % 4 === 0? 0 + "px" : i % 4 * 140 + 10 + "px"; 
 
@@ -307,13 +295,7 @@
                 }
             }
     }
-/* Mudar o tamanho do verso das imagens se estiver no mobile - preciso testar */
-function sizeBackMobile(){
-        var backFaces = document.getElementsByClassName("back");
-        for(var i = 0; i < backFaces.length; i++){
-            backFaces[i].style.objectFit = "fill";
-        }
-}
+
 /*Embaralhar as cartas */
     function randomSort(images){
         var sorted = [];
