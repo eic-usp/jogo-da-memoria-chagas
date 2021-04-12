@@ -341,6 +341,8 @@
     function ShowStart(){
         setTimeout(function(){ 
             document.getElementById("titulo-jogo").innerHTML = "Vire os cartões";
+            var ShowPointsBox = document.getElementById("points-box");
+            ShowPointsBox.classList.remove("hide-points-box");
         }, 5000);
     }
 
@@ -364,14 +366,11 @@
 
                 /*toggle = switch, se nao existe adiciona, se ja existe, remove */
                 flippedCards.push(this);
-
               
                 console.log("1" + flippedCards[0].childNodes[1]);
                 console.log("2" +  flippedCards[0].childNodes[3]);
                 console.log("3" + flippedCards[1].childNodes[1]);
-                console.log("4" + flippedCards[1].childNodes[3]);
-                
-                
+                console.log("4" + flippedCards[1].childNodes[3]);     
 
                 if(flippedCards.length === 2 ){
                     //Problema com a carta carlos chagas e megacolon - não sei o que está acontecendo
@@ -450,8 +449,13 @@
      /*Função para mostrar o modal sair caso a pessoa queira sair no meio do jogo*/
     function ShowQuitModal(){
 
+	    //container.classlist.add("conteudo-inacessivel");
+
         var quitModal = document.getElementById("modal-sair");
         quitModal.style.zIndex = 10;
+
+        var container = document.getElementById("container");
+        container.classList.toggle("conteudo-inacessivel");
 
         var btnClose = document.getElementById("sair");
         btnClose.addEventListener("click", quitGame, false);
@@ -467,6 +471,8 @@
     function HideQuitModal(){
         var quitModal = document.getElementById("modal-sair");
         quitModal.style.zIndex = -3;
+       // var container = document.getElementById("container");
+	    //container.classlist.remove("conteudo-inacessivel");
         console.log("sumiu");
     }
     function quitGame(){

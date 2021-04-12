@@ -56,9 +56,9 @@
   animation-duration: 1000ms;
   animation-fill-mode: forwards;
 }
-
-
-
+.hide-points-box{
+    display:none;
+}
 
 /*DESKTOP*/
 @media(min-width: 1001px){

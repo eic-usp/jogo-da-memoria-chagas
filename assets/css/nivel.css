@@ -29,12 +29,20 @@
   color: rgba(0, 0, 0, 0.83);
 }
 .modal-exclamacao{
-  position: absolute;
-  width: 50%;
-  height: 100%;
-  left:36%;
+  position: relative;
+  width: 48px;
+  height: 48px;
+  left:40%;
   background: url('../img/exclamacao.png');
   background-repeat: no-repeat;
+}
+.cursor-pointer{
+  cursor: pointer;
+}
+.conteudo-inacessivel{
+  background:rgba(0, 0, 0); /* Green background with 30% opacity */
+  opacity: 0.25%;
+  z-index:8;
 }
 
 
@@ -64,7 +72,6 @@
     position: absolute;
     width: 80vw;
     height: 100vh;
-    /*left: clamp(-180px,-180px, -160px);*/
     right: 0px;
     top: -5px;
     background: #541663;
@@ -129,7 +136,7 @@
     background: #FFFFFF;
     position: absolute;
     width: 80vw;
-    height: 28vh;
+    height: 44vh;
     border-radius: 8px;
     left: 8%;
     top: 24%;
@@ -156,8 +163,8 @@
     z-index: -5;
     background: #FFFFFF;
     position: absolute;
-    width: 20vw;
-    height: 40vh;
+    width: 24vw;
+    height: 44vh;
     border-radius: 8px;
     left: 32%;
     top: 24%;
@@ -180,7 +187,7 @@
     background: #FFFFFF;
     position: absolute;
     width: 40%;
-    height: 48%;
+    height: 28vh;
     border-radius: 8px;
     left: 32%;
     top: 24%;

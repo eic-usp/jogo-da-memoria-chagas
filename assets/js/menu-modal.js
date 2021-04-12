@@ -1,3 +1,5 @@
+
+
 var BtnMenuModal = document.querySelector("#botao-menu-modal");
 BtnMenuModal.addEventListener("click",ShowMenuModal,false);
 
@@ -8,10 +10,9 @@ BtnVoltar.addEventListener("click",HideMenuModal,false);
 
 function ShowMenuModal(){
 	menuModal.style.zIndex = 5;
-	//console.log("chamou");
+	console.log("chamou");
 }
 function HideMenuModal(){
 	menuModal.style.zIndex = -2;
-	//console.log("chamou e parou de mostrar");
 }
 
