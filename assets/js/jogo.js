@@ -15,6 +15,7 @@
 
     var images = [];
     var matches = 0;
+    var fail = 0;
     /*Imagens desktop*/
     if(size >= 600){
         if (level === "1"){
@@ -28,7 +29,7 @@
                         id: i%8
                     
                 };
-                console.log("id das imagens:" + img.id);
+               // console.log("id das imagens:" + img.id);
                 images.push(img);
             } 
 
@@ -89,7 +90,7 @@
                         id: i%8
                     
                 };
-                console.log("id das imagens:" + img.id);
+              //  console.log("id das imagens:" + img.id);
                 images.push(img);
             } 
 
@@ -281,7 +282,7 @@
 
     /* Mudar as imagens do verso das cartas acordo com a fase */
     function backgroundLevel(level){
-         console.log("entrou");
+        // console.log("entrou");
             var backFaces = document.getElementsByClassName("back");
             for(var i = 0; i < backFaces.length; i++){
                 if(level === "1"){
@@ -391,12 +392,10 @@
                         flippedCards[1].childNodes[1].classList.add("pair");
                         flippedCards[1].childNodes[3].classList.add("pair");
 
-                        //matches=7;
+                        matches = 7;
                         matches++;
                        
                         flippedCards = [];
-
-                        CountPoints(matches);
 
                         if(matches === 8){
                             victory();
@@ -405,47 +404,31 @@
                 }
 
             } else {
-                /*childNodes: todos os nós filhos de FlippedCards (filhos do array pai (flippedCards))*/
+            /*childNodes: todos os nós filhos de FlippedCards (filhos do array pai (flippedCards))*/
             flippedCards[0].childNodes[1].classList.toggle("flipped");
             flippedCards[0].childNodes[3].classList.toggle("flipped");
             flippedCards[1].childNodes[1].classList.toggle("flipped");
             flippedCards[1].childNodes[3].classList.toggle("flipped");
+            
+            fail++; 
 
             flippedCards = [];
             }  
+            CountPoints(fail);
         }
 
          /*Função para contar os pontos*/
-        function CountPoints(matches){
-            //console.log("count points" + matches);
+        function CountPoints(fail){
+            
+            var ptsant = document.getElementById("points").textContent;
+             ptsant = parseInt(ptsant);
 
-            switch(matches){
-                case 1: 
-                document.getElementById("points").innerHTML =  "12" ;
-                break;
-                case 2: 
-                document.getElementById("points").innerHTML =  "24" ;
-                break;
-                case 3: 
-                document.getElementById("points").innerHTML =  "36" ;
-                break;
-                case 4: 
-                document.getElementById("points").innerHTML =  "48" ;
-                break;
-                case 5: 
-                document.getElementById("points").innerHTML =  "60" ;
-                break;
-                case 6: 
-                document.getElementById("points").innerHTML =  "72" ;
-                break;
-                case 7: 
-                document.getElementById("points").innerHTML =  "84" ;
-                break;
-                case 8: 
-                document.getElementById("points").innerHTML =  "100" ;
-                break;
-            }
-    }
+             if(ptsant > 50){
+                pts = 100 - (fail * 2);
+                document.getElementById("points").innerHTML =  pts;
+             }
+        }
+
      /*Função para mostrar o modal sair caso a pessoa queira sair no meio do jogo*/
     function ShowQuitModal(){
 
@@ -486,9 +469,9 @@
             sessionStorage.setItem("fase", level);
             sessionStorage.setItem("nivel", mode);
 
-            var points = $("#points").text();   
+            var points = document.getElementById("points").textContent;
 
-            sessionStorage.setItem("points", points);
+            sessionStorage.setItem("pontos", points);
 
             window.location.replace("vitoria.html");
         }
