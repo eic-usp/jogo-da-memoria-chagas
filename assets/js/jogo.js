@@ -3,6 +3,23 @@
     level = sessionStorage.getItem('fase'); // fase 1, 2, 3
     var mode = sessionStorage.getItem('nivel'); // facil/medio/dificil 
 
+
+    if(!Cookies.get('Played')){
+        Cookies.set('level',level);
+        Cookies.set('mode',mode);
+        if(level === "1"){
+            if(Cookies.get('tutorial')){
+                break_if;
+            }  else {
+                window.location.replace("instrucoes1.html"); 
+            }
+        } else if (level === "1"){
+            window.location.replace("instrucoes2.html");
+        } else {
+            window.location.replace("instrucoes3.html");   
+        }
+    }
+
     var size = $(window).width();
 
     //console.log("fase:" + level);
