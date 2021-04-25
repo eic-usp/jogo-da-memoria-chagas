@@ -1,9 +1,10 @@
 
-// mandar o botao apertado para a fase
-function fase(n, faseAtual){
-    // pensar em transformar o IdBtn classList em função - pensar
+// mandar o botao apertado para a pag instruções apenas com o fase atual, tentar fazerum cookie Jájogou/nunca jogou
+// para nao mostrar o tutorial toda ver e fazer umif dentro dessa função pra ver se esse cookie existe
+//provavelmente terei que fazer instruções 1 2 3 .html para facilitar o trabalho, ao inves de mudar com js
+//fazer cookie de ja jogou
 
-    //s = state     0 - primeira vez | 1 - ja ganhou
+function fase(n, faseAtual){
 
     var nivel = "";
 
@@ -15,9 +16,6 @@ function fase(n, faseAtual){
         nivel = 3;
     }
 
-    //console.log("nivel antes" + n);
-   // console.log("fase" + faseAtual);
-    
 sessionStorage.setItem("nivel", nivel);
 sessionStorage.setItem("fase", faseAtual);
 }

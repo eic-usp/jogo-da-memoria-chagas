@@ -1,3 +1,4 @@
+//Alterar salvando o fase atual aqui e depois salvando a fase do jogo
 var btnNext = document.getElementById("nextPage");
 
 btnNext.addEventListener("click", GameTutorial, false);

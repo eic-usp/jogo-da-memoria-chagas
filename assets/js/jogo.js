@@ -1,6 +1,5 @@
 (function (){
 
-
     level = sessionStorage.getItem('fase'); // fase 1, 2, 3
     var mode = sessionStorage.getItem('nivel'); // facil/medio/dificil 
 

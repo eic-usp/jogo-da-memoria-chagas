@@ -1,4 +1,5 @@
  var size = $(window).width();
+/* PENSAR EM FAZER COOKIES */
 
  if(size > 1000){ /*Versão Desktop*/
 
@@ -61,6 +62,7 @@ if(level === "1"){
 
     again.classList.add("1");
     next.classList.add("2");
+    Cookies.set('ptsfase1', points);
 
 } else if (level === "2"){
     
@@ -71,19 +73,14 @@ if(level === "1"){
     again.classList.add("2");
     next.classList.add("3");
 
+    Cookies.set('ptsfase2', points);
+
 } else if (level === "3"){
 
     document.getElementById("points-fase3").innerHTML = points;
 
-    //pegando as pontuações e mandando para a pagina "fim"
+    Cookies.set('ptsfase3', points);
 
-    var ScoreFase1 = document.getElementById("points-fase1");
-    var ScoreFase2 = document.getElementById("points-fase2");
-    var ScoreFase3 = document.getElementById("points-fase3");
-
-    sessionStorage.setItem('scorefase1',ScoreFase1);
-    sessionStorage.setItem('scorefase2',ScoreFase2);
-    sessionStorage.setItem('scorefase3',ScoreFase2);
 
     again.classList.remove("2");
     next.classList.remove("3");
