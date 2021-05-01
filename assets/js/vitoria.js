@@ -81,7 +81,6 @@ if(level === "1"){
 
     Cookies.set('ptsfase3', points);
 
-
     again.classList.remove("2");
     next.classList.remove("3");
     again.classList.add("3");
