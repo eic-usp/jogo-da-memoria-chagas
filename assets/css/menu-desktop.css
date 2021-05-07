@@ -21,9 +21,9 @@
       .elem-menu-lateral img{
         padding-left: 2rem;
         float: left;
+        margin-right: 32px;
       }
       .elem-menu-lateral p{
-        padding-left: 4.5rem;
         text-align: left;
       }
 }

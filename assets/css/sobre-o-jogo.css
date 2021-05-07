@@ -1,0 +1,18 @@
+.list-sobre {
+    color: #541663;
+  }
+.list-hide-sobre{
+    list-style-type: none;
+}
+/*MOBILE*/
+.destaque-sobre{
+    font-family: Fira Sans;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 1.25rem;
+    line-height: 1.35rem;
+    text-align: left;
+    color: #FFFFFF;
+  }
+/*TABLET*/
+/*DESKTOP*/
