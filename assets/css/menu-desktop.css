@@ -31,12 +31,40 @@
   @media(min-width: 600px) and (max-width: 1000px){
     .menu-desktop{
         display:none;
-        }
+      }
+    .ajuste-direita{
+        padding-left:24px ; 
+      }
+    .ajuste-esquerda{
+        padding-right:24px ;      
+      }
+     #logo-nav-sup-desktop{
+      width: 24px;
+      height:24px;
+     }
+      #logo-eic-nav-sup-desktop{
+        width: 28px;
+        height:28px;
+      }
  }
  /*versão mobile*/
  @media(max-width: 599px){
     .menu-desktop{
         display:none;
         }
+    .ajuste-direita{
+      padding-left:24px ; 
+    }
+    .ajuste-esquerda{
+      padding-right:24px ;      
+    }
+    #logo-nav-sup-desktop{
+      width: 24px;
+      height:24px;
+     }
+    #logo-eic-nav-sup-desktop{
+      width: 28px;
+      height:28px;
+    }
  
 }

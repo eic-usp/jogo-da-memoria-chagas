@@ -3,23 +3,6 @@
     level = sessionStorage.getItem('fase'); // fase 1, 2, 3
     var mode = sessionStorage.getItem('nivel'); // facil/medio/dificil 
 
-//NAO DEU CERTO AINDA, VER SE A PESSOA JA JOGOU PARA NAO MOSTRAR TUTORIAL
-   /* if(!Cookies.get('Played')){
-        Cookies.set('level',level);
-        Cookies.set('mode',mode);
-        if(level === "1"){
-            if(Cookies.get('tutorial')){
-                break_if;
-            }  else {
-                window.location.replace("instrucoes1.html"); 
-            }
-        } else if (level === "1"){
-            window.location.replace("instrucoes2.html");
-        } else {
-            window.location.replace("instrucoes3.html");   
-        }
-    }*/
-
     var size = $(window).width();
 
     //console.log("fase:" + level);
@@ -402,13 +385,12 @@
 
                         matchCardsSign();
 
-                         //não funciona
                         flippedCards[0].childNodes[1].classList.add("pair");
                         flippedCards[0].childNodes[3].classList.add("pair");
                         flippedCards[1].childNodes[1].classList.add("pair");
                         flippedCards[1].childNodes[3].classList.add("pair");
 
-                        matches = 7;
+                        matches = 6;
                         matches++;
                        
                         flippedCards = [];
@@ -416,21 +398,25 @@
                         if(matches === 8){
                             victory();
                         }
-                    }
+
+                        } else {
+                            flippedCards[0].childNodes[1].classList.toggle("flipped");
+                            flippedCards[0].childNodes[3].classList.toggle("flipped");
+                            flippedCards[1].childNodes[1].classList.toggle("flipped");
+                            flippedCards[1].childNodes[3].classList.toggle("flipped");
+                            
+                            fail++; 
+                
+                            flippedCards = [];
+                            CountPoints(fail);
+                            }  
+
+                        }
                 }
 
-            } else {
+            //} else {
             /*childNodes: todos os nós filhos de FlippedCards (filhos do array pai (flippedCards))*/
-            flippedCards[0].childNodes[1].classList.toggle("flipped");
-            flippedCards[0].childNodes[3].classList.toggle("flipped");
-            flippedCards[1].childNodes[1].classList.toggle("flipped");
-            flippedCards[1].childNodes[3].classList.toggle("flipped");
-            
-            fail++; 
-
-            flippedCards = [];
-            }  
-            CountPoints(fail);
+           //console.log("tendi nada");
         }
 
          /*Função para contar os pontos*/
