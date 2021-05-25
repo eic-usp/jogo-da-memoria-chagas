@@ -147,6 +147,8 @@
 
         flippedCards = [];
 
+        error = 0;
+
         images  = randomSort(images);
 
         var frontFaces = document.getElementsByClassName("front");
@@ -345,11 +347,12 @@
             ShowPointsBox.classList.remove("hide-points-box");
         }, 5000);
     }
-
-     /*Função para virar as cartas e contar os matches*/
-    function flipCard(){
+ /*Função para virar as cartas e contar os matches*/
+ function flipCard(){
             
             if(flippedCards.length < 2){
+
+                console.log(flippedCards.length);
 
                 /*rotacionar as faces 180 graus*/
                 /*getElementsByClassName retorna uma lista */
@@ -385,38 +388,38 @@
 
                         matchCardsSign();
 
+                         //não funciona
                         flippedCards[0].childNodes[1].classList.add("pair");
                         flippedCards[0].childNodes[3].classList.add("pair");
                         flippedCards[1].childNodes[1].classList.add("pair");
                         flippedCards[1].childNodes[3].classList.add("pair");
 
-                        matches = 6;
+                        //matches=7;
                         matches++;
                        
                         flippedCards = [];
 
+                        CountPoints(matches);
+
                         if(matches === 8){
                             victory();
                         }
-
-                        } else {
-                            flippedCards[0].childNodes[1].classList.toggle("flipped");
-                            flippedCards[0].childNodes[3].classList.toggle("flipped");
-                            flippedCards[1].childNodes[1].classList.toggle("flipped");
-                            flippedCards[1].childNodes[3].classList.toggle("flipped");
-                            
-                            fail++; 
-                
-                            flippedCards = [];
-                            CountPoints(fail);
-                            }  
-
-                        }
+                    }
                 }
 
-            //} else {
-            /*childNodes: todos os nós filhos de FlippedCards (filhos do array pai (flippedCards))*/
-           //console.log("tendi nada");
+            } else {
+                /*childNodes: todos os nós filhos de FlippedCards (filhos do array pai (flippedCards))*/
+               // for(i=0;i < flippedCards[0].childNodes[1].classList.length; i++){
+                 //   console.log( "classe" + flippedCards[0].childNodes[1].classList[i]);
+                //}
+            flippedCards[0].childNodes[1].classList.toggle("flipped");
+            flippedCards[0].childNodes[3].classList.toggle("flipped");
+            flippedCards[1].childNodes[1].classList.toggle("flipped");
+            flippedCards[1].childNodes[3].classList.toggle("flipped");
+        
+            flippedCards = [];
+            
+            }
         }
 
          /*Função para contar os pontos*/
