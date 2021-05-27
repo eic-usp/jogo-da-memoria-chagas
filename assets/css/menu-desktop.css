@@ -13,7 +13,9 @@
       }
       .logo-eic-centro{
         position: relative;
-        padding-left: 5vw;
+        padding-left: 3vw;
+        width: 240px;
+        height:80px;
       }
       .elem-menu-lateral{
         width: 18,75rem;
@@ -34,7 +36,21 @@
         right: 10px;
         position: relative;
         border-radius: 5px;
-    }
+      } 
+      .organize-elem-centro-coluna{
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .organize-elem-centro-linha{
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
 }
   /*versão tablet */
   @media(min-width: 600px) and (max-width: 1000px){

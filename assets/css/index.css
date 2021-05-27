@@ -17,7 +17,12 @@
 /*MOBILE*/
 @media(max-width: 599px){ 
     .cards-inicial{
-        width: 13.375rem;
-        height: 4rem;
+        width: 360px;
+        height: 112px;
       }
+
+    .logo-eic-index{
+        height: 240px;
+        height: 80px;
+        }
 }
