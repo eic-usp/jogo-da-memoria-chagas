@@ -1,0 +1,23 @@
+/*GLOBAL*/
+
+/*DESKTOP*/
+@media(min-width: 1001px){
+    .creditos{ 
+        line-height: 16px;
+    }
+   
+}
+/*TABLET*/
+@media(min-width: 600px) and (max-width: 1000px){
+    .creditos{ 
+        line-height: 16px;
+    }
+
+}
+/*MOBILE*/
+@media(max-width: 599px){ 
+
+    .creditos{ 
+        line-height: 16px;
+    }
+}
