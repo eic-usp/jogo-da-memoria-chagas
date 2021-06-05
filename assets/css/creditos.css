@@ -5,6 +5,22 @@
     .creditos{ 
         line-height: 16px;
     }
+    .fundo-creditos{
+        display:block;
+        overflow-y: hidden;
+        overflow-x: hidden;
+        width: 100%;
+        height: 100vh;
+        background: rgb(136,69,153);
+        }
+        .titulo{
+            text-align: center;
+            justify-content: center;
+        }
+        .subtitulo-cred{
+            position: absolute;
+            left: 34vw;
+        }
    
 }
 /*TABLET*/
@@ -12,12 +28,44 @@
     .creditos{ 
         line-height: 16px;
     }
+    #creditos-mobile{
+        overflow-y: scroll;
+    }
+    .fundo-creditos{
+        overflow-y: scroll;
+        overflow-x: hidden;
+        width: 100%;
+        height: 100vh;
+        background: rgb(136,69,153);
+        text-align: center;
+        justify-content: center;
+      }
+      .menu-mobile-fixed{
+        position: fixed;
+        width: 100%;
+    }
 
 }
 /*MOBILE*/
 @media(max-width: 599px){ 
-
+    #creditos-mobile{
+        overflow-y: scroll;
+    }
     .creditos{ 
         line-height: 16px;
     }
+    .fundo-creditos{
+        overflow-y: scroll;
+        overflow-x: hidden;
+        width: 100%;
+        height: 100vh;
+        background: rgb(136,69,153);
+        text-align: center;
+        justify-content: center;
+      }
+      .menu-mobile-fixed{
+          position: fixed;
+          width: 100%;
+      }
+      
 }
