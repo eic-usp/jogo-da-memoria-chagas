@@ -13,6 +13,11 @@
         width: 26.75rem;
         height: 8rem;
       }
+       .logo-eic-index{
+        height: 80px;
+        position: fixed;
+        bottom: 5vh;
+        }
 }
 /*MOBILE*/
 @media(max-width: 599px){ 
@@ -22,7 +27,8 @@
       }
 
     .logo-eic-index{
-        height: 240px;
         height: 80px;
+        position: fixed;
+        bottom: 5vh;
         }
 }

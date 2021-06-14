@@ -79,11 +79,27 @@
     justify-content: left;
     z-index: -2;
   }
+  .fade-menu-mobile{
+      position: absolute;
+      width: 20vw;
+      height: 100vh;
+      right: 80vw;
+      top: -5px;
+      justify-content: right;
+      z-index: -2;
+  }
+  .touch-surface{
+    width: 100vw;
+    height:100vh;
+    z-index: -2;
+  }
+
   .elem-carta{
     height:120px;
     width: 120px;
     top: 60vh;
   }
+
   .seta-meio{
     width: 80px;
     height: 80px;
