@@ -103,11 +103,8 @@
     #btn-voltar-d{
         padding-left: 4%;
         padding-top: 1%;
+        height: 32px;
        }
-    .img-voltar{
-        width: 32px;
-        height:32px;
-    }
 }
 /*TABLET*/
 @media(min-width: 600px) and (max-width: 1000px){
