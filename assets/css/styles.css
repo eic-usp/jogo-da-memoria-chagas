@@ -251,5 +251,14 @@ a{
     text-align: center;
     color: #FFFFFF;
   }
+   /*Botao do menu lateral*/
+   #btn-voltar-ms{
+    padding-left: 4%;
+    padding-top: 1%;
+   }
+.img-voltar{
+    width: 32px;
+    height:32px;
+}
 }
  
