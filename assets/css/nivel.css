@@ -2,49 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 /*Global*/
-.btn-close{
-  width: 8%;
-  height: 7.5%;
-  top: 4%;
-  right: 4%;
-  position: absolute;
-  background: url('../img/Vector.png');
-  background-repeat: no-repeat;
-}
-.fonte-modal-sair-destaque{
-  font-family:'Luckiest Guy', cursive;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 28px;
-  line-height: 28px;
-  text-align: center;
-  letter-spacing: 0.0025em;
-  color: #541663;
-}
-.fonte-modal-sair{
-  font-family: 'Roboto', sans-serif;;
-  font-size: 20px;
-  text-align: center;
-  letter-spacing: 0.005em;
-  color: rgba(0, 0, 0, 0.83);
-}
-.modal-exclamacao{
-  position: relative;
-  width: 48px;
-  height: 48px;
-  left:40%;
-  background: url('../img/exclamacao.png');
-  background-repeat: no-repeat;
-}
-.cursor-pointer{
-  cursor: pointer;
-}
-.conteudo-inacessivel{
-  background:rgba(0, 0, 0); /* Green background with 30% opacity */
-  opacity: 0.25%;
-  z-index:8;
-}
-
 
 /*versão mobile*/
 @media(max-width: 599px){

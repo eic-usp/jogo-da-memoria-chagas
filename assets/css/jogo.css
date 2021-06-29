@@ -99,7 +99,7 @@
     .b3{
         background: url("../img/desktop/fase3/verso3.png");
     }
-    /*Botao do menu lateral*/
+    /*Botao do menu lateral - especifico jogo*/
     #btn-voltar-d{
         padding-left: 4%;
         padding-top: 1%;

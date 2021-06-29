@@ -437,13 +437,12 @@
      /*Função para mostrar o modal sair caso a pessoa queira sair no meio do jogo*/
     function ShowQuitModal(){
 
-	    //container.classlist.add("conteudo-inacessivel");
-
         var quitModal = document.getElementById("modal-sair");
-        quitModal.style.zIndex = 10;
-
-        var container = document.getElementById("container");
-        container.classList.toggle("conteudo-inacessivel");
+        quitModal.style.display="";
+        
+        var container = document.querySelector(".fundo");
+	    container.classList.toggle("conteudo-inacessivel");
+        console.log(container + "meu container");
 
         var btnClose = document.getElementById("sair");
         btnClose.addEventListener("click", quitGame, false);
@@ -458,12 +457,14 @@
      /*Função para esconder o menu-modal de saída caso a pessoa queira continuar jogando*/
     function HideQuitModal(){
         var quitModal = document.getElementById("modal-sair");
-        quitModal.style.zIndex = -3;
-       // var container = document.getElementById("container");
-	    //container.classlist.remove("conteudo-inacessivel");
-        console.log("sumiu");
+        quitModal.style.display = "none";
+       var container = document.getElementsByClassName("fundo");
+	    container.classlist.remove("conteudo-inacessivel");
+       console.log("sumiu");
     }
+
     function quitGame(){
+
         window.location.replace("index.html");
     }
      /*Função para chamar a página de vitória*/

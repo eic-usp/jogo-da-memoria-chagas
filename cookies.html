@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Nível - Jogo da memória</title>
+    <title> Cookies - Jogo da memória</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Luckiest+Guy">
@@ -12,12 +12,12 @@
     <link rel="stylesheet" href="assets/css/nivel.css">
     <link rel="stylesheet" href="assets/css/menu-modal.css">
     <link rel="stylesheet" href="assets/css/menu-desktop.css">
-    <link rel="stylesheet" href="assets/css/jogo.css">
-    
+    <link rel="stylesheet" href="assets/css/compartilhar.css">
 </head>
-<!--Colar o novo menu desktop em todas as outras paginas-->
+
 <body>
-    <div class="menu-desktop">
+
+   <div class="menu-desktop">
         <ul class="menu-desktop tipoUL">
         <li class = "espaco-6 menu-desktop"></li>
         <li> <!--Colocar o logo no centro-->
@@ -58,7 +58,7 @@
         <li class = "menu-desktop espaco-2"></li>
         <li>
             <a class="menu-desktop" href="compartilhar.html">
-            <div class="menu-desktop elem-menu-lateral">
+            <div class="menu-desktop elem-menu-lateral active">
             <img  class="menu-desktop" src="assets/img/compartilhar.svg">
             <p class="menu-desktop"> Compartilhar <p> 
             <div>
@@ -66,11 +66,11 @@
         </li>
         </ul>
     </div>
-    <!--Fim menu desktop -->
 
     <div class="fundo">
-<!-- menu mobile- colocar nas outras paginas-->
+<!-- menu mobile-->
     <div class="menu-mobile">
+
         <div class="row menu-mobile">
 
         <!-- lembrar de mudar o link de voltar dependendo da pagina atual-->
@@ -96,9 +96,8 @@
             </div>
     </div>
     
-<!--Menu modal que só aparece quando o botao-menu-modal é clicado, funcionando e aparecendo-->
+<!--Menu modal que só aparece quando o botao-menu-modal é clicado-->
 <div id="menu-modal" class="menu-mobile">
-    <div class="touch-surface"> </div>
     <ul class="list-modal">
          <li>
             <a href="index.html">
@@ -144,7 +143,7 @@
         </li>
     </ul>
     <div class="espaco-3"></div>
-    <div class="fade-menu-mobile menu-mobile"></div>
+    <div class="fade-menu-mobile menu-mobile"></div> 
 </div>
 
 <!--fim menu mobile-->
@@ -158,43 +157,30 @@
              </a>
         </div>
     </div>
+    
 
 <!-- Conteúdo da página -->
-
     <div class="espaco-3"> </div>
 
-    <h1 class="subtitulo-2">ESCOLHA UM NÍVEL</h1>
+    <div class="subtitulo-2">Por que usamos cookies?</div>
+    <div class="espaco-3"></div>
+
+    <p>Não salvamos nenhum dado sensível, usamos cookies apenas para controlar as pontuações entre as fases.</p>
+    <p>Nenhuma informação fica salva ou é repassada a terceiros.</p>
     <div class="espaco-6"></div>
-    <p class="largura-texto"> Você terá um tempo para memorizar as posições dos cartões com as imagens! </p>
-    <div class="espaco-6"></div>
 
-        <div class="row">
-            <div class="col"><a class="btn btn-primary btn-facil 1" id ="facil" href="instrucoes.html" onclick="fase(this.id, classList[3])"> FÁCIL </a> </div>
+     <div class="row">
+            <div class="col"><a class="btn btn-primary btn-medio" id ="btn-pg-cookies" href="index.html"> JOGAR </a> </div>
         </div>
 
-        <div class="espaco-6"></div>
-
-        <div class="row">
-            <div class="col">
-                <a class="btn btn-primary btn-medio 1" id="medio" href="instrucoes.html"  onclick="fase(this.id, classList[3])"> MÉDIO  </a>
-            </div>
-        </div>
-
-        <div class="espaco-6"></div>
-
-        <div class="row">
-            <div class="col">
-            <a class="btn btn-primary btn-dificil 1" id="dificil" href="instrucoes.html"  onclick="fase(this.id, classList[3])"> DÍFICIL </a>
-            </div>
-        </div>
+    
 
 </div>
      
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/menu-modal.js"></script>
-    <script src="assets/js/nivel.js"></script>
-
+   
 </body>
 
 </html>
