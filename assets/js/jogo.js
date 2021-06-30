@@ -399,7 +399,7 @@
                        
                         flippedCards = [];
 
-                        CountPoints(matches);
+                        //CountPoints(matches);
 
                         if(matches === 8){
                             victory();
@@ -408,16 +408,15 @@
                 }
 
             } else {
-                /*childNodes: todos os nós filhos de FlippedCards (filhos do array pai (flippedCards))*/
-               // for(i=0;i < flippedCards[0].childNodes[1].classList.length; i++){
-                 //   console.log( "classe" + flippedCards[0].childNodes[1].classList[i]);
-                //}
             flippedCards[0].childNodes[1].classList.toggle("flipped");
             flippedCards[0].childNodes[3].classList.toggle("flipped");
             flippedCards[1].childNodes[1].classList.toggle("flipped");
             flippedCards[1].childNodes[3].classList.toggle("flipped");
         
             flippedCards = [];
+            
+            fail++;
+            CountPoints(fail);
             
             }
         }

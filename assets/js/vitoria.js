@@ -1,5 +1,5 @@
  var size = $(window).width();
-/* PENSAR EM FAZER COOKIES */
+/* Pontuação funciona com cookies */
 
  if(size > 1000){ /*Versão Desktop*/
 
