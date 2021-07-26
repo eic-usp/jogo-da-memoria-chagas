@@ -1,21 +1,24 @@
 /*GLOBAL*/
+.hide-cookie{
+  display: none;
+}
 
 /*DESKTOP*/
 @media(min-width: 1001px){
-    .cards-inicial{
-        width: 26.75rem;
-        height: 8rem;
-      } 
-      #cookies-consent{
-        position: absolute;
-        bottom: 0%;
-        background-color: #541663;
-        opacity: 80%;
-        height: 20vh;
-        width: 100vw;
-        z-index: 20;
-        align-items: left;
-      }
+  .cards-inicial{
+    width: 26.75rem;
+    height: 8rem;
+  } 
+  #cookies-consent{
+    position: absolute;
+    bottom: 0%;
+    background-color: #541663;
+    opacity: 80%;
+    height: 20vh;
+    width: 100vw;
+    z-index: 20;
+    align-items: left;
+    }
 }
 /*TABLET*/
 @media(min-width: 600px) and (max-width: 1000px){
@@ -40,23 +43,22 @@
 }
 /*MOBILE*/
 @media(max-width: 599px){ 
-    .cards-inicial{
-        width: 360px;
-        height: 112px;
-      }
-
-    .logo-eic-index{
-        height: 80px;
-        position: fixed;
-        bottom: 5vh;
-        }
-    #cookies-consent{
-      position: absolute;
-      top: 78vh;
-      background-color: #541663;
-      opacity: 80%;
-      height: 24vh;
-      width: 102%;
-      z-index: 20;
+  .cards-inicial{
+      width: 360px;
+      height: 112px;
     }
+  .logo-eic-index{
+      height: 80px;
+      position: fixed;
+      bottom: 5vh;
+      }
+  #cookies-consent{
+    position: absolute;
+    top: 78vh;
+    background-color: #541663;
+    opacity: 80%;
+    height: 24vh;
+    width: 102%;
+    z-index: 20;
+  }
 }

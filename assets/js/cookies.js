@@ -1,18 +1,30 @@
+
 var BtnOkCookie = document.getElementById("btn-ok-cookies");
-BtnOkCookie.addEventListener("click",OkCookie , false);
+BtnOkCookie.addEventListener("click",OkCookie, false);
 
-var showed = 0;
-// verificar se o cookie existe, se sim, não mostrar
+if(sessionStorage.getItem('showed')){
+    HideCookieWarning();
+} else{
+    OkCookie;
+}
+
+//var scoreFase3 = Cookies.get('ptsfase3');
+
 function OkCookie(){
-    var divCookie = document.getElementById("cookies-consent");
-    divCookie.style.display = "none";
-    var showed = 1;
-    Cookies.set('Warning',showed);
+    /* função para mostrar aviso de cookies */
+    console.log("entrou no ok cookie - primeira vez q rodou ");
+    showed = 1;
+    sessionStorage.setItem('showed',showed);
+    HideCookieWarning(showed);
+    }
+/*Função para esconder os cookies */
+function HideCookieWarning(showed){
+    sessionStorage.setItem('showed',showed);
+    console.log("entrou no hide 2 - vamo ve se foi essa palhaçada" + showed);
+    var componentsList = document.getElementsByClassName("text-cookies");
+    for(i=0;i<componentsList.length;i++){
+        console.log("componente" + i);
+        componentsList[i].classList.remove("text-cookies");
+        componentsList[i].classList.add("hide-cookies");
+    }
 }
-
- //se o cookie warning existir: esconde o aviso
- if(Cookies.get('Warning') === '1'){
-    var divCookie = document.getElementById("cookies-consent");
-    divCookie.style.display = "none";
-}
-

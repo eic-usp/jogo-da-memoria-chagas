@@ -126,6 +126,7 @@
         perspective: 600px;
         background:  rgb(136,69,153) ;
         border: 0ch;
+        z-index: 20;
     }
     .b1{
         background: url("../img/desktop/fase1/verso1.png");
@@ -148,6 +149,7 @@
         position: relative;
         margin: 0 auto;
         border-radius: 10px;
+        z-index: 5;
     }
     .card{
         width: 72px;

@@ -1,4 +1,3 @@
-/*arrumar os aquivos de estilo porque estão uma bagunça*/
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 /*Global*/
@@ -24,7 +23,6 @@
     right: 93.2%;
     top:0;
   }
-  
   #menu-modal{    
     position: absolute;
     width: 80vw;
@@ -133,7 +131,7 @@
     display: none;
   }
   #modal-sair{
-    z-index: -5;
+    z-index: 15;
     background: #FFFFFF;
     position: absolute;
     width: 24vw;
@@ -142,7 +140,6 @@
     left: 32%;
     top: 24%;
   }
-
 }
  /*versão tablet */
  @media(min-width: 600px) and (max-width: 1000px){

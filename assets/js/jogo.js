@@ -441,7 +441,6 @@
         
         var container = document.querySelector(".fundo");
 	    container.classList.toggle("conteudo-inacessivel");
-        console.log(container + "meu container");
 
         var btnClose = document.getElementById("sair");
         btnClose.addEventListener("click", quitGame, false);

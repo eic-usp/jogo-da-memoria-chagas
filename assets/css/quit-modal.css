@@ -1,3 +1,17 @@
+.conteudo-inacessivel{
+  background:#808080;  
+  opacity: 50%;
+  z-index: 2;
+}
+
+.modal-exclamacao{
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  left:40%;
+  background: url('../img/exclamacao.png');
+  background-repeat: no-repeat;
+}
 .btn-close{
     width: 8%;
     height: 7.5%;
@@ -24,19 +38,7 @@
     letter-spacing: 0.005em;
     color: rgba(0, 0, 0, 0.83);
   }
-  .modal-exclamacao{
-    position: relative;
-    width: 48px;
-    height: 48px;
-    left:40%;
-    background: url('../img/exclamacao.png');
-    background-repeat: no-repeat;
-  }
+
   .cursor-pointer{
     cursor: pointer;
-  }
-  .conteudo-inacessivel{
-    background:#808080; /* Green background with 30% opacity */
-    opacity: 50%;
-    z-index: 8;
   }
