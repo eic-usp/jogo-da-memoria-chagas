@@ -1,5 +1,6 @@
  /*versão DESKTOP*/
  @media(MIN-width: 1001px){
+  
     .tipoUL{
         list-style-type: none;
         left: 80%;
@@ -29,8 +30,7 @@
         text-align: left;
       }
       .active{
-        background-color: rgb(136,69,153); /*trocar pra vh e vw*/
-        height: 48px;
+        background-color: rgb(136,69,153); 
         width: 220px;
         left: 10px;
         right: 10px;
