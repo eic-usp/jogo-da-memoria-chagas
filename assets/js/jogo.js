@@ -161,8 +161,6 @@
             /*tentar criar uma função e modularizar essa parte passando o tamanho da tela por parâmetro, ver se vai funcionar*/
             for(var i = 0; i < 16; i++){
 
-                var quitGame = document.getElementById("btn-voltar-d");
-                quitGame.addEventListener("click",ShowQuitModal,false);
         
                 frontFaces[i].classList.remove("flipped", "match");
                 backFaces[i].classList.remove("flipped", "match");
@@ -204,9 +202,6 @@
 
             for(var i = 0; i < 16; i++){
 
-                var quitGame = document.getElementById("btn-voltar-m");
-                quitGame.addEventListener("click",ShowQuitModal,false);
-
 
                 frontFaces[i].classList.remove("flipped", "match");
                 backFaces[i].classList.remove("flipped", "match");
@@ -243,10 +238,6 @@
 
         } else { /*Versão Mobile*/
             for(var i = 0; i < 16; i++){
-
-                var quitGame = document.getElementById("btn-voltar-m");
-                quitGame.addEventListener("click", ShowQuitModal, false);
-
 
                 frontFaces[i].classList.remove("flipped", "match");
                 backFaces[i].classList.remove("flipped", "match");
@@ -433,38 +424,6 @@
              }
         }
 
-     /*Função para mostrar o modal sair caso a pessoa queira sair no meio do jogo*/
-    function ShowQuitModal(){
-
-        var quitModal = document.getElementById("modal-sair");
-        quitModal.style.display="";
-        
-        var container = document.querySelector(".fundo");
-	    container.classList.toggle("conteudo-inacessivel");
-
-        var btnClose = document.getElementById("sair");
-        btnClose.addEventListener("click", quitGame, false);
-
-        var btnHideModal = document.getElementById("fechar");
-        btnHideModal.addEventListener("click", HideQuitModal, false);
-
-        var btnStay = document.getElementById("ficar");
-        btnStay.addEventListener("click", HideQuitModal, false);
-
-    }
-     /*Função para esconder o menu-modal de saída caso a pessoa queira continuar jogando*/
-    function HideQuitModal(){
-        var quitModal = document.getElementById("modal-sair");
-        quitModal.style.display = "none";
-       var container = document.getElementsByClassName("fundo");
-	    container.classlist.remove("conteudo-inacessivel");
-       console.log("sumiu");
-    }
-
-    function quitGame(){
-
-        window.location.replace("index.html");
-    }
      /*Função para chamar a página de vitória*/
     function victory(){
 
@@ -494,3 +453,7 @@
   
 }
 )();
+
+function quitGame(){
+    window.location.replace("index.html");
+}

@@ -83,7 +83,7 @@
             <div class="col menu-mobile col-lg-2 ajuste-direita">
                 <div id="btn-voltar-m">
                     <a class = "menu-mobile"> 
-                        <img class="nav-elem menu-mobile"  id="logo-nav-sup-desktop" src="assets/img/nav/voltar.svg">
+                        <img class="nav-elem menu-mobile"  id="logo-nav-sup-desktop" src="assets/img/nav/voltar.svg" data-toggle="modal" data-target="#exampleModalCenter">
                     </a>
                 </div>
             </div>
@@ -159,29 +159,40 @@
     <div class="espaco-0-5"> </div>
     <div class="row menu-desktop">
         <div id="btn-voltar-d">
-            <img class="img-voltar" src="assets/img/nav/voltar.svg">
+            <img class="img-voltar" src="assets/img/nav/voltar.svg" data-toggle="modal" data-target="#exampleModalCenter">
         </div>
     </div>
 
 <!-- Fim opção sair --> 
-<!-- Opção sair - fazer o css - acho que ja ta feito - falta background  -->
-<div id="modal-sair">
-    <div class="btn-close cursor-pointer" id="fechar"></div>
-    <div class="espaco-3"></div>
-    <div class="modal-exclamacao"></div>
-    <div class="espaco-3"></div>
-    <h1 class="fonte-modal-sair-destaque"> Sair do jogo </h1> 
-    <div class="espaco-2"></div>
-    <h1 class="fonte-modal-sair"> Tem certeza que deseja sair do jogo </h1>
-    <div class="espaco-2"></div>
-    <div class="row">
-        <div class="col" id=""></div>
-        <div class="col" id=""></div>
-        <div class="col cursor-pointer" id="ficar"> NÃO </div>
-        <div class="col cursor-pointer" id="sair"> SIM </div>
+
+<!-- Modal SAIR DO JOGO-->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+            <div class="modal-exclamacao mx-auto"></div>
+             <h1 class="fonte-modal-sair-destaque"> Sair do jogo </h1> 
+            <div class="espaco-2"></div>
+            <h1 class="fonte-modal-sair"> Tem certeza que deseja sair do jogo? </h1>
     </div>
-</div>  
-    
+      <div class="modal-footer">
+        <div class="row">
+        <div class="col" id=""></div>
+        <div class="col" id=""></div>
+        <div class="col cursor-pointer" id="ficar" data-dismiss="modal" aria-label="Close" > NÃO </div>
+        <div class="col cursor-pointer" id="sair" onclick="quitGame()" > SIM </div>
+    </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--jogo-->
     <div class="espaco-0-5"></div>
     <div class="subtitulo-2" id="titulo-jogo">MEMORIZE AS POSIÇÕES</div>
 

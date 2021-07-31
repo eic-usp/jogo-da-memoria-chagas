@@ -1,6 +1,6 @@
 /*GLOBAL*/
 .hide-cookie{
-  display: none;
+  display: none !important; 
 }
 
 /*DESKTOP*/
@@ -55,7 +55,7 @@
   #cookies-consent{
     position: absolute;
     top: 78vh;
-    background-color: #541663;
+    background-color: hsl(288, 64%, 24%);
     opacity: 80%;
     height: 24vh;
     width: 102%;
