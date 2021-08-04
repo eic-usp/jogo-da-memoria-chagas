@@ -8,8 +8,14 @@
 }
 .btn-cookies{
     background: #a961bd;
+    left:8vw;
 }
-
+.cookies-consent{
+  position: absolute;
+  bottom: 0%;
+  background-color: #541663;
+  z-index:10;
+}
 
 /*DESKTOP*/
 @media(min-width: 1001px){
@@ -17,17 +23,9 @@
     width: 26.75rem;
     height: 8rem;
   } 
-  .cookies-consent{
-    position: absolute;
-    bottom: 0%;
-    background-color: #541663;
-    opacity: 100%;
-    z-index:10;
-    }
-
   .toast{
-    width: 96vw;
-    height: 10rem;
+    width: 100vw;
+    height: 8rem;
   }
 }
 /*TABLET*/
@@ -41,15 +39,6 @@
     position: fixed;
     bottom: 5vh;
     }
-    #cookies-consent{
-      position: absolute;
-      bottom: 0%;
-      background-color: #541663;
-      opacity: 80%;
-      height: 20vh;
-      width: 100vw;
-      z-index: 20;
-    }
 }
 /*MOBILE*/
 @media(max-width: 599px){ 
@@ -62,14 +51,4 @@
       position: fixed;
       bottom: 5vh;
       }
-  #cookies-consent{
-    position: absolute;
-    top: 78vh;
-    background-color: hsl(288, 64%, 24%);
-    opacity: 80%;
-    height: 24vh;
-    width: 102%;
-    z-index: 20;
-  }
-  
 }
