@@ -15,17 +15,17 @@
     <link rel="stylesheet" href="assets/css/jogo.css">
     
 </head>
+
 <!--Colar o novo menu desktop em todas as outras paginas-->
 <body>
     <div class="menu-desktop tipoUL">
-
         <nav class="nav flex-column">
             <div class="espaco-6 menu-desktop"></div>
             <a class=" nav menu-desktop" href="index.html"> 
                 <img class="logo-eic-centro menu-desktop" src="assets/img/logo-eic-branco.png">
             </a>
-<!--Perguntar sobre a ordem e colocar os actives nas paginas-->
-<!--precisa refatorar o menu-mobile e substituir em todas as paginas-->
+            <!--Perguntar sobre a ordem e colocar os actives nas paginas-->
+            <!--precisa refatorar o menu-mobile e substituir em todas as paginas-->
             <div class="espaco-2 menu-desktop"></div>
 
             <a class="nav-link menu-desktop" href="index.html">
@@ -55,14 +55,47 @@
                 <p class="menu-desktop"> Compartilhar </p> 
                 </div>
             </a>
-
-            
          </nav>
-</div>
+    </div>
     
 <!--Menu modal que só aparece quando o botao-menu-modal é clicado-->
 <!--Ainda não consegui fazer o efeito swipe, tentar de novo-->
 <div class="fundo">
+
+   <nav class="navbar navbar-default navbar-fixed-top justify-content-center menu-mobile">
+      <div class="container">
+       <li class="nav-item">
+        <a class="nav-link" href="#">
+         <img class="nav-elem menu-mobile" src="assets/img/nav/voltar.svg">
+         </a>
+        </li>
+        <li class="nav-item">
+            <img class="nav-elem menu-mobile" src="assets/img/nav/logo-eic-nav.svg">
+        </li>
+        <li class="nav-item navbar-slide-nav" data-toggle="collapse" data-target="#collapseMenuMobile" aria-expanded="false" aria-controls="collapseMenuMobile">
+             <img class="nav-elem"  id="logo-nav-sup-desktop" src="assets/img/nav/menu.svg">
+        </li>
+        </nav>
+
+<!--menu modal - aparece quando clicado -->
+<div class="collapse" id="collapseMenuMobile">
+aaaaaaaaaaaaaaaaaaaaaaaaaaa
+   <div id="menu-modal">
+        <a class="nav-link active" href="#">Active</a>
+        <a class="nav-link" href="#">Link</a>
+        <a class="nav-link" href="#">Link</a>
+        <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+</div>
+</div>
+
+  
+
+
+      
+        
+
+
+
 
 <!-- Conteúdo da página -->
 

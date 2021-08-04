@@ -23,7 +23,6 @@
     padding-bottom: 8%;
   }
   }
-
    /*versão tablet */
    @media(min-width: 600px) and (max-width: 1000px){
     .tamanho-logo-modal{
@@ -45,7 +44,7 @@
         padding-top: 16px;
         padding-left: 0;
         text-align: left;
-        z-index: -2;
+       /* z-index: -2;*/
     }
     .elem-menu-modal{
         width: 48vw;
@@ -67,3 +66,30 @@
         padding-bottom: 0.8%;
     }
   }
+/*Para dispositivos móveis*/
+  @media(max-width: 1000px){
+    /*.navbar-collapse {
+      position: absolute;
+      top: 54px;
+      right: 100%;
+      padding-left: 32px;
+      padding-right: 8px;
+      padding-bottom: 15px;
+      width: 80%;
+      transition: all 0.3s ease;
+      display: block;
+  }
+  .navbar-collapse.collapsing {
+      height: auto !important;
+      margin-right: 50%;
+      transition: all 0.3s ease;
+      display: block;
+  }
+  .navbar-collapse.show {
+      right: 0;
+  }*/
+    li.nav-item{
+      list-style-type: none;
+    }
+}
+  
