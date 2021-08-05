@@ -1,23 +1,21 @@
-/*Se o cookie nao existe  mostra e espera a pessoa clicar. Quando a pessoa clica cria  */
-//Chamando a função
 cookieConsent();
-/*Não estou conseguindo setar o cookie como eu gostaria - perguntar isaque estratégia */
+/* perguntar isaque estratégia "X" */
 function cookieConsent() {
-   // if (!getCookie("CookieWarning")) {
+    if (!Cookies.get("CookieWarning")) {
         $(".toast").toast("show");
-        var btnCookie = document.getElementById("cookie-warning");
-        btnCookie.addEventListener("click",Accept());
-        console.log("teste cookie" + test)
-    //}else{
-      //  $(".toast").toast("hide");
-   // }
+        var btnCookie = document.getElementById("btn-cookies");
+        btnCookie.addEventListener("click",Accept,false);
+
+    }else{
+      $(".toast").toast("hide");
+      console.log("false no else")
+    }
 }
 
 function Accept(){
-    document.cookie = "CookieWarning = 1";
-    setTimeout(function (){
-        $(".toast").toast("hide");
-        }, 1000);
+    showed = 1;
+    Cookies.set('CookieWarning', showed);
+    cookieConsent();
 }
 
 

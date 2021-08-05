@@ -51,21 +51,25 @@
     <img class = "logo-eic-index" src="assets/img/logo-eic.svg">
     </div>
     <!--Aviso de cookies-->
-      <div id="cookies-consent text-cookies" class="0">
-            <div class="espaco-3"></div> 
+     <div id="cookie-warning" class="toast cookies-consent"  data-autohide="false">
+        <div class="toast-body">
             <div class="row">
-                <div class="text-cookies col col-lg-8">
-                <p> Usamos cookies para melhorar a sua experiência. </p>
-                <p> Clique <a href="cookies.html"><u> aqui </u><a> para entender porque usamos cookies. </p>
+                <div class="col col-lg-6">
+                <p> <br> Usamos cookies para melhorar a sua experiência.<p>
                 </div>
-                <div class="text-cookies col col-lg-4">
-                <!--Fazer uma nova classe para o botao esse modelo é grande e ficou feio aqui, no mobile-->
-                    <a> <div class="btn btn-dificil text-cookies" id="btn-ok-cookies"> OK </div> </a> 
+                <div class="col col-lg-6">
+                    <a> <div id="btn-cookies" class="btn btn-cookies" id="btn-ok-cookies"> OK </div> </a> 
                 </div>
             </div>
+            <br>
+        <p> Clique <a href="cookies.html"><u>aqui</u><a> para entender porque usamos cookies. </p>
         </div>
+    </div> 
+
  </div>
- 
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
     <script src="assets/js/cookies.js"></script>
     <script src="assets/js/jquery.min.js"></script>
