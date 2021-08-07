@@ -1,5 +1,8 @@
 (function (){
 
+    /*Não está mostrando a imagem de par correto e não está entendendo que algumas cartas sao pares */
+    /*porque não está contando par se eu não mudei nada */
+
     level = sessionStorage.getItem('fase'); // fase 1, 2, 3
     var mode = sessionStorage.getItem('nivel'); // facil/medio/dificil 
 
@@ -35,7 +38,6 @@
         } else if (level === "2"){
 
             document.getElementsByTagName('title')[0].innerHTML= "Fase 2";
-
         
             for(var i = 0; i < 8; i++){
                 var img = {
@@ -376,10 +378,11 @@
                         flippedCards[0].childNodes[3].classList.toggle("match");
                         flippedCards[1].childNodes[1].classList.toggle("match");
                         flippedCards[1].childNodes[3].classList.toggle("match");
-
+                        
+                        //sinal de desaparecimento da carta - não funciona
                         matchCardsSign();
 
-                         //não funciona
+                        //efeito de desaparecimento da carta
                         flippedCards[0].childNodes[1].classList.add("pair");
                         flippedCards[0].childNodes[3].classList.add("pair");
                         flippedCards[1].childNodes[1].classList.add("pair");
@@ -440,6 +443,17 @@
         }
          /*Função para mostrar o sinal de que a pessoa acertou o par*/
     function matchCardsSign(){
+            comsole.log("ta chamando");
+            var imgMatchSing = document.getElementById("imgMatchSing");
+            imgMatchSing.classList.remove("hideMatchSing");
+            var height =  $(window).height();
+            imgMatchSing.style.top = Math.round(height/2) + "px";
+             setTimeout(function(){
+                imgMatchSing.style.top = 250 + "px";
+                imgMatchSing.classList.add("hideMatchSing");
+            },1000);
+        }
+       /* function matchCardsSign(){
             imgMatchSing.style.zIndex = 1;
             var height =  $(window).height();
             imgMatchSing.style.top = Math.round(height/2) + "px";
@@ -449,7 +463,7 @@
                 imgMatchSing.style.top = 250 + "px";
                 imgMatchSing.style.opacity = 1;
             },1000);
-        }
+        }*/
   
 }
 )();
