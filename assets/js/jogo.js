@@ -204,7 +204,6 @@
 
             for(var i = 0; i < 16; i++){
 
-
                 frontFaces[i].classList.remove("flipped", "match");
                 backFaces[i].classList.remove("flipped", "match");
                 
@@ -369,9 +368,7 @@
                 console.log("4" + flippedCards[1].childNodes[3]);     
 
                 if(flippedCards.length === 2 ){
-                    //Problema com a carta carlos chagas e megacolon - não sei o que está acontecendo
-                    // tentativa de arrumar
-    
+        
                     if(flippedCards[0].childNodes[3].id === flippedCards[1].childNodes[3].id){
 
                         flippedCards[0].childNodes[1].classList.toggle("match");
@@ -380,7 +377,8 @@
                         flippedCards[1].childNodes[3].classList.toggle("match");
                         
                         //sinal de desaparecimento da carta - não funciona
-                        matchCardsSign();
+                        //problema na função mathcardssing
+                        //matchCardsSign();
 
                         //efeito de desaparecimento da carta
                         flippedCards[0].childNodes[1].classList.add("pair");
@@ -388,12 +386,12 @@
                         flippedCards[1].childNodes[1].classList.add("pair");
                         flippedCards[1].childNodes[3].classList.add("pair");
 
-                        //matches=7;
+                        matches=7;
                         matches++;
-                       
+
                         flippedCards = [];
 
-                        //CountPoints(matches);
+                        CountPoints(matches);
 
                         if(matches === 8){
                             victory();

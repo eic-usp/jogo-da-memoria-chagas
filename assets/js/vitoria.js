@@ -1,13 +1,24 @@
 
 /* Pontuação funciona com cookies */
-var played = sessionStorage.setItem('playAgain','0');
+//var played = sessionStorage.setItem('playAgain','0');
 
 setPoints();
-GameFlow;
+GameFlow();
 /*ele sabe que clicou no botao mas não em qual botão, por isso já vai direto para a prox fase*/
+/*resolver chamando duas funções no onclick */
 /*não precisa mudar o fluxo só setar que já jogou novamente */
+
 function playAgain(){
-    console.log("funcionou a função");
+    console.log("entrou no play");
+    let played = document.getElementById("again").classList[3].split(":");
+    //adicionar mais um play e cria um novo cookie, 
+    //retorna true e depois compara para nao sobreescrever o cookie
+
+    //mudar na pagina fim.js tbm
+    let plays = parseInt(played[1]);
+    plays +=1;
+    //True = new Play
+    return True;
 }
 
 function setPoints(){
@@ -17,14 +28,13 @@ function setPoints(){
 }
 
 function GameFlow(){
+    //playAgain();
 
     var level = sessionStorage.getItem('fase');
     var mode = sessionStorage.getItem('nivel');
 
     var next = document.getElementById("next");
     var again = document.getElementById("again");
-
-    again.addEventListener(click, playAgain(),false);
 
     var NextLevel = 0;
 
