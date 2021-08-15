@@ -202,7 +202,7 @@
 
         }else if (size >= 600 && size <= 1000) { /*Versão tablet*/
 
-            for(var i = 0; i < 16; i++){
+            for(let i = 0; i < 16; i++){
 
                 frontFaces[i].classList.remove("flipped", "match");
                 backFaces[i].classList.remove("flipped", "match");

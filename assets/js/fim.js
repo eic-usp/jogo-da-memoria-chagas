@@ -15,7 +15,7 @@ console.log("pontuação final " + total);
 //mostrar o resultado
 document.getElementById('final-score').innerHTML = total;
 
-//criando cookie que mostra que a pessoa já jogou uma vez, recuperar na página nível
+//criando cookie que mostra que a pessoa já jogou uma vez, recuperar na página nível - apagar
 Cookies.set('Played','1');
 
 

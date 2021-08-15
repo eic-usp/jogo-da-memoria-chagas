@@ -1,50 +1,42 @@
-function setPoints(get){
-    let points = sessionStorage.getItem('pontos');
-    if(get === 0){
-        document.getElementById("points").innerHTML = points;
-    }else{
-        return points;
-    }    
-}
-function GetRounds(){
-    //preciso pegar a qtd de rodadas em cada fase
-    //se o cookie ja existe o valor é atualizado, vai dar certo
-    //cookie de qtd de rounds, unico
-   return document.getElementById("again").classList[3];
-}
-function playAgain(){
-    //funcionando, preciso fazer a contagem na página de vitoria agora, para contar na pontuação final
-   //não diferenciei entre as rodadas, dar um jeito
-   //usar split
-    let plays = document.getElementById("again").classList[3];
-    console.log("plays" + plays);
+/*Salvo para caso a nova estrategia de errado */
+/* Pontuação funciona com cookies */
+//var played = sessionStorage.setItem('playAgain','0');
 
-    let level = sessionStorage.getItem('fase');
-   if (plays >= 1){
-       //Modelo de nome do cookie: ptsfase-1-Round:1
-       let cookiename = "ptsfase" + String(level) +"Round:" + String(plays);
-       let points = setPoints(1);
-       Cookies.set(cookiename, points); //ver como descobrir os nomes dos cookies depois
-   }
- 
-   let qtdPlays = parseInt(plays)+1;
-   document.getElementById("again").classList[3] = qtdPlays;
+setPoints();
+GameFlow();
+/*ele sabe que clicou no botao mas não em qual botão, por isso já vai direto para a prox fase*/
+/*resolver chamando duas funções no onclick */
+/*não precisa mudar o fluxo só setar que já jogou novamente */
+
+//continuar aqui
+function playAgain(){
+    //pensar em como mostrar o ranking e criar uma página genérica no figma amanhã
+    //pensar em criar um doc de documentação tecnica do código
+    console.log("entrou no play");
+    let played = document.getElementById("again").classList[3].split(":");
+    //adicionar mais um play e cria um novo cookie, 
+    //retorna true e depois compara para nao sobreescrever o cookie
+
+    //mudar na pagina fim.js tbm
+    let plays = parseInt(played[1]);
+    plays +=1;
+    return True;
+}
+
+function setPoints(){
+
+    var points = sessionStorage.getItem('pontos');
+    document.getElementById("points").innerHTML = points;
 }
 
 function GameFlow(){
-    //setar depois de cada verificação a quantidade de fases, criar um padrão de string
-    //está dando certo
+    //playAgain();
 
-    console.log("entrou no game flow");
-   //troquei para lets porque são variaveis locais, boas práticas, lembrar
-
-    var level = sessionStorage.getItem('fase'); // fase atual
-    console.log("fase em cada nivel - vitoria" + level);
+    var level = sessionStorage.getItem('fase');
     var mode = sessionStorage.getItem('nivel');
 
     var next = document.getElementById("next");
     var again = document.getElementById("again");
-    
 
     var NextLevel = 0;
 
@@ -105,7 +97,7 @@ function GameFlow(){
     var script = document.createElement("script");  
     script.src = "assets/js/nivel.js";  
     document.body.appendChild(script); 
+
 }
 
-setPoints(0);
-GameFlow();
+
