@@ -1,3 +1,10 @@
+/**
+ * Seta os pontos na tela de vitória
+ * @param {number} get 
+ * Se get = 0: mostra na tela
+ * se get = 1: retorna a pontuação
+ * @returns points
+ */
 function setPoints(get){
     let points = sessionStorage.getItem('pontos');
     if(get === 0){
@@ -8,7 +15,7 @@ function setPoints(get){
 }
 function GetRounds(){
     //preciso pegar a qtd de rodadas em cada fase
-    //se o cookie ja existe o valor é atualizado, vai dar certo
+    //se o cookie ja existe o valor é atualizado
     //cookie de qtd de rounds, unico
    return document.getElementById("again").classList[3];
 }
@@ -26,7 +33,6 @@ function playAgain(){
        let points = setPoints(1);
        Cookies.set(cookiename, points); //ver como descobrir os nomes dos cookies depois
    }
- 
    let qtdPlays = parseInt(plays)+1;
    document.getElementById("again").classList[3] = qtdPlays;
 }

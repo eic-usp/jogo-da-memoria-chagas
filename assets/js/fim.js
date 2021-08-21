@@ -1,3 +1,4 @@
+//criar funções para ajudar na documentação
 
 //Pegando o resultado do cookie e passando pra inteiro
 var scoreFase1 = Cookies.get('ptsfase1');

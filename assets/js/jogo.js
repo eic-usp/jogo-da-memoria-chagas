@@ -142,7 +142,7 @@
    
 
     startGame();
-
+    /** começa o jogo */
     function startGame(){   
     
         matches = 0;
@@ -273,7 +273,10 @@
         }
     }
 
-    /* Mudar as imagens do verso das cartas acordo com a fase */
+    /**
+     *  Mudar as imagens do verso das cartas acordo com a fase
+     * @param {*} level 
+     */
     function backgroundLevel(level){
         // console.log("entrou");
             var backFaces = document.getElementsByClassName("back");
@@ -289,8 +292,11 @@
                 }
             }
     }
-
-/*Embaralhar as cartas */
+    /**
+     * Embaralhar as cartas
+     * @param {*} images vetor de imagens organizadas
+     * @returns sorted - vetor com as imagens em posições aleatorias
+     */
     function randomSort(images){
         var sorted = [];
         while(sorted.length < 16){
@@ -302,7 +308,9 @@
         }
         return sorted;
     }
-    /* Virar as cartas no inicio do jogo para a pessoa memorizar*/
+    /** 
+     *  Virar as cartas no inicio do jogo para a pessoa memorizar
+     */
     function InicialTime(mode){
       
         var faces =  document.getElementsByClassName("face");
@@ -331,7 +339,9 @@
     }
     
 
-    /* Mudar o comando da página */
+    /**
+     *  Mudar a instrução no ínicio do jogo
+     */
     function ShowStart(){
         setTimeout(function(){ 
             document.getElementById("titulo-jogo").innerHTML = "Vire os cartões";
@@ -339,9 +349,12 @@
             ShowPointsBox.classList.remove("hide-points-box");
         }, 5000);
     }
- /*Função para virar as cartas e contar os matches*/
+ 
+ /**
+  * Função para virar as cartas e contar os matches
+  *  */
  function flipCard(){
-            
+            //verificar porque chamo countPoints fail e countPoints matches
             if(flippedCards.length < 2){
 
                 console.log(flippedCards.length);
@@ -412,8 +425,13 @@
             
             }
         }
-
-         /*Função para contar os pontos*/
+         /**
+          * Função para contar os pontos feitos na fase
+          * @param {number} fail
+          * recebe o numero de fails para calcular a pontuação total
+          * pontuação final = 100 - (errados*2)
+          * Nunca está abaixo de 50
+          */
         function CountPoints(fail){
             
             var ptsant = document.getElementById("points").textContent;
@@ -425,7 +443,9 @@
              }
         }
 
-     /*Função para chamar a página de vitória*/
+     /**
+      * Função para chamar a página de vitória
+      */
     function victory(){
 
             var level = sessionStorage.getItem('fase');
@@ -439,7 +459,9 @@
 
             window.location.replace("vitoria.html");
         }
-         /*Função para mostrar o sinal de que a pessoa acertou o par*/
+         /**
+          * Sinaliza quando o jogador acerta um par
+          */
     function matchCardsSign(){
             comsole.log("ta chamando");
             var imgMatchSing = document.getElementById("imgMatchSing");
@@ -465,7 +487,9 @@
   
 }
 )();
-
+/**
+ * Sair da página de jogo
+ */
 function quitGame(){
     window.location.replace("index.html");
 }
