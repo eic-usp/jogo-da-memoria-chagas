@@ -4,6 +4,10 @@
 
 /*DESKTOP*/
 @media(min-width: 1001px){
+  .container-line{
+    width: 80vw;
+    left:0;
+}
   .line{
     position: absolute;
     width: 20rem;

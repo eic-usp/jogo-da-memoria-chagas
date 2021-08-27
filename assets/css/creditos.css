@@ -2,6 +2,10 @@
 
 /*DESKTOP*/
 @media(min-width: 1001px){
+    #titulo-creditos-centro{
+        width: 80vw;
+        left:0;
+    }
     .creditos{ 
         line-height: 16px;
     }
@@ -18,6 +22,7 @@
             justify-content: center;
         }
         .subtitulo-cred{
+            width: 80vw;
             position: absolute;
             left: 34vw;
         }
@@ -25,16 +30,20 @@
 }
 /*TABLET*/
 @media(min-width: 600px) and (max-width: 1000px){
+    #creditos-mobile{
+        top: 3rem;
+        height: 94vh; 
+        overflow-y: scroll;    
+    }
+
     .creditos{ 
         line-height: 16px;
     }
-    #creditos-mobile{
-        overflow-y: scroll;
-    }
+
     .fundo-creditos{
         overflow-y: scroll;
         overflow-x: hidden;
-        width: 100%;
+        width: 100vw;
         height: 100vh;
         background: rgb(136,69,153);
         text-align: center;
@@ -48,11 +57,15 @@
 }
 /*MOBILE*/
 @media(max-width: 599px){ 
+
     #creditos-mobile{
-        overflow-y: scroll;
+        top: 3rem;
+        height: 94vh; 
+        overflow-y: scroll;    
     }
     .creditos{ 
         line-height: 16px;
+        overflow-y: scroll;
     }
     .fundo-creditos{
         overflow-y: scroll;

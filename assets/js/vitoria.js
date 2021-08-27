@@ -36,12 +36,14 @@ function playAgain(){
    let qtdPlays = parseInt(plays)+1;
    document.getElementById("again").classList[3] = qtdPlays;
 }
-
+/** 
+ * Faz alterações na dificuldade e no nivel, cria os cookies para armazenar resultados
+ */
 function GameFlow(){
     //setar depois de cada verificação a quantidade de fases, criar um padrão de string
     //está dando certo
 
-    console.log("entrou no game flow");
+    //console.log("entrou no game flow");
    //troquei para lets porque são variaveis locais, boas práticas, lembrar
 
     var level = sessionStorage.getItem('fase'); // fase atual
