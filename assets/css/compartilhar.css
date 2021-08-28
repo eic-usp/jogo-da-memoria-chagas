@@ -10,7 +10,7 @@
 }
   .line{
     position: absolute;
-    width: 20rem;
+    width: 32vw;
     height: 0px;
     left: 22.375rem;
     border: 2px solid rgba(255, 255, 255, 0.2);

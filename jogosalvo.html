@@ -4,28 +4,25 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title> Compartilhar - Jogo da memória </title>
+    <title> Fase 1 - Jogo da memória</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Luckiest+Guy">
+
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/nivel.css">
     <link rel="stylesheet" href="assets/css/menu-modal.css">
     <link rel="stylesheet" href="assets/css/menu-desktop.css">
-    <link rel="stylesheet" href="assets/css/compartilhar.css">
-
-    <!-- facebook tags -->
-    <meta property="og:url"           content="https://www.your-domain.com/your-page.html"/>
-    <meta property="og:type"          content="website" />
-    <meta property="og:title"         content="Jogo da memória" />
-    <meta property="og:description"   content="Jogo da memória sobre a doença de chagas"/>
-    <meta property="og:image" content="assets/img/btn-facebook.svg">
+    <link rel="stylesheet" href="assets/css/quit-modal.css">
+    <link rel="stylesheet" href="assets/css/jogo.css">
+    <link rel="stylesheet" href="assets/css/vitoria.css">
 
 </head>
 
 <body>
+ <!-- menu Desktop -->
 
-   <div class="menu-desktop">
+     <div class="menu-desktop">
         <ul class="menu-desktop tipoUL">
         <li class = "espaco-6 menu-desktop"></li>
         <li> <!--Colocar o logo no centro-->
@@ -66,7 +63,7 @@
         <li class = "menu-desktop espaco-2"></li>
         <li>
             <a class="menu-desktop" href="compartilhar.html">
-            <div class="menu-desktop elem-menu-lateral active">
+            <div class="menu-desktop elem-menu-lateral">
             <img  class="menu-desktop" src="assets/img/compartilhar.svg">
             <p class="menu-desktop"> Compartilhar <p> 
             <div>
@@ -77,6 +74,7 @@
 
     <div class="fundo">
 <!-- menu mobile-->
+  <div class="espaco-0-5"> </div>
     <div class="menu-mobile">
 
         <div class="row menu-mobile">
@@ -84,8 +82,8 @@
         <!-- lembrar de mudar o link de voltar dependendo da pagina atual-->
             <div class="col menu-mobile col-lg-2 ajuste-direita">
                 <div id="btn-voltar-m">
-                    <a class = "menu-mobile"  href="index.html"> 
-                        <img class="nav-elem menu-mobile"  id="logo-nav-sup-desktop" src="assets/img/nav/voltar.svg">
+                    <a class = "menu-mobile"> 
+                        <img class="nav-elem menu-mobile"  id="logo-nav-sup-desktop" src="assets/img/nav/voltar.svg" data-toggle="modal" data-target="#exampleModalCenter">
                     </a>
                 </div>
             </div>
@@ -151,116 +149,144 @@
         </li>
     </ul>
     <div class="espaco-3"></div>
-    <div class="fade-menu-mobile menu-mobile"></div> 
+   <div class="fade-menu-mobile menu-mobile"></div> <!--ARRUMAR AQUI PARA FICAR CINZA-->
 </div>
 
 <!--fim menu mobile-->
 
-<!--Btn voltar  superior - desktop-->
-<div class="espaco-0-5"> </div>
-    <div class="row menu-desktop">
-        <div class="btn-voltar-ms">
-       <a href="index.html">
-            <img class="img-voltar" src="assets/img/nav/voltar.svg">
-             </a>
-        </div>
-    </div>
-    
-
 <!-- Conteúdo da página -->
-    <div class="espaco-3"> </div>
 
-    <div class="subtitulo-2">COMPARTILHAR</div>
-    <div class="espaco-3"></div>
-
-    <p> Compartilhe o jogo da memória com seus amigos e familiares </p>
-    <div class="espaco-3"></div>
-    <!--Facebook -->
-     <div class="display-center">
-        <div class = "elem-btn-c">
-            <div> 
-                 <div data-href="">
-                    <a target="_blank"
-                    id="facebook-share-btt" rel="nofollow"  class="facebook-share-button"
-                    href="">
-                     <img src="assets/img/redesSociais/btn-facebook.svg"></a>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-         <!-- Whatsapp-->
-        <div class = "elem-btn-c">
-            <div> 
-                <a href="https://api.whatsapp.com/send?text= Jogo da memória - Doença de chagas https://eic.ifsc.usp.br/app/jogo-da-memoria-chagas/index.html">
-                    <img src="assets/img/redesSociais/btn-whats.svg">
-                </a>
-             </div>
-        </div>
-
-        <!--twiiter-->
-        <div class = "elem-btn-c">
-            <div> 
-                <a id="twitter-share-btt" rel="nofollow" target="_blank" href="https://twitter.com/intent/tweet?text= Jogo da memória - Doença de chagas  https://eic.ifsc.usp.br/app/jogo-da-memoria-chagas/index.html"> 
-                    <img src="assets/img/redesSociais/btn-twitter.svg"> 
-                </a>
-            </div>
-        </div>
-     </div>
-
-     <div class="espaco-3"></div>
-        <div class="container-line"> 
-            <h1 class="line display-center"></h1>
-        </div>
-     <div class="espaco-3"></div>
-
-
-    <h1 class="subtitulo-2">SIGA O EIC</h1>
-    <div class="espaco-3"></div>
-    <p> Interaja com a gente nas mídias sociais e em nosso site! </p>
-    <div class="espaco-3"></div>  
- 
-
-    <div class="display-center">
-        <div class = "elem-btn-c">
-        <div> <a href="https://www.facebook.com/EIC.USP/"> <img src="assets/img/redesSociais/btn-facebook-line.svg"></a></div>
-        </div>
-        <div class = "elem-btn-c">
-        <div> <a href="https://www.instagram.com/eiciencia"><img src="assets/img/redesSociais/btn-insta-line.svg"></a></div>
-        </div>
-        <div class = "elem-btn-c">
-        <div> <a href="https://www.youtube.com/c/EspaçoInterativodeCiências"><img src="assets/img/redesSociais/btn-youtube-line.svg"> </a></div>
-        </div>
-         <div class = "elem-btn-c">
-        <div> <a href="https://eic.ifsc.usp.br/"><img src="assets/img/redesSociais/btn-site-line.svg"> </a></div>
+    <div class="espaco-0-5"> </div>
+    <div class="row menu-desktop">
+        <div id="btn-voltar-d">
+            <img class="img-voltar" src="assets/img/nav/voltar.svg" data-toggle="modal" data-target="#exampleModalCenter">
         </div>
     </div>
-<!--Botao facebook-->
-<div
-  class="fb-share-button" style="display:none"
-  data-href="https://jogo-da-memoria-eic.vercel.app/index.html"
-  data-layout="button">
+
+<!-- Fim opção sair --> 
+
+<!-- Modal SAIR DO JOGO-->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+            <div class="modal-exclamacao mx-auto"></div>
+             <h1 class="fonte-modal-sair-destaque"> Sair do jogo </h1> 
+            <div class="espaco-2"></div>
+            <h1 class="fonte-modal-sair"> Tem certeza que deseja sair do jogo? </h1>
+    </div>
+      <div class="modal-footer">
+        <div class="row">
+        <div class="col" id=""></div>
+        <div class="col" id=""></div>
+        <div class="col cursor-pointer" id="ficar" data-dismiss="modal" aria-label="Close" > NÃO </div>
+        <div class="col cursor-pointer" id="sair" onclick="quitGame()" > SIM </div>
+    </div>
+      </div>
+    </div>
+  </div>
 </div>
 
-</div>
-     
+<!--jogo-->
+    <div class="espaco-0-5"></div>
+    <div class="subtitulo-2" id="titulo-jogo">MEMORIZE AS POSIÇÕES</div>
+
+    <div class="espaco-1"></div>
+  
+<!-- Painel ensinando como jogar -->
+
+<div id="container" class=""> 
+
+    <div class="card" id="card0">
+        <div class="face back">  </div>
+         <div class="face front"> </div>
+    </div>
+     <div class="card" id="card1">
+        <div class="face back">  </div>
+         <div class="face front">  </div>
+    </div>
+     <div class="card" id="card2">
+         <div class="face back">  </div>
+         <div class="face front">  </div>
+    </div>
+     <div class="card" id="card3">
+        <div class="face back">  </div>
+         <div class="face front">  </div>
+    </div>
+     <div class="card" id="card4">
+        <div class="face back">  </div>
+         <div class="face front">  </div>
+    </div>
+     <div class="card" id="card5">
+        <div class="face back">  </div>
+         <div class="face front">  </div>
+    </div>
+    <div class="card" id="card6">
+        <div class="face back">  </div>
+         <div class="face front">  </div>
+    </div>
+    <div class="card" id="card7">
+        <div class="face back">  </div>
+         <div class="face front">  </div>
+    </div>
+    <div class="card" id="card8">
+        <div class="face back">  </div>
+         <div class="face front">  </div>
+    </div>
+    <div class="card" id="card9">
+        <div class="face back">  </div>
+         <div class="face front">  </div>
+    </div>
+    <div class="card" id="card10">
+        <div class="face back">  </div>
+         <div class="face front">  </div>
+    </div>
+    <div class="card" id="card11">
+        <div class="face back">  </div>
+         <div class="face front">  </div>
+    </div>
+    <div class="card" id="card12">
+        <div class="face back">  </div>
+         <div class="face front">  </div>
+    </div>
+    <div class="card" id="card13">
+        <div class="face back">  </div>
+         <div class="face front">  </div>
+    </div>
+    <div class="card" id="card14">
+        <div class="face back">  </div>
+         <div class="face front">  </div>
+    </div>
+    <div class="card" id="card15">
+        <div class="face back">  </div>
+         <div class="face front">  </div>
+    </div>
+
+     <!--Perguntar sobre uma imagem melhor para colocar aqui-->
+    <img src="assets/img/match.png" id="imgMatchSing" class="hideMatchSing"/> 
+    
+    </div>
+
+    <!--display de pontos -->
+    <div class="points-position-game">
+        <div id="points-box" class="points-box hide-points-box">
+            <img  class="medal" src="assets/img/medalha.svg">
+            <p id="points" class="points"> 100 </p>
+            <!--Arrumar aqui para o texto e a imagem ficarem alinhados-->
+        </div>
+    <!--Fim  painel  -->
+
+    </div>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
     <script src="assets/js/menu-modal.js"></script>
-
-    <!--Botao facebook-->
-    <!-- Não foi necessário vincular o ID do jogo no facebook a essa pagina para funcionar -->
-     <script type="text/javascript">
-        //Constrói a URL depois que o DOM estiver pronto
-        document.addEventListener("DOMContentLoaded", function() {            
-            //altera a URL do botão
-            document.getElementById("facebook-share-btt").href = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent("https://eic.ifsc.usp.br/app/jogo-da-memoria-chagas/index.html");
-        }, false);
-    </script>
-
-    
-
-   
+    <script src="assets/js/jogo.js"></script>
 </body>
 
 </html>
