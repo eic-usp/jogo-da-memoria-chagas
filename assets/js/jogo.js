@@ -1,153 +1,157 @@
-//mudar toda a estrutura do jogo para orientação a OBJ, vai ficar melhor e mais origanizado
+(function (){
 
-/*a lógica provavelmente vai funcionar mas preciso pensar em coisas que antes eram passadas como classList 
-e agora vão ser guardadas nos objetos, se não a OO não faz sentido*/
+    /*Não está mostrando a imagem de par correto e não está entendendo que algumas cartas sao pares */
+    /*porque não está contando par se eu não mudei nada */
 
-/** Guardar informações sobre a carta */
-class Cardd{
+    level = sessionStorage.getItem('fase'); // fase 1, 2, 3
+    var mode = sessionStorage.getItem('nivel'); // facil/medio/dificil 
 
-    constructor(id,src){
-        this.id = id;
-        this.scr = src;
-        this.status = False;
+    var size = $(window).width();
+
+    //console.log("fase:" + level);
+    //console.log("nivel:" + mode);
+
+    if (level === null){
+        level = 1;
     }
-    
-    static VerifyPair(Card1, Card2){
-        if(Card1.id == Card2.id){
-          this.pair = True;
-          //matchCardsSign
-        }else{
-            this.pair = False;
-            //Flip the cards Back
-        }
-    }
-    
-}
-class Level{
-//esse método ta muito grande e complexo, quero quebrar em partes, procurar a melhor estratégi
-    constructor(level){
-        var CardsList = [];
+
+    var images = [];
+    var matches = 0;
+    var fail = 0;
+    /*Imagens desktop*/
+    if(size >= 600){
         if (level === "1"){
 
             document.getElementsByTagName('title')[0].innerHTML= "Fase 1";
 
-            for(let i = 0; i < 16; i++){
-                src = "assets/img/desktop/fase1/" + i + ".png";
-                id = i%8;
-                let card = new Cardd(id, src);    //constroi a carta e coloca na lista de cartas
-                CardsList.push(card);
+            for(var i = 0; i < 16; i++){
+
+                var img = {
+                        src: "assets/img/desktop/fase1/" + i + ".png",
+                        id: i%8
+                    
+                };
+               // console.log("id das imagens:" + img.id);
+                images.push(img);
             } 
 
         } else if (level === "2"){
 
             document.getElementsByTagName('title')[0].innerHTML= "Fase 2";
         
-            for(let i = 0; i < 8; i++){
-                src = "assets/img/desktop/fase1/" + i + ".png";
-                id = i%8;
-                let card = new Cardd(id, src);    
-                CardsList.push(card);
+            for(var i = 0; i < 8; i++){
+                var img = {
+                        src: "assets/img/desktop/fase1/" + i + ".png",
+                        id: i%8
+                };
+                images.push(img);
+            }
+
+            for(var i = 8; i < 16; i++){
+                var img = {
+                        src: "assets/img/desktop/fase2/" + i + ".png",
+                        id: i%8
+                };
+                images.push(img);
             } 
-            for(let i = 8; i < 16; i++){
-                src = "assets/img/desktop/fase2/" + i + ".png";
-                id = i%8;
-                let card = new Cardd(id, src);    
-                CardsList.push(card);
+
+        } else if(level === "3"){
+
+            document.getElementsByTagName('title')[0].innerHTML= "Fase 3";
+
+            for(var i = 0; i < 8; i++){
+                var img = {
+                        src: "assets/img/desktop/fase3/" + i + ".png",
+                        id: i%8
+                    };
+                    images.push(img);
+                }
+
+            for(var i = 8; i < 16; i++){
+                var img = {
+                        src: "assets/img/desktop/fase2/" + i + ".png",
+                        id: i%8
+                };
+                images.push(img);
             } 
 
         }
-       return CardsList; 
-    }
 
-    sortCards(CardsList){
-        //pensar em como embaralhar aqui dentro mesmo
-        CardsList  = randomSort(CardsList);
-        return CardsList;
-    }
-}
-/**Guardar informações sobre a partida */
-class Game{
-    constructor(){
-        this.points = 100;
-        this.matches = 0;
-        this.fail = 0;
-    }
+    }else{ /*Imagens mobile*/
+        console.log("fase");
 
-    static startGame(){
-        let level = sessionStorage.getItem('fase'); // fase 1, 2, 3
+        if (level === "1"){
 
-        //queria usar esse if mas acho que é uma gambiarra porque não tenho else
-        level === null ? level = 1: level = 1;
-    
+            document.getElementsByTagName('title')[0].innerHTML= "Fase 1";
 
-        let mode = sessionStorage.getItem('nivel'); // facil/medio/dificil
-        round = new Round(level,mode,0);
-    }
+            for(var i = 0; i < 16; i++){
+                /*img é objeto, indices textuais, funções = métodos */
+                var img = {
+                        src: "assets/img/mobile/fase1/" + i + ".png",
+                        id: i%8
+                    
+                };
+              //  console.log("id das imagens:" + img.id);
+                images.push(img);
+            } 
 
-    fase(level){
-        //Cardd.CreateCards(level);
-    }
+        } else if (level === "2"){
 
-     /**
-          * método para contar os pontos feitos na fase
-          * @param {number} fail
-          * recebe o numero de fails para calcular a pontuação total
-          * pontuação final = 100 - (errados*2)
-          * Nunca está abaixo de 50
-          */
-    countPoints(fail){
-            
-        var ptsant = document.getElementById("points").textContent;
-         ptsant = parseInt(ptsant);
+            document.getElementsByTagName('title')[0].innerHTML= "Fase 2";
 
-         if(ptsant > 50){
-            pts = 100 - (fail * 2);
-            document.getElementById("points").innerHTML =  pts;
-         }
-    }
-    /** método para chamar a página de vitória */
-    victory(){
-        //como salvar objetos de um script para outro?
-        //pemsar em como alterar a estrutura para não depender dos elementos de html além do necessario
-        var level = sessionStorage.getItem('fase');
         
-        sessionStorage.setItem("fase", level);
-        sessionStorage.setItem("nivel", mode);
+            for(var i = 0; i < 8; i++){
+                var img = {
+                        src: "assets/img/mobile/fase1/" + i + ".png",
+                        id: i%8
+                };
+                images.push(img);
+            }
 
-        var points = document.getElementById("points").textContent;
+            for(var i = 8; i < 16; i++){
+                var img = {
+                        src: "assets/img/mobile/fase2/" + i + ".png",
+                        id: i%8
+                };
+                images.push(img);
+            } 
 
-        sessionStorage.setItem("pontos", points);
+        } else if(level === "3"){
+            // arrumar o tamanho das imagens, mas de resto ta tudo certo até aqui
 
-        window.location.replace("vitoria.html");
+            document.getElementsByTagName('title')[0].innerHTML= "Fase 3";
+
+            for(var i = 0; i < 8; i++){
+                var img = {
+                        src: "assets/img/mobile/fase3/" + i + ".png",
+                        id: i%8
+                    };
+                    images.push(img);
+                }
+
+            for(var i = 8; i < 16; i++){
+                var img = {
+                        src: "assets/img/mobile/fase2/" + i + ".png",
+                        id: i%8
+                };
+                images.push(img);
+            } 
+
+        }
     }
-    /** Sair da página de jogo */
-    quitGame(){
-        window.location.replace("index.html");
-    }
-}
-class Round{
-
-    //ver como desbobrir o round
-    constructor(level,mode, round){
-        this.level = level;
-        this.mode = mode;
-        this.round = round;
-        
-    }
-}
-
-
-    //passar para round
-    level = sessionStorage.getItem('fase'); // fase 1, 2, 3
-    var mode = sessionStorage.getItem('nivel'); // facil/medio/dificil 
-
-    var size = $(window).width();
+   
 
     startGame();
     /** começa o jogo */
-
     function startGame(){   
     
+        matches = 0;
+
+        flippedCards = [];
+
+        error = 0;
+
+        images  = randomSort(images);
 
         var frontFaces = document.getElementsByClassName("front");
         var backFaces = document.getElementsByClassName("back");
@@ -159,6 +163,7 @@ class Round{
             /*tentar criar uma função e modularizar essa parte passando o tamanho da tela por parâmetro, ver se vai funcionar*/
             for(var i = 0; i < 16; i++){
 
+        
                 frontFaces[i].classList.remove("flipped", "match");
                 backFaces[i].classList.remove("flipped", "match");
 
@@ -303,7 +308,35 @@ class Round{
         }
         return sorted;
     }
-    
+    /** 
+     *  Virar as cartas no inicio do jogo para a pessoa memorizar
+     */
+    function InicialTime(mode){
+      
+        var faces =  document.getElementsByClassName("face");
+        for(i = 0; i < 32; i++){
+            faces[i].classList.toggle("flipped");
+            }
+            if(mode === "1"){
+                setTimeout(function (){
+                for(i = 0; i < 32; i++){
+                    faces[i].classList.toggle("flipped");
+                    }
+                }, 5000);
+            } else if(mode === "2"){
+                setTimeout(function (){
+                    for(i = 0; i < 32; i++){
+                        faces[i].classList.toggle("flipped");
+                        }
+                    }, 2500);
+            } else if(mode === "3"){
+                setTimeout(function (){
+                    for(i = 0; i < 32; i++){
+                        faces[i].classList.toggle("flipped");
+                        }
+                    }, 1500);
+            } 
+    }
     
 
     /**
@@ -392,11 +425,44 @@ class Round{
             
             }
         }
-        
+         /**
+          * Função para contar os pontos feitos na fase
+          * @param {number} fail
+          * recebe o numero de fails para calcular a pontuação total
+          * pontuação final = 100 - (errados*2)
+          * Nunca está abaixo de 50
+          */
+        function CountPoints(fail){
+            
+            var ptsant = document.getElementById("points").textContent;
+             ptsant = parseInt(ptsant);
 
+             if(ptsant > 50){
+                pts = 100 - (fail * 2);
+                document.getElementById("points").innerHTML =  pts;
+             }
+        }
+
+     /**
+      * Função para chamar a página de vitória
+      */
+    function victory(){
+
+            var level = sessionStorage.getItem('fase');
+            
+            sessionStorage.setItem("fase", level);
+            sessionStorage.setItem("nivel", mode);
+
+            var points = document.getElementById("points").textContent;
+
+            sessionStorage.setItem("pontos", points);
+
+            window.location.replace("vitoria.html");
+        }
          /**
           * Sinaliza quando o jogador acerta um par
           */
+    matchCardsSign();     
     function matchCardsSign(){
             comsole.log("ta chamando");
             var imgMatchSing = document.getElementById("imgMatchSing");
@@ -408,6 +474,23 @@ class Round{
                 imgMatchSing.classList.add("hideMatchSing");
             },1000);
         }
-    
-
-
+       /* function matchCardsSign(){
+            imgMatchSing.style.zIndex = 1;
+            var height =  $(window).height();
+            imgMatchSing.style.top = Math.round(height/2) + "px";
+            imgMatchSing.style.opacity = 0;
+            setTimeout(function(){
+                imgMatchSing.style.zIndex = -1;
+                imgMatchSing.style.top = 250 + "px";
+                imgMatchSing.style.opacity = 1;
+            },1000);
+        }*/
+  
+}
+)();
+/**
+ * Sair da página de jogo
+ */
+function quitGame(){
+    window.location.replace("index.html");
+}
