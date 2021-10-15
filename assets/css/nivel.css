@@ -149,7 +149,7 @@
     bottom: 5%;
   }
   .alinhamento{
-    align: left;
+    box-align: left;
   }
   /*modal sair*/
   #modal-sair{

@@ -1,7 +1,7 @@
  /*versão DESKTOP*/
  @media(MIN-width: 1001px){
   
-    .tipoUL{
+    .tipoUL{ /*menu lateral**/
         list-style-type: none;
         left: 80%;
         margin: 0;
@@ -11,32 +11,47 @@
         height: 100%; 
         position: absolute; 
         overflow: hidden; 
+        text-align: left;
       }
-      .logo-eic-centro{
+      .logo-eic-centro{ /*logo do EIC**/
         position: relative;
         padding-left: 3vw;
         width: 240px;
-        height:80px;
+        height: 80px;
       }
       .elem-menu-lateral{
         width: 18,75rem;
+        position: static;
+        vertical-align: middle;
       }
-      .elem-menu-lateral img{
+      .elem-menu-lateral img{ /*imagens menu lateral**/
         padding-left: 2rem;
         float: left;
-        margin-right: 32px;
+        margin-right: 32px;        
       }
-      .elem-menu-lateral p{
+      .elem-menu-lateral p{ /*texto menu lateral**/
         text-align: left;
-      }
-      .active{
+        padding-top: 3px;
+      }    
+      /*.active:hover{
         background-color: rgb(136,69,153); 
         width: 220px;
         left: 10px;
         right: 10px;
         position: relative;
         border-radius: 5px;
-      } 
+      }**/
+      
+      .elem-menu-lateral:hover{
+        background-color: rgb(136,69,153);
+        padding: 3%;                
+        position: relative;
+        width: 234px;
+        left: 20px;
+        right: 10px;
+        border-radius: 5px;
+        height: 48px;
+      }
       .organize-elem-centro-coluna{
         align-items: center;
         display: flex;
