@@ -18,6 +18,7 @@
         padding-left: 3vw;
         width: 240px;
         height: 80px;
+        margin-bottom: 40px;
       }
       .elem-menu-lateral{
         width: 18,75rem;
@@ -27,7 +28,8 @@
       .elem-menu-lateral img{ /*imagens menu lateral**/
         padding-left: 2rem;
         float: left;
-        margin-right: 32px;        
+        margin-right: 32px; 
+        width: 60px;       
       }
       .elem-menu-lateral p{ /*texto menu lateral**/
         text-align: left;
