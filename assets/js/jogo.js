@@ -474,7 +474,7 @@
                 imgMatchSing.classList.add("hideMatchSing");
             },1000);
         }
-       /* function matchCardsSign(){
+        /*function matchCardsSign(){
             imgMatchSing.style.zIndex = 1;
             var height =  $(window).height();
             imgMatchSing.style.top = Math.round(height/2) + "px";
@@ -484,7 +484,7 @@
                 imgMatchSing.style.top = 250 + "px";
                 imgMatchSing.style.opacity = 1;
             },1000);
-        }*/
+        */
   
 }
 )();
