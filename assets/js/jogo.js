@@ -183,7 +183,7 @@
                     card.style.top = 390 + "px";
                 }
 
-                card.addEventListener("click", flipCard, false);
+               card.addEventListener("click", flipCard, false);
 
         
                 backgroundLevel(level);
@@ -221,7 +221,7 @@
                     card.style.top = 390 + "px";
                 }
 
-                card.addEventListener("click", flipCard, false);
+               card.addEventListener("click", flipCard, false);
 
                 if(i === 1){
                     backgroundLevel(level);
@@ -255,7 +255,7 @@
                     card.style.top = 230 + "px";
                 }
         
-                card.addEventListener("click", flipCard, false);
+               card.addEventListener("click", flipCard, false);
 
                 if(i === 1){
                     backgroundLevel(level);
@@ -349,11 +349,23 @@
             ShowPointsBox.classList.remove("hide-points-box");
         }, 5000);
     }
- 
  /**
   * Função para virar as cartas e contar os matches
   *  */
- function flipCard(){
+
+  
+function flipCard(){
+ /*  function some(){
+        for (n =0; n < 16 ; n++){
+            let carta = [];
+            let cart = this.document.getElementsById("#card"+n);
+            carta.push(cart);
+            if(n%8 === flippedCards[0].childNodes[3].id){ 
+                carta[n].classList.toggle("pair");
+            }
+        }
+    }
+    */
             //verificar porque chamo countPoints fail e countPoints matches
             if(flippedCards.length < 2){
 
@@ -376,7 +388,7 @@
                 flippedCards.push(this);
               
                 console.log("1" + flippedCards[0].childNodes[1]);
-                console.log("2" +  flippedCards[0].childNodes[3]);
+                console.log("2" + flippedCards[0].childNodes[3]);
                 console.log("3" + flippedCards[1].childNodes[1]);
                 console.log("4" + flippedCards[1].childNodes[3]);     
 
@@ -384,44 +396,61 @@
         
                     if(flippedCards[0].childNodes[3].id === flippedCards[1].childNodes[3].id){
 
-                        flippedCards[0].childNodes[1].classList.toggle("match");
-                        flippedCards[0].childNodes[3].classList.toggle("match");
-                        flippedCards[1].childNodes[1].classList.toggle("match");
-                        flippedCards[1].childNodes[3].classList.toggle("match");
+                      flippedCards[0].childNodes[1].classList.toggle("match");
+                      flippedCards[0].childNodes[3].classList.toggle("match");
+                      flippedCards[1].childNodes[1].classList.toggle("match");
+                      flippedCards[1].childNodes[3].classList.toggle("match");
                         
                         //sinal de desaparecimento da carta - não funciona
                         //problema na função mathcardssing
                         //matchCardsSign();
 
                         //efeito de desaparecimento da carta
-                        flippedCards[0].childNodes[1].classList.add("pair");
-                        flippedCards[0].childNodes[3].classList.add("pair");
-                        flippedCards[1].childNodes[1].classList.add("pair");
-                        flippedCards[1].childNodes[3].classList.add("pair");
-
-                        matches=7;
-                        matches++;
+                        
+                      flippedCards[0].childNodes[1].classList.add("pair");
+                      flippedCards[0].childNodes[3].classList.add("pair");
+                      flippedCards[1].childNodes[1].classList.add("pair");
+                      flippedCards[1].childNodes[3].classList.add("pair");
+                     // for(n=0; n <16; n++){
+                      //  var cart = document.getElementById("Card"+n);
+                      //  if(n%8 === flippedCards[0].id){
+                       //     cart[i].classList.add("pair");
+                      //      flippedCards = [];
+                      //  }
+                      //  }
+        
+                 //   }
 
                         flippedCards = [];
-
+                        matches++;
                         CountPoints(matches);
-
                         if(matches === 8){
                             victory();
                         }
+                        
                     }
                 }
 
             } else {
-            flippedCards[0].childNodes[1].classList.toggle("flipped");
-            flippedCards[0].childNodes[3].classList.toggle("flipped");
-            flippedCards[1].childNodes[1].classList.toggle("flipped");
-            flippedCards[1].childNodes[3].classList.toggle("flipped");
-        
-            flippedCards = [];
-            
-            fail++;
-            CountPoints(fail);
+                
+                   function rotarY(){
+                       if(flippedCards[0].childNodes[3].id !== flippedCards[1].childNodes[3].id){
+                    flippedCards[0].childNodes[1].style.transform = "rotateY("+0+"deg)";
+                    flippedCards[0].childNodes[3].style.transform = "rotateY("+180+"deg)";
+                    flippedCards[1].childNodes[1].style.transform = "rotateY("+0+"deg)";
+                    flippedCards[1].childNodes[3].style.transform = "rotateY("+180+"deg)";
+                    flippedCards = [];
+                    fail++;
+                    CountPoints(fail);
+                       }
+                   }
+                   setTimeout(rotarY(),500);
+               
+          // flippedCards[0].childNodes[1].classList.toggle("flipped");
+          // flippedCards[0].childNodes[3].classList.toggle("flipped");
+          // flippedCards[1].childNodes[1].classList.toggle("flipped");
+          // flippedCards[1].childNodes[3].classList.toggle("flipped");
+           
             
             }
         }
