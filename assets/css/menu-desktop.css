@@ -102,10 +102,11 @@
       height:28px;
     }
 }
+
 /*versão mobile*/
 @media(max-width: 599px){
   .menu-desktop{
-      display:none;
+      display: none;
       }
   .ajuste-direita{
     padding-left:24px ; 
