@@ -36,26 +36,23 @@
 }
 .card:hover{
     /*efeito lindo, amei*/
-    box-shadow: 0 0 30px  #aaa;
+    box-shadow: 0 0 30px #aaa;
 }
-
-.face.flipped.match {
-    box-shadow: 0 0 30px #0f0;
+.face .flipped .match{
+    box-shadow: 0 0 10px #0f0;
 }
 #imgMatchSing{
     position: relative;
     top: 250px;
     transition-property: top, opacity;
-    
+    transition-duration: 1.5s;
 }
 .pair{
-    animation-name: fadeIn;
-    animation-delay: 1000ms;
-    animation-duration: 1000ms;
-    animation-fill-mode: forwards;
-    box-shadow: none;
+  animation-name: fadeIn;
+  animation-delay: 1000ms;
+  animation-duration: 1000ms;
+  animation-fill-mode: forwards;
 }
-
 .hide-points-box{
     display:none;
 }
