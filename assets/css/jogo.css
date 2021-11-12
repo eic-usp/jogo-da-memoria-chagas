@@ -53,6 +53,7 @@
     animation-delay: 1000ms;
     animation-duration: 1000ms;
     animation-fill-mode: forwards;
+    box-shadow: none;
 }
 
 .hide-points-box{
