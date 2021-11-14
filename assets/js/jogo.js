@@ -429,40 +429,43 @@ function flipCard(){
                         }
                         
                     }
-                }
+                    function rotarY(){
+                        flippedCards[0].childNodes[1].style.transform = "rotateY("+0+"deg)";
+                        flippedCards[0].childNodes[3].style.transform = "rotateY("+180+"deg)";
+                        flippedCards[1].childNodes[1].style.transform = "rotateY("+0+"deg)";
+                        flippedCards[1].childNodes[3].style.transform = "rotateY("+180+"deg)";
 
-            } //else {
+                       
+                     
+                }
+                        
+            if(flippedCards[0].childNodes[3].id !== flippedCards[1].childNodes[3].id){
+                rotarY();
+                flippedCards[0].childNodes[1].classList.toggle("flipped");
+                flippedCards[0].childNodes[3].classList.toggle("flipped");
+                flippedCards[1].childNodes[1].classList.toggle("flipped");
+                flippedCards[1].childNodes[3].classList.toggle("flipped");
+            
+                flippedCards = [];
+                fail++;
+                CountPoints(fail);
+            }  
+     
+            } 
+            
+            
+            
+            
+            
+            
+            
+            //else {
          
            // }
-            function rotarY(){
-               // flippedCards[0].childNodes[1].classList.toggle("flipped");
-                //flippedCards[0].childNodes[3].classList.toggle("flipped");
-                //flippedCards[1].childNodes[1].classList.toggle("flipped");
-                //flippedCards[1].childNodes[3].classList.toggle("flipped");
-                
-<<<<<<< HEAD
-             flippedCards[0].childNodes[1].style.transform = "rotateY("+0+"deg)";
-             flippedCards[0].childNodes[3].style.transform = "rotateY("+180+"deg)";
-             flippedCards[1].childNodes[1].style.transform = "rotateY("+0+"deg)";
-             flippedCards[1].childNodes[3].style.transform = "rotateY("+180+"deg)";
-             faces[0].classList.toggle("flipped");
-             faces[1].classList.toggle("flipped");
-             flippedCards = [];
-             fail++;
-             CountPoints(fail);
-=======
-                   function rotarY(){
-                       if(flippedCards[0].childNodes[3].id !== flippedCards[1].childNodes[3].id){
-                    flippedCards[0].childNodes[1].style.transform = "rotateY("+0+"deg)";
-                    flippedCards[0].childNodes[3].style.transform = "rotateY("+-180+"deg)";
-                    flippedCards[1].childNodes[1].style.transform = "rotateY("+0+"deg)";
-                    flippedCards[1].childNodes[3].style.transform = "rotateY("+-180+"deg)";
-                    flippedCards = [];
-                    fail++;
-                    CountPoints(fail);
-                       }
-                   }
-                   setTimeout(rotarY(),500);
+           
+                   
+                   
+                  
                
           // flippedCards[0].childNodes[1].classList.toggle("flipped");
           // flippedCards[0].childNodes[3].classList.toggle("flipped");
@@ -470,11 +473,7 @@ function flipCard(){
           // flippedCards[1].childNodes[3].classList.toggle("flipped");
            
             
->>>>>>> 60c82ed32697d11db36e2c2baa416bc0f9b6632d
-            }
-            if(flippedCards[0].childNodes[3].id !== flippedCards[1].childNodes[3].id){
-                setTimeout(rotarY(),500);
-            }  
+          
          
            
         }
@@ -527,6 +526,7 @@ function flipCard(){
                 imgMatchSing.classList.add("hideMatchSing");
             },1000);
         }
+    }
         /*function matchCardsSign(){
             imgMatchSing.style.zIndex = 1;
             var height =  $(window).height();
@@ -539,11 +539,11 @@ function flipCard(){
             },1000);
         */
   
-}
+        }
 )();
 /**
  * Sair da página de jogo
  */
-function quitGame(){
+ function quitGame(){
     window.location.replace("index.html");
 }
