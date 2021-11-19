@@ -144,7 +144,7 @@
     startGame();
     /** começa o jogo */
     function startGame(){   
-    
+        
         matches = 0;
 
         flippedCards = [];
@@ -158,11 +158,13 @@
         
         var size = $(window).width();
 
+        
+
         if(size > 1000){ /*Versão Desktop*/
             
             /*tentar criar uma função e modularizar essa parte passando o tamanho da tela por parâmetro, ver se vai funcionar*/
             for(var i = 0; i < 16; i++){
-
+                
         
                 frontFaces[i].classList.remove("flipped", "match");
                 backFaces[i].classList.remove("flipped", "match");
@@ -182,8 +184,9 @@
                 } else{
                     card.style.top = 390 + "px";
                 }
-
+                
                 card.addEventListener("click", flipCard, false);
+                
 
         
                 backgroundLevel(level);
@@ -220,8 +223,9 @@
                 } else{
                     card.style.top = 390 + "px";
                 }
-
+                
                 card.addEventListener("click", flipCard, false);
+                
 
                 if(i === 1){
                     backgroundLevel(level);
@@ -254,7 +258,7 @@
                 } else {
                     card.style.top = 230 + "px";
                 }
-        
+                
                 card.addEventListener("click", flipCard, false);
 
                 if(i === 1){
@@ -353,12 +357,18 @@
  /**
   * Função para virar as cartas e contar os matches
   *  */
+  var cont = 0;
+ 
  function flipCard(){
+
+    
+            cont++;
+            console.log("flipCard ----------------- " + cont)
+            console.log("Tamanho - " + flippedCards.length);
             //verificar porque chamo countPoints fail e countPoints matches
             if(flippedCards.length < 2){
-
-                console.log(flippedCards.length);
-
+                console.log("Entrou no IF 0 ----------");
+                                
                 /*rotacionar as faces 180 graus*/
                 /*getElementsByClassName retorna uma lista */
                 var faces =  this.getElementsByClassName("face");
@@ -373,16 +383,29 @@
                 faces[1].classList.toggle("flipped");
 
                 /*toggle = switch, se nao existe adiciona, se ja existe, remove */
+                //console.log("Tamanho - 1- " + flippedCards.length);
                 flippedCards.push(this);
-              
+                //console.log("Tamanho - 2- " + flippedCards.length);
+                /*
                 console.log("1" + flippedCards[0].childNodes[1]);
                 console.log("2" +  flippedCards[0].childNodes[3]);
                 console.log("3" + flippedCards[1].childNodes[1]);
                 console.log("4" + flippedCards[1].childNodes[3]);     
-
+                */   
+                
+                console.log(" -- ID0 - " + flippedCards[0].childNodes[3].id);
+                console.log(" -- ID1 - " + flippedCards[1].childNodes[3].id);
+                
+                
                 if(flippedCards.length === 2 ){
+
+                    console.log("Entrou no IF 1 ----------");
+                    
+                    console.log("---------- ----------");
         
                     if(flippedCards[0].childNodes[3].id === flippedCards[1].childNodes[3].id){
+
+                        
 
                         flippedCards[0].childNodes[1].classList.toggle("match");
                         flippedCards[0].childNodes[3].classList.toggle("match");
@@ -410,21 +433,81 @@
                             victory();
                         }
                     }
+
+                    console.log("errou -------")
+                    timeAction();
+                    //setTimeout(()=>{console.log("this is the first message")}, 3000);
+                    
+                    //setTimeout(() => {console.log("this is the first message")}, 50000);
+                    
+            
+            
+            
+                    //console.log(" teste 2 - " + flippedCards.classList.contains)
+                    /*
+                    flippedCards[0].childNodes[1].classList.toggle("flipped");
+                    flippedCards[0].childNodes[3].classList.toggle("flipped");
+                    flippedCards[1].childNodes[1].classList.toggle("flipped");
+                    flippedCards[1].childNodes[3].classList.toggle("flipped");
+             
+                    flippedCards = [];
+            
+                    fail++;
+                    CountPoints(fail);
+                   */
+
+                    
                 }
+                
 
             } else {
+
+
+            console.log("Entrou no else ---- ");
+            //timeSensativeAction();
+                /*
+            
+            
+            
+            
+            //console.log(" teste 2 - " + flippedCards.classList.contains)
+           
             flippedCards[0].childNodes[1].classList.toggle("flipped");
             flippedCards[0].childNodes[3].classList.toggle("flipped");
             flippedCards[1].childNodes[1].classList.toggle("flipped");
             flippedCards[1].childNodes[3].classList.toggle("flipped");
-        
+             
             flippedCards = [];
             
             fail++;
             CountPoints(fail);
-            
+            */
             }
         }
+
+        //sleep
+        const sleep = (milliseconds) => {
+            return new Promise(resolve => setTimeout(resolve, milliseconds))
+          }
+
+        async function timeAction(){ 
+            //do something here
+            console.log(" Sleep ------");
+            await sleep(3000) 
+            console.log(" Sleep depois ------");
+            flippedCards[0].childNodes[1].classList.toggle("flipped");
+            flippedCards[0].childNodes[3].classList.toggle("flipped");
+            flippedCards[1].childNodes[1].classList.toggle("flipped");
+            flippedCards[1].childNodes[3].classList.toggle("flipped");
+     
+            flippedCards = [];
+    
+            fail++;
+            CountPoints(fail);
+            
+          }
+
+
          /**
           * Função para contar os pontos feitos na fase
           * @param {number} fail
