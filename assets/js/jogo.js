@@ -422,7 +422,7 @@
                         flippedCards[1].childNodes[1].classList.add("pair");
                         flippedCards[1].childNodes[3].classList.add("pair");
 
-                        
+
                         matches++;
 
                         flippedCards = [];
