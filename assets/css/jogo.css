@@ -19,7 +19,7 @@
     height: 100%;
     position: absolute; /*para que as faces fiquem sobrepostas*/
     border-radius: 10px;
-    transition: 1s;
+    transition:all 1s;
     backface-visibility: hidden;
     background: rgb(136,69,153);
     background-position: center !important;
@@ -27,14 +27,14 @@
 }
 .back.flipped{
     transform: rotateY(180deg);
-    transition: 2s;
+   
 }
 .front{
     transform: rotateY(-180deg);
 }
 .front.flipped{
     transform: rotateY(0deg);
-    transition: 2s;
+    
 }
 .card:hover{
     /*efeito lindo, amei*/

@@ -144,7 +144,7 @@
     startGame();
     /** começa o jogo */
     function startGame(){   
-    
+        
         matches = 0;
 
         flippedCards = [];
@@ -158,11 +158,13 @@
         
         var size = $(window).width();
 
+        
+
         if(size > 1000){ /*Versão Desktop*/
             
             /*tentar criar uma função e modularizar essa parte passando o tamanho da tela por parâmetro, ver se vai funcionar*/
             for(var i = 0; i < 16; i++){
-
+                
         
                 frontFaces[i].classList.remove("flipped", "match");
                 backFaces[i].classList.remove("flipped", "match");
@@ -182,8 +184,9 @@
                 } else{
                     card.style.top = 390 + "px";
                 }
-
-               card.addEventListener("click", flipCard, false);
+                
+                card.addEventListener("click", flipCard, false);
+                
 
         
                 backgroundLevel(level);
@@ -220,8 +223,9 @@
                 } else{
                     card.style.top = 390 + "px";
                 }
-
-               card.addEventListener("click", flipCard, false);
+                
+                card.addEventListener("click", flipCard, false);
+                
 
                 if(i === 1){
                     backgroundLevel(level);
@@ -254,8 +258,8 @@
                 } else {
                     card.style.top = 230 + "px";
                 }
-        
-               card.addEventListener("click", flipCard, false);
+                
+                card.addEventListener("click", flipCard, false);
 
                 if(i === 1){
                     backgroundLevel(level);
@@ -349,28 +353,22 @@
             ShowPointsBox.classList.remove("hide-points-box");
         }, 5000);
     }
+ 
  /**
   * Função para virar as cartas e contar os matches
   *  */
+  var cont = 0;
+ 
+ function flipCard(mode){
 
-  
-function flipCard(){
- /*  function some(){
-        for (n =0; n < 16 ; n++){
-            let carta = [];
-            let cart = this.document.getElementsById("#card"+n);
-            carta.push(cart);
-            if(n%8 === flippedCards[0].childNodes[3].id){ 
-                carta[n].classList.toggle("pair");
-            }
-        }
-    }
-    */
+    
+            cont++;
+            console.log("flipCard ----------------- " + cont)
+            console.log("Tamanho - " + flippedCards.length);
             //verificar porque chamo countPoints fail e countPoints matches
             if(flippedCards.length < 2){
-
-                console.log(flippedCards.length);
-
+                console.log("Entrou no IF 0 ----------");
+                                
                 /*rotacionar as faces 180 graus*/
                 /*getElementsByClassName retorna uma lista */
                 var faces =  this.getElementsByClassName("face");
@@ -385,98 +383,160 @@ function flipCard(){
                 faces[1].classList.toggle("flipped");
 
                 /*toggle = switch, se nao existe adiciona, se ja existe, remove */
+                //console.log("Tamanho - 1- " + flippedCards.length);
                 flippedCards.push(this);
-              
+                //console.log("Tamanho - 2- " + flippedCards.length);
+                /*
                 console.log("1" + flippedCards[0].childNodes[1]);
-                console.log("2" + flippedCards[0].childNodes[3]);
+                console.log("2" +  flippedCards[0].childNodes[3]);
                 console.log("3" + flippedCards[1].childNodes[1]);
                 console.log("4" + flippedCards[1].childNodes[3]);     
-
+                */   
+                
+                console.log(" -- ID0 - " + flippedCards[0].childNodes[3].id);
+                console.log(" -- ID1 - " + flippedCards[1].childNodes[3].id);
+                
+                
                 if(flippedCards.length === 2 ){
+
+                    console.log("Entrou no IF 1 ----------");
+                    
+                    console.log("---------- ----------");
         
                     if(flippedCards[0].childNodes[3].id === flippedCards[1].childNodes[3].id){
 
-                      flippedCards[0].childNodes[1].classList.toggle("match");
-                      flippedCards[0].childNodes[3].classList.toggle("match");
-                      flippedCards[1].childNodes[1].classList.toggle("match");
-                      flippedCards[1].childNodes[3].classList.toggle("match");
+                        
+
+                        flippedCards[0].childNodes[1].classList.toggle("match");
+                        flippedCards[0].childNodes[3].classList.toggle("match");
+                        flippedCards[1].childNodes[1].classList.toggle("match");
+                        flippedCards[1].childNodes[3].classList.toggle("match");
                         
                         //sinal de desaparecimento da carta - não funciona
                         //problema na função mathcardssing
                         //matchCardsSign();
 
                         //efeito de desaparecimento da carta
+                        flippedCards[0].childNodes[1].classList.add("pair");
+                        flippedCards[0].childNodes[3].classList.add("pair");
+                        flippedCards[1].childNodes[1].classList.add("pair");
+                        flippedCards[1].childNodes[3].classList.add("pair");
+
                         
-                      flippedCards[0].childNodes[1].classList.add("pair");
-                      flippedCards[0].childNodes[3].classList.add("pair");
-                      flippedCards[1].childNodes[1].classList.add("pair");
-                      flippedCards[1].childNodes[3].classList.add("pair");
-                     // for(n=0; n <16; n++){
-                      //  var cart = document.getElementById("Card"+n);
-                      //  if(n%8 === flippedCards[0].id){
-                       //     cart[i].classList.add("pair");
-                      //      flippedCards = [];
-                      //  }
-                      //  }
-        
-                 //   }
+                        matches++;
 
                         flippedCards = [];
-                        matches++;
-                        CountPoints(matches);
+
+                        CountPoint();
+
                         if(matches === 8){
                             victory();
                         }
-                        
-                    }
-                    function rotarY(){
-                        flippedCards[0].childNodes[1].style.transform = "rotateY("+0+"deg)";
-                        flippedCards[0].childNodes[3].style.transform = "rotateY("+180+"deg)";
-                        flippedCards[1].childNodes[1].style.transform = "rotateY("+0+"deg)";
-                        flippedCards[1].childNodes[3].style.transform = "rotateY("+180+"deg)";
 
-                       
-                     
+                    }else{
+                    timeAction(mode);
+                    console.log("errou -------")
+                    }
+                    //setTimeout(()=>{console.log("this is the first message")}, 3000);
+                    
+                    //setTimeout(() => {console.log("this is the first message")}, 50000);
+                    
+                    
+            
+            
+                    //console.log(" teste 2 - " + flippedCards.classList.contains)
+                    /*
+                    flippedCards[0].childNodes[1].classList.toggle("flipped");
+                    flippedCards[0].childNodes[3].classList.toggle("flipped");
+                    flippedCards[1].childNodes[1].classList.toggle("flipped");
+                    flippedCards[1].childNodes[3].classList.toggle("flipped");
+             
+                    flippedCards = [];
+            
+                    fail++;
+                    CountPoints(fail);
+                   */
+
+                    
                 }
-                        
-            if(flippedCards[0].childNodes[3].id !== flippedCards[1].childNodes[3].id){
-                rotarY();
-                flippedCards[0].childNodes[1].classList.toggle("flipped");
-                flippedCards[0].childNodes[3].classList.toggle("flipped");
-                flippedCards[1].childNodes[1].classList.toggle("flipped");
-                flippedCards[1].childNodes[3].classList.toggle("flipped");
-            
-                flippedCards = [];
-                fail++;
-                CountPoints(fail);
-            }  
-     
+                
+                
+
             } 
+
+
+            //console.log("Entrou no else ---- ");
+            //timeSensativeAction();
+                /*
             
             
             
             
-            
-            
-            
-            //else {
-         
-           // }
+            //console.log(" teste 2 - " + flippedCards.classList.contains)
            
-                   
-                   
-                  
-               
-          // flippedCards[0].childNodes[1].classList.toggle("flipped");
-          // flippedCards[0].childNodes[3].classList.toggle("flipped");
-          // flippedCards[1].childNodes[1].classList.toggle("flipped");
-          // flippedCards[1].childNodes[3].classList.toggle("flipped");
-           
+            flippedCards[0].childNodes[1].classList.toggle("flipped");
+            flippedCards[0].childNodes[3].classList.toggle("flipped");
+            flippedCards[1].childNodes[1].classList.toggle("flipped");
+            flippedCards[1].childNodes[3].classList.toggle("flipped");
+             
+            flippedCards = [];
             
-          
-         
-           
+            fail++;
+            CountPoints(fail);
+            */
+            
         }
+
+        //sleep
+        const sleep = (milliseconds) => {
+            return new Promise(resolve => setTimeout(resolve, milliseconds))
+          }
+
+        async function timeAction(){ 
+            //do something here
+           // console.log(" Sleep ------");
+            if (mode === "1"){
+            await sleep(3000) 
+            console.log(" Sleep do level 1");
+            flippedCards[0].childNodes[1].classList.toggle("flipped");
+            flippedCards[0].childNodes[3].classList.toggle("flipped");
+            flippedCards[1].childNodes[1].classList.toggle("flipped");
+            flippedCards[1].childNodes[3].classList.toggle("flipped");
+     
+            flippedCards = [];
+    
+            fail++;
+            CountPoints(fail);
+
+            }else if(mode === "2"){
+                await sleep(2000) 
+            console.log(" Sleep do level 2");
+            flippedCards[0].childNodes[1].classList.toggle("flipped");
+            flippedCards[0].childNodes[3].classList.toggle("flipped");
+            flippedCards[1].childNodes[1].classList.toggle("flipped");
+            flippedCards[1].childNodes[3].classList.toggle("flipped");
+     
+            flippedCards = [];
+            fail++;
+            CountPoints(fail);
+
+            }else{
+                await sleep(1000) 
+            console.log(" Sleep do level 3");
+            flippedCards[0].childNodes[1].classList.toggle("flipped");
+            flippedCards[0].childNodes[3].classList.toggle("flipped");
+            flippedCards[1].childNodes[1].classList.toggle("flipped");
+            flippedCards[1].childNodes[3].classList.toggle("flipped");
+     
+            flippedCards = [];
+            fail++;
+            CountPoints(fail);
+
+            }
+            
+          }
+
+
          /**
           * Função para contar os pontos feitos na fase
           * @param {number} fail
@@ -484,13 +544,23 @@ function flipCard(){
           * pontuação final = 100 - (errados*2)
           * Nunca está abaixo de 50
           */
-        function CountPoints(fail){
+        function CountPoints(){
             
             var ptsant = document.getElementById("points").textContent;
              ptsant = parseInt(ptsant);
 
              if(ptsant > 50){
-                pts = 100 - (fail * 2);
+                pts = ptsant - 2;
+                document.getElementById("points").innerHTML =  pts;
+             }
+        }
+        function CountPoint(){
+            
+            var ptsant = document.getElementById("points").textContent;
+             ptsant = parseInt(ptsant);
+
+             if(ptsant < 100){
+                pts = ptsant + 2;
                 document.getElementById("points").innerHTML =  pts;
              }
         }
@@ -526,7 +596,6 @@ function flipCard(){
                 imgMatchSing.classList.add("hideMatchSing");
             },1000);
         }
-    }
         /*function matchCardsSign(){
             imgMatchSing.style.zIndex = 1;
             var height =  $(window).height();
@@ -539,11 +608,11 @@ function flipCard(){
             },1000);
         */
   
-        }
+}
 )();
 /**
  * Sair da página de jogo
  */
- function quitGame(){
+function quitGame(){
     window.location.replace("index.html");
 }
