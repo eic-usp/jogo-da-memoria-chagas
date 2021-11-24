@@ -19,7 +19,7 @@
     height: 100%;
     position: absolute; /*para que as faces fiquem sobrepostas*/
     border-radius: 10px;
-    transition: all 1s;
+    transition:all 1s;
     backface-visibility: hidden;
     background: rgb(136,69,153);
     background-position: center !important;
@@ -27,12 +27,14 @@
 }
 .back.flipped{
     transform: rotateY(180deg);
+   
 }
 .front{
     transform: rotateY(-180deg);
 }
 .front.flipped{
     transform: rotateY(0deg);
+    
 }
 .card:hover{
     /*efeito lindo, amei*/
@@ -49,8 +51,8 @@
 }
 .pair{
   animation-name: fadeIn;
-  animation-delay: 1000ms;
-  animation-duration: 1000ms;
+  animation-delay: 500ms;
+  animation-duration: 500ms;
   animation-fill-mode: forwards;
 }
 .hide-points-box{
