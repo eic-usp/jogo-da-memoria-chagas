@@ -358,6 +358,25 @@
   * Função para virar as cartas e contar os matches
   *  */
   var cont = 0;
+
+  //Remove o brilho dos pares feitos
+  function brilho(){
+    let info = [];
+     for(i=0; i< 16; i++){
+        info[i] = document.getElementById("card"+i); //Recolhe todos os cards
+         console.log(info[i]);
+     }
+     for(i=0; i< info.length; i++){
+         info[i] = info[i].childNodes[3]; //faz com que os cards se tornem "face front"
+         console.log(info[i]);
+         if(info[i].id === flippedCards[0].childNodes[3].id){
+             //info.splice(info.indexOf(i));
+             info[i].parentNode.style.boxShadow = "none"; //remove o brilho da carta associada
+         }
+     }
+     console.log(info);
+     info = [];
+ }
  
  function flipCard(mode){
 
@@ -417,12 +436,16 @@
                         //matchCardsSign();
 
                         //efeito de desaparecimento da carta
+                        
+
                         flippedCards[0].childNodes[1].classList.add("pair");
                         flippedCards[0].childNodes[3].classList.add("pair");
                         flippedCards[1].childNodes[1].classList.add("pair");
                         flippedCards[1].childNodes[3].classList.add("pair");
+                    
+                        brilho();
 
-
+                        
                         matches++;
 
                         flippedCards = [];
@@ -497,7 +520,7 @@
            // console.log(" Sleep ------");
             if (mode === "1"){
             await sleep(3000) 
-            console.log(" Sleep do level 1");
+            console.log(" Sleep Fácil");
             flippedCards[0].childNodes[1].classList.toggle("flipped");
             flippedCards[0].childNodes[3].classList.toggle("flipped");
             flippedCards[1].childNodes[1].classList.toggle("flipped");
@@ -510,7 +533,7 @@
 
             }else if(mode === "2"){
                 await sleep(2000) 
-            console.log(" Sleep do level 2");
+            console.log(" Sleep Médio");
             flippedCards[0].childNodes[1].classList.toggle("flipped");
             flippedCards[0].childNodes[3].classList.toggle("flipped");
             flippedCards[1].childNodes[1].classList.toggle("flipped");
@@ -522,7 +545,7 @@
 
             }else{
                 await sleep(1000) 
-            console.log(" Sleep do level 3");
+            console.log(" Sleep Difícil");
             flippedCards[0].childNodes[1].classList.toggle("flipped");
             flippedCards[0].childNodes[3].classList.toggle("flipped");
             flippedCards[1].childNodes[1].classList.toggle("flipped");
@@ -559,10 +582,10 @@
             var ptsant = document.getElementById("points").textContent;
              ptsant = parseInt(ptsant);
 
-             if(ptsant < 100){
+             
                 pts = ptsant + 2;
                 document.getElementById("points").innerHTML =  pts;
-             }
+             
         }
 
      /**
