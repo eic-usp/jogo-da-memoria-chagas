@@ -9,10 +9,9 @@ var scoreFase1n = parseInt(scoreFase1);
 var scoreFase2n = parseInt(scoreFase2);
 var scoreFase3n = parseInt(scoreFase3);
 
-console.log(scoreFase1n + scoreFase2n + scoreFase3n);
 
 //mostrar o resultado
-document.getElementById('final-score').innerHTML = total;
+document.getElementById('final-score').innerHTML = scoreFase1n + scoreFase2n + scoreFase3n;
 
 //criando cookie que mostra que a pessoa já jogou uma vez, recuperar na página nível - apagar
 Cookies.set('Played','1');

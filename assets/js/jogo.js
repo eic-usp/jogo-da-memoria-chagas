@@ -445,7 +445,7 @@
                     
                         brilho();
 
-                        
+                        matches = 7;
                         matches++;
 
                         flippedCards = [];
@@ -598,7 +598,7 @@
             sessionStorage.setItem("fase", level);
             sessionStorage.setItem("nivel", mode);
 
-            var points = document.getElementById("points").textContent;
+            var points = document.getElementById("points").innerHTML;
 
             sessionStorage.setItem("pontos", points);
 
@@ -609,7 +609,7 @@
           */
     matchCardsSign();     
     function matchCardsSign(){
-            comsole.log("ta chamando");
+            console.log("ta chamando");
             var imgMatchSing = document.getElementById("imgMatchSing");
             imgMatchSing.classList.remove("hideMatchSing");
             var height =  $(window).height();

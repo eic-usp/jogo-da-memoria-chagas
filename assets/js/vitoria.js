@@ -72,33 +72,33 @@ function GameFlow(){
     }
 
     if(level === "1"){
-
-        document.getElementById("points-fase1").innerHTML = points;
-
+        let points1 = document.getElementById("points").innerHTML;
+        console.log(points1)
         again.classList.add("1");
         next.classList.add("2");
-        Cookies.set('ptsfase1', points);
+        Cookies.set('ptsfase1', points1);
+        console.log(Cookies.get('ptsfase1'));
 
     } else if (level === "2"){
-        
-        document.getElementById("points-fase2").innerHTML = points;
-
+        let points2 = document.getElementById("points").innerHTML;
+        //document.getElementById("points-fase2").innerHTML = points;
+        console.log(points2)
         again.classList.remove("1");
         next.classList.remove("2");
         again.classList.add("2");
         next.classList.add("3");
 
-        Cookies.set('ptsfase2', points);
+        Cookies.set('ptsfase2', points2);
+        console.log(Cookies.get('ptsfase2'));
 
     } else if (level === "3"){
-
-        document.getElementById("points-fase3").innerHTML = points;
-
-        Cookies.set('ptsfase3', points);
-
+        let points3 = document.getElementById("points").innerHTML;
+        //document.getElementById("points-fase3").innerHTML = points;
+        console.log(points3)
         again.classList.remove("2");
         next.classList.remove("3");
         again.classList.add("3");
+        Cookies.set('ptsfase3', points3);
         next.href = "fim.html";
         next.innerHTML = "TERMINAR";
     }
