@@ -472,9 +472,9 @@
                         flippedCards[1].childNodes[1].classList.toggle("match");
                         flippedCards[1].childNodes[3].classList.toggle("match");
                         
-                        //sinal de desaparecimento da carta - não funciona
-                        //problema na função mathcardssing
-                        //matchCardsSign();
+                        //sinal de desaparecimento da carta
+                        
+                        matchCardsSign();
 
                         //efeito de desaparecimento da carta
                         
@@ -486,7 +486,6 @@
                     
                         brilho();
 
-                        matches = 7;
                         matches++;
 
                         flippedCards = [];
@@ -614,8 +613,16 @@
              ptsant = parseInt(ptsant);
 
              if(ptsant > 50){
-                pts = ptsant - 2;
-                document.getElementById("points").innerHTML =  pts;
+                if(level == "1"){ 
+                    pts = ptsant - 2;
+                    document.getElementById("points").innerHTML =  pts;
+                }else if(level == "2"){
+                    pts = ptsant - 4;
+                    document.getElementById("points").innerHTML =  pts;
+                }else if(level == "3"){
+                    pts = ptsant - 6;
+                    document.getElementById("points").innerHTML =  pts;
+                }
              }
         }
         function CountPoint(){
@@ -623,10 +630,16 @@
             var ptsant = document.getElementById("points").textContent;
              ptsant = parseInt(ptsant);
 
-             
+            if(level == "1"){ 
                 pts = ptsant + 2;
                 document.getElementById("points").innerHTML =  pts;
-             
+            } else if(level == "2"){
+                pts = ptsant + 4;
+                document.getElementById("points").innerHTML = pts;
+            }else if(level == "3"){
+                pts = ptsant + 6;
+                document.getElementById("points").innerHTML = pts;
+            }
         }
 
      /**
@@ -647,8 +660,7 @@
         }
          /**
           * Sinaliza quando o jogador acerta um par
-          */
-    matchCardsSign();     
+          */    
     function matchCardsSign(){
             console.log("ta chamando");
             var imgMatchSing = document.getElementById("imgMatchSing");
