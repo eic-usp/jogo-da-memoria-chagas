@@ -315,31 +315,72 @@
     /** 
      *  Virar as cartas no inicio do jogo para a pessoa memorizar
      */
-    function InicialTime(mode){
+     function InicialTime(mode){
       
         var faces =  document.getElementsByClassName("face");
         for(i = 0; i < 32; i++){
             faces[i].classList.toggle("flipped");
             }
-            if(mode === "1"){
+            if(mode === "1" && level == "1"){
                 setTimeout(function (){
                 for(i = 0; i < 32; i++){
                     faces[i].classList.toggle("flipped");
                     }
-                }, 5000);
-            } else if(mode === "2"){
+                }, 4000);
+            
+            } else if(mode == "1" && level == "2"){
+                setTimeout(function(){
+                    for(i = 0; i < 32; i++){
+                        faces[i].classList.toggle("flipped");
+                    }
+                },5000);
+            } else if(mode == "1" && level == "3"){
+                setTimeout(function(){
+                    for(i = 0; i < 32; i++){
+                        faces[i].classList.toggle("flipped");
+                    }
+                },6000);
+            }
+            else if(mode === "2" && level == "1"){
                 setTimeout(function (){
                     for(i = 0; i < 32; i++){
                         faces[i].classList.toggle("flipped");
                         }
-                    }, 2500);
-            } else if(mode === "3"){
+                    }, 3000);
+
+            } else if(mode == "2" && level == "2"){
                 setTimeout(function (){
                     for(i = 0; i < 32; i++){
                         faces[i].classList.toggle("flipped");
                         }
-                    }, 1500);
-            } 
+                    }, 4000); 
+                        
+            } else if(mode === "2" && level == "3"){
+                setTimeout(function (){
+                    for(i = 0; i < 32; i++){
+                        faces[i].classList.toggle("flipped");
+                        }
+                    }, 5000);
+            }
+            else if(mode === "3" && level == "1"){
+                setTimeout(function (){
+                    for(i = 0; i < 32; i++){
+                        faces[i].classList.toggle("flipped");
+                        }
+                    }, 2000);
+            } else if(mode === "3" && level == "2"){
+                setTimeout(function (){
+                    for(i = 0; i < 32; i++){
+                        faces[i].classList.toggle("flipped");
+                        }
+                    }, 3000);   
+            } else if(mode === "3" && level == "3"){
+                setTimeout(function (){
+                    for(i = 0; i < 32; i++){
+                        faces[i].classList.toggle("flipped");
+                        }
+                    }, 4000);         
+            }        
     }
     
 

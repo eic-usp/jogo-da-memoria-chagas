@@ -1,0 +1,19 @@
+/*DESKTOP*/
+@media(min-width: 1001px){
+  
+  
+    .medal{
+      bottom: 1rem;
+      position:relative;
+      top: 14px;
+      right: 40px;
+          
+    }
+  
+    .points{
+        position:relative;
+        bottom: 1.5rem;
+        left: 2px;
+    }
+    
+  }
