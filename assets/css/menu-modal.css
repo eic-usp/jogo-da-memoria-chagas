@@ -4,6 +4,13 @@
 }
   /*versão mobile*/
   @media(max-width: 599px){
+  
+  .elem-menu-modal{
+    width: 18,75vw;
+    height:6vh;
+    position: static;
+    justify-content: center;
+  }
     
   .elem-menu-modal img{
     position: relative;
@@ -40,14 +47,21 @@
     height: 32px;
     left: 10px;
     right: 10px;
+  }*/
+  .elem-menu-modal:hover{
+    background-color: rgb(136,69,153);
+    border-radius: 5px;
+    /*position: relative;*/
+    width: 234px;
+    left: 10px;
+    right: 10px;
   }
   .elem-menu-modal:hover img{
-    left: 32px;
+    position: relative;
   }
- .elem-menu-modal:hover p{
-    left: 105px;
-    }
-    */
+  .elem-menu-modal:hover p{
+    position: relative;
+  }
   }
 
    /*versão tablet */
