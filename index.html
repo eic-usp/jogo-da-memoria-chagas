@@ -28,10 +28,15 @@
     <!---<div class="row">
         <div class="col"><a class="btn btn-primary" href="login.html" id="login"> LOGIN </a></div>--->
     </div>
-    <form >
-     <input class="inputs-container" id="usuario" value="" placeholder="Digite seu nome de usuário">
-     <input class="inputs-container" id="senha" type="password" placeholder="Digite sua senha">
-     <div class="btn btn-primary btn-entrar" ><a href="nivel.html">ENTRAR</a></div>
+    <form id="loguinForm" action="#" method="post">
+
+     <input type="text" id="email" name="email"class="inputs-container" placeholder="Digite seu e-mail">
+     <input class="inputs-container" id="password" name="password" type="password" placeholder="Digite sua senha">
+    
+     <button class="btn btn-primary" id="" type="submit">Entrar</button>
+
+    <button type="submit" id="loguin-Google"  class="btn btn-primary">Login google</button>
+
     </form>
     <a href="nivel.html"><p id="reset">Esqueceu Sua Senha?</p></a>
     
@@ -80,7 +85,9 @@
         </div>
     </div> 
 
- </div>
+</div>
+<div id ="logout-Action"> </div> 
+<div id ="cadForm-form"> </div> 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
@@ -88,6 +95,9 @@
     <script src="assets/js/cookies.js"></script>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
     <script src="assets/js/index.js"></script>
 </body>
 

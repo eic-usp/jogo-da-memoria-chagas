@@ -70,21 +70,46 @@
     </div>
 
 <div class="fundo">
-<div>
-        <p class="subtitulo-3" id="titulo-cadastrar">CADASTRAR</p>
+    <form id="cadForm-form" action="#" method="post">
+
+        <div>
+            <p class="subtitulo-3" id="titulo-cadastrar">CADASTRAR</p>
+        </div>
+
+        <div>
+            <label class="label1">Nome</label>
+            <input class="inputs-container" id="nome-cadastrar" placeholder="Ex: Fulana de Tal">
+        </div>
+
+        <div>
+            <label class="label1">Escolha uma senha</label>
+            <input class="inputs-container" type="password" id="password"  name="password" placeholder="Ex: S3Nha F0Rt3"required>
+        </div>
+
+        <div>
+            <label class="label1">E-mail</label>
+            <input class="inputs-container" type="text" id="email" name="email" placeholder="Ex: email@email.com" required autofocus>
+        </div>
+        <div>
+            <label class="label1">Confirme sua senha</label>
+            <input class="inputs-container" type="password" placeholder="Ex: S3Nha F0Rt3 ">
+        </div>
+
+        <div>
+        <button type="submit" id="cadForm-form" class="btn btn-primary">
+              Cadastrar
+        </button> 
+        </div>  
+
+        <div id ="logout-Action"> </div>   
+        <div id ="loguinForm"> </div>  
+        <div id ="loguin-Google"> </div>
+
+    </form>
 </div>
-<div class="pgn-cadastrar">
-    <label class="label1">Nome</label>
-    <input class="inputs-container" id="nome-cadastrar" placeholder="Ex: Fulana de Tal">
-    <label class="label1">Escolha uma senha</label>
-    <input class="inputs-container" type="password"value="" placeholder="Ex: S3Nha F0Rt3">
-</div>
-<div class=pgn-cadastrar>
-    <label class="label1">E-mail</label>
-    <input class="inputs-container" placeholder="Ex: email@email.com">
-    <label class="label1">Confirme sua senha</label>
-    <input class="inputs-container" type="password" placeholder="Ex: S3Nha F0Rt3 ">
-</div>
-<div class="btn btn-primary btn-pronto" ><a href="login.html">PRONTO</a></div>
+<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
+<script src="assets/js/index.js"></script>
+
 </body>
 </html>
