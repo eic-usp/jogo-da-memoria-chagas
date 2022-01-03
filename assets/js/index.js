@@ -43,18 +43,23 @@
         
         const email = cadForm.querySelector('[name="email"]').value;
         const senha = cadForm.querySelector('[name="password"]').value;
+        const Csenha = cadForm.querySelector('[name="password2"]').value;
 
         console.log("Email " + email + " senha " + senha)
-
+        
+        if(Csenha == senha){
         firebase.auth().createUserWithEmailAndPassword(email, senha)
             .then(() => {
                 alert("sucesso")
             }).catch((error) => {
                 console.log(error)
             });
+        }else{
+            alert("As senhas não coincidem");
+        }
         
     };
-    
+
     loguinForm.onsubmit = event => {
         event.preventDefault();
         const email = loguinForm.querySelector('[name="email"]').value;
