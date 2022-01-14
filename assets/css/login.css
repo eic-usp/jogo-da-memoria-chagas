@@ -1,46 +1,99 @@
-.inputs-container{
-height: 66px;
-width: 312px;
-left: 365px;
-top: 195px;
-padding-left: 1em;
-border-radius: 10px;
-border: 3px solid #884599 ;
-background: #F0C0F4;
-font-style: normal;
-font-weight: normal;
-font-size: 20px;
-line-height: 0px;
--webkit-text-fill-color:#985193;
-letter-spacing: -0.015em;
-text-shadow: #884599;
-margin-top: 2rem;
-margin-bottom: 1rem;
-}
-.subtitulo-3{
-    padding-top: 8%;
-    padding-bottom: 4%;
-    text-align: center;
-    color: rgb(255,255,255);
-    font-size: 2.375rem;
-    line-height: 2.8rem;
-    font-family: Luckiest Guy, cursive; 
-    -webkit-text-fill-color:rgba(255, 255, 255, 0.9) ;
-    -webkit-text-stroke-color: #000000;
-    -webkit-text-stroke-width: 1px;
+/*Mobile*/
+@media(max-width: 599px){
+    .inputs-container{
+    height: 66px;
+    width: 312px;
+    left: 365px;
+    top: 195px;
+    padding-left: 1em;
+    border-radius: 10px;
+    border: 3px solid #884599 ;
+    background: #F0C0F4;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 0px;
+    -webkit-text-fill-color:#985193;
     letter-spacing: -0.015em;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-.btn-entrar{
-    margin-top: 1rem;
+    text-shadow: #884599;
+    margin-top: 2rem;
     margin-bottom: 1rem;
+    }
+    .subtitulo-3{
+        padding-top: 8%;
+        padding-bottom: 4%;
+        text-align: center;
+        color: rgb(255,255,255);
+        font-size: 2.375rem;
+        line-height: 2.8rem;
+        font-family: Luckiest Guy, cursive; 
+        -webkit-text-fill-color:rgba(255, 255, 255, 0.9) ;
+        -webkit-text-stroke-color: #000000;
+        -webkit-text-stroke-width: 1px;
+        letter-spacing: -0.015em;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+    .btn-entrar{
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+    .label1{
+        font-family: Fira Sans;
+        width: 100%;
+        position: absolute;
+        color: #fff;
+        text-align: left;
+        padding-bottom: 0.2em;
+        font-weight: bold;
+    }
 }
-.label1{
-    font-family: Fira Sans;
-    width: 100%;
-    position: absolute;
-    color: #fff;
-    text-align: left;
-    padding-bottom: 0.2em;
-    font-weight: bold;
+
+/*Desktop*/
+@media(min-width: 1000px){
+    .inputs-container{
+    height: 66px;
+    width: 312px;
+    left: 365px;
+    top: 195px;
+    padding-left: 1em;
+    border-radius: 10px;
+    border: 3px solid #884599 ;
+    background: #F0C0F4;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 0px;
+    -webkit-text-fill-color:#985193;
+    letter-spacing: -0.015em;
+    text-shadow: #884599;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    }
+    .subtitulo-3{
+        padding-top: 8%;
+        padding-bottom: 4%;
+        text-align: center;
+        color: rgb(255,255,255);
+        font-size: 2.375rem;
+        line-height: 2.8rem;
+        font-family: Luckiest Guy, cursive; 
+        -webkit-text-fill-color:rgba(255, 255, 255, 0.9) ;
+        -webkit-text-stroke-color: #000000;
+        -webkit-text-stroke-width: 1px;
+        letter-spacing: -0.015em;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+    .btn-entrar{
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+    .label1{
+        font-family: Fira Sans;
+        width: 100%;
+        position: absolute;
+        color: #fff;
+        text-align: left;
+        padding-bottom: 0.2em;
+        font-weight: bold;
+    }
 }

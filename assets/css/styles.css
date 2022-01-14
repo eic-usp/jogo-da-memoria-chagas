@@ -64,13 +64,15 @@ a{
   .titulo{
     color: rgb(255,255,255);
     font-family: 'Luckiest Guy', cursive; 
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     -webkit-text-fill-color:rgba(255, 255, 255, 0.9) ;
     -webkit-text-stroke-color: #000000;
     -webkit-text-stroke-width: 1px;
     letter-spacing: -0.015em;
     line-height: 3.5rem;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-top: 0px;
+    margin-bottom: 0px;
   }
   
   .subtitulo-t{
@@ -82,6 +84,12 @@ a{
     -webkit-text-stroke-color: #000000;
     -webkit-text-stroke-width: 1px;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  .espaco-2{
+    display: none;
+  }
+  .display-center{
+    display: none;
   }
 
   .subtitulo-tam{

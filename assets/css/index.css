@@ -75,9 +75,6 @@
         padding-bottom: 0.2em;
         font-weight: bold;
     }
-    .pgn-cadastrar{
-        
-    }
 }
 /*TABLET*/
 @media(min-width: 600px) and (max-width: 1000px){
@@ -87,19 +84,64 @@
       }
     .logo-eic-index{
     height: 80px;
-    position: fixed;
+    position: relative;
     bottom: 5vh;
+    vertical-align: center;
     }
+    .inputs-container{
+      height: 56px;
+      width: 300px;
+      left: 365px;
+      top: 195px;
+      padding-left: 1em;
+      border-radius: 10px;
+      border: 3px solid #884599 ;
+      background: #F0C0F4;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 20px;
+      line-height: 0px;
+      -webkit-text-fill-color:#985193;
+      letter-spacing: -0.015em;
+      text-shadow: #884599;
+      margin: top 10px;
+      margin-bottom: 10px;
+      }
 }
 /*MOBILE*/
 @media(max-width: 599px){ 
   .cards-inicial{
-      width: 360px;
-      height: 112px;
+      width: 300px;
+      height: 80px;
     }
   .logo-eic-index{
-      height: 80px;
-      position: fixed;
+      height: 75px;
+      position: relative;
       bottom: 5vh;
+      margin: 10px;
       }
+      .inputs-container{
+        height: 45px;
+        width: 250px;
+        left: 365px;
+        top: 195px;
+        padding-left: 1em;
+        border-radius: 10px;
+        border: 3px solid #884599 ;
+        background: #F0C0F4;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 0px;
+        -webkit-text-fill-color:#985193;
+        letter-spacing: -0.015em;
+        text-shadow: #884599;
+        margin-bottom: 10px;
+        }
+        .btn-index{
+        height: 45px;
+        width: 250px;
+        margin-bottom: 10px;
+        vertical-align: center;
+        }
 }
