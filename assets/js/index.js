@@ -19,14 +19,15 @@
     const cadForm = document.getElementById('cadForm-form')
     const loguinForm = document.getElementById('loguinForm')
     const logoutAction = document.getElementById('logout-Action')
+    const logoutActionModal = document.getElementById('logout-Action-modal')
     const loguinGoogle = document.getElementById('loguin-Google')
 
    firebase.auth().onAuthStateChanged((user) => {
 
     if(user){
         //cadForm-form.reset();
-        console.log("logado " + user.email)
-        window.location="nivel.html#";
+      console.log("logado " + user.email)
+       window.location="nivel.html#";
 
         //document.getElementById(cadForm).innerHTML = 
     } else{
@@ -36,7 +37,7 @@
     }
     
 
-  })
+    })
 
     cadForm.onsubmit = event => {
         event.preventDefault();
@@ -95,7 +96,13 @@
     logoutAction.onclick = event => {
         firebase.auth().signOut();
         console.log("Sair -------------------");
-        //window.location="login.html";
+        window.location="index.html";
+        
+    }
+    logoutActionModal.onclick = event => {
+        firebase.auth().signOut();
+        console.log("Sair -------------------");
+        window.location="index.html";
         
     }
     
