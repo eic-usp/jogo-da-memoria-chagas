@@ -33,6 +33,7 @@
       display: flex;
       align-items: center;
       transform: translateY(30%);
+      color: #fff;
     }
     .elem-menu-lateral p{ /*texto menu lateral**/
       text-align: left;

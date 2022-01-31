@@ -691,4 +691,12 @@
  */
 function quitGame(){
     window.location.replace("index.html");
+    const logoutAction = document.getElementByClassName('cursor-pointer');
+
+    logoutAction.onclick = event => {
+        firebase.auth().signOut();
+        console.log("Sair -------------------");
+        window.location="index.html";
+        
+      }
 }
