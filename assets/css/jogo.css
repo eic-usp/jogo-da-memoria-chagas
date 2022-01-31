@@ -147,9 +147,9 @@
 /*MOBILE*/
 @media(max-width: 599px){ 
     #container{
-        width: 95vw; 
-        height: 58vh;
-        top: 20px;
+        width: 350px; 
+        height: 650px;
+        top: 50px;
         left: 2.5vw;
         position: relative;
         margin: 0 auto;
@@ -164,7 +164,13 @@
         perspective: 600px;
         background:  rgb(136,69,153) ;
         border: 0ch;
+        justify-content:center;
     }   
+    #points-box{
+        position:absolute;
+        bottom: 3.5rem;
+        left: 150px;
+    }
     .b1{
         background: url("../img/mobile/fase1/verso1.png");
     }
