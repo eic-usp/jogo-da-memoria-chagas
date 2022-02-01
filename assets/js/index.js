@@ -9,6 +9,11 @@
       messagingSenderId: "303948770238",
       appId: "1:303948770238:web:08cb0909a9317fb16ee7ef"
     };
+
+    var actionCodeSettings = {
+        url: 'http://127.0.0.1:80/'
+      }
+
   
     // Initialize Firebase
     //const app = initializeApp(firebaseConfig);
@@ -21,6 +26,10 @@
     const logoutAction = document.getElementById('logout-Action')
     const logoutActionModal = document.getElementById('logout-Action-modal')
     const loguinGoogle = document.getElementById('loguin-Google')
+
+    const emailreset = document.getElementById('email-reset')
+    const salvar = document.getElementById('salvar')
+    const consulta = document.getElementById('consulta')
 
    firebase.auth().onAuthStateChanged((user) => {
 
@@ -63,7 +72,7 @@
 
     loguinForm.onsubmit = event => {
         event.preventDefault();
-        const email = loguinForm.querySelector('[name="email"]').value;
+        const email = loguinForm.querySelector('[name="e-mail"]').value;
         const senha = loguinForm.querySelector('[name="password"]').value;
 
         console.log("loguin Email " + email + " senha " + senha)
@@ -78,6 +87,26 @@
         })
 
     };
+    emailreset.onsubmit = event => {
+        event.preventDefault();
+        //console.log(" teste ------- funcionou ")
+        const email = emailreset.querySelector('[name="email"]').value;
+        console.log("Reset Email " + email)
+
+        if (email) {
+            
+            firebase.auth().sendPasswordResetEmail(email, actionCodeSettings).then(function () {
+                console.log('E-mail de redefinição de senha foi enviado para ' + email + '.')
+            }).catch(function (error) {
+                console.log('Houve um erro ao enviar e-mail de redefinição de senha!')
+              console.log(error)
+            })
+          } 
+
+        
+
+    }; 
+
    
     loguinGoogle.onclick = event => {
 
@@ -88,22 +117,96 @@
         .catch(function(error){
            alert(error.message);     
         })
-        
-        
        
     }
-    
     logoutAction.onclick = event => {
         firebase.auth().signOut();
         console.log("Sair -------------------");
         window.location="index.html";
         
     }
+
     logoutActionModal.onclick = event => {
         firebase.auth().signOut();
         console.log("Sair -------------------");
         window.location="index.html";
         
     }
+
+    emailreset.onsubmit = event => {
+        event.preventDefault();
+        //console.log(" teste ------- funcionou ")
+        const email = emailreset.querySelector('[name="email"]').value;
+        console.log("Reset Email " + email)
+
+        if (email) {
+            
+            firebase.auth().sendPasswordResetEmail(email, actionCodeSettings).then(function () {
+                console.log('E-mail de redefinição de senha foi enviado para ' + email + '.')
+            }).catch(function (error) {
+                console.log('Houve um erro ao enviar e-mail de redefinição de senha!')
+              console.log(error)
+            })
+          } 
+
+    }; 
+
     
 })();
+
+/*
+emailreset.onsubmit = event => {
+        event.preventDefault();
+        //console.log(" teste ------- funcionou ")
+        const email = emailreset.querySelector('[name="email"]').value;
+        console.log("Reset Email " + email)
+
+        if (email) {
+            
+            firebase.auth().sendPasswordResetEmail(email, actionCodeSettings).then(function () {
+                console.log('E-mail de redefinição de senha foi enviado para ' + email + '.')
+            }).catch(function (error) {
+                console.log('Houve um erro ao enviar e-mail de redefinição de senha!')
+              console.log(error)
+            })
+          } 
+
+        
+
+    }; 
+
+     salvar.onclick = event => {
+
+        if(firebase.auth().currentUser != null){
+            var data = {
+              nome: "teste 01",
+              Pontos: 5,
+              jogo: "Chagas"
+            }
+      
+            console.log(firebase.auth().currentUser.uid + '" adicionada com sucesso')
+      
+            
+            dbRefUsers.child(firebase.auth().currentUser.uid).push(data).then(function () {
+              console.log(data.nome + "Salvo")
+            })
+          } else {
+              console.log('Erro')
+          }      
+    }
+
+    consulta.onclick = event => {
+
+        console.log('Consulta')
+        // quando tiver alteração
+        dbRefUsers.child(firebase.auth().currentUser.uid).on('value', function (dataSnapshot) {
+
+            console.log( dataSnapshot.numChildren() + " teste")
+
+            dataSnapshot.forEach((item, index)=>{
+                console.log(index, item)
+            })
+            
+        })
+    }
+ */
