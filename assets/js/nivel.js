@@ -28,6 +28,3 @@ console.log("fase em cada nivel - nivel" + faseAtual);
 }
 
 
-   
-
-

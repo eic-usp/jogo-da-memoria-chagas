@@ -559,7 +559,7 @@
             //do something here
            // console.log(" Sleep ------");
             if (mode === "1"){
-            await sleep(3000) 
+            await sleep(3000)
             console.log(" Sleep Fácil");
             flippedCards[0].childNodes[1].classList.toggle("flipped");
             flippedCards[0].childNodes[3].classList.toggle("flipped");
@@ -690,13 +690,7 @@
  * Sair da página de jogo
  */
 function quitGame(){
-    window.location.replace("index.html");
+    window.location.replace("nivel.html");
     const logoutAction = document.getElementByClassName('cursor-pointer');
 
-    logoutAction.onclick = event => {
-        firebase.auth().signOut();
-        console.log("Sair -------------------");
-        window.location="index.html";
-        
-      }
 }
