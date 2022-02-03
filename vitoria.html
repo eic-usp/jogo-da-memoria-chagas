@@ -67,6 +67,14 @@
             <div>
             </a>
         </li>
+        <li>
+            <a id="logout-Action">
+                <div type="submit" class="menu-desktop elem-menu-lateral">
+                    <img  class="menu-desktop" src="assets/img/sair.svg">
+                    <p class="menu-desktop">Sair</p>
+                </div>
+            </a>
+        </li>
         </ul>
     </div>
 
@@ -144,6 +152,14 @@
             <div>
             </a>
         </li>
+        <li>
+            <a type="submit" id="logout-Action-modal">
+            <div class="elem-menu-modal">
+            <img  class="tamanho-img-modal" src="assets/img/sair.svg">
+            <p>Sair</p>
+            </div>
+            </a>
+        </li>
     </ul>
     <div class="espaco-3"></div>
     <div class="fade-menu-mobile menu-mobile"></div> 
@@ -181,6 +197,11 @@
             </div>
         </div>
     </div>
+     
+    <div id ="loguinForm"> </div> 
+    <div id ="cadForm-form"> </div>
+    <div id ="loguin-Google"> </div>
+    <div class="card-body">
 
     <p id="points-fase1" class="score"></p>
     <p id="points-fase2" class="score"></p>
@@ -188,9 +209,13 @@
 
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
-    <script src="assets/js/vitoria.js"></script>
     <script src="assets/js/menu-modal.js"></script>
+    
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
+
+    <script src="assets/js/nivel.js"></script>
+    <script src="assets/js/index.js"></script>
     
     
 </body>

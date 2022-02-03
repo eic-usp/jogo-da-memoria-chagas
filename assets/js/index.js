@@ -98,9 +98,10 @@
         const senha = loguinForm.querySelector('[name="password"]').value;
 
         console.log("loguin Email " + email + " senha " + senha)
-        window.location="nivel.html#";
         firebase.auth().signInWithEmailAndPassword(email, senha)
-        window.replace()
+        .then(function() {
+            window.location="nivel.html";
+            })
         .catch((error) => {
             if(error.code == 'auth/wrong-password' || error.code == 'auth/user-not-found'){
                 alert(" Email ou senha invalidos");
@@ -113,15 +114,16 @@
 
 
     loguinGoogle.onclick = event => {
-
         console.log(" teste")
-        
         const provider = new firebase.auth.GoogleAuthProvider();
         firebase.auth().signInWithPopup(provider)
+        .then(function() {
+        window.location="nivel.html";
+        })
         .catch(function(error){
            alert(error.message);     
         })
-       
+        
     }
     
 
