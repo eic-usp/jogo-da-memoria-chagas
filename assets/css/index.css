@@ -45,8 +45,8 @@
     text-shadow: #884599;
     margin: top 10px;
     margin-bottom: 10px;
-    }
-
+    }  
+    
     
     .subtitulo-3{
         padding-top: 8%;
@@ -78,6 +78,12 @@
         padding-bottom: 0.2em;
         font-weight: bold;
     }
+    .espaco-2{
+       height: 8px;
+      }
+    .espaco-3{
+      height:1px;
+    }
 }
 /*TABLET*/
 @media(min-width: 600px) and (max-width: 1000px){
@@ -88,7 +94,7 @@
     .logo-eic-index{
     height: 80px;
     position: relative;
-    bottom: 5vh;
+    bottom: 2vh;
     vertical-align: center;
     }
     .inputs-container{
@@ -120,8 +126,9 @@
   .logo-eic-index{
       height: 75px;
       position: relative;
-      bottom: 5vh;
+      bottom: 1vh;
       margin: 10px;
+      vertical-align: left;
       }
       .inputs-container{
         height: 45px;
