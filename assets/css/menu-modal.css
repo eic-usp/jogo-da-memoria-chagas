@@ -92,13 +92,17 @@
         height:40px;
     }
     .elem-menu-modal img{
-        padding-left: 12px;
-        float: left;
+      position: relative;
+      left:15px;
+      float: left;
+      vertical-align: center;
     }
     .elem-menu-modal p{
-        padding-left: 8px;
-        text-align: left;
-    }      
+      position: relative;
+      left: 45px;
+      text-align: left;
+      transform: translateY(25%);
+    }     
     .tamanho-img-modal{
         width: 40px;
         height: 40px;

@@ -1,20 +1,23 @@
-.list-sobre {
-    color: #541663;
-    padding-left: 10px;
-  }
-.list-hide-sobre{
-    list-style-type: none;
-}
-/*MOBILE*/
+@media(min-width: 1001px){
 .destaque-sobre{
     font-family: Fira Sans;
     font-style: normal;
     font-weight: 800;
     font-size: 1.25rem;
     line-height: 1.35rem;
-    text-align: left;
     color: #FFFFFF;
   }
+  .sobre .box-instrucoes-sobre{
+  width: 100%;
+  }
+  .box-instrucoes-sobre p{
+    text-align: left;
+    padding-left: 18.2rem;
+  }
+}
+
+  
+  
  
 /*TABLET*/
 /*DESKTOP*/
