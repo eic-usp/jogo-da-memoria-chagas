@@ -9,19 +9,17 @@ var scoreFase3n = parseInt(scoreFase3);
 
 const logoutAction = document.getElementById('logout-Action')
 //mostrar o resultado
+
 document.getElementById('final-score').innerHTML = scoreFase1n + scoreFase2n + scoreFase3n;
 
-console.log(firebase.auth().currentUser.email);
+/*async function mostrar(){
+  await sleep(2000)
+  document.getElementById('ranking1').innerHTML = firebase.auth().currentUser.email
+}
+*/
+
 //criando cookie que mostra que a pessoa já jogou uma vez, recuperar na página nível - apagar
 Cookies.set('Played','1');
-
-logoutAction.onclick = event => {
-  firebase.auth().signOut();
-  console.log("Sair -------------------");
-  window.location="index.html";
-  
-}
-
 
 
 

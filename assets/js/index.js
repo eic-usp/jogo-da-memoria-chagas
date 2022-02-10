@@ -18,10 +18,8 @@
     //const app = initializeApp(firebaseConfig);
     
     firebase.initializeApp(firebaseConfig)
-   
     //var database = firebase.database()
     //var dbRefUsers = database.ref('users')
-
     
     
     const cadForm = document.getElementById('cadForm-form');
@@ -140,6 +138,40 @@
         console.log("Sair -------------------");
         window.location="index.html";
         
+    }
+    
+    salvar.onclick = event => {
+        
+        if(firebase.auth().currentUser != null){
+            var data = {
+              nome: firebase.auth().currentUser.email,
+              Pontos: document.getElementById('final-score').innerHTML,
+              jogo: "Doença de Chagas"
+            }
+            console.log(firebase.auth().currentUser.uid + '" adicionada com sucesso')
+            
+            
+            dbRefUsers.child(firebase.auth().currentUser.uid).push(data).then(function () {
+              console.log(data.nome + " Salvo")
+            })
+          } else {
+              console.log('Erro')
+          }      
+    }
+
+    consulta.onclick = event => {
+
+        console.log('Consulta')
+        // quando tiver alteração
+        dbRefUsers.child(firebase.auth().currentUser.uid).on('value', function (dataSnapshot) {
+
+            console.log( dataSnapshot.numChildren() + " teste")
+
+            dataSnapshot.forEach((item, index)=>{
+                console.log(index, item)
+            })
+            
+        })
     }
     */
     
