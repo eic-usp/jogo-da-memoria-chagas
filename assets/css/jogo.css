@@ -130,7 +130,7 @@
         border-radius: 10px;
         /*aqui os cards ficam empilhados, mas são separados com javascript*/
         perspective: 600px;
-        background:  rgb(136,69,153) ;
+        background: rgb(136,69,153);
         border: 0ch;
         z-index: 20;
     }
@@ -181,4 +181,7 @@
     .b3{
         background: url("../img/mobile/fase3/verso3.png");
     }   
+    .espaco-0-5{
+        height: 10px;
+        }  
 }
