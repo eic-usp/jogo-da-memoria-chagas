@@ -1,6 +1,6 @@
 /*Global*/
  .list-modal{
-     list-style-type: none;  
+  list-style-type:none; 
 }
   /*versão mobile*/
   @media(max-width: 599px){
@@ -75,7 +75,7 @@
         padding-left: 12%;
         padding-bottom: 8%;
       }
-    #menu-modal{    
+      #menu-modal{    
         position: absolute;
         width: 50vw;
         height: 100vh;

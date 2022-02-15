@@ -6,7 +6,8 @@
 @media(max-width: 599px){
   .fundo{
     display: block;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
     width: 100%;
     height: 100vh;
     background: rgb(136,69,153);
@@ -119,7 +120,8 @@
 @media (min-width: 1000px){
   .fundo{
     display: block;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y:hidden;
     width: 80%;
     height: 100vh;
     background: rgb(136,69,153);
