@@ -8,8 +8,8 @@
 
     var size = $(window).width();
 
-    //console.log("fase:" + level);
-    //console.log("nivel:" + mode);
+    console.log("fase:" + level);
+    console.log("nivel:" + mode);
 
     if (level === null){
         level = 1;

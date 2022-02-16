@@ -9,8 +9,10 @@
  * @param {number} nivelP :nível (fácil, médio, dificil)
  * @param {number} faseAtual: fase atual (1,2,3,etc)
  */
+
 function fase(nivelP, faseAtual){
 
+    
     var nivel = "";
 
     if(nivelP === "facil"){
@@ -23,7 +25,21 @@ function fase(nivelP, faseAtual){
 
 sessionStorage.setItem("nivel", nivel);
 sessionStorage.setItem("fase", faseAtual);
-console.log("fase em cada nivel - nivel" + faseAtual);
+console.log("nivel N " + faseAtual);
+console.log("Fase N " + faseAtual);
+
+
+}
+
+function fasef(nivelP, faseAtual){
+
+       
+
+sessionStorage.setItem("nivel", nivelP);
+sessionStorage.setItem("fase", faseAtual);
+//console.log("nivel " + faseAtual);
+//console.log("Fase " + faseAtual);
+
 
 }
 

@@ -1,9 +1,10 @@
 (function() {
+
     const key = 0;
     const user_email = " ";
     const jogo = "Chagas";
 
-
+    /*
     const nome = "";
     const pontos = 0;
     const nivel = 0;
@@ -16,11 +17,12 @@
      fase: fase,
      jogo: jogo
    }
-
+   */
 
     const firebaseConfig = {
       apiKey: "AIzaSyAPYA5Aa8T9JtHgHFQLeDkg2nbGZRkruA4",
       authDomain: "jogomemoria-11e21.firebaseapp.com",
+      databaseURL: "https://jogomemoria-11e21-default-rtdb.firebaseio.com",
       projectId: "jogomemoria-11e21",
       storageBucket: "jogomemoria-11e21.appspot.com",
       messagingSenderId: "303948770238",
@@ -28,7 +30,7 @@
     };
 
     var actionCodeSettings = {
-        url: 'http://127.0.0.1:80/'
+        url: 'http://127.0.0.1:5501/'
       }
 
     // Initialize Firebase
@@ -36,8 +38,8 @@
     
     firebase.initializeApp(firebaseConfig)
 
-    //var database = firebase.database()
-    //var dbRefUsers = database.ref('users')
+    var database = firebase.database()
+    var dbRefUsers = database.ref('users')
     
     const cadForm = document.getElementById('cadForm-form');
     const loguinForm = document.getElementById('loguinForm');
@@ -50,11 +52,17 @@
     const consulta = document.getElementById('consulta')
     const atualizacao = document.getElementById('atualizacao')
 
+// ------------------------- verificar autenticação -----------------------
+
    firebase.auth().onAuthStateChanged((user) => {
 
     if(user){
         console.log("logado " + user.email)
+        //VerificarNivelFase()
         verificarKey()
+        VerificarNivelFase()
+       
+
         //código para continuar jogando de onde parou aqui
         //document.getElementById(cadForm).innerHTML = 
     } else{
@@ -81,71 +89,12 @@
         //window.location="login.html#";
     }
     })
+// ------------------------- Fim verificar autenticação ----------------------- 
 
-     
-  function verificarKey(){
 
- 
-    // pegar usuario de email
-    const email_user_ = firebase.auth().currentUser.email
-    let user_ = email_user_.split("@")
-    this.user_email = user_[0]
-    console.log("User " + this.user_email) 
-  
-    var data = {
-      nome: user_[0],
-      Pontos: 0,
-      nivel: 0,
-      fase: 0,
-      jogo: jogo
-    }
-     
-      dbRefUsers.child(firebase.auth().currentUser.uid).child(jogo).once('value').then((snapshot) =>
-      {
-        if (snapshot.exists()) {
-          // se usuario já esta cadastrado
-          console.log("Jogo de chagas Cadastrado");
-  
-          dbRefUsers.child(firebase.auth().currentUser.uid).child(jogo).once("child_added", (snap) => {
-            // dados de pontuação e niveis e fase
-            console.log(snap.val())
-            // chave do usuario         
-            this.key = snap.key
-                     
-          });
-       
-        } else {
-          console.log("Jogo de chagas não cadastrado");
-          // criar cadastro
-          dbRefUsers.child(firebase.auth().currentUser.uid).child(jogo).push(data).then(function () {
-            console.log(data.nome + "Cadastrado")          
-          });
-  
-          dbRefUsers.child(firebase.auth().currentUser.uid).child(jogo).once("child_added", (snap) => {
-            // pegar a chave do usuario
-            this.key = snap.key
-                     
-          });
-        }
-      }).catch((error) => {
-        console.error(error);
-      });      
-      
-    }
-    // Depois
-    function GerarRank(){
-      console.log("------------------------")
-      
-      dbRefUsers.orderByChild('Pontos')
-      .on("child_added", (snap) => {
-        console.log(snap.val());
-        //console.log(snap.key)
-       // this.key = snap.key
-        
-        
-      });
-      
-    }
+
+
+// ------------------------- Cadatro de usuario -----------------------
 
     cadForm.onsubmit = event => {
         event.preventDefault();
@@ -168,6 +117,9 @@
         }
         
     };
+// ------------------------- Fim  Cadatro de usuario -----------------------
+
+// ------------------------- Autenticação por email e senha -----------------------
 
     loguinForm.onsubmit = event => {
         event.preventDefault();
@@ -189,7 +141,9 @@
 
     };
 
+// ------------------------- Fim Autenticação por email e senha -----------------------
 
+// ------------------------- Autenticação google -----------------------
     loguinGoogle.onclick = event => {
         console.log(" teste")
         const provider = new firebase.auth.GoogleAuthProvider();
@@ -202,8 +156,10 @@
         })
         
     }
-    
+// ------------------------- Fim Autenticação google -----------------------    
 
+// ------------------------- Sair -----------------------    
+    // pode usar só uma
     logoutAction.onclick = event => {
         firebase.auth().signOut();
         console.log("Sair -------------------");
@@ -218,7 +174,10 @@
         window.location="index.html";
         
     }
+// ------------------------- Fim Sair ----------------------- 
 
+// ------------------------- Consultar ----------------------- 
+    /*
     consulta.onclick = event => {
         
         console.log('Consulta')
@@ -231,7 +190,11 @@
           });       
       
     }
+    */
+// ------------------------- Fim Consultar ----------------------- 
 
+// ------------------------- Atualização ----------------------- 
+    /*
     atualizacao.onclick = event => {
       
       console.log('Atualização')
@@ -259,5 +222,7 @@
       })
 
   }
+  */
+  // ------------------------- Fim da Atualização ----------------------- 
 
 })();
