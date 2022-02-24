@@ -10,8 +10,15 @@
  * @param {number} faseAtual: fase atual (1,2,3,etc)
  */
 
+ //document.getElementById("facil").disabled = true;
+ //const button = document. querySelector("facil");
+ //button. disabled = true;
+
+
 function fase(nivelP, faseAtual){
 
+    console.log("nivelP ----- " + nivelP );
+    
     
     var nivel = "";
 
@@ -25,9 +32,9 @@ function fase(nivelP, faseAtual){
 
 sessionStorage.setItem("nivel", nivel);
 sessionStorage.setItem("fase", faseAtual);
-console.log("nivel N " + faseAtual);
-console.log("Fase N " + faseAtual);
-
+//console.log("nivel N " + faseAtual);
+// console.log("Fase N " + faseAtual);
+location.href = "instrucoes.html";   
 
 }
 
@@ -37,8 +44,25 @@ function fasef(nivelP, faseAtual){
 
 sessionStorage.setItem("nivel", nivelP);
 sessionStorage.setItem("fase", faseAtual);
-//console.log("nivel " + faseAtual);
+
+//console.log("nivel **** " + nivelP);
 //console.log("Fase " + faseAtual);
+
+// verificar fase e nivel
+if(nivelP == 1){
+    //console.log("nivel ###" + 1)
+    //document.getElementById("facil").disabled = true;
+}if(nivelP == 2) {
+    //console.log("nivel ### " + 2)
+
+    document.getElementById("facil").disabled = true;
+    
+}if(nivelP == 3) {
+   // console.log("nivel ###" + 3)
+    document.getElementById("facil").disabled = true;
+    document.getElementById("medio").disabled = true;
+}
+
 
 
 }

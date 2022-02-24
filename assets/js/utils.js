@@ -23,52 +23,51 @@ function verificarKey(){
       Pontos: 0,
       nivel: 1,
       fase: 1,
-      jogo: jogo
+      jogo: jogo,
+      concluido: 0
     }
      
-      dbRefUsers.child(firebase.auth().currentUser.uid).child("Chagas").once('value').then((snapshot) =>
-      {
+    dbRefUsers.child(firebase.auth().currentUser.uid).child("Chagas").once('value').then((snapshot) =>
+    {
         if (snapshot.exists()) {
-          // se usuario já esta cadastrado
-          console.log("Jogo de chagas Cadastrado");
-  
-          dbRefUsers.child(firebase.auth().currentUser.uid).child(jogo).once("child_added", (snap) => {
-            //console.log(snap.val().fase)
-            //console.log(snap.key)
-            //console.log(snap.jogo)
-            
-            // chave do usuario 
-            this.jogo_nivel = snap.val().nivel   
-            this.jogo_fase = snap.val().fase      
-            this.key = snap.key 
-
-            fasef(this.jogo_nivel, this.jogo_fase)
-            
-            console.log("nivel - ", this.jogo_nivel)
-            console.log("Fase - ", this.jogo_fase)
-                    
-          });
-
-          
-
-
+            // se usuario já esta cadastrado
+            console.log("Jogo de chagas Cadastrado");
     
+            dbRefUsers.child(firebase.auth().currentUser.uid).child(jogo).once("child_added", (snap) => {
+                //console.log(snap.val().fase)
+                //console.log(snap.key)
+                //console.log(snap.jogo)
+                
+                // chave do usuario 
+                this.jogo_nivel = snap.val().nivel   
+                this.jogo_fase = snap.val().fase      
+                this.key = snap.key 
+
+                console.log("nivel - ", this.jogo_nivel)
+                console.log("Fase - ", this.jogo_fase)
+
+                fasef(this.jogo_nivel, this.jogo_fase)
+                
+                
+                        
+            });
+            
         } else {
-          console.log("Jogo de chagas não cadastrado");
-          // criar cadastro
-          dbRefUsers.child(firebase.auth().currentUser.uid).child(jogo).push(data).then(function () {
-            console.log(data.nome + "Cadastrado")          
-          });
-  
-          dbRefUsers.child(firebase.auth().currentUser.uid).child(jogo).once("child_added", (snap) => {
-            // pegar a chave do usuario
-            this.key = snap.key
-                     
-          });
+            console.log("Jogo de chagas não cadastrado");
+            // criar cadastro
+            dbRefUsers.child(firebase.auth().currentUser.uid).child(jogo).push(data).then(function () {
+                console.log(data.nome + "Cadastrado")          
+            });
+    
+            dbRefUsers.child(firebase.auth().currentUser.uid).child(jogo).once("child_added", (snap) => {
+                // pegar a chave do usuario
+                this.key = snap.key
+                        
+            });
         }
-      }).catch((error) => {
-        console.error(error);
-      });   
+        }).catch((error) => {
+            console.error(error);
+            });   
       
      
       
@@ -82,10 +81,10 @@ function VerificarNivelFase(){
 
     var level = sessionStorage.getItem('fase'); 
     var mode = sessionStorage.getItem('nivel'); 
-    console.log(" Verificar fase local");
-    console.log("fase - V " + level);
-    console.log("nivel - V " + mode);  
-
+    //console.log(" Verificar fase ");
+    //console.log("fase - V " + level);
+    //console.log("nivel - V " + mode);  
+    
       }, 1000)
 
   
