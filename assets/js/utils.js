@@ -75,32 +75,57 @@ function verificarKey(){
   // ------------------------- Fim verificar Chave -----------------------
 
 // ------------------------- Verificar nivel-----------------------
-function VerificarNivelFase(){
+function AtualizarNivelFase(nivelP, faseAtual){
 
+
+    var mode = sessionStorage.getItem('nivel');
+
+    var data = {
+        nome: this.user_email,
+        Pontos: points,
+        nivel: nivelP,
+        fase: faseAtual,
+        jogo: jogo,
+        concluido: 0
+      }
+
+    dbRefUsers.child(firebase.auth().currentUser.uid).child(jogo).child(this.key).set(data).then(function () {
+        console.log(data.nome + "Atualização de fase e nivel")          
+    }); 
+
+
+    /*
     let teste = setTimeout(function() {
-
     var level = sessionStorage.getItem('fase'); 
     var mode = sessionStorage.getItem('nivel'); 
     //console.log(" Verificar fase ");
-    //console.log("fase - V " + level);
-    //console.log("nivel - V " + mode);  
+    console.log("fase - --- V " + level);
+    console.log("nivel - ---V " + mode);  
     
       }, 1000)
 
-  
-
-    
-        
+  */        
 
 }
 
-function AtualizarNivelFase(){
+function  AtualizarPontos(points){
+    var level = sessionStorage.getItem('fase'); 
+    var mode = sessionStorage.getItem('nivel'); 
+    
+    var data = {
+        nome: this.user_email,
+        Pontos: points,
+        nivel: mode,
+        fase: level,
+        jogo: jogo,
+        concluido: 0
+      }
 
-    var level = sessionStorage.getItem('fase'); // fase 1, 2, 3
-    var mode = sessionStorage.getItem('nivel'); // facil/medio/dificil 
+    dbRefUsers.child(firebase.auth().currentUser.uid).child(jogo).child(this.key).set(data).then(function () {
+        console.log(data.nome + "Atualização dos pontos")          
+    });  
+    
 
-console.log("fase " + level);
-console.log("nivel " + mode);
 
 
 }
@@ -124,6 +149,21 @@ function GerarRank(){
     
   }
 // ------------------------- Fim Gerar rank de pontuação -----------------------
+// ------------------------- Atualizar  pontuação -----------------------
+function AtualizaPontosFasenivel(){
+
+    let points = sessionStorage.getItem('pontos');
+    console.log("Get points " + points)
+
+    console.log(data)
+    /*
+    dbRefUsers.child(firebase.auth().currentUser.uid).child(jogo).push(data).then(function () {
+        console.log(data.nome + "Cadastrado")          
+    });
+    */
+}
+
+// ------------------------- Fim da atualização da pontuação -----------------------
 
 var database = firebase.database()
 var dbRefUsers = database.ref('users')

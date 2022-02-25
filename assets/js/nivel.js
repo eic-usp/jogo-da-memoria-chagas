@@ -30,11 +30,16 @@ function fase(nivelP, faseAtual){
         nivel = 3;
     }
 
-sessionStorage.setItem("nivel", nivel);
-sessionStorage.setItem("fase", faseAtual);
-//console.log("nivel N " + faseAtual);
-// console.log("Fase N " + faseAtual);
+    AtualizarNivelFase(nivelP, faseAtual)
+
+    sessionStorage.setItem("nivel", nivel);
+    sessionStorage.setItem("fase", faseAtual);
+    console.log("nivel N " + faseAtual);
+    console.log("Fase N " + faseAtual);
+
+
 location.href = "instrucoes.html";   
+
 
 }
 

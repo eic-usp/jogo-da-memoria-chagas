@@ -652,9 +652,12 @@
             sessionStorage.setItem("fase", level);
             sessionStorage.setItem("nivel", mode);
 
+
             var points = document.getElementById("points").innerHTML;
 
             sessionStorage.setItem("pontos", points);
+            //console.log("mode " + mode + " level " + level + " points " + points)
+            AtualizarPontos(points);
 
             window.location.replace("vitoria.html");
         }

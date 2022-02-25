@@ -60,7 +60,7 @@
         console.log("logado " + user.email)
         //VerificarNivelFase()
         verificarKey()
-        VerificarNivelFase()
+       // VerificarNivelFase()
        
 
         //código para continuar jogando de onde parou aqui
