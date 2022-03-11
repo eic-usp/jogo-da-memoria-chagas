@@ -43,8 +43,8 @@ function verificarKey(){
                 this.jogo_fase = snap.val().fase      
                 this.key = snap.key 
 
-                console.log("nivel - ", this.jogo_nivel)
-                console.log("Fase - ", this.jogo_fase)
+                //console.log("nivel -------- ", this.jogo_nivel)
+                //console.log("Fase -------- ", this.jogo_fase)
 
                 fasef(this.jogo_nivel, this.jogo_fase)
                 
@@ -75,15 +75,14 @@ function verificarKey(){
   // ------------------------- Fim verificar Chave -----------------------
 
 // ------------------------- Verificar nivel-----------------------
-function AtualizarNivelFase(nivelP, faseAtual){
+function AtualizarNivelFase(nivel, faseAtual){
 
-
-    var mode = sessionStorage.getItem('nivel');
+    //console.log("nivel - ---V " + nivel);
+    //var mode = sessionStorage.getItem('nivel');
 
     var data = {
         nome: this.user_email,
-        Pontos: points,
-        nivel: nivelP,
+        nivel: nivel,
         fase: faseAtual,
         jogo: jogo,
         concluido: 0
@@ -164,6 +163,13 @@ function AtualizaPontosFasenivel(){
 }
 
 // ------------------------- Fim da atualização da pontuação -----------------------
+
+function NivelConcluidoTeste(){
+
+    console.log("Nivel------------------- teste")
+
+
+}
 
 var database = firebase.database()
 var dbRefUsers = database.ref('users')
