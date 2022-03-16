@@ -93,6 +93,12 @@ function fase(nivelP, faseAtual){
         */
         
     }
+    if(AntigaFase == 3 && nivel == 3){
+
+        sessionStorage.setItem("Concluido", 1);
+        console.log("Testec ------- " + sessionStorage.getItem('Concluido'))
+
+    }
     else{
         console.log("teste nivel ----------- " + nivel )
         console.log("teste fase --------- " + faseAtual)
@@ -103,7 +109,7 @@ function fase(nivelP, faseAtual){
     
     }   
     
-
+    
     //-----------------------------
   
 

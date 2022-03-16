@@ -1,11 +1,30 @@
 
+/*
+class ConcluidoNivelFase{
 
+    constructor () {
+        this.concluido = 0
+    }
+
+    get concluido(){
+
+        return this.pontos
+    }
+    set concluido(value){
+
+        this.concluido = value
+
+    }
+}
+pontos = new Pontos();
+
+pontos.concluido = 10
+
+console.log("Pontos concluidos" + pontos.concluido)
+*/
 BotaoAtivar()
 
-
-
 function BotaoAtivar(){
-
 
     const nivelP = sessionStorage.getItem("nivel")
     const fase = sessionStorage.getItem("fase")
@@ -29,8 +48,8 @@ function BotaoAtivar(){
         document.getElementById("facil").disabled = false;
         document.getElementById("medio").disabled = false;
 
-    }
-
+    }   
 
     
 }
+
