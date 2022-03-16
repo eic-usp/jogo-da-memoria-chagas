@@ -120,11 +120,13 @@ function fase(nivelP, faseAtual){
 
 }
 
-function fasef(nivelP, faseAtual){
+function fasef(nivelP, faseAtual, concluido){
   
+    console.log(" teste " + concluido)
 
     sessionStorage.setItem("nivel", nivelP);
     sessionStorage.setItem("fase", faseAtual);
+    sessionStorage.setItem("Concluido", concluido);
 
    // console.log("nivel **** " + nivelP);
     //console.log("Fase **** " + faseAtual);

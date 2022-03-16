@@ -4,6 +4,7 @@
 const jogo = "Chagas";
 const jogo_nivel = 1;
 const jogo_fase = 1;
+const concluido = 0;
 
 
      
@@ -40,13 +41,14 @@ function verificarKey(){
                 
                 // chave do usuario 
                 this.jogo_nivel = snap.val().nivel   
-                this.jogo_fase = snap.val().fase      
+                this.jogo_fase = snap.val().fase   
+                this.concluido = snap.val().concluido    
                 this.key = snap.key 
 
                 //console.log("nivel -------- ", this.jogo_nivel)
                 //console.log("Fase -------- ", this.jogo_fase)
 
-                fasef(this.jogo_nivel, this.jogo_fase)
+                fasef(this.jogo_nivel, this.jogo_fase, this.concluido)
                 
                 
                         
@@ -77,16 +79,24 @@ function verificarKey(){
 // ------------------------- Verificar nivel-----------------------
 function AtualizarNivelFase(nivel, faseAtual){
 
-    //console.log("nivel - ---V " + nivel);
+    console.log("nivel - ---V " + nivel);
     //var mode = sessionStorage.getItem('nivel');
+    if(nivel == 3 && faseAtual == 3){
+        console.log("333 ")
+        this.concluido = 1;
+    }
 
     var data = {
         nome: this.user_email,
         nivel: nivel,
         fase: faseAtual,
         jogo: jogo,
-        concluido: 0
+        concluido: this.concluido
       }
+    
+    
+
+
 
     dbRefUsers.child(firebase.auth().currentUser.uid).child(jogo).child(this.key).set(data).then(function () {
         console.log(data.nome + "Atualização de fase e nivel")          
