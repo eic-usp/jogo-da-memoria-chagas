@@ -119,16 +119,18 @@
 /*versão desktop */
 @media (min-width: 1000px){
   .fundo{
-    display: block;
-    overflow-x: hidden;
-    overflow-y:hidden;
-    width: 80%;
+    display: flex;
+    overflow: hidden;
+    width: 80vw;
     height: 100vh;
     background: rgb(136,69,153);
     text-align: center;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex-grow: 1;
   }
-
   .menu-mobile{
     display: none;
   }

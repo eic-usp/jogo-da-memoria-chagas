@@ -19,32 +19,35 @@
 
 /*DESKTOP*/
 @media(min-width: 1001px){
+  .logo-eic-index{
+    width: 15vw;
+    position: relative;
+    margin-top: 1.5vh;
+    vertical-align: left;
+    }
   .cards-inicial{
-    width: 26.75rem;
-    height: 8rem;
+    width: 25vw;
   } 
   .toast{
     width: 100vw;
     height: 8rem;
   }
   .inputs-container{
-    height: 56px;
-    width: 300px;
-    left: 365px;
-    top: 195px;
-    padding-left: 1em;
+    height: 5.5vh;
+    width: 16.666vw;
+    padding: 1vw;
     border-radius: 10px;
     border: 0px solid #884599 ;
     background: #F0C0F4;
     font-style: normal;
     font-weight: normal;
-    font-size: 20px;
+    font-size: 2vh;
     line-height: 0px;
     -webkit-text-fill-color:#985193;
     letter-spacing: -0.015em;
     text-shadow: #884599;
-    margin: top 10px;
-    margin-bottom: 10px;
+    margin-bottom: 1vh;
+    position: relative;
     }  
     
     
@@ -63,9 +66,12 @@
         text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         left: 15%;  
     }
-    .btn-entrar{
-        margin: top 10px;
-        margin-bottom: 1rem;
+    .btn-index{
+        margin-bottom: 1vh;
+        height: 5.5vh;
+        width: 16.666vw;
+        font-size: 2vh;
+        position: relative;
     }
     .label1{
         font-family: Fira Sans;
@@ -82,79 +88,94 @@
     .espaco-3{
       height:1px;
     }
+    .links-uteis{
+      margin-bottom: 1vh;
+      font-size: 2vh;
+    }
 }
 /*TABLET*/
 @media(min-width: 600px) and (max-width: 1000px){
     .cards-inicial{
-        width: 26.75rem;
-        height: 8rem;
+        width: 50vw;
       }
     .logo-eic-index{
-    height: 80px;
+    width: 50vw;
     position: relative;
-    bottom: 2vh;
+    margin-top: 1.5vh;
     vertical-align: center;
     }
     .inputs-container{
-      height: 56px;
-      width: 300px;
-      left: 365px;
-      top: 195px;
+      height: 5vh;
+      width: 40vw;
       padding-left: 1em;
       border-radius: 10px;
       border: 0px solid #884599 ;
       background: #F0C0F4;
       font-style: normal;
       font-weight: normal;
-      font-size: 20px;
+      font-size: 2vh;
       line-height: 0px;
       -webkit-text-fill-color:#985193;
       letter-spacing: -0.015em;
       text-shadow: #884599;
-      margin: top 10px;
-      margin-bottom: 10px;
+      margin-bottom: 1vh;
+      position: relative;
       }
+      .btn-index{
+        margin-bottom: 1vh;
+        height: 5.5vh;
+        width: 35vw;
+        font-size: 2vh;
+    }
+    .links-uteis{
+      margin-bottom: 1vh;
+      font-size: 2vh;
+    }
 }
 /*MOBILE*/
 @media(max-width: 599px){ 
   .cards-inicial{
-      width: 300px;
-      height: 80px;
+      width: 50vw;
     }
   .logo-eic-index{
-      height: 75px;
+      width: 50vw;
       position: relative;
-      bottom: 1vh;
-      margin: 10px;
+      margin-top: 1vh;
       vertical-align: left;
       }
       .inputs-container{
-        height: 45px;
-        width: 250px;
-        left: 365px;
-        top: 195px;
-        padding-left: 1em;
+        height: 5vh;
+        width: 66.666vw;
         border-radius: 10px;
         border: 0px solid #884599 ;
         background: #F0C0F4;
         font-style: normal;
         font-weight: normal;
-        font-size: 20px;
+        font-size: 2vh;
         line-height: 0px;
         -webkit-text-fill-color:#985193;
         letter-spacing: -0.015em;
         text-shadow: #884599;
-        margin-bottom: 10px;
+        margin-bottom: 1vh;
+        position: relative;
         }
         .btn-index{
-        height: 45px;
-        width: 250px;
-        margin-bottom: 10px;
+        height: 6vh;
+        width: 45vw;
+        position: relative;
+        margin-bottom: 1vh;
         }
         .links-uteis{
-          margin-bottom: 10px;
+          margin-bottom: 1vh;
+          font-size: 2vh;
         }
         .display-center{
           display: none;
+        }
+        #e-mail{
+          margin-bottom: 1vh;
+        }
+        #password{
+          margin-bottom: 1vh;
         }
 }

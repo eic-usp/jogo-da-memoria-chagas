@@ -3,6 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  width: auto;
 }
 .espaco-0-5{
   height: 4px;
@@ -52,33 +53,41 @@ a{
 }
 /*MOBILE*/
 @media(max-width: 599px){
+  /*Quebra de linha para que alguns elementos não fiquem sobrepostos*/
+  .break {
+    flex-basis: 100%;
+    height: 0;
+  }
   .fundo{
-    display: block;
-    overflow-y: hidden;
-    overflow-x: hidden;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    flex-wrap: wrap;
     width: 100%;
     height: 100vh;
     background: rgb(136,69,153);
     text-align: center;
-    justify-content: center;
+    justify-content:baseline;
+    align-items: center;
   }
   .titulo{
     color: rgb(255,255,255);
     font-family: 'Luckiest Guy', cursive; 
-    font-size: 2.0rem;
+    font-size: 10vw;
+    width: 100%;
     -webkit-text-fill-color:rgba(255, 255, 255, 0.9) ;
     -webkit-text-stroke-color: #000000;
     -webkit-text-stroke-width: 1px;
     letter-spacing: -0.015em;
     line-height: 3.5rem;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    margin-top: 0px;
+    margin-top: 2vh;
     margin-bottom: 0px;
   }
   
   .subtitulo-t{
     color: rgb(255,255,255);
-    font-size: 1.8rem;
+    font-size: 7vw;
     line-height: 2rem;
     font-weight: 700;
     -webkit-text-fill-color:rgba(255, 255, 255, 0.9) ;
@@ -135,21 +144,29 @@ a{
 
 /*TABLET */ 
 @media(min-width: 600px) and (max-width: 1000px){
+  /*Quebra de linha para que alguns elementos não fiquem sobrepostos*/
+  .break {
+    flex-basis: 100%;
+    height: 0;
+  }
   .fundo{
-    display: block;
-    overflow-y: hidden;
+    display: flex;
+    flex-direction: column;
+    flex-wrap:nowrap;
+    flex-grow: 2;
     overflow-x: hidden;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     background: rgb(136,69,153);
     text-align: center;
-    justify-content: center;
+    justify-content: baseline;
+    align-items: center;
   }
 
   .titulo{
     color: rgb(255,255,255);
     font-family: 'Luckiest Guy', cursive; 
-    font-size: 5.75rem; /*92px*/
+    font-size: 10vw; /*92px*/
     line-height:  5.75rem;
     font-weight: 400;
     -webkit-text-fill-color:rgba(255, 255, 255, 0.9) ;
@@ -159,7 +176,7 @@ a{
   }
   .subtitulo-t{
     color: rgb(255,255,255);
-    font-size: 3rem;
+    font-size: 7vw;
     line-height: 3rem;
     font-weight: 700;
     -webkit-text-fill-color:rgba(255, 255, 255, 0.9) ;
@@ -211,30 +228,40 @@ a{
 /*versão DESKTOP*/
 
 @media (min-width: 1001px){
+  /*Quebra de linha para que alguns elementos não fiquem sobrepostos*/
+  .break {
+    flex-basis: 100%;
+    height: 0;
+  }
   .fundo{
-    display: block;
-    overflow-y: hidden;
-    overflow-x: hidden;
+    display: flex;
+    align-content: center;
+    overflow: hidden;
     width: 80%;
     height: 100vh;
     background: rgb(136,69,153);
     text-align: center;
-    justify-content: center;
+    justify-content:flex-start;
+    align-items: center;
+    flex-wrap: wrap;
   }
   .fundo1{
-    display: block;
-    overflow-y: hidden;
-    overflow-x: hidden;
-    width: 100%;
-    height: 100vh;
+    margin-top: 10vh;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    width: 100vw;
+    height: auto;
     background: rgb(136,69,153);
     text-align: center;
-    justify-content: center;
+    justify-content:center;
+    align-items: center;
+    flex-wrap: wrap;
   }
   .titulo{
     color: rgb(255,255,255);
     font-family: 'Luckiest Guy', cursive; 
-    font-size: 5.75rem; /*92px*/
+    font-size: 5.75vw; /*92px*/
     line-height:  5.75rem;
     font-weight: 400;
     -webkit-text-fill-color:rgba(255, 255, 255, 0.9) ;
@@ -244,7 +271,7 @@ a{
   }
   .subtitulo-t{
     color: rgb(255,255,255);
-    font-size: 3rem; /*48px*/
+    font-size: 3vw; /*48px*/
     line-height: 3rem;
     font-weight: 700;
     -webkit-text-stroke-color: #000000;
