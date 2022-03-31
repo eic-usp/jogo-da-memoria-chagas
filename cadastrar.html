@@ -8,13 +8,13 @@
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Luckiest+Guy">
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/nivel.css">
-    <link rel="stylesheet" href="assets/css/menu-modal.css">
-    <link rel="stylesheet" href="assets/css/menu-desktop.css">
-    <link rel="stylesheet" href="assets/css/jogo.css">
-    <link rel="stylesheet" href="assets/css/login.css">
-    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/nivel.css">
+    <link rel="stylesheet" href="/assets/css/menu-modal.css">
+    <link rel="stylesheet" href="/assets/css/menu-desktop.css">
+    <link rel="stylesheet" href="/assets/css/jogo.css">
+    <link rel="stylesheet" href="/assets/css/login.css">
+    <link rel="stylesheet" href="/assets/css/index.css">
     
     
 </head>
@@ -70,6 +70,87 @@
         </ul>
     </div>
 
+    <div class="fundo">
+        <!-- menu mobile-->
+        <div class="menu-mobile">
+        
+            <div class="row menu-mobile">
+        
+            <!-- lembrar de mudar o link de voltar dependendo da pagina atual-->
+                <div class="col menu-mobile col-lg-2 ajuste-direita">
+                    <div id="btn-voltar-m">
+                        <a class = "menu-mobile"  href="index.html"> 
+                            <img class="nav-elem menu-mobile"  id="logo-nav-sup-desktop" src="assets/img/nav/voltar.svg">
+                        </a>
+                    </div>
+                </div>
+                <div class="col menu-mobile col-lg-1"></div>
+                <div class="col menu-mobile col-lg-6">
+                    <a class="menu-mobile"  href="index.html"> 
+                        <img class="nav-elem menu-mobile" id="logo-eic-nav-sup-desktop" src="assets/img/nav/logo-eic-nav.svg">
+                    </a>
+                </div>
+                <div class="col menu-mobile col-lg-1"></div>
+                <div class="col menu-mobile col-lg-2 ajuste-esquerda">
+                    <a class="menu-mobile" id="botao-menu-modal"> 
+                        <img class="nav-elem"  id="logo-nav-sup-desktop" src="assets/img/nav/menu.svg">
+                    </a>
+                </div>
+                </div>
+        </div>
+        
+        <!--Menu modal que só aparece quando o botao-menu-modal é clicado-->
+        <div id="menu-modal" class="menu-mobile">
+            <ul class="list-modal">
+                 <li>
+                    <a href="index.html">
+                    <div class= "logo-modal">
+                    <img class="tamanho-logo-modal" src="assets/img/logo-eic-branco.png">
+                    <div>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html">
+                    <div class= "elem-menu-modal">
+                    <img class="tamanho-img-modal" src="assets/img/home.svg">
+                    <p> Início <p> 
+                    <div>
+                    </a>
+                </li>
+                <li><div class="espaco-1"></div></li>
+                 <li>
+                    <a href="sobre-o-jogo.html">
+                    <div class= "elem-menu-modal">
+                    <img class="tamanho-img-modal" src="assets/img/sobre-o-jogo.svg">
+                    <p> Sobre o Jogo <p> 
+                    <div>
+                    </a>
+                </li>
+                <li><div class="espaco-1"></div></li>
+                 <li>
+                    <a href="creditos.html">
+                    <div class= "elem-menu-modal">
+                    <img class="tamanho-img-modal" src="assets/img/creditos.svg">
+                    <p> Créditos <p> 
+                    <div>
+                    </a>
+                </li>
+                 <li><div class="espaco-1"></div></li>
+                 <li>
+                    <a href="compartilhar.html">
+                    <div class= "elem-menu-modal">
+                    <img class="tamanho-img-modal" src="assets/img/compartilhar.svg">
+                    <p> Compartilhar <p> 
+                    <div>
+                    </a>
+                </li>
+            </ul>
+            <div class="espaco-3"></div>
+            <div class="fade-menu-mobile menu-mobile"></div> 
+        </div>
+        
+        <!--fim menu mobile-->
+    
 <div>
     <form id="cadForm-form" action="#" method="post">
 
@@ -112,6 +193,7 @@
 <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
 <script src="assets/js/firebase.js"></script>
+<script src="assets/js/menu-modal.js"></script>
 
 </body>
 </html>

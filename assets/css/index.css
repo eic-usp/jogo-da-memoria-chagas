@@ -47,8 +47,7 @@
     letter-spacing: -0.015em;
     text-shadow: #884599;
     margin-bottom: 1vh;
-    position: relative;
-    }  
+  }  
     
     
     .subtitulo-3{
@@ -119,7 +118,6 @@
       letter-spacing: -0.015em;
       text-shadow: #884599;
       margin-bottom: 1vh;
-      position: relative;
       }
       .btn-index{
         margin-bottom: 1vh;
@@ -157,7 +155,6 @@
         letter-spacing: -0.015em;
         text-shadow: #884599;
         margin-bottom: 1vh;
-        position: relative;
         }
         .btn-index{
         height: 6vh;
