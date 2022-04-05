@@ -45,9 +45,12 @@
 }
 #imgMatchSing{
     position: relative;
-    top: 250px;
+    top: 40%;
+    left: 40%;
     transition-property: top, opacity;
     transition-duration: 1.5s;
+    width: 100px;
+    height: 100px;
 }
 .pair{
   animation-name: fadeIn;
