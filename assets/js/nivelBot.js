@@ -33,22 +33,22 @@ function BotaoAtivar(){
     console.log(" Fase salvos " +  sessionStorage.getItem("nivel"))
     console.log(" Concluido " +  sessionStorage.getItem("Concluido"))
 
-    // verificar fase e nivel
-    if(nivelP == 2 && concluido == 0) {
-        //console.log("nivel ### " + 2)
+    // // verificar fase e nivel
+    // if(nivelP == 2 && concluido == 0) {
+    //     //console.log("nivel ### " + 2)
 
-        document.getElementById("facil").disabled = true;
+    //     document.getElementById("facil").disabled = true;
         
-    }if(nivelP == 3 && concluido == 0) {
-    // console.log("nivel ###" + 3)
-        document.getElementById("facil").disabled = true;
-        document.getElementById("medio").disabled = true;
-    }if(nivelP == 3 && fase == 3 && concluido == 1){
+    // }if(nivelP == 3 && concluido == 0) {
+    // // console.log("nivel ###" + 3)
+    //     document.getElementById("facil").disabled = true;
+    //     document.getElementById("medio").disabled = true;
+    // }if(nivelP == 3 && fase == 3 && concluido == 1){
 
-        document.getElementById("facil").disabled = false;
-        document.getElementById("medio").disabled = false;
+    //     document.getElementById("facil").disabled = false;
+    //     document.getElementById("medio").disabled = false;
 
-    }   
+    // }   
 
     
 }
