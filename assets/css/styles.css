@@ -246,7 +246,7 @@ a{
     flex-wrap: wrap;
   }
   .fundo1{
-    margin-top: 10vh;
+    margin-top: 5.0vh;
     display: flex;
     overflow: hidden;
     flex-direction: column;
