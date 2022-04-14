@@ -13,12 +13,6 @@
  //AtualizarNivelFase(mode, level);
  //NivelConcluido();
 
- if(mode == 1){
-    // console.log(" level " + level + " Nivel " + mode)
-     //document.getElementById("again").disabled = true;
-     //document.getElementById("next").disabled = true;
-
- }
 
  //VerificarFase()
 
@@ -95,7 +89,7 @@ function GameFlow(){
 
     if(level === "1"){
         let points1 = document.getElementById("points").innerHTML;
-        //console.log(points1)
+        console.log(points1)
         again.classList.add("1");
         next.classList.add("2");
         Cookies.set('ptsfase1', points1);
@@ -107,22 +101,22 @@ function GameFlow(){
         console.log(points2)
         again.classList.remove("1");
         next.classList.remove("2");
+        console.log(next.classList)
         again.classList.add("2");
         next.classList.add("3");
-
         Cookies.set('ptsfase2', points2);
         console.log(Cookies.get('ptsfase2'));
 
     } else if (level === "3"){
         let points3 = document.getElementById("points").innerHTML;
-        //document.getElementById("points-fase3").innerHTML = points;
-        //console.log(points3)
+        var next = document.getElementById("next");
+        next.innerHTML = "TERMINAR";
+        location.href = "fim.html"
         again.classList.remove("2");
         next.classList.remove("3");
         again.classList.add("3");
         Cookies.set('ptsfase3', points3);
-        next.href = "fim.html";
-        next.innerHTML = "TERMINAR";
+        
     }
 
     if (level === "3" && mode !== "3"){

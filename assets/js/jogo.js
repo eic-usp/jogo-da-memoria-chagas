@@ -405,13 +405,10 @@
     let info = [];
      for(i=0; i< 16; i++){
         info[i] = document.getElementById("card"+i); //Recolhe todos os cards
-         console.log(info[i]);
      }
      for(i=0; i< info.length; i++){
          info[i] = info[i].childNodes[3]; //faz com que os cards se tornem "face front"
-         console.log(info[i]);
          if(info[i].id === flippedCards[0].childNodes[3].id){
-             //info.splice(info.indexOf(i));
              info[i].parentNode.style.boxShadow = "none"; //remove o brilho da carta associada
          }
      }

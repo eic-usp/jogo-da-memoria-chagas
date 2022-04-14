@@ -1,7 +1,7 @@
 
-var scoreFase1 = Cookies.get('ptsfase1');
-var scoreFase2 = Cookies.get('ptsfase2');
-var scoreFase3 = Cookies.get('ptsfase3');
+var scoreFase1 = Cookies.get(points1);
+var scoreFase2 = Cookies.get(points2);
+var scoreFase3 = Cookies.get(points3);
 
 var scoreFase1n = parseInt(scoreFase1);
 var scoreFase2n = parseInt(scoreFase2);
