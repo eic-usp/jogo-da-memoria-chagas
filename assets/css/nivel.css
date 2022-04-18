@@ -5,7 +5,7 @@
 /*versão mobile*/
 @media(max-width: 599px){
   .fundo{
-    display: block;
+    /*display: block;
     overflow-x: hidden;
     overflow-y: hidden;
     width: 100%;
@@ -13,6 +13,18 @@
     background: rgb(136,69,153);
     text-align: center;
     justify-content: center;
+*/
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100vh;
+    background: rgb(136,69,153);
+    text-align: center;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
   } 
   .largura-texto{
       text-align: center;
@@ -96,7 +108,6 @@
   .scroll-bar{
     overflow: auto;
   }
- 
   .mostrar-no-desktop{
     display: none;
   }
@@ -113,7 +124,6 @@
     left: 8%;
     top: 24%;
   }
-
 }
   
 /*versão desktop */
@@ -125,7 +135,7 @@
     height: 100vh;
     background: rgb(136,69,153);
     text-align: center;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
     flex-wrap: wrap;
@@ -166,6 +176,9 @@
     left: 32%;
     top: 24%;
   }
-  
+  .menu-mobile{
+    display: flex;
+    margin-top: 10vh;
+  }
 
 }

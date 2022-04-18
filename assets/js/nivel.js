@@ -49,7 +49,9 @@ function fase(nivelP, faseAtual){
     console.log("faseAtual ------- fora do if " + faseAtual)
     console.log("AntigaFase ------- fora do if " + AntigaFase)
     */
-    if(faseAtual == null && AntigaFase == 3){
+
+    //Verifica se o nível é igual a
+    if(faseAtual == null && AntigaFase == 3){ 
     
         console.log("------------------------------------------")
         console.log("nivel -------gfdgdfgdf " + nivel)
@@ -62,7 +64,7 @@ function fase(nivelP, faseAtual){
             sessionStorage.setItem("nivel", 2);
             sessionStorage.setItem("fase", 1);
             AtualizarNivelFase(2, 1);
-            location.href = "nivel.html";             
+            location.href = "nivel.html";          
             console.log(" Nivel 1 - fase 3")
 
         }
@@ -76,7 +78,7 @@ function fase(nivelP, faseAtual){
         } 
         if (nivel == 3) {
             sessionStorage.setItem("nivel", 3);
-            sessionStorage.setItem("fase", 3);
+            sessionStorage.setItem("fase", 3); //não entendi o porquê da fase 3.
             AtualizarNivelFase(3, 3);
             location.href = "nivel.html";
             console.log(" Nivel 3 - fase 3")
@@ -93,7 +95,7 @@ function fase(nivelP, faseAtual){
         */
         
     }
-    if(AntigaFase == 3 && nivel == 3){
+    if((AntigaFase == 3 && nivel == 3)||(AntigaFase == 3 && nivel == 2)||(AntigaFase == 3 && nivel == 1)){
 
         sessionStorage.setItem("Concluido", 1);
         console.log("Teste ------- " + sessionStorage.getItem('Concluido'))

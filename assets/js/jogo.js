@@ -482,7 +482,7 @@
                         flippedCards[1].childNodes[3].classList.add("pair");
                     
                         brilho();
-                        
+                        matches=7;
                         matches++;
 
                         flippedCards = [];

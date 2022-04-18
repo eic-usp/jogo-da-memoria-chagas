@@ -42,7 +42,7 @@ function verificarKey(){
                 // chave do usuario 
                 this.jogo_nivel = snap.val().nivel   
                 this.jogo_fase = snap.val().fase   
-                this.concluido = snap.val().concluido    
+                this.concluido = snap.val().concluido   
                 this.key = snap.key 
 
                 //console.log("nivel -------- ", this.jogo_nivel)
