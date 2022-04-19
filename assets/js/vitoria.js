@@ -111,7 +111,7 @@ function GameFlow(){
         let points3 = document.getElementById("points").innerHTML;
         var next = document.getElementById("next");
         next.innerHTML = "TERMINAR";
-        //location.href = "fim.html";
+        location.href = "fim.html";
         again.classList.remove("2");
         next.classList.remove("3");
         again.classList.add("3");

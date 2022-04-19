@@ -42,7 +42,18 @@
       left: 50%;
       top: 8%;    
     }
-    .ranking{
+    .titulo{
+      color: rgb(255,255,255);
+      font-family: 'Luckiest Guy', cursive;
+      font-size: 5.0rem;
+      line-height: 5.75rem;
+      font-weight: 400;
+      -webkit-text-fill-color: rgba(255, 255, 255, 0.9);
+      -webkit-text-stroke-color: #000000;
+      -webkit-text-stroke-width: 2px;
+    }
+    espaco-
+    /* .ranking{
       position: absolute;
       width: 608px;
       height: 44px;
@@ -54,18 +65,24 @@
       font-weight: normal;
       font-size: 36px;
       line-height: 44px;
-      /* identical to box height */
+      /* identical to box height 
 
       display: flex;
       align-items: flex-end;
       letter-spacing: -0.015em;
 
       color: #FFFFFF;
-    }
+    } */
     #inicio{
       margin-top: 400px;
     }
-    .subtitulo-4{
+    .espaco-n{
+      height: 12px;
+    }
+    .subtitulo-tam{
+      width: 70vw;
+    }
+    /* .subtitulo-4{
       padding-top: 8%;
       padding-bottom: 4%;
       text-align: center;
@@ -82,5 +99,5 @@
       left: 15%;
       
     
-  }
+  } */
 }
