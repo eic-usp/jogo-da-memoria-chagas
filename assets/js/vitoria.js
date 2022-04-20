@@ -68,10 +68,6 @@ function GameFlow(){
 
     var NextLevel = 0;
 
-        
-
-   
-
     switch(mode){
         case "1":
             again.classList.add("facil");
@@ -112,8 +108,8 @@ function GameFlow(){
         var next = document.getElementById("next");
         next.innerHTML = "TERMINAR";
         location.href = "fim.html";
-        again.classList.remove("2");
-        next.classList.remove("3");
+        //again.classList.remove("2");
+        //next.classList.remove("3");
         again.classList.add("3");
         Cookies.set('ptsfase3', points3);
         

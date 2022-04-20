@@ -2,102 +2,45 @@
 @media(min-width: 1001px){
   
   
-    .medal{
-      bottom: 1rem;
-      position:relative;
-      top: 14px;
-      right: 40px;
-          
-    }
-  
-    .points{
-        position:relative;
-        bottom: 1.5rem;
-        left: 2px;
-
-        position: absolute;
-        width: 176px;
-        height: 54px;
-        left: 764px;
-        top: 228px;
-
-        font-family: Lohit Tamil;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 36px;
-        line-height: 44px;
-        display: flex;
-        align-items: flex-end;
-        letter-spacing: -0.015em;
-
-        color: #FFFFFF;
-
-    }
-    #trofeu-rkn{
-      height: 88.99998474121094px;
-      width: 93.88369750976562px;
-      top: 0px;
-      border-radius: 0px;
-      position: absolute;
-      left: 50%;
-      top: 8%;    
-    }
-    .titulo{
-      color: rgb(255,255,255);
-      font-family: 'Luckiest Guy', cursive;
-      font-size: 5.0rem;
-      line-height: 5.75rem;
-      font-weight: 400;
-      -webkit-text-fill-color: rgba(255, 255, 255, 0.9);
-      -webkit-text-stroke-color: #000000;
-      -webkit-text-stroke-width: 2px;
-    }
-    espaco-
-    /* .ranking{
-      position: absolute;
-      width: 608px;
-      height: 44px;
-      left: 154px;
-      top: 243px;
-
-      font-family: Lohit Tamil;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 36px;
-      line-height: 44px;
-      /* identical to box height 
-
-      display: flex;
-      align-items: flex-end;
-      letter-spacing: -0.015em;
-
-      color: #FFFFFF;
-    } */
-    #inicio{
-      margin-top: 400px;
-    }
-    .espaco-n{
-      height: 12px;
-    }
-    .subtitulo-tam{
-      width: 70vw;
-    }
-    /* .subtitulo-4{
-      padding-top: 8%;
-      padding-bottom: 4%;
-      text-align: center;
-      color: rgb(255,255,255);
-      font-size: 2.0rem;
-      line-height: 2.8rem;
-      font-family: Luckiest Guy, cursive; 
-      -webkit-text-fill-color:rgba(255, 255, 255, 0.9) ;
-      -webkit-text-stroke-color: #000000;
-      -webkit-text-stroke-width: 1px;
-      letter-spacing: -0.015em;
-      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-      position: absolute;
-      left: 15%;
-      
+  .medal{
     
-  } */
+    position:relative;
+    justify-content: center;
+    right: 20px;  
+  }
+
+  .points{
+    position:relative;
+    justify-content: center;
+    align-items: center;
+  }
+  #trofeu-rkn{
+    height: 88.99998474121094px;
+    width: 93.88369750976562px;
+    top: 0px;
+    border-radius: 0px;
+    position: absolute;
+    left: 50%;
+    top: 8%;    
+  }
+  .titulo{
+    color: rgb(255,255,255);
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 5.0rem;
+    line-height: 5.75rem;
+    font-weight: 400;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0.9);
+    -webkit-text-stroke-color: #000000;
+    -webkit-text-stroke-width: 2px;
+  }
+  espaco-
+  #inicio{
+    margin-top: 400px;
+  }
+  .espaco-n{
+    height: 12px;
+  }
+  .subtitulo-tam{
+    width: 70vw;
+  }
 }

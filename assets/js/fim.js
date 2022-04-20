@@ -7,7 +7,7 @@ var scoreFase1n = parseInt(scoreFase1);
 var scoreFase2n = parseInt(scoreFase2);
 var scoreFase3n = parseInt(scoreFase3);
 
-const logoutAction = document.getElementById('logout-Action')
+const logoutAction = document.getElementById('logout-Action');
 //mostrar o resultado
 
 document.getElementById('final-score').innerHTML = scoreFase1n + scoreFase2n + scoreFase3n;
