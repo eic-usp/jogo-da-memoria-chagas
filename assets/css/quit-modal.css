@@ -12,32 +12,32 @@
   background-repeat: no-repeat;
 }
 .btn-close{
-    width: 8%;
-    height: 7.5%;
-    top: 4%;
-    right: 4%;
-    position: absolute;
-    background: url('../img/Vector.png');
-    background-repeat: no-repeat;
-  }
-  .fonte-modal-sair-destaque{
-    font-family:'Luckiest Guy', cursive;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 28px;
-    line-height: 28px;
-    text-align: center;
-    letter-spacing: 0.0025em;
-    color: #541663;
-  }
-  .fonte-modal-sair{
-    font-family: 'Roboto', sans-serif;;
-    font-size: 20px;
-    text-align: center;
-    letter-spacing: 0.005em;
-    color: rgba(0, 0, 0, 0.83);
-  }
+  width: 8%;
+  height: 7.5%;
+  top: 4%;
+  right: 4%;
+  position: absolute;
+  background: url('../img/Vector.png');
+  background-repeat: no-repeat;
+}
+.fonte-modal-sair-destaque{
+  font-family:'Luckiest Guy', cursive;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 28px;
+  text-align: center;
+  letter-spacing: 0.0025em;
+  color: #541663;
+}
+.fonte-modal-sair{
+  font-family: 'Roboto', sans-serif;;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 0.005em;
+  color: rgba(0, 0, 0, 0.83);
+}
 
-  .cursor-pointer{
-    cursor: pointer;
-  }
+.cursor-pointer{
+  cursor: pointer;
+}

@@ -1,113 +1,106 @@
- /*versão DESKTOP*/
- @media(MIN-width: 1001px){
+/*versão DESKTOP*/
+@media(MIN-width: 1001px){
   
   .tipoUL{ /*menu lateral**/
-      list-style-type: none;
-      left: 75%;
-      margin: 0;
-      padding: 0;
-      width: 25vw;
-      background-color: #541663;
-      height: 100%; 
-      position: absolute; 
-      overflow: hidden; 
-    }
-    .logo-eic-centro{ /*logo do EIC**/
-      position: relative;
-      padding-left: 3vw;
-      width: 240px;
-      height: 80px;
-    }
-    .elem-menu-lateral{
-      width: 18,75vw;
-      height:6vh;
-      position: static;
-      justify-content: center;
-    }
-    .elem-menu-lateral img{ /*imagens menu lateral**/
-      float: left;
-      padding-right: 32px; 
-      position:absolute;
-      left: 35px;
-      display: flex;
-      align-items: center;
-      transform: translateY(30%);
-      color: #fff;
-    }
-    .elem-menu-lateral p{ /*texto menu lateral**/
-      text-align: left;
-      padding-top: 3px;
-      position:relative;
-      left: 115px;
-      transform: translateY(37%);
-    }    
-    /*.active:hover{
-      background-color: rgb(136,69,153); 
-      width: 220px;
-      left: 10px;
-      right: 10px;
-      position: relative;
-      border-radius: 5px;
-    }**/
+    list-style-type: none;
+    left: 75%;
+    margin: 0;
+    padding: 0;
+    width: 25vw;
+    background-color: #541663;
+    height: 100%; 
+    position: absolute; 
+    overflow: hidden; 
+  }
+  .logo-eic-centro{ /*logo do EIC**/
+    position: relative;
+    padding-left: 3vw;
+    width: 240px;
+    height: 80px;
+  }
+  .elem-menu-lateral{
+    width: 18,75vw;
+    height:6vh;
+    position: static;
+    justify-content: center;
+  }
+  .elem-menu-lateral img{ /*imagens menu lateral**/
+    float: left;
+    padding-right: 32px; 
+    position:absolute;
+    left: 35px;
+    display: flex;
+    align-items: center;
+    transform: translateY(30%);
+    color: #fff;
+  }
+  .elem-menu-lateral p{ /*texto menu lateral**/
+    text-align: left;
+    padding-top: 3px;
+    position:relative;
+    left: 115px;
+    transform: translateY(37%);
+  }
     
-    .elem-menu-lateral:hover{
-      background-color: rgb(136,69,153);
-      border-radius: 5px;
-      position: relative;
-      width: 234px;
-      left: 10px;
-      right: 10px;
-    }
-    .elem-menu-lateral:hover img{
-      left: 25px;
-    }
-    .elem-menu-lateral:hover p{
-      left: 105px;
-    }
-    .organize-elem-centro-coluna{
-      align-items: center;
-      display: flex;
-      flex-direction: column;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    .organize-elem-centro-linha{
-      align-items: center;
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    .adjust{
-      left: 8px;
-    }
+  .elem-menu-lateral:hover{
+    background-color: rgb(136,69,153);
+    border-radius: 5px;
+    position: relative;
+    width: 234px;
+    left: 10px;
+    right: 10px;
+  }
+  .elem-menu-lateral:hover img{
+    left: 25px;
+  }
+  .elem-menu-lateral:hover p{
+    left: 105px;
+  }
+  .organize-elem-centro-coluna{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .organize-elem-centro-linha{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .adjust{
+    left: 8px;
+  }
 }
+
 /*versão tablet */
 @media(min-width: 600px) and (max-width: 1000px){
   .menu-desktop{
-      display:none;
-    }
+    display:none;
+  }
   .ajuste-direita{
-      padding-left:24px ; 
-    }
+    padding-left:24px ; 
+  }
   .ajuste-esquerda{
-      padding-right:24px ;      
-    }
+    padding-right:24px ;      
+  }
    #logo-nav-sup-desktop{
     width: 24px;
     height:24px;
-   }
-    #logo-eic-nav-sup-desktop{
-      width: 28px;
-      height:28px;
-    }
+  }
+  #logo-eic-nav-sup-desktop{
+    width: 28px;
+    height:28px;
+  }
 }
 
 /*versão mobile*/
 @media(max-width: 599px){
   .menu-desktop{
-      display: none;
-      }
+    display: none;
+  }
   .ajuste-direita{
     padding-left:24px ; 
   }
@@ -117,7 +110,7 @@
   #logo-nav-sup-desktop{
     width: 24px;
     height:24px;
-   }
+  }
   #logo-eic-nav-sup-desktop{
     width: 28px;
     height:28px;

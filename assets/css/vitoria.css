@@ -3,7 +3,7 @@
   overflow: hidden;
 }
 .btn-next {
-    background:  #541663;
+  background:  #541663;
   }
 .btn-playAgain {
   background: #301A67;
@@ -57,7 +57,7 @@ p.points{
     display: flex;
     align-items: center;
     justify-content: center;
-}
+  }
   .medal{
     bottom: 1.5rem;
     position: relative;

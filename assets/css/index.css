@@ -1,7 +1,4 @@
 /*GLOBAL*/
-/*.hide-cookie{
-  display: none !important; 
-}*/
 .toast{
   background-color: #541663;
   z-index:10;
@@ -81,11 +78,11 @@
         padding-bottom: 0.2em;
         font-weight: bold;
     }
-    .espaco-2{
-       height: 1px;
+    .espaco-i-1{
+       height: 3vh;
       }
-    .espaco-3{
-      height:1px;
+    .espaco-i-2{
+      height:6vh;
     }
     .links-uteis{
       margin-bottom: 1vh;

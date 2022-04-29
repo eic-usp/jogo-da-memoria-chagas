@@ -21,15 +21,10 @@
     */  
 
   //-----------------------
-  
 
-  // ---------------------
-    
 
 function fase(nivelP, faseAtual){
-
-    console.log("faseAtual ------- " + faseAtual)
-   
+  
     var nivel = "";
 
     if(nivelP === "facil"){
@@ -41,127 +36,8 @@ function fase(nivelP, faseAtual){
     }
 
     
-    //--------------------------
-    
-    var AntigaFase = sessionStorage.getItem('fase'); 
-   /*
-    console.log("nivel -------fora do if " + nivel)
-    console.log("faseAtual ------- fora do if " + faseAtual)
-    console.log("AntigaFase ------- fora do if " + AntigaFase)
-    */
-
-    //Verifica se o nível é igual a
-    if(faseAtual == null && AntigaFase == 3){ 
-    
-        console.log("------------------------------------------")
-        console.log("nivel -------gfdgdfgdf " + nivel)
-        console.log("faseAtual -------gfdgdfgdf " + faseAtual)
-        console.log("AntigaFase -------gfdgdfgdf " + AntigaFase)
-
-        console.log("------------------------------------------")
-        
-        if(nivel == 1){
-            sessionStorage.setItem("nivel", 2);
-            sessionStorage.setItem("fase", 1);
-            AtualizarNivelFase(2, 1);
-            location.href = "nivel.html";          
-            console.log(" Nivel 1 - fase 3")
-
-        }
-        if (nivel == 2){
-            sessionStorage.setItem("nivel", 3);
-            sessionStorage.setItem("fase", 1);
-            AtualizarNivelFase(3, 1);
-            location.href = "nivel.html";
-            console.log(" Nivel 2 - fase 3")
-
-        } 
-        if (nivel == 3) {
-            sessionStorage.setItem("nivel", 3);
-            sessionStorage.setItem("fase", 3); //não entendi o porquê da fase 3.
-            AtualizarNivelFase(3, 3);
-            location.href = "nivel.html";
-            console.log(" Nivel 3 - fase 3")
-        } 
-        /*
-        else {
-
-            console.log("teste nivel +++++++++ " + nivel )
-            console.log("teste fase +++++++++ " + faseAtual)
-            AtualizarNivelFase(nivel, faseAtual);
-            //location.href = "instrucoes.html"
-            
-        }
-        */
-        
-    }
-    if((AntigaFase == 3 && nivel == 3)||(AntigaFase == 3 && nivel == 2)||(AntigaFase == 3 && nivel == 1)){
-
-        sessionStorage.setItem("Concluido", 1);
-        console.log("Teste ------- " + sessionStorage.getItem('Concluido'))
-
-    }
-    else{
-        console.log("teste nivel ----------- " + nivel )
-        console.log("teste fase --------- " + faseAtual)
-        sessionStorage.setItem("nivel", nivel);
-        sessionStorage.setItem("fase", faseAtual);
-        AtualizarNivelFase(nivel, faseAtual);
-        location.href = "instrucoes.html"         
-    
-    }   
-    
-    
-    //-----------------------------
-  
-
-   // var AntigaFase = sessionStorage.getItem("faseAtual");
-    
-
-   // sessionStorage.setItem("nivel", nivel);
-   // sessionStorage.setItem("fase", faseAtual);
-    //console.log("nivel N " + faseAtual);
-    //console.log("Fase N " + faseAtual);
-
-    //location.href = "instrucoes.html"; 
-
-
-}
-
-function fasef(nivelP, faseAtual, concluido){
-  
-    console.log(" teste " + concluido)
-
-    sessionStorage.setItem("nivel", nivelP);
+    sessionStorage.setItem("nivel", nivel);
     sessionStorage.setItem("fase", faseAtual);
-    sessionStorage.setItem("Concluido", concluido);
+    console.log("fase em cada nivel - nivel" + faseAtual);
 
-   // console.log("nivel **** " + nivelP);
-    //console.log("Fase **** " + faseAtual);
-
-    
-
-    //console.log(" Nivel e fase salvos ")
-    //console.log(" Nivel salvos " + sessionStorage.getItem("fase"))
-    //console.log(" Fase salvos " +  sessionStorage.getItem("nivel"))
-}
-
-function VerificarFase(){
-    
-    var level = sessionStorage.getItem('fase'); 
-    var mode = sessionStorage.getItem('nivel');   
-
-    if(mode == 2){
-       // console.log(" level " + level + " Nivel " + mode)
-        //document.getElementById("again").disabled = true;
-        //document.getElementById("next").disabled = true;
-
-    }
-}
-
-
-
-
-
-
-
+}       

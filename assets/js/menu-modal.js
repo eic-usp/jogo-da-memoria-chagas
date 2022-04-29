@@ -1,7 +1,6 @@
 var BtnMenuModal = document.querySelector("#botao-menu-modal");
 BtnMenuModal.addEventListener("click",ShowMenuModal,false);
 
-//colocar essas coisas em funções depois - não esquecer
 var FadeMenuModal = document.querySelector(".fade-menu-mobile");
 FadeMenuModal.addEventListener("click",HideMenuModal,false);
 

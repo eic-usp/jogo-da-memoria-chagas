@@ -5,15 +5,6 @@
 /*versão mobile*/
 @media(max-width: 599px){
   .fundo{
-    /*display: block;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    width: 100%;
-    height: 100vh;
-    background: rgb(136,69,153);
-    text-align: center;
-    justify-content: center;
-*/
     display: flex;
     overflow: hidden;
     flex-direction: column;
@@ -27,8 +18,7 @@
     position: relative;
   } 
   .largura-texto{
-      text-align: center;
-    /*Arrumar tam maximo de centralizar depois*/
+    text-align: center;
   }
   .nav-botao-voltar{
     position: relative;
@@ -48,13 +38,13 @@
     z-index: -2;
   }
   .fade-menu-mobile{
-      position: absolute;
-      width: 20vw;
-      height: 100vh;
-      right: 80vw;
-      top: -5px;
-      justify-content: right;
-      z-index: -2;
+    position: absolute;
+    width: 20vw;
+    height: 100vh;
+    right: 80vw;
+    top: -5px;
+    justify-content: right;
+    z-index: -2;
   }
   .touch-surface{
     width: 100vw;
@@ -74,28 +64,28 @@
     top:56vh;
   }
 
-.logo-modal{
-  padding-top: 5%;
-}
+  .logo-modal{
+    padding-top: 5%;
+  }
 
-/* logo-eic */
-.nav-logo-eic{
+  /* logo-eic */
+  .nav-logo-eic{
   position: relative;
   left: 45.63%;
   right: 45.31%;
   top: 0;
-}
-/* botao-menu */
-.nav-botao-menu{
-  position: relative;
-  left: 93.2%;
-  right: 0%;
-  top: 0;
-}
-.nav-elem{
-  width: 21px;
-  height: 21px;
-}
+  }
+  /* botao-menu */
+  .nav-botao-menu{
+    position: relative;
+    left: 93.2%;
+    right: 0%;
+    top: 0;
+  }
+  .nav-elem{
+    width: 21px;
+    height: 21px;
+  }
   .p-destaque{
     font-family: Fira Sans;
     font-style: normal;
@@ -155,8 +145,9 @@
     top: 24%;
   }
 }
- /*versão tablet */
- @media(min-width: 600px) and (max-width: 1000px){
+
+/*versão tablet */
+@media(min-width: 600px) and (max-width: 1000px){
 
   .logo-eic{
     top: 85%;
