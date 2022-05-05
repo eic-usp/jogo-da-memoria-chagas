@@ -30,8 +30,8 @@
     height: 8rem;
   }
   .inputs-container{
-    height: 5.5vh;
-    width: 16.666vw;
+    height: 6.5vh;
+    width: 18vw;
     padding: 1vw;
     border-radius: 10px;
     border: 0px solid #884599 ;
@@ -64,8 +64,8 @@
     }
     .btn-index{
         margin-bottom: 1vh;
-        height: 5.5vh;
-        width: 16.666vw;
+        height: 7vh;
+        width: 12vw;
         font-size: 2vh;
         position: relative;
     }

@@ -1,25 +1,24 @@
 (function (){
 
-    level = sessionStorage.getItem('fase'); // fase 1, 2, 3
+    /*Não está mostrando a imagem de par correto e não está entendendo que algumas cartas sao pares */
+    /*porque não está contando par se eu não mudei nada */
 
+    level = sessionStorage.getItem('fase'); // fase 1, 2, 3
     var mode = sessionStorage.getItem('nivel'); // facil/medio/dificil 
 
     var size = $(window).width();
 
-    console.log("fase:" + level);
-    console.log("nivel:" + mode);
+    //console.log("fase:" + level);
+    //console.log("nivel:" + mode);
 
     if (level === null){
         level = 1;
     }
 
     var images = [];
-
     var matches = 0;
-
     var fail = 0;
-
-    /* ------------------------ Imagens desktop/tablet ------------------------ */
+    /*Imagens desktop*/
     if(size >= 600){
         if (level === "1"){
 
@@ -77,7 +76,8 @@
             } 
 
         }
-    }else{ /* ------------------------- Imagens mobile ------------------------ */
+
+    }else{ /*Imagens mobile*/
         console.log("fase");
 
         if (level === "1"){
@@ -98,6 +98,7 @@
         } else if (level === "2"){
 
             document.getElementsByTagName('title')[0].innerHTML= "Fase 2";
+
         
             for(var i = 0; i < 8; i++){
                 var img = {
@@ -116,6 +117,7 @@
             } 
 
         } else if(level === "3"){
+            // arrumar o tamanho das imagens, mas de resto ta tudo certo até aqui
 
             document.getElementsByTagName('title')[0].innerHTML= "Fase 3";
 
@@ -140,7 +142,7 @@
    
 
     startGame();
-    /* ---------------------------- começa o jogo ---------------------------- */
+    /** começa o jogo */
     function startGame(){   
         
         matches = 0;
@@ -160,6 +162,7 @@
 
         if(size > 1000){ /*Versão Desktop*/
             
+            /*tentar criar uma função e modularizar essa parte passando o tamanho da tela por parâmetro, ver se vai funcionar*/
             for(var i = 0; i < 16; i++){
                 
         
@@ -170,7 +173,7 @@
                 var card = document.querySelector("#card" + i);
                 // console.log(card);
                 /*mod: resto da divisao */
-                card.style.left = i % 4 === 0? 0 + "px" : i % 4 * 140 + 10 + "px"; 
+                card.style.left = i % 4 === 0? 10 + "px" : i % 4 * 140 + 10 + "px"; 
 
                 if(i < 4){
                     card.style.top = 0 + "px";
@@ -273,7 +276,7 @@
              }
         }
     }
-    /* --------------------------- background level --------------------------- */
+
     /**
      *  Mudar as imagens do verso das cartas acordo com a fase
      * @param {*} level 
@@ -293,7 +296,6 @@
                 }
             }
     }
-    /* ----------------------------- random sort ----------------------------- */
     /**
      * Embaralhar as cartas
      * @param {*} images vetor de imagens organizadas
@@ -310,11 +312,10 @@
         }
         return sorted;
     }
-    /* ------------------------ virar cartas início ------------------------- */
     /** 
      *  Virar as cartas no inicio do jogo para a pessoa memorizar
      */
-    function InicialTime(mode){
+     function InicialTime(mode){
       
         var faces =  document.getElementsByClassName("face");
         for(i = 0; i < 32; i++){
@@ -381,7 +382,8 @@
                     }, 4000);         
             }        
     }
-    /* --------------------------- mudar instrução --------------------------- */
+    
+
     /**
      *  Mudar a instrução no ínicio do jogo
      */
@@ -398,108 +400,166 @@
   *  */
   var cont = 0;
 
-    /* ---------------------- remove hover dos pares feitos ---------------------- */
-    function brilho(){
-        let info = [];
-        for(i=0; i< 16; i++){
-            info[i] = document.getElementById("card"+i); //Recolhe todos os cards
-        }
-        for(i=0; i< info.length; i++){
-            info[i] = info[i].childNodes[3]; //faz com que os cards se tornem "face front"
-            if(info[i].id === flippedCards[0].childNodes[3].id){
-                info[i].parentNode.style.boxShadow = "none"; //remove o brilho da carta associada
-            }
-        }
-        console.log(info);
-        info = [];
-    }
-    /* --------------------------------- flipcard --------------------------------- */
-    function flipCard(mode){
+  //Remove o brilho dos pares feitos
+  function brilho(){
+    let info = [];
+     for(i=0; i< 16; i++){
+        info[i] = document.getElementById("card"+i); //Recolhe todos os cards
+         console.log(info[i]);
+     }
+     for(i=0; i< info.length; i++){
+         info[i] = info[i].childNodes[3]; //faz com que os cards se tornem "face front"
+         console.log(info[i]);
+         if(info[i].id === flippedCards[0].childNodes[3].id){
+             //info.splice(info.indexOf(i));
+             info[i].parentNode.style.boxShadow = "none"; //remove o brilho da carta associada
+         }
+     }
+     console.log(info);
+     info = [];
+ }
+ 
+ function flipCard(mode){
 
-        cont++;
-        console.log("flipCard ----------------- " + cont)
-        console.log("Tamanho - " + flippedCards.length);
-        //verificar porque chamo countPoints fail e countPoints matches
-        if(flippedCards.length < 2){
-            console.log("Entrou no IF 0 ----------");
+    
+            cont++;
+            console.log("flipCard ----------------- " + cont)
+            console.log("Tamanho - " + flippedCards.length);
+            //verificar porque chamo countPoints fail e countPoints matches
+            if(flippedCards.length < 2){
+                console.log("Entrou no IF 0 ----------");
                                 
-            /*rotacionar as faces 180 graus*/
-            /*getElementsByClassName retorna uma lista */
-            var faces =  this.getElementsByClassName("face");
+                /*rotacionar as faces 180 graus*/
+                /*getElementsByClassName retorna uma lista */
+                var faces =  this.getElementsByClassName("face");
                 
-            // tive que mudar para 3 para que as cartas virem 
-            //impedir que o usuario tente clicar duas vezes na mesma carta
-            if(faces[0].classList.length > 3){
-                return; 
-            }
+                // tive que mudar para 3 para que as cartas virem 
+                //impedir que o usuario tente clicar duas vezes na mesma carta
+                if(faces[0].classList.length > 3){
+                    return; 
+                }
 
-            faces[0].classList.toggle("flipped");
-            faces[1].classList.toggle("flipped");
+                faces[0].classList.toggle("flipped");
+                faces[1].classList.toggle("flipped");
 
-            /*toggle = switch, se nao existe adiciona, se ja existe, remove */
-            //console.log("Tamanho - 1- " + flippedCards.length);
-            flippedCards.push(this);
-               
+                /*toggle = switch, se nao existe adiciona, se ja existe, remove */
+                //console.log("Tamanho - 1- " + flippedCards.length);
+                flippedCards.push(this);
+                //console.log("Tamanho - 2- " + flippedCards.length);
+                /*
+                console.log("1" + flippedCards[0].childNodes[1]);
+                console.log("2" +  flippedCards[0].childNodes[3]);
+                console.log("3" + flippedCards[1].childNodes[1]);
+                console.log("4" + flippedCards[1].childNodes[3]);     
+                */   
                 
-            console.log(" -- ID0 - " + flippedCards[0].childNodes[3].id);
-            console.log(" -- ID1 - " + flippedCards[1].childNodes[3].id);
+                console.log(" -- ID0 - " + flippedCards[0].childNodes[3].id);
+                console.log(" -- ID1 - " + flippedCards[1].childNodes[3].id);
                 
                 
-            if(flippedCards.length === 2 ){
+                if(flippedCards.length === 2 ){
 
-                console.log("Entrou no IF 1 ----------");
-                
-                console.log("---------- ----------");
-        
-                if(flippedCards[0].childNodes[3].id === flippedCards[1].childNodes[3].id){
-
-                    flippedCards[0].childNodes[1].classList.toggle("match");
-                    flippedCards[0].childNodes[3].classList.toggle("match");
-                    flippedCards[1].childNodes[1].classList.toggle("match");
-                    flippedCards[1].childNodes[3].classList.toggle("match");
-                        
-                    //sinal de desaparecimento da carta
-                        
-                    matchCardsSign();
-
-                    //efeito de desaparecimento da carta
-                        
-
-                    flippedCards[0].childNodes[1].classList.add("pair");
-                    flippedCards[0].childNodes[3].classList.add("pair");
-                    flippedCards[1].childNodes[1].classList.add("pair");
-                    flippedCards[1].childNodes[3].classList.add("pair");
+                    console.log("Entrou no IF 1 ----------");
                     
-                    brilho();
-                    matches=7;
-                    matches++;
+                    console.log("---------- ----------");
+        
+                    if(flippedCards[0].childNodes[3].id === flippedCards[1].childNodes[3].id){
 
-                    flippedCards = [];
+                        
 
-                    CountPoint();
+                        flippedCards[0].childNodes[1].classList.toggle("match");
+                        flippedCards[0].childNodes[3].classList.toggle("match");
+                        flippedCards[1].childNodes[1].classList.toggle("match");
+                        flippedCards[1].childNodes[3].classList.toggle("match");
+                        
+                        //sinal de desaparecimento da carta
+                        
+                        matchCardsSign();
 
-                    if(matches === 8){
-                        victory();
-                    }
+                        //efeito de desaparecimento da carta
+                        
 
-                }else{
+                        flippedCards[0].childNodes[1].classList.add("pair");
+                        flippedCards[0].childNodes[3].classList.add("pair");
+                        flippedCards[1].childNodes[1].classList.add("pair");
+                        flippedCards[1].childNodes[3].classList.add("pair");
+                    
+                        brilho();
+                        matches=7;
+                        matches++;
+
+                        flippedCards = [];
+
+                        CountPoint();
+
+                        if(matches === 8){
+                            victory();
+                        }
+
+                    }else{
                     timeAction(mode);
                     console.log("errou -------")
-                }      
-            }
-        }         
-    }
+                    }
+                    //setTimeout(()=>{console.log("this is the first message")}, 3000);
+                    
+                    //setTimeout(() => {console.log("this is the first message")}, 50000);
+                    
+                    
+            
+            
+                    //console.log(" teste 2 - " + flippedCards.classList.contains)
+                    /*
+                    flippedCards[0].childNodes[1].classList.toggle("flipped");
+                    flippedCards[0].childNodes[3].classList.toggle("flipped");
+                    flippedCards[1].childNodes[1].classList.toggle("flipped");
+                    flippedCards[1].childNodes[3].classList.toggle("flipped");
+             
+                    flippedCards = [];
+            
+                    fail++;
+                    CountPoints(fail);
+                   */
 
-    //sleep
-    const sleep = (milliseconds) => {
-        return new Promise(resolve => setTimeout(resolve, milliseconds))
-    }
+                    
+                }
+                
+                
 
-    async function timeAction(){ 
-        //do something here
-        // console.log(" Sleep ------");
-        if (mode === "1"){
-            await sleep(3000)
+            } 
+
+
+            //console.log("Entrou no else ---- ");
+            //timeSensativeAction();
+                /*
+            
+            
+            
+            
+            //console.log(" teste 2 - " + flippedCards.classList.contains)
+           
+            flippedCards[0].childNodes[1].classList.toggle("flipped");
+            flippedCards[0].childNodes[3].classList.toggle("flipped");
+            flippedCards[1].childNodes[1].classList.toggle("flipped");
+            flippedCards[1].childNodes[3].classList.toggle("flipped");
+             
+            flippedCards = [];
+            
+            fail++;
+            CountPoints(fail);
+            */
+            
+        }
+
+        //sleep
+        const sleep = (milliseconds) => {
+            return new Promise(resolve => setTimeout(resolve, milliseconds))
+          }
+
+        async function timeAction(){ 
+            //do something here
+           // console.log(" Sleep ------");
+            if (mode === "1"){
+            await sleep(3000) 
             console.log(" Sleep Fácil");
             flippedCards[0].childNodes[1].classList.toggle("flipped");
             flippedCards[0].childNodes[3].classList.toggle("flipped");
@@ -511,8 +571,8 @@
             fail++;
             CountPoints(fail);
 
-        }else if(mode === "2"){
-            await sleep(2000) 
+            }else if(mode === "2"){
+                await sleep(2000) 
             console.log(" Sleep Médio");
             flippedCards[0].childNodes[1].classList.toggle("flipped");
             flippedCards[0].childNodes[3].classList.toggle("flipped");
@@ -523,8 +583,8 @@
             fail++;
             CountPoints(fail);
 
-        }else{
-            await sleep(1000) 
+            }else{
+                await sleep(1000) 
             console.log(" Sleep Difícil");
             flippedCards[0].childNodes[1].classList.toggle("flipped");
             flippedCards[0].childNodes[3].classList.toggle("flipped");
@@ -535,89 +595,97 @@
             fail++;
             CountPoints(fail);
 
-        }       
-    }
+            }
+            
+          }
 
-    /* ----------------------------- count point ----------------------------- */
-    /**
-    * Função para contar os pontos feitos na fase
-    * @param {number} fail
-    * recebe o numero de fails para calcular a pontuação total
-    * pontuação final = 100 - (errados*2)
-    * Nunca está abaixo de 50
-    */
-    function CountPoints(){        
-        var ptsant = document.getElementById("points").textContent;
-        ptsant = parseInt(ptsant);
 
-        if(ptsant > 50){
-            if(level == "1"){ 
-                pts = ptsant - 2;
-                document.getElementById("points").innerHTML =  pts;
-            }else if(level == "2"){
+         /**
+          * Função para contar os pontos feitos na fase
+          * @param {number} fail
+          * recebe o numero de fails para calcular a pontuação total
+          * pontuação final = 100 - (errados*2)
+          * Nunca está abaixo de 50
+          */
+        function CountPoints(){
+            
+            var ptsant = document.getElementById("points").textContent;
+             ptsant = parseInt(ptsant);
+
+             if(ptsant > 50){
+                if(level == "1"){ 
+                    pts = ptsant - 2;
+                    document.getElementById("points").innerHTML =  pts;
+                }else if(level == "2"){
                     pts = ptsant - 4;
+                    document.getElementById("points").innerHTML =  pts;
+                }else if(level == "3"){
+                    pts = ptsant - 6;
+                    document.getElementById("points").innerHTML =  pts;
+                }
+             }
+        }
+        function CountPoint(){
+            
+            var ptsant = document.getElementById("points").textContent;
+             ptsant = parseInt(ptsant);
+
+            if(level == "1"){ 
+                pts = ptsant + 2;
                 document.getElementById("points").innerHTML =  pts;
+            } else if(level == "2"){
+                pts = ptsant + 4;
+                document.getElementById("points").innerHTML = pts;
             }else if(level == "3"){
-                pts = ptsant - 6;
-                document.getElementById("points").innerHTML =  pts;
+                pts = ptsant + 6;
+                document.getElementById("points").innerHTML = pts;
             }
         }
-    }
-    function CountPoint(){    
-        var ptsant = document.getElementById("points").textContent;
-        ptsant = parseInt(ptsant);
 
-        if(level == "1"){ 
-            pts = ptsant + 2;
-            document.getElementById("points").innerHTML =  pts;
-        } else if(level == "2"){
-            pts = ptsant + 4;
-            document.getElementById("points").innerHTML = pts;
-        }else if(level == "3"){
-            pts = ptsant + 6;
-            document.getElementById("points").innerHTML = pts;
-        }
-    }
-    /* ----------------------- chamar página de vitória ----------------------- */
      /**
       * Função para chamar a página de vitória
       */
     function victory(){
-        var level = sessionStorage.getItem('fase');
+
+            var level = sessionStorage.getItem('fase');
             
-        sessionStorage.setItem("fase", level);
-        sessionStorage.setItem("nivel", mode);
+            sessionStorage.setItem("fase", level);
+            sessionStorage.setItem("nivel", mode);
 
-        // console.log("Nivel " + mode + " fase " + fase)
+            var points = document.getElementById("points").innerHTML;
 
-        var points = document.getElementById("points").innerHTML;
+            sessionStorage.setItem("pontos", points);
 
-        sessionStorage.setItem("pontos", points);
-        //console.log("mode --- " + mode + " level --- " + level + " points  ---" + points)
-        AtualizarPontos(points);
-       // AtualizarNivelFaseTeste()
-
-        window.location.replace("vitoria.html");
-    }
-    /* ---------------------------- sinal de match ---------------------------- */    
+            window.location.replace("vitoria.html");
+        }
          /**
           * Sinaliza quando o jogador acerta um par
           */    
     function matchCardsSign(){
-        console.log("ta chamando");
-        var imgMatchSing = document.getElementById("imgMatchSing");
-        imgMatchSing.classList.remove("hideMatchSing");
-        var height =  $(window).height();
-        imgMatchSing.style.top = Math.round(height/2) + "px";
-        
-        setTimeout(function(){
-            imgMatchSing.style.top = 250 + "px";
-            imgMatchSing.classList.add("hideMatchSing");
-        },1000);
-    }
+            console.log("ta chamando");
+            var imgMatchSing = document.getElementById("imgMatchSing");
+            imgMatchSing.classList.remove("hideMatchSing");
+            var height =  $(window).height();
+            imgMatchSing.style.top = Math.round(height/2) + "px";
+             setTimeout(function(){
+                imgMatchSing.style.top = 250 + "px";
+                imgMatchSing.classList.add("hideMatchSing");
+            },1000);
+        }
+        /*function matchCardsSign(){
+            imgMatchSing.style.zIndex = 1;
+            var height =  $(window).height();
+            imgMatchSing.style.top = Math.round(height/2) + "px";
+            imgMatchSing.style.opacity = 0;
+            setTimeout(function(){
+                imgMatchSing.style.zIndex = -1;
+                imgMatchSing.style.top = 250 + "px";
+                imgMatchSing.style.opacity = 1;
+            },1000);
+        */
+  
 }
 )();
-/* ------------------------------ sair do jogo ------------------------------ */
 /**
  * Sair da página de jogo
  */

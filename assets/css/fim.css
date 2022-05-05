@@ -1,46 +1,14 @@
 /*DESKTOP*/
-@media(min-width: 1001px){
-  
-  
+@media(min-width: 1001px){  
   .medal{
-    
+    bottom: 1rem;
     position:relative;
-    justify-content: center;
-    right: 20px;  
+    top: 14px;
+    right: 40px;      
   }
-
   .points{
     position:relative;
-    justify-content: center;
-    align-items: center;
-  }
-  #trofeu-rkn{
-    height: 88.99998474121094px;
-    width: 93.88369750976562px;
-    top: 0px;
-    border-radius: 0px;
-    position: absolute;
-    left: 50%;
-    top: 8%;    
-  }
-  .titulo{
-    color: rgb(255,255,255);
-    font-family: 'Luckiest Guy', cursive;
-    font-size: 5.0rem;
-    line-height: 5.75rem;
-    font-weight: 400;
-    -webkit-text-fill-color: rgba(255, 255, 255, 0.9);
-    -webkit-text-stroke-color: #000000;
-    -webkit-text-stroke-width: 2px;
-  }
-  espaco-
-  #inicio{
-    margin-top: 400px;
-  }
-  .espaco-n{
-    height: 12px;
-  }
-  .subtitulo-tam{
-    width: 70vw;
+    bottom: 1.5rem;
+    left: 2px;
   }
 }

@@ -9,22 +9,8 @@
  * @param {number} nivelP :nível (fácil, médio, dificil)
  * @param {number} faseAtual: fase atual (1,2,3,etc)
  */
-
- //document.getElementById("facil").disabled = true;
- //const button = document. querySelector("facil");
- //button. disabled = true;
- /*
- var AntigaFase = sessionStorage.getItem("fase");
-
- console.log("Fase Antiga " + AntigaFase)
-  console.log("nivelP ----- " + nivelP );
-    */  
-
-  //-----------------------
-
-
 function fase(nivelP, faseAtual){
-  
+
     var nivel = "";
 
     if(nivelP === "facil"){
@@ -35,9 +21,13 @@ function fase(nivelP, faseAtual){
         nivel = 3;
     }
 
-    
-    sessionStorage.setItem("nivel", nivel);
-    sessionStorage.setItem("fase", faseAtual);
-    console.log("fase em cada nivel - nivel" + faseAtual);
+sessionStorage.setItem("nivel", nivel);
+sessionStorage.setItem("fase", faseAtual);
+console.log("fase em cada nivel - nivel" + faseAtual);
 
-}       
+}
+
+
+   
+
+

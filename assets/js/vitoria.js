@@ -5,18 +5,6 @@
  * se get = 1: retorna a pontuação
  * @returns points
  */
-
- var level = sessionStorage.getItem('fase'); 
- var mode = sessionStorage.getItem('nivel'); 
-
-
- //AtualizarNivelFase(mode, level);
- //NivelConcluido();
-
-
- //VerificarFase()
-
-
 function setPoints(get){
     let points = sessionStorage.getItem('pontos');
     if(get === 0){
@@ -59,7 +47,7 @@ function GameFlow(){
    //troquei para lets porque são variaveis locais, boas práticas, lembrar
 
     var level = sessionStorage.getItem('fase'); // fase atual
-    //console.log("fase em cada nivel - vitoria" + level);
+    console.log("fase em cada nivel - vitoria" + level);
     var mode = sessionStorage.getItem('nivel');
 
     var next = document.getElementById("next");
@@ -97,22 +85,22 @@ function GameFlow(){
         console.log(points2)
         again.classList.remove("1");
         next.classList.remove("2");
-        console.log(next.classList)
         again.classList.add("2");
         next.classList.add("3");
+
         Cookies.set('ptsfase2', points2);
         console.log(Cookies.get('ptsfase2'));
 
     } else if (level === "3"){
         let points3 = document.getElementById("points").innerHTML;
-        var next = document.getElementById("next");
-        next.innerHTML = "TERMINAR";
-        location.href = "fim.html";
-        //again.classList.remove("2");
-        //next.classList.remove("3");
+        //document.getElementById("points-fase3").innerHTML = points;
+        console.log(points3)
+        again.classList.remove("2");
+        next.classList.remove("3");
         again.classList.add("3");
         Cookies.set('ptsfase3', points3);
-        
+        next.href = "fim.html";
+        next.innerHTML = "TERMINAR";
     }
 
     if (level === "3" && mode !== "3"){
@@ -129,4 +117,3 @@ function GameFlow(){
 
 setPoints(0);
 GameFlow();
-

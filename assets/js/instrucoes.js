@@ -4,8 +4,6 @@
 function Instructions(){
     var fase = sessionStorage.getItem("fase");
     var nivel = sessionStorage.getItem("nivel");
-    console.log("fase - I " + fase);
-    console.log("nivel - I " + nivel);  
 
     if(fase === "2"){
 
