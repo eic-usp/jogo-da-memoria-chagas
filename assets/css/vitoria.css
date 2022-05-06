@@ -7,6 +7,7 @@
   }
 .btn-playAgain {
   background: #301A67;
+  display: none;
 }
 .points-box{
   width: 9.75rem;
