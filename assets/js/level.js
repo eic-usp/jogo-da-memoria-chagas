@@ -19,7 +19,7 @@ function nextMode(NextLevel, btnNextLevel){
         } else if (mode === "2"){
             btnNextLevel.classList.add("dificil");
         }
-    
+            
         var script = document.createElement("script");  
         script.src = "assets/js/nivel.js";  
         document.body.appendChild(script); 
