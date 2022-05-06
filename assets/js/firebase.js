@@ -25,7 +25,7 @@
     const logoutActionModal = document.getElementById('logout-Action-modal');
     const loguinGoogle = document.getElementById('loguin-Google');
 
-    const emailreset = document.getElementById('email-reset')
+    const emailreset = document.getElementById('EmailReset')
     
    firebase.auth().onAuthStateChanged((user) => {
 
