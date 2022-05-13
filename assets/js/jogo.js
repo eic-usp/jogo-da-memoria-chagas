@@ -81,9 +81,8 @@
             for(var i = 0; i < 16; i++){
                 /*img é objeto, indices textuais, funções = métodos */
                 var img = {
-                        src: "assets/img/mobile/fase1/" + i + ".png",
-                        id: i%8
-                    
+                    src: "assets/img/mobile/fase1/" + i + ".png",
+                    id: i%8                    
                 };
               //  console.log("id das imagens:" + img.id);
                 images.push(img);
@@ -96,16 +95,16 @@
         
             for(var i = 0; i < 8; i++){
                 var img = {
-                        src: "assets/img/mobile/fase1/" + i + ".png",
-                        id: i%8
-                };
+                    src: "assets/img/mobile/fase1/" + i + ".png",
+                    id: i%8
+            };
                 images.push(img);
             }
 
             for(var i = 8; i < 16; i++){
                 var img = {
-                        src: "assets/img/mobile/fase2/" + i + ".png",
-                        id: i%8
+                    src: "assets/img/mobile/fase2/" + i + ".png",
+                    id: i%8
                 };
                 images.push(img);
             } 
@@ -152,73 +151,45 @@
         
         var size = $(window).width();
 
-        
-
-        if(size >= 600){ /*Versão Desktop e tablet*/
-            
-            /*tentar criar uma função e modularizar essa parte passando o tamanho da tela por parâmetro, ver se vai funcionar*/
-            for(var i = 0; i < 16; i++){
+        /*tentar criar uma função e modularizar essa parte passando o tamanho da tela por parâmetro, ver se vai funcionar*/
+        for(var i = 0; i < 16; i++){
                 
         
-                frontFaces[i].classList.remove("flipped", "match");
-                backFaces[i].classList.remove("flipped", "match");
+            frontFaces[i].classList.remove("flipped", "match");
+            backFaces[i].classList.remove("flipped", "match");
 
-                /*Pode usar get element by id, porem o query selector é mais rápido*/
-                var card = document.querySelector("#card" + i);
-                // console.log(card);
+            /*Pode usar get element by id, porem o query selector é mais rápido*/
+            var card = document.querySelector("#card" + i);
+            // console.log(card);
+
+            if(size >= 600){ /*Versão Desktop e tablet*/
                 /*mod: resto da divisao */
-                //card.style.left = i % 4 === 0? 0 + "px" : i % 4 * 140 + "px"; 
                 card.style.left = (i % 4) * 140 + "px"; 
-
 
                 //se 0 ou multiplo de 4 = 0
                 //caso contrário 140 * resto -> 140 * resto OU 0
-
                 card.style.top = (Math.floor(i / 4) * 130)  + "px"; //(((i / 4).floor() + 1) * 0)
-                
-                card.addEventListener("click", flipCard, false);
-                
-                backgroundLevel(level);
-
-                /*todos os cards tem imagem e id */
-                frontFaces[i].style.background = "url('"+ images[i].src +"')";
-                frontFaces[i].setAttribute("id",images[i].id);
-                frontFaces[i].style.backgroundRepeat = "no-repeat";
-
-                if(i === 15){
-                    //mudar o texto
-                    ShowStart();
-                    InicialTime(mode); 
-                }
+            } else { /*Versão Mobile*/
+                card.style.left = (i % 4) * 140 + "px"; 
+                card.style.top = (Math.floor(i / 4) * 130)  + "px"; //(((i / 4).floor() + 1) * 0)
             }
 
-        } else { /*Versão Mobile*/
-            for(var i = 0; i < 16; i++){
+            card.addEventListener("click", flipCard, false);
+                
+            backgroundLevel(level);
 
-                frontFaces[i].classList.remove("flipped", "match");
-                backFaces[i].classList.remove("flipped", "match");
-                var card = document.querySelector("#card" + i);
-                //card.style.left = i % 4 === 0? 6 + "px" : i % 4 * 76 + 6 + "px"; 
-                card.style.left = (i % 4) * 76 + "px"; 
+            /*todos os cards tem imagem e id */
+            frontFaces[i].style.background = "url('"+ images[i].src +"')";
+            frontFaces[i].setAttribute("id",images[i].id);
+            frontFaces[i].style.backgroundRepeat = "no-repeat";
 
-                card.style.top = (Math.floor(i / 4) * 130)  + "px"; //(((i / 4).floor() + 1) * 0)
-                                
-                card.addEventListener("click", flipCard, false);
-
-                if(i === 1){
-                    backgroundLevel(level);
-                }
-        
-                frontFaces[i].style.background = "url('"+ images[i].src +"')";
-                frontFaces[i].setAttribute("id",images[i].id);
-                frontFaces[i].style.backgroundRepeat = "no-repeat";
-
-                if(i === 15){
-                    ShowStart();
-                    InicialTime(mode);
-                }
+            if(i === 15){
+                //mudar o texto
+                ShowStart();
+                InicialTime(mode); 
             }
         }
+        
     }
 
     /**
@@ -262,64 +233,19 @@
     function InicialTime(mode){
       
         var faces =  document.getElementsByClassName("face");
+
         for(i = 0; i < 32; i++){
             faces[i].classList.toggle("flipped");
         }
-        if(mode === "1" && level == "1"){
-            setTimeout(function (){
-                for(i = 0; i < 32; i++){
-                    faces[i].classList.toggle("flipped");
-                }
-            }, 4000);        
-        } else if(mode == "1" && level == "2"){
-            setTimeout(function(){
-                for(i = 0; i < 32; i++){
-                    faces[i].classList.toggle("flipped");
-                }
-            },5000);
-        } else if(mode == "1" && level == "3"){
-            setTimeout(function(){
-                for(i = 0; i < 32; i++){
-                    faces[i].classList.toggle("flipped");
-                }
-            },6000);
-        } else if(mode === "2" && level == "1"){
-            setTimeout(function (){
-                for(i = 0; i < 32; i++){
-                    faces[i].classList.toggle("flipped");
-                }
-            }, 3000);
-        } else if(mode == "2" && level == "2"){
-            setTimeout(function (){
-                for(i = 0; i < 32; i++){
-                    faces[i].classList.toggle("flipped");
-                }
-            }, 4000);                 
-        } else if(mode === "2" && level == "3"){
-            setTimeout(function (){
-                for(i = 0; i < 32; i++){
-                    faces[i].classList.toggle("flipped");
-                }
-            }, 5000);
-        } else if(mode === "3" && level == "1"){
-            setTimeout(function (){
-                for(i = 0; i < 32; i++){
-                    faces[i].classList.toggle("flipped");
-                }
-            }, 2000);
-        } else if(mode === "3" && level == "2"){
-            setTimeout(function (){
-                for(i = 0; i < 32; i++){
-                    faces[i].classList.toggle("flipped");
-                }
-            }, 3000);   
-        } else if(mode === "3" && level == "3"){
-            setTimeout(function (){
-                for(i = 0; i < 32; i++){
-                    faces[i].classList.toggle("flipped");
-                }
-            }, 4000);         
-        }        
+
+        sleepTime = (4000 - parseInt(mode)*1000) + (parseInt(level)*1000);
+        
+        setTimeout(function (){
+            for(i = 0; i < 32; i++){
+                faces[i].classList.toggle("flipped");
+            }
+        }, sleepTime);
+        
     }
     
     /* ------------- Mudar a instrução no ínicio do jogo ------------- */
@@ -400,20 +326,22 @@
     
                 if(flippedCards[0].childNodes[3].id === flippedCards[1].childNodes[3].id){
     
-                    flippedCards[0].childNodes[1].classList.toggle("match");
-                    flippedCards[0].childNodes[3].classList.toggle("match");
-                    flippedCards[1].childNodes[1].classList.toggle("match");
-                    flippedCards[1].childNodes[3].classList.toggle("match");
+                    for(let i = 0; i < 2; i++){
+                        for(let j = 1; j < 4; j+=2){
+                            flippedCards[i].childNodes[j].classList.toggle("match");
+                        }
+                    }
                         
                     //sinal de desaparecimento da carta                        
                     matchCardsSign();
 
                     //efeito de desaparecimento da carta
                         
-                    flippedCards[0].childNodes[1].classList.add("pair");
-                    flippedCards[0].childNodes[3].classList.add("pair");
-                    flippedCards[1].childNodes[1].classList.add("pair");
-                    flippedCards[1].childNodes[3].classList.add("pair");
+                    for(let i = 0; i < 2; i++){
+                        for(let j = 1; j < 4; j+=2){
+                            flippedCards[i].childNodes[j].classList.add("pair");
+                        }
+                    }
                     
                     brilho();
                     //matches = 7;
@@ -445,11 +373,11 @@
         if (mode === "1"){
             await sleep(3000) 
             console.log(" Sleep Fácil");
-            flippedCards[0].childNodes[1].classList.toggle("flipped");
-            flippedCards[0].childNodes[3].classList.toggle("flipped");
-            flippedCards[1].childNodes[1].classList.toggle("flipped");
-            flippedCards[1].childNodes[3].classList.toggle("flipped");
-     
+            for(let i = 0; i < 2; i++){
+                for(let j = 1; j < 4; j+=2){
+                    flippedCards[i].childNodes[j].classList.toggle("flipped");
+                }
+            }
             flippedCards = [];
     
             fail++;
@@ -458,10 +386,11 @@
         }else if(mode === "2"){
             await sleep(2000) 
             console.log(" Sleep Médio");
-            flippedCards[0].childNodes[1].classList.toggle("flipped");
-            flippedCards[0].childNodes[3].classList.toggle("flipped");
-            flippedCards[1].childNodes[1].classList.toggle("flipped");
-            flippedCards[1].childNodes[3].classList.toggle("flipped");
+            for(let i = 0; i < 2; i++){
+                for(let j = 1; j < 4; j+=2){
+                    flippedCards[i].childNodes[j].classList.toggle("flipped");
+                }
+            }
      
             flippedCards = [];
             fail++;
@@ -470,10 +399,11 @@
         }else{
             await sleep(1000) 
             console.log(" Sleep Difícil");
-            flippedCards[0].childNodes[1].classList.toggle("flipped");
-            flippedCards[0].childNodes[3].classList.toggle("flipped");
-            flippedCards[1].childNodes[1].classList.toggle("flipped");
-            flippedCards[1].childNodes[3].classList.toggle("flipped");
+            for(let i = 0; i < 2; i++){
+                for(let j = 1; j < 4; j+=2){
+                    flippedCards[i].childNodes[j].classList.toggle("flipped");
+                }
+            }
      
             flippedCards = [];
             fail++;
@@ -524,13 +454,13 @@
     function matchCardsSign(){
         console.log("ta chamando");
         var imgMatchSign = document.getElementById("imgMatchSign");
-        imgMatchSign.classList.remove("hideMatchSing");
+        imgMatchSign.classList.remove("hideMatchSign");
         var height =  $(window).height();
         imgMatchSign.style.top = Math.round(height/2) + "px";
 
         setTimeout(function(){
             imgMatchSign.style.top = 250 + "px";
-            imgMatchSign.classList.add("hideMatchSing");
+            imgMatchSign.classList.add("hideMatchSign");
         },1000);
     }  
 }

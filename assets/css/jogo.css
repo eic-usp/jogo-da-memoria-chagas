@@ -62,7 +62,7 @@
 .score{
     display:none;
 }
-.hideMatchSing{
+.hideMatchSign{
     display:none;
     z-index: 20;
     position:absolute;
