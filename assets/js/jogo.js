@@ -1,8 +1,5 @@
 (function (){
 
-    /*Não está mostrando a imagem de par correto e não está entendendo que algumas cartas sao pares */
-    /*porque não está contando par se eu não mudei nada */
-
     level = sessionStorage.getItem('fase'); // fase 1, 2, 3
     var mode = sessionStorage.getItem('nivel'); // facil/medio/dificil 
 
@@ -18,7 +15,7 @@
     var images = [];
     var matches = 0;
     var fail = 0;
-    /*Imagens desktop*/
+    /* ----------------- Imagens desktop e tablet ----------------- */
     if(size >= 600){
         if (level === "1"){
 
@@ -27,9 +24,8 @@
             for(var i = 0; i < 16; i++){
 
                 var img = {
-                        src: "assets/img/desktop/fase1/" + i + ".png",
-                        id: i%8
-                    
+                    src: "assets/img/desktop/fase1/" + i + ".png",
+                    id: i%8    
                 };
                // console.log("id das imagens:" + img.id);
                 images.push(img);
@@ -41,43 +37,41 @@
         
             for(var i = 0; i < 8; i++){
                 var img = {
-                        src: "assets/img/desktop/fase1/" + i + ".png",
-                        id: i%8
+                    src: "assets/img/desktop/fase1/" + i + ".png",
+                    id: i%8
                 };
                 images.push(img);
             }
 
             for(var i = 8; i < 16; i++){
                 var img = {
-                        src: "assets/img/desktop/fase2/" + i + ".png",
-                        id: i%8
+                    src: "assets/img/desktop/fase2/" + i + ".png",
+                    id: i%8
                 };
                 images.push(img);
             } 
-
         } else if(level === "3"){
 
             document.getElementsByTagName('title')[0].innerHTML= "Fase 3";
 
             for(var i = 0; i < 8; i++){
                 var img = {
-                        src: "assets/img/desktop/fase3/" + i + ".png",
-                        id: i%8
-                    };
+                    src: "assets/img/desktop/fase3/" + i + ".png",
+                    id: i%8
+                };
                     images.push(img);
                 }
 
             for(var i = 8; i < 16; i++){
                 var img = {
-                        src: "assets/img/desktop/fase2/" + i + ".png",
-                        id: i%8
+                    src: "assets/img/desktop/fase2/" + i + ".png",
+                    id: i%8
                 };
                 images.push(img);
             } 
-
         }
-
-    }else{ /*Imagens mobile*/
+     /* ---------------------- Imagens mobile ---------------------- */
+    }else{
         console.log("fase");
 
         if (level === "1"){
@@ -132,7 +126,7 @@
             for(var i = 8; i < 16; i++){
                 var img = {
                         src: "assets/img/mobile/fase2/" + i + ".png",
-                        id: i%8
+                        id: i%8 // assets/img/mobile/fase + (3 - Math.floor(i/8)).toString() + "/"
                 };
                 images.push(img);
             } 
@@ -142,7 +136,7 @@
    
 
     startGame();
-    /** começa o jogo */
+    /* ----------------------- começa o jogo ----------------------- */
     function startGame(){   
         
         matches = 0;
@@ -160,7 +154,7 @@
 
         
 
-        if(size > 1000){ /*Versão Desktop*/
+        if(size >= 600){ /*Versão Desktop e tablet*/
             
             /*tentar criar uma função e modularizar essa parte passando o tamanho da tela por parâmetro, ver se vai funcionar*/
             for(var i = 0; i < 16; i++){
@@ -173,22 +167,17 @@
                 var card = document.querySelector("#card" + i);
                 // console.log(card);
                 /*mod: resto da divisao */
-                card.style.left = i % 4 === 0? 10 + "px" : i % 4 * 140 + 10 + "px"; 
+                //card.style.left = i % 4 === 0? 0 + "px" : i % 4 * 140 + "px"; 
+                card.style.left = (i % 4) * 140 + "px"; 
 
-                if(i < 4){
-                    card.style.top = 0 + "px";
-                } else if(i < 8){
-                    card.style.top = 130 + "px";
-                }else if(i < 12){
-                    card.style.top = 260 + "px";
-                } else{
-                    card.style.top = 390 + "px";
-                }
+
+                //se 0 ou multiplo de 4 = 0
+                //caso contrário 140 * resto -> 140 * resto OU 0
+
+                card.style.top = (Math.floor(i / 4) * 130)  + "px"; //(((i / 4).floor() + 1) * 0)
                 
                 card.addEventListener("click", flipCard, false);
                 
-
-        
                 backgroundLevel(level);
 
                 /*todos os cards tem imagem e id */
@@ -203,62 +192,17 @@
                 }
             }
 
-        }else if (size >= 600 && size <= 1000) { /*Versão tablet*/
-
-            for(let i = 0; i < 16; i++){
-
-                frontFaces[i].classList.remove("flipped", "match");
-                backFaces[i].classList.remove("flipped", "match");
-                
-                var card = document.querySelector("#card" + i);
-        
-                card.style.left = i % 4 === 0? 0 + "px" : i % 4 * 140 + 10 + "px"; 
-
-                if(i < 4){
-                    card.style.top = 0 + "px";
-                } else if(i < 8){
-                    card.style.top = 130 + "px";
-                }else if(i < 12){
-                    card.style.top = 260 + "px";
-                } else{
-                    card.style.top = 390 + "px";
-                }
-                
-                card.addEventListener("click", flipCard, false);
-                
-
-                if(i === 1){
-                    backgroundLevel(level);
-                }
-        
-                frontFaces[i].style.background = "url('"+images[i].src +"')";
-                frontFaces[i].setAttribute("id",images[i].id);
-                frontFaces[i].style.backgroundRepeat = "no-repeat";
-
-                if(i === 15){
-                    ShowStart();
-                    InicialTime(mode); 
-                }
-            }
-
         } else { /*Versão Mobile*/
             for(var i = 0; i < 16; i++){
 
                 frontFaces[i].classList.remove("flipped", "match");
                 backFaces[i].classList.remove("flipped", "match");
                 var card = document.querySelector("#card" + i);
-                card.style.left = i % 4 === 0? 6 + "px" : i % 4 * 76 + 6 + "px"; 
-        
-                if(i < 4){
-                    card.style.top = 5 + "px";
-                } else if(i < 8){
-                    card.style.top = 80 + "px";
-                }else if(i < 12){
-                    card.style.top = 155 + "px";
-                } else {
-                    card.style.top = 230 + "px";
-                }
-                
+                //card.style.left = i % 4 === 0? 6 + "px" : i % 4 * 76 + 6 + "px"; 
+                card.style.left = (i % 4) * 76 + "px"; 
+
+                card.style.top = (Math.floor(i / 4) * 130)  + "px"; //(((i / 4).floor() + 1) * 0)
+                                
                 card.addEventListener("click", flipCard, false);
 
                 if(i === 1){
@@ -273,7 +217,7 @@
                     ShowStart();
                     InicialTime(mode);
                 }
-             }
+            }
         }
     }
 
@@ -283,19 +227,20 @@
      */
     function backgroundLevel(level){
         // console.log("entrou");
-            var backFaces = document.getElementsByClassName("back");
-            for(var i = 0; i < backFaces.length; i++){
-                if(level === "1"){
-                    backFaces[i].classList.add("b1");
-                }else if(level === "2"){
-                    backFaces[i].classList.remove("b1");
-                    backFaces[i].classList.add("b2");
-                } else{
-                    backFaces[i].classList.remove("b2");
-                    backFaces[i].classList.add("b3");
-                }
+        var backFaces = document.getElementsByClassName("back");
+        for(var i = 0; i < backFaces.length; i++){
+            if(level === "1"){
+                backFaces[i].classList.add("b1");
+            }else if(level === "2"){
+                backFaces[i].classList.remove("b1");
+                backFaces[i].classList.add("b2");
+            } else{
+                backFaces[i].classList.remove("b2");
+                backFaces[i].classList.add("b3");
             }
+        }
     }
+
     /**
      * Embaralhar as cartas
      * @param {*} images vetor de imagens organizadas
@@ -312,81 +257,72 @@
         }
         return sorted;
     }
-    /** 
-     *  Virar as cartas no inicio do jogo para a pessoa memorizar
-     */
-     function InicialTime(mode){
+
+    /* -- Virar as cartas no inicio do jogo para a pessoa memorizar -- */
+    function InicialTime(mode){
       
         var faces =  document.getElementsByClassName("face");
         for(i = 0; i < 32; i++){
             faces[i].classList.toggle("flipped");
-            }
-            if(mode === "1" && level == "1"){
-                setTimeout(function (){
+        }
+        if(mode === "1" && level == "1"){
+            setTimeout(function (){
                 for(i = 0; i < 32; i++){
                     faces[i].classList.toggle("flipped");
-                    }
-                }, 4000);
-            
-            } else if(mode == "1" && level == "2"){
-                setTimeout(function(){
-                    for(i = 0; i < 32; i++){
-                        faces[i].classList.toggle("flipped");
-                    }
-                },5000);
-            } else if(mode == "1" && level == "3"){
-                setTimeout(function(){
-                    for(i = 0; i < 32; i++){
-                        faces[i].classList.toggle("flipped");
-                    }
-                },6000);
-            }
-            else if(mode === "2" && level == "1"){
-                setTimeout(function (){
-                    for(i = 0; i < 32; i++){
-                        faces[i].classList.toggle("flipped");
-                        }
-                    }, 3000);
-
-            } else if(mode == "2" && level == "2"){
-                setTimeout(function (){
-                    for(i = 0; i < 32; i++){
-                        faces[i].classList.toggle("flipped");
-                        }
-                    }, 4000); 
-                        
-            } else if(mode === "2" && level == "3"){
-                setTimeout(function (){
-                    for(i = 0; i < 32; i++){
-                        faces[i].classList.toggle("flipped");
-                        }
-                    }, 5000);
-            }
-            else if(mode === "3" && level == "1"){
-                setTimeout(function (){
-                    for(i = 0; i < 32; i++){
-                        faces[i].classList.toggle("flipped");
-                        }
-                    }, 2000);
-            } else if(mode === "3" && level == "2"){
-                setTimeout(function (){
-                    for(i = 0; i < 32; i++){
-                        faces[i].classList.toggle("flipped");
-                        }
-                    }, 3000);   
-            } else if(mode === "3" && level == "3"){
-                setTimeout(function (){
-                    for(i = 0; i < 32; i++){
-                        faces[i].classList.toggle("flipped");
-                        }
-                    }, 4000);         
-            }        
+                }
+            }, 4000);        
+        } else if(mode == "1" && level == "2"){
+            setTimeout(function(){
+                for(i = 0; i < 32; i++){
+                    faces[i].classList.toggle("flipped");
+                }
+            },5000);
+        } else if(mode == "1" && level == "3"){
+            setTimeout(function(){
+                for(i = 0; i < 32; i++){
+                    faces[i].classList.toggle("flipped");
+                }
+            },6000);
+        } else if(mode === "2" && level == "1"){
+            setTimeout(function (){
+                for(i = 0; i < 32; i++){
+                    faces[i].classList.toggle("flipped");
+                }
+            }, 3000);
+        } else if(mode == "2" && level == "2"){
+            setTimeout(function (){
+                for(i = 0; i < 32; i++){
+                    faces[i].classList.toggle("flipped");
+                }
+            }, 4000);                 
+        } else if(mode === "2" && level == "3"){
+            setTimeout(function (){
+                for(i = 0; i < 32; i++){
+                    faces[i].classList.toggle("flipped");
+                }
+            }, 5000);
+        } else if(mode === "3" && level == "1"){
+            setTimeout(function (){
+                for(i = 0; i < 32; i++){
+                    faces[i].classList.toggle("flipped");
+                }
+            }, 2000);
+        } else if(mode === "3" && level == "2"){
+            setTimeout(function (){
+                for(i = 0; i < 32; i++){
+                    faces[i].classList.toggle("flipped");
+                }
+            }, 3000);   
+        } else if(mode === "3" && level == "3"){
+            setTimeout(function (){
+                for(i = 0; i < 32; i++){
+                    faces[i].classList.toggle("flipped");
+                }
+            }, 4000);         
+        }        
     }
     
-
-    /**
-     *  Mudar a instrução no ínicio do jogo
-     */
+    /* ------------- Mudar a instrução no ínicio do jogo ------------- */
     function ShowStart(){
         setTimeout(function(){ 
             document.getElementById("titulo-jogo").innerHTML = "Vire os cartões";
@@ -395,170 +331,118 @@
         }, 5000);
     }
  
- /**
-  * Função para virar as cartas e contar os matches
-  *  */
-  var cont = 0;
+    var cont = 0;
 
-  //Remove o brilho dos pares feitos
-  function brilho(){
-    let info = [];
-     for(i=0; i< 16; i++){
-        info[i] = document.getElementById("card"+i); //Recolhe todos os cards
-         console.log(info[i]);
-     }
-     for(i=0; i< info.length; i++){
-         info[i] = info[i].childNodes[3]; //faz com que os cards se tornem "face front"
-         console.log(info[i]);
-         if(info[i].id === flippedCards[0].childNodes[3].id){
-             //info.splice(info.indexOf(i));
-             info[i].parentNode.style.boxShadow = "none"; //remove o brilho da carta associada
-         }
-     }
-     console.log(info);
-     info = [];
- }
- 
- function flipCard(mode){
+    /* -------------- Remove o brilho dos pares feitos -------------- */
+    function brilho(){
+        let info = [];
+        for(i=0; i< 16; i++){
+            info[i] = document.getElementById("card"+i); //Recolhe todos os cards
+            console.log(info[i]);
+        }
+        for(i=0; i< info.length; i++){
+            info[i] = info[i].childNodes[3]; //faz com que os cards se tornem "face front"
+            console.log(info[i]);
+            
+            if(info[i].id === flippedCards[0].childNodes[3].id){
+                //info.splice(info.indexOf(i));
+                info[i].parentNode.style.boxShadow = "none"; //remove o brilho da carta associada
+            }
+        }
+        console.log(info);
+        info = [];
+    }
 
-    
-            cont++;
-            console.log("flipCard ----------------- " + cont)
-            console.log("Tamanho - " + flippedCards.length);
-            //verificar porque chamo countPoints fail e countPoints matches
-            if(flippedCards.length < 2){
-                console.log("Entrou no IF 0 ----------");
+    /* -------------------------- flipCard -------------------------- */
+    function flipCard(mode){
+
+        cont++;
+        console.log("flipCard ----------------- " + cont)
+        console.log("Tamanho - " + flippedCards.length);
+
+        //verificar porque chamo countPoints fail e countPoints matches
+        if(flippedCards.length < 2){
+            console.log("Entrou no IF 0 ----------");
                                 
-                /*rotacionar as faces 180 graus*/
-                /*getElementsByClassName retorna uma lista */
-                var faces =  this.getElementsByClassName("face");
+            /*rotacionar as faces 180 graus*/
+            /*getElementsByClassName retorna uma lista */
+            var faces =  this.getElementsByClassName("face");
                 
-                // tive que mudar para 3 para que as cartas virem 
-                //impedir que o usuario tente clicar duas vezes na mesma carta
-                if(faces[0].classList.length > 3){
-                    return; 
-                }
+            // tive que mudar para 3 para que as cartas virem 
+            //impedir que o usuario tente clicar duas vezes na mesma carta
+            if(faces[0].classList.length > 3){
+                return; 
+            }
 
-                faces[0].classList.toggle("flipped");
-                faces[1].classList.toggle("flipped");
+            faces[0].classList.toggle("flipped");
+            faces[1].classList.toggle("flipped");
 
-                /*toggle = switch, se nao existe adiciona, se ja existe, remove */
-                //console.log("Tamanho - 1- " + flippedCards.length);
-                flippedCards.push(this);
-                //console.log("Tamanho - 2- " + flippedCards.length);
-                /*
-                console.log("1" + flippedCards[0].childNodes[1]);
-                console.log("2" +  flippedCards[0].childNodes[3]);
-                console.log("3" + flippedCards[1].childNodes[1]);
-                console.log("4" + flippedCards[1].childNodes[3]);     
-                */   
+            /*toggle = switch, se nao existe adiciona, se ja existe, remove */
+            //console.log("Tamanho - 1- " + flippedCards.length);
+            flippedCards.push(this);
+            //console.log("Tamanho - 2- " + flippedCards.length);
+            /*
+            console.log("1" + flippedCards[0].childNodes[1]);
+            console.log("2" +  flippedCards[0].childNodes[3]);
+            console.log("3" + flippedCards[1].childNodes[1]);
+            console.log("4" + flippedCards[1].childNodes[3]);     
+            */   
                 
-                console.log(" -- ID0 - " + flippedCards[0].childNodes[3].id);
-                console.log(" -- ID1 - " + flippedCards[1].childNodes[3].id);
+            console.log(" -- ID0 - " + flippedCards[0].childNodes[3].id);
+            console.log(" -- ID1 - " + flippedCards[1].childNodes[3].id);
                 
                 
-                if(flippedCards.length === 2 ){
+            if(flippedCards.length === 2 ){
 
-                    console.log("Entrou no IF 1 ----------");
+                console.log("Entrou no IF 1 ----------");
+                
+                console.log("---------- ----------");
+    
+                if(flippedCards[0].childNodes[3].id === flippedCards[1].childNodes[3].id){
+    
+                    flippedCards[0].childNodes[1].classList.toggle("match");
+                    flippedCards[0].childNodes[3].classList.toggle("match");
+                    flippedCards[1].childNodes[1].classList.toggle("match");
+                    flippedCards[1].childNodes[3].classList.toggle("match");
+                        
+                    //sinal de desaparecimento da carta                        
+                    matchCardsSign();
+
+                    //efeito de desaparecimento da carta
+                        
+                    flippedCards[0].childNodes[1].classList.add("pair");
+                    flippedCards[0].childNodes[3].classList.add("pair");
+                    flippedCards[1].childNodes[1].classList.add("pair");
+                    flippedCards[1].childNodes[3].classList.add("pair");
                     
-                    console.log("---------- ----------");
-        
-                    if(flippedCards[0].childNodes[3].id === flippedCards[1].childNodes[3].id){
+                    brilho();
+                    //matches = 7;
+                    matches++;
 
-                        
+                    flippedCards = [];
 
-                        flippedCards[0].childNodes[1].classList.toggle("match");
-                        flippedCards[0].childNodes[3].classList.toggle("match");
-                        flippedCards[1].childNodes[1].classList.toggle("match");
-                        flippedCards[1].childNodes[3].classList.toggle("match");
-                        
-                        //sinal de desaparecimento da carta
-                        
-                        matchCardsSign();
+                    CountPoint();
 
-                        //efeito de desaparecimento da carta
-                        
-
-                        flippedCards[0].childNodes[1].classList.add("pair");
-                        flippedCards[0].childNodes[3].classList.add("pair");
-                        flippedCards[1].childNodes[1].classList.add("pair");
-                        flippedCards[1].childNodes[3].classList.add("pair");
-                    
-                        brilho();
-                        matches=7;
-                        matches++;
-
-                        flippedCards = [];
-
-                        CountPoint();
-
-                        if(matches === 8){
-                            victory();
-                        }
-
-                    }else{
+                    if(matches === 8){
+                        victory();
+                    }    
+                }else{
                     timeAction(mode);
                     console.log("errou -------")
-                    }
-                    //setTimeout(()=>{console.log("this is the first message")}, 3000);
-                    
-                    //setTimeout(() => {console.log("this is the first message")}, 50000);
-                    
-                    
-            
-            
-                    //console.log(" teste 2 - " + flippedCards.classList.contains)
-                    /*
-                    flippedCards[0].childNodes[1].classList.toggle("flipped");
-                    flippedCards[0].childNodes[3].classList.toggle("flipped");
-                    flippedCards[1].childNodes[1].classList.toggle("flipped");
-                    flippedCards[1].childNodes[3].classList.toggle("flipped");
-             
-                    flippedCards = [];
-            
-                    fail++;
-                    CountPoints(fail);
-                   */
-
-                    
+                }               
                 }
-                
-                
-
             } 
-
-
-            //console.log("Entrou no else ---- ");
-            //timeSensativeAction();
-                /*
-            
-            
-            
-            
-            //console.log(" teste 2 - " + flippedCards.classList.contains)
-           
-            flippedCards[0].childNodes[1].classList.toggle("flipped");
-            flippedCards[0].childNodes[3].classList.toggle("flipped");
-            flippedCards[1].childNodes[1].classList.toggle("flipped");
-            flippedCards[1].childNodes[3].classList.toggle("flipped");
-             
-            flippedCards = [];
-            
-            fail++;
-            CountPoints(fail);
-            */
-            
         }
+    
+    /* --------------------------- sleep --------------------------- */
+    const sleep = (milliseconds) => {
+        return new Promise(resolve => setTimeout(resolve, milliseconds))
+    }
 
-        //sleep
-        const sleep = (milliseconds) => {
-            return new Promise(resolve => setTimeout(resolve, milliseconds))
-          }
-
-        async function timeAction(){ 
-            //do something here
-           // console.log(" Sleep ------");
-            if (mode === "1"){
+    async function timeAction(){ 
+        //do something here
+       // console.log(" Sleep ------");
+        if (mode === "1"){
             await sleep(3000) 
             console.log(" Sleep Fácil");
             flippedCards[0].childNodes[1].classList.toggle("flipped");
@@ -571,8 +455,8 @@
             fail++;
             CountPoints(fail);
 
-            }else if(mode === "2"){
-                await sleep(2000) 
+        }else if(mode === "2"){
+            await sleep(2000) 
             console.log(" Sleep Médio");
             flippedCards[0].childNodes[1].classList.toggle("flipped");
             flippedCards[0].childNodes[3].classList.toggle("flipped");
@@ -583,8 +467,8 @@
             fail++;
             CountPoints(fail);
 
-            }else{
-                await sleep(1000) 
+        }else{
+            await sleep(1000) 
             console.log(" Sleep Difícil");
             flippedCards[0].childNodes[1].classList.toggle("flipped");
             flippedCards[0].childNodes[3].classList.toggle("flipped");
@@ -594,101 +478,65 @@
             flippedCards = [];
             fail++;
             CountPoints(fail);
+        }                
+    }
+    /* ----------------------- conta pontos ----------------------- */
+    /**
+    * Função para contar os pontos feitos na fase
+    * @param {number} fail
+    * recebe o numero de fails para calcular a pontuação total
+    * pontuação final = 100 - (errados*2)
+    * Nunca está abaixo de 50
+    */
+    function CountPoints(){
+        var ptsant = document.getElementById("points").textContent;
+        ptsant = parseInt(ptsant);
 
-            }
-            
-          }
-
-
-         /**
-          * Função para contar os pontos feitos na fase
-          * @param {number} fail
-          * recebe o numero de fails para calcular a pontuação total
-          * pontuação final = 100 - (errados*2)
-          * Nunca está abaixo de 50
-          */
-        function CountPoints(){
-            
-            var ptsant = document.getElementById("points").textContent;
-             ptsant = parseInt(ptsant);
-
-             if(ptsant > 50){
-                if(level == "1"){ 
-                    pts = ptsant - 2;
-                    document.getElementById("points").innerHTML =  pts;
-                }else if(level == "2"){
-                    pts = ptsant - 4;
-                    document.getElementById("points").innerHTML =  pts;
-                }else if(level == "3"){
-                    pts = ptsant - 6;
-                    document.getElementById("points").innerHTML =  pts;
-                }
-             }
+        if(ptsant > 50){
+            pts = ptsant - (parseInt(level) * 2);
+            document.getElementById("points").innerHTML =  pts;
         }
-        function CountPoint(){
-            
-            var ptsant = document.getElementById("points").textContent;
-             ptsant = parseInt(ptsant);
+    }
+    function CountPoint(){            
+        var ptsant = document.getElementById("points").textContent;
+        ptsant = parseInt(ptsant);
 
-            if(level == "1"){ 
-                pts = ptsant + 2;
-                document.getElementById("points").innerHTML =  pts;
-            } else if(level == "2"){
-                pts = ptsant + 4;
-                document.getElementById("points").innerHTML = pts;
-            }else if(level == "3"){
-                pts = ptsant + 6;
-                document.getElementById("points").innerHTML = pts;
-            }
-        }
-
-     /**
-      * Função para chamar a página de vitória
-      */
+        pts = ptsant + (parseInt(level) * 2);
+        document.getElementById("points").innerHTML =  pts;
+    }
+    
+    /* ------------------ chamar página vitória ------------------ */
     function victory(){
 
-            var level = sessionStorage.getItem('fase');
+        var level = sessionStorage.getItem('fase');
             
-            sessionStorage.setItem("fase", level);
-            sessionStorage.setItem("nivel", mode);
+        sessionStorage.setItem("fase", level);
+        sessionStorage.setItem("nivel", mode);
 
-            var points = document.getElementById("points").innerHTML;
+        var points = document.getElementById("points").innerHTML;
 
-            sessionStorage.setItem("pontos", points);
+        sessionStorage.setItem("pontos", points);
 
-            window.location.replace("vitoria.html");
-        }
-         /**
-          * Sinaliza quando o jogador acerta um par
-          */    
+        window.location.replace("vitoria.html");
+    }
+        
+    /* ------------- Sinaliza quando um par é feito ------------- */
     function matchCardsSign(){
-            console.log("ta chamando");
-            var imgMatchSing = document.getElementById("imgMatchSing");
-            imgMatchSing.classList.remove("hideMatchSing");
-            var height =  $(window).height();
-            imgMatchSing.style.top = Math.round(height/2) + "px";
-             setTimeout(function(){
-                imgMatchSing.style.top = 250 + "px";
-                imgMatchSing.classList.add("hideMatchSing");
-            },1000);
-        }
-        /*function matchCardsSign(){
-            imgMatchSing.style.zIndex = 1;
-            var height =  $(window).height();
-            imgMatchSing.style.top = Math.round(height/2) + "px";
-            imgMatchSing.style.opacity = 0;
-            setTimeout(function(){
-                imgMatchSing.style.zIndex = -1;
-                imgMatchSing.style.top = 250 + "px";
-                imgMatchSing.style.opacity = 1;
-            },1000);
-        */
-  
+        console.log("ta chamando");
+        var imgMatchSign = document.getElementById("imgMatchSign");
+        imgMatchSign.classList.remove("hideMatchSing");
+        var height =  $(window).height();
+        imgMatchSign.style.top = Math.round(height/2) + "px";
+
+        setTimeout(function(){
+            imgMatchSign.style.top = 250 + "px";
+            imgMatchSign.classList.add("hideMatchSing");
+        },1000);
+    }  
 }
 )();
-/**
- * Sair da página de jogo
- */
+
+/* ------------------- Sair da página de jogo ------------------- */
 function quitGame(){
     window.location.replace("index.html");
 }
