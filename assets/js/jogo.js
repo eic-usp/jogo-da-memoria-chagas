@@ -15,180 +15,116 @@
     var images = [];
     var matches = 0;
     var fail = 0;
+    var sty;
     /* ----------------- Imagens desktop e tablet ----------------- */
     if(size >= 600){
-        if (level === "1"){
-
-            document.getElementsByTagName('title')[0].innerHTML= "Fase 1";
-
-            for(var i = 0; i < 16; i++){
-
-                var img = {
-                    src: "assets/img/desktop/fase1/" + i + ".png",
-                    id: i%8    
-                };
-               // console.log("id das imagens:" + img.id);
-                images.push(img);
-            } 
-
-        } else if (level === "2"){
-
-            document.getElementsByTagName('title')[0].innerHTML= "Fase 2";
-        
-            for(var i = 0; i < 8; i++){
-                var img = {
-                    src: "assets/img/desktop/fase1/" + i + ".png",
-                    id: i%8
-                };
-                images.push(img);
-            }
-
-            for(var i = 8; i < 16; i++){
-                var img = {
-                    src: "assets/img/desktop/fase2/" + i + ".png",
-                    id: i%8
-                };
-                images.push(img);
-            } 
-        } else if(level === "3"){
-
-            document.getElementsByTagName('title')[0].innerHTML= "Fase 3";
-
-            for(var i = 0; i < 8; i++){
-                var img = {
-                    src: "assets/img/desktop/fase3/" + i + ".png",
-                    id: i%8
-                };
-                    images.push(img);
-                }
-
-            for(var i = 8; i < 16; i++){
-                var img = {
-                    src: "assets/img/desktop/fase2/" + i + ".png",
-                    id: i%8
-                };
-                images.push(img);
-            } 
-        }
-     /* ---------------------- Imagens mobile ---------------------- */
+        sty = "desktop";
     }else{
-        console.log("fase");
+        sty = "mobile";
+    }
 
-        if (level === "1"){
+    instantiateAllImgOfLevel(sty, level);
 
-            document.getElementsByTagName('title')[0].innerHTML= "Fase 1";
-
-            for(var i = 0; i < 16; i++){
-                /*img é objeto, indices textuais, funções = métodos */
-                var img = {
-                    src: "assets/img/mobile/fase1/" + i + ".png",
-                    id: i%8                    
-                };
-              //  console.log("id das imagens:" + img.id);
-                images.push(img);
-            } 
-
-        } else if (level === "2"){
-
-            document.getElementsByTagName('title')[0].innerHTML= "Fase 2";
-
-        
-            for(var i = 0; i < 8; i++){
-                var img = {
-                    src: "assets/img/mobile/fase1/" + i + ".png",
-                    id: i%8
+    function getAllImgInRange(path, changeInPath, start, end){
+        for(let i = start; i < end; i++){
+            /*img é objeto, indices textuais, funções = métodos */
+            var img = {
+                src: path + changeInPath + "/" + i + ".png",
+                id: i%8                     
             };
-                images.push(img);
-            }
-
-            for(var i = 8; i < 16; i++){
-                var img = {
-                    src: "assets/img/mobile/fase2/" + i + ".png",
-                    id: i%8
-                };
-                images.push(img);
-            } 
-
-        } else if(level === "3"){
-            // arrumar o tamanho das imagens, mas de resto ta tudo certo até aqui
-
-            document.getElementsByTagName('title')[0].innerHTML= "Fase 3";
-
-            for(var i = 0; i < 8; i++){
-                var img = {
-                        src: "assets/img/mobile/fase3/" + i + ".png",
-                        id: i%8
-                    };
-                    images.push(img);
-                }
-
-            for(var i = 8; i < 16; i++){
-                var img = {
-                        src: "assets/img/mobile/fase2/" + i + ".png",
-                        id: i%8 // assets/img/mobile/fase + (3 - Math.floor(i/8)).toString() + "/"
-                };
-                images.push(img);
-            } 
-
+            images.push(img);
         }
+    }
+
+    function instantiateAllImgOfLevel(modeOpening, level){
+        const path = "assets/img/" + modeOpening + "/fase"
+        document.getElementsByTagName('title')[0].innerHTML= "Fase " + level;
+
+        if(level === "1"){
+            getAllImgInRange(path, parseInt(level), 0, 16);
+        }else if(level === "2"){
+            getAllImgInRange(path, parseInt(level-1), 0, 8);
+            getAllImgInRange(path, parseInt(level), 8, 16);
+        }else if(level === "3"){
+            getAllImgInRange(path, parseInt(level), 0, 8);
+            getAllImgInRange(path, parseInt(level-1), 8, 16);
+        }   
     }
    
 
     startGame();
+
+    function VerifySize(){
+        var size = $(window).width();
+
+        if(size >= 600){ //Desktop e tablet
+            return {
+                constantSizeTop: 130,
+                constantSizeLeft: 140,
+
+                constantSpaceTop: 0,
+                constantSpaceLeft: 0
+            }
+            
+        }else{ //Mobile
+            return {
+                constantSizeTop: 70,
+                constantSizeLeft: 76,
+
+                constantSpaceTop: 5,
+                constantSpaceLeft: 6
+            }
+        }
+    }
+
+    //Pode ser mudada infinitamente caso seja necessario
+    function SizeFormula(value, operationNumber, size, space, operationSize, operationSpace){
+        return (operationSize(value, operationNumber) * size) + 
+                operationSpace(space, Math.floor(value / operationNumber) + 1); // % /
+    }
+
+    function SetCardStyle(index, sizes){
+        /*Pode usar get element by id, porem o query selector é mais rápido*/
+        var card = document.querySelector("#card" + index);
+
+        card.style.top = SizeFormula(index, 4, sizes.constantSizeTop, sizes.constantSpaceTop, 
+                        (v, h) => Math.floor(v / h), (v,h) => v) + "px";
+        card.style.left = SizeFormula(index, 4, sizes.constantSizeLeft, sizes.constantSpaceLeft, 
+                        (v, h) => v % h, (v,h) => v * h) + "px";
+
+        card.addEventListener("click", flipCard, false);
+    }
+
     /* ----------------------- começa o jogo ----------------------- */
     function startGame(){   
-        
         matches = 0;
-
         flippedCards = [];
-
         error = 0;
-
         images  = randomSort(images);
 
         var frontFaces = document.getElementsByClassName("front");
-        var backFaces = document.getElementsByClassName("back");
+        var backFaces = document.getElementsByClassName("back"); 
         
-        var size = $(window).width();
-
-        /*tentar criar uma função e modularizar essa parte passando o tamanho da tela por parâmetro, ver se vai funcionar*/
+        //Encontra o size da tela e configura os espaçamentos
+        const sizes = VerifySize();
+        
         for(var i = 0; i < 16; i++){
-                
-        
             frontFaces[i].classList.remove("flipped", "match");
             backFaces[i].classList.remove("flipped", "match");
 
-            /*Pode usar get element by id, porem o query selector é mais rápido*/
-            var card = document.querySelector("#card" + i);
-            // console.log(card);
+            SetCardStyle(i, sizes);
 
-            if(size >= 600){ /*Versão Desktop e tablet*/
-                /*mod: resto da divisao */
-                card.style.left = (i % 4) * 140 + "px"; 
-
-                //se 0 ou multiplo de 4 = 0
-                //caso contrário 140 * resto -> 140 * resto OU 0
-                card.style.top = (Math.floor(i / 4) * 130)  + "px"; //(((i / 4).floor() + 1) * 0)
-            } else { /*Versão Mobile*/
-                card.style.left = (i % 4) * 140 + "px"; 
-                card.style.top = (Math.floor(i / 4) * 130)  + "px"; //(((i / 4).floor() + 1) * 0)
-            }
-
-            card.addEventListener("click", flipCard, false);
-                
             backgroundLevel(level);
 
-            /*todos os cards tem imagem e id */
+            //todos os cards tem imagem e id
             frontFaces[i].style.background = "url('"+ images[i].src +"')";
             frontFaces[i].setAttribute("id",images[i].id);
             frontFaces[i].style.backgroundRepeat = "no-repeat";
-
-            if(i === 15){
-                //mudar o texto
-                ShowStart();
-                InicialTime(mode); 
-            }
         }
+
+        //mudar o texto
+        ShowStart();
+        InicialTime(mode); 
         
     }
 
@@ -199,6 +135,7 @@
     function backgroundLevel(level){
         // console.log("entrou");
         var backFaces = document.getElementsByClassName("back");
+
         for(var i = 0; i < backFaces.length; i++){
             if(level === "1"){
                 backFaces[i].classList.add("b1");
@@ -260,13 +197,15 @@
     var cont = 0;
 
     /* -------------- Remove o brilho dos pares feitos -------------- */
-    function brilho(){
+    function RemoveGlowEffect(){
         let info = [];
-        for(i=0; i< 16; i++){
+
+        for(i=0; i < 16; i++){
             info[i] = document.getElementById("card"+i); //Recolhe todos os cards
             console.log(info[i]);
         }
-        for(i=0; i< info.length; i++){
+
+        for(i=0; i < info.length; i++){
             info[i] = info[i].childNodes[3]; //faz com que os cards se tornem "face front"
             console.log(info[i]);
             
@@ -277,6 +216,22 @@
         }
         console.log(info);
         info = [];
+    }
+
+    function flippedCardsToggleAction(action){
+        for(let i = 0; i < 2; i++){
+            for(let j = 1; j < 4; j+=2){
+                flippedCards[i].childNodes[j].classList.toggle(action);
+            }
+        }
+    }
+
+    function flippedCardsAddAction(action){
+        for(let i = 0; i < 2; i++){
+            for(let j = 1; j < 4; j+=2){
+                flippedCards[i].childNodes[j].classList.add(action);
+            }
+        }
     }
 
     /* -------------------------- flipCard -------------------------- */
@@ -304,53 +259,29 @@
             faces[1].classList.toggle("flipped");
 
             /*toggle = switch, se nao existe adiciona, se ja existe, remove */
-            //console.log("Tamanho - 1- " + flippedCards.length);
-            flippedCards.push(this);
-            //console.log("Tamanho - 2- " + flippedCards.length);
-            /*
-            console.log("1" + flippedCards[0].childNodes[1]);
-            console.log("2" +  flippedCards[0].childNodes[3]);
-            console.log("3" + flippedCards[1].childNodes[1]);
-            console.log("4" + flippedCards[1].childNodes[3]);     
-            */   
-                
-            console.log(" -- ID0 - " + flippedCards[0].childNodes[3].id);
-            console.log(" -- ID1 - " + flippedCards[1].childNodes[3].id);
-                
+            flippedCards.push(this);    
                 
             if(flippedCards.length === 2 ){
+                console.log(" -- ID0 - " + flippedCards[0].childNodes[3].id);
+                console.log(" -- ID1 - " + flippedCards[1].childNodes[3].id);
 
                 console.log("Entrou no IF 1 ----------");
-                
                 console.log("---------- ----------");
     
                 if(flippedCards[0].childNodes[3].id === flippedCards[1].childNodes[3].id){
-    
-                    for(let i = 0; i < 2; i++){
-                        for(let j = 1; j < 4; j+=2){
-                            flippedCards[i].childNodes[j].classList.toggle("match");
-                        }
-                    }
-                        
+                    flippedCardsToggleAction("match");
                     //sinal de desaparecimento da carta                        
                     matchCardsSign();
-
                     //efeito de desaparecimento da carta
-                        
-                    for(let i = 0; i < 2; i++){
-                        for(let j = 1; j < 4; j+=2){
-                            flippedCards[i].childNodes[j].classList.add("pair");
-                        }
-                    }
+                    flippedCardsAddAction("pair");
                     
-                    brilho();
+                    RemoveGlowEffect();
                     //matches = 7;
                     matches++;
 
                     flippedCards = [];
 
                     CountPoint();
-
                     if(matches === 8){
                         victory();
                     }    
@@ -358,9 +289,9 @@
                     timeAction(mode);
                     console.log("errou -------")
                 }               
-                }
-            } 
-        }
+            }
+        } 
+    }
     
     /* --------------------------- sleep --------------------------- */
     const sleep = (milliseconds) => {
@@ -370,45 +301,15 @@
     async function timeAction(){ 
         //do something here
        // console.log(" Sleep ------");
-        if (mode === "1"){
-            await sleep(3000) 
-            console.log(" Sleep Fácil");
-            for(let i = 0; i < 2; i++){
-                for(let j = 1; j < 4; j+=2){
-                    flippedCards[i].childNodes[j].classList.toggle("flipped");
-                }
-            }
-            flippedCards = [];
-    
-            fail++;
-            CountPoints(fail);
 
-        }else if(mode === "2"){
-            await sleep(2000) 
-            console.log(" Sleep Médio");
-            for(let i = 0; i < 2; i++){
-                for(let j = 1; j < 4; j+=2){
-                    flippedCards[i].childNodes[j].classList.toggle("flipped");
-                }
-            }
-     
-            flippedCards = [];
-            fail++;
-            CountPoints(fail);
+        sleepTime = 4000 - (parseInt(mode) * 1000);
+        await sleep(sleepTime)
 
-        }else{
-            await sleep(1000) 
-            console.log(" Sleep Difícil");
-            for(let i = 0; i < 2; i++){
-                for(let j = 1; j < 4; j+=2){
-                    flippedCards[i].childNodes[j].classList.toggle("flipped");
-                }
-            }
-     
-            flippedCards = [];
-            fail++;
-            CountPoints(fail);
-        }                
+        flippedCardsToggleAction("flipped");
+
+        flippedCards = [];
+        fail++;
+        CountPoints(fail);                
     }
     /* ----------------------- conta pontos ----------------------- */
     /**

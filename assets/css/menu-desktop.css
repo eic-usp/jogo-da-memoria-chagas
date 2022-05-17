@@ -3,10 +3,10 @@
   
   .tipoUL{ /*menu lateral**/
     list-style-type: none;
-    left: 75%;
+    left: 77vw;
     margin: 0;
     padding: 0;
-    width: 25vw;
+    width: 23vw;
     background-color: #541663;
     height: 100%; 
     position: absolute; 
@@ -17,9 +17,10 @@
     padding-left: 3vw;
     width: 240px;
     height: 80px;
+    margin-bottom: 35px;
   }
   .elem-menu-lateral{
-    width: 18,75vw;
+    width: 18.75vw;
     height:6vh;
     position: static;
     justify-content: center;
