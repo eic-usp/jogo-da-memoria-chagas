@@ -369,5 +369,5 @@
 
 /* ------------------- Sair da página de jogo ------------------- */
 function quitGame(){
-    window.location.replace("index.html");
+    window.location.replace("nivel.html");
 }
