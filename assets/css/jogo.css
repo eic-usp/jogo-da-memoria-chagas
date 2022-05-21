@@ -69,7 +69,7 @@
 }
 
 /*DESKTOP*/
-@media(min-width: 1001px){
+@media(min-width: 1500px){
 
     #container{
         width: 36rem; 
@@ -110,7 +110,62 @@
         padding-top: 1%;
         height: 32px;
     }
+    .points-position-game{    
+        position: relative;
+        filter: drop-shadow(0px 6px 8px rgba(0, 0, 0, 0.25));
+        display: flex;
+        align-items: center;
+        justify-content: center;    
+    }
 }
+@media(min-width: 1001px) and (max-width: 1499px){ /* telas menores desktop/laptop*/
+
+    #container{
+        width: 34rem; 
+        height: 32rem;
+        top: 10vh;
+        left: 20vw;
+        position: absolute;
+        border-radius: 10px;
+        display: flex;
+        
+       /* border: 1px solid #000; Visualizar melhor o tamanho do container*/
+    }
+
+    .card{
+        width: 120px;
+        height: 120px;
+        position: absolute; 
+        border-radius: 10px;
+        perspective: 600px; /*profundidade do giro*/
+        background:  rgb(136,69,153) ;
+        border: 0ch;
+    }
+    .back{
+        object-fit: fill;
+    }   
+    .b1{
+        background: url("../img/desktop/fase1/verso1.png");
+    }
+    .b2{
+        background: url("../img/desktop/fase2/verso2.png");
+    }      
+    .b3{
+        background: url("../img/desktop/fase3/verso3.png");
+    }
+    /*Botao do menu lateral - especifico jogo*/
+    #btn-voltar-d{
+        padding-left: 4%;
+        padding-top: 1%;
+        height: 15px;
+    }
+    .points-position-game{    
+        position: relative;
+        margin-top: 65vh;
+        margin-left: -2%;  
+    }
+}
+
 /*TABLET*/
 @media(min-width: 600px) and (max-width: 1000px){
     #container{
