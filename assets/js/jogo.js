@@ -276,7 +276,7 @@
                     flippedCardsAddAction("pair");
                     
                     RemoveGlowEffect();
-                    //matches = 7;
+                    matches = 7;
                     matches++;
 
                     flippedCards = [];
