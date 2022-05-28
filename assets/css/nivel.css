@@ -117,7 +117,7 @@
 }
   
 /*versão desktop */
-@media (min-width: 1000px){
+@media (min-width: 1001px){
   .fundo{
     display: flex;
     overflow: hidden;
@@ -148,7 +148,7 @@
 
 /*versão tablet */
 @media(min-width: 600px) and (max-width: 1000px){
-
+  
   .logo-eic{
     top: 85%;
     bottom: 5%;
@@ -169,7 +169,6 @@
   }
   .menu-mobile{
     display: flex;
-    margin-top: 10vh;
   }
 
 }
