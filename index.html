@@ -4,133 +4,161 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    
+
     <title>Jogo da memória - Chagas</title>
-    
+
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Luckiest+Guy">
     <link rel="stylesheet" href="/assets/css/styles.css">
     <link rel="stylesheet" href="/assets/css/index.css">
-    
-</head> 
+
+</head>
 
 <body class="fundo1 fundo">
-    
+
     <div class=" titulo">JOGO DA MEMÓRIA</div>
     <div class="espaco-3"></div>
-    
+
     <div class="subtitulo-t">Doença de chagas</div>
     <div class="espaco-2"></div>
-    
+
     <img src="assets/img/cards-img.svg" class="cards-inicial">
     <div class="espaco-3"></div>
-    
+
     <form id="loguinForm" action="#" method="post">
 
         <div>
-            <input type="text" id="email"  class="inputs-container" name="email" placeholder="Digite seu e-mail" required autofocus>
-            <input type="password" id="password" class="inputs-container" name="password" placeholder="Digite sua senha" required>
+            <input type="text" id="email" class="inputs-container" name="email" placeholder="Digite seu e-mail" required
+                autofocus>
+            <input type="password" id="password" class="inputs-container" name="password" placeholder="Digite sua senha"
+                required>
         </div>
 
         <button class="btn btn-primary btn-index" id="" type="submit">Entrar</button>
 
-        <button type="submit" id="loguin-Google"  class="btn btn-primary btn-index">Login Google</button>
+        <button type="submit" id="loguin-Google" class="btn btn-primary btn-index">Login Google</button>
 
     </form>
 
 
-    <div>
-        <a class="links-uteis" type="button" data-toggle="modal" data-target="#EmailReset"><p>Esqueceu Sua Senha?</p></a>
-    </div>
+
 
     <div class="espaco-2"></div>
 
     <!-- A classe elem-btn-c serve apenas para fins de identificação e não esta atrelada a nenhuma classe css-->
-    <div class="display-center">
-        <div class = "elem-btn-c">
-        <div> <a href="instrucoes.html"> <img src="assets/img/botao-instruções.svg"></a></div>
-        </div>
-        <div class = "elem-btn-c">
-        <div> <a href="creditos.html"> <img src="assets/img/botao-creditos.svg"></a></div>
-        </div>
-        <div class = "elem-btn-c">
-        <div> <a href="compartilhar.html"> <img src="assets/img/botao-compartilhar.svg"> </a></div>
-        </div>
-    </div>
-
-    <a href="cadastrar.html"><p id="cadastro">Cadastre-se</p></a>
-        
-    <div class="espaco-1"></div>
-
     <div>
-        <img class = "logo-eic-index" src="assets/img/logo-eic.svg">
+
+        <div>
+            <a class="links-uteis" type="button" data-toggle="modal" data-target="#EmailReset">
+                Esqueceu Sua Senha?
+            </a>
+        </div>
+        <div class="d-flex justify-content-center">
+            <div class="elem-btn-c">
+                <div> <a href="instrucoes.html"> <img src="assets/img/botao-instruções.svg"></a></div>
+            </div>
+            <div class="elem-btn-c">
+                <div> <a href="creditos.html"> <img src="assets/img/botao-creditos.svg"></a></div>
+            </div>
+            <div class="elem-btn-c">
+                <div> <a href="compartilhar.html"> <img src="assets/img/botao-compartilhar.svg"> </a></div>
+            </div>
+        </div>
+
+        <div>
+            <a id="cadastro" href="cadastrar.html">
+                Cadastre-se
+            </a>
+        </div>
+
+        <div class="espaco-1"></div>
+
+        <div>
+            <img class="logo-eic-index" src="assets/img/logo-eic.svg">
+        </div>
+
+
     </div>
+
+
+
+    
     </div>
 
     <div class="espaco-i-1"></div>
-        
+
     <!-- A classe elem-btn-c serve apenas para fins de identificação e não esta atrelada a nenhuma classe css-->
-    
+
     <div class="modal fade" id="EmailReset" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                
+
                 <div class="modal-header">
                     <h5 class="modal-title" id="ModalLabel">Redefinir senha</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form id="email-reset" action="#" method="post">    
-                    <div class="modal-body">                                    
+                <form id="email-reset" action="#" method="post">
+                    <div class="modal-body">
                         <div class="form-group row">
                             <label for="EmailReset" class="col-md-4 col-form-label text-md-right">E-Mail</label>
                             <div class="col-md-6">
                                 <input type="text" id="email" class="form-control" name="email">
                             </div>
-                        </div> 
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                        <button type="submit" id=""  class="btn btn-primary">
+                        <button type="submit" id="" class="btn btn-primary">
                             enviar
                         </button>
                     </div>
-                </form>     
-            
+                </form>
+
             </div>
         </div>
     </div>
 
-    <div id ="logoutAction"></div>
-    <div id ="logout-Action-modal"> </div>
-    <div id ="logout-Action"> </div> 
-    <div id ="cadForm-form"> </div> 
-    <div id ="consulta"> </div> 
-    <div id ="atualizacao"> </div>
+    <div id="logoutAction"></div>
+    <div id="logout-Action-modal"> </div>
+    <div id="logout-Action"> </div>
+    <div id="cadForm-form"> </div>
+    <div id="consulta"> </div>
+    <div id="atualizacao"> </div>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
     <script src="assets/js/cookies.js"></script>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-database.js"></script>  
-        
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-database.js"></script>
+
     <script src="assets/js/firebase.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
 
     <script>
         $('#myModal').on('shown.bs.modal', function () {
-        $('#myInput').trigger('focus')
+            $('#myInput').trigger('focus')
         })
- 
+
     </script>
 </body>
 
