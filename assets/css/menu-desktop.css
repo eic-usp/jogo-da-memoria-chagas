@@ -15,7 +15,7 @@
   .logo-eic-centro{ /*logo do EIC**/
     position: relative;
     padding-left: 3vw;
-    width: 240px;
+    width: 200px;
     height: 80px;
     margin-bottom: 35px;
   }
@@ -39,7 +39,7 @@
     text-align: left;
     padding-top: 3px;
     position:relative;
-    left: 115px;
+    left: 100px;
     transform: translateY(37%);
   }
     
