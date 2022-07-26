@@ -71,8 +71,8 @@
                 constantSizeTop: 70,
                 constantSizeLeft: 76,
 
-                constantSpaceTop: 5,
-                constantSpaceLeft: 6
+                constantSpaceTop: 0,
+                constantSpaceLeft: 0
             }
         }
     }

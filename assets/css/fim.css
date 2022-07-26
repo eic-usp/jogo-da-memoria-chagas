@@ -12,3 +12,17 @@
     left: 2px;
   }
 }
+/*MOBILE*/
+@media(max-width: 600px){  
+  .medal{
+    bottom: 1rem;
+    position:relative;
+    top: 14px;
+    right: 40px;      
+  }
+  .points{
+    position:relative;
+    bottom: 1.5rem;
+    left: 2px;
+  }
+}
